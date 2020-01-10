@@ -12,11 +12,11 @@ export class PageService {
 
   // * Reset Document Title To "YPS"
   reset = (): void => {
-    document.title = "YPS"
+    document.title = "YPS";
   }
 
   // * Add a Specific Value to the Current Document Title Value
-  upend = (title: string) => {
+  append = (title: string) => {
     const currentDocumentTitle = document.title;
     document.title = currentDocumentTitle + title;
   }
