@@ -1,7 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
 @import './fonts.scss';
+@import './vars.scss';
 
 * {
+  color: #333333;
   padding: 0;
   margin: 0;
   box-sizing: border-box;
@@ -49,5 +51,27 @@ input {
 }
 
 .yps-logo {
-  font-family: 'Montserrat', monospace;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 900;
+  font-size: 2.5rem;
+  position: relative;
+
+  &::before {
+    content: 'yps';
+    display: block;
+    text-transform: uppercase;
+    color: $accent;
+  }
+
+  &::after {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    height: 5px;
+    width: 50px;
+    background-color: $accent;
+  }
 }

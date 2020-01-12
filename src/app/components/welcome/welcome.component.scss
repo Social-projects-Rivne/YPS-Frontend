@@ -1,0 +1,9 @@
+:host {
+  display: grid;
+  grid-gap: 1rem;
+  padding: 1rem;
+  text-align: center;
+  .title {
+    text-transform: capitalize;
+  }
+}
