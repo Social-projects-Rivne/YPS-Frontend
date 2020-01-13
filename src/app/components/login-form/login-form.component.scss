@@ -1,0 +1,80 @@
+@import 'src/vars.scss';
+
+:host {
+  display: block;
+  width: 24rem;
+  margin: 0 auto;
+
+  .form {
+    display: grid;
+    grid-gap: 1rem;
+    padding: 1rem;
+
+    .title {
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+    .login-btn {
+      justify-self: center;
+      transition: $transition;
+
+      &:hover {
+        border-color: $accent;
+        background-color: #ffffff;
+        color: $accent;
+      }
+    }
+
+    .wrap {
+      display: grid;
+      grid-template-columns: repeat(2, auto);
+      font-size: 0.875rem;
+      color: #acacac;
+      
+      .checkbox-field {
+        display: grid;
+        grid-template-columns: 13px auto;
+        align-items: center;
+        justify-self: start;
+
+        .remember-control {
+          margin-bottom: -2px;
+
+          &:hover {
+            cursor: pointer;
+          }
+        }
+
+        .remember {
+          color: #acacac;
+          padding-left: 0.25rem;
+          transition: $transition;
+
+          &::first-letter {
+            text-transform: capitalize;
+          }
+
+          &:hover {
+            cursor: pointer;
+          }
+        }
+
+        &:hover {
+          .remember {
+            color: $accent;
+          }
+        }
+      }
+
+      .forgot-link {
+        justify-self: end;
+        transition: $transition;
+
+        &:hover {
+          color: $accent;
+        }
+      }
+    }
+  }
+}
