@@ -50,28 +50,14 @@ input {
   font-family: 'Muli', sans-serif;
 }
 
-.yps-logo {
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 900;
-  font-size: 2.5rem;
-  position: relative;
+.btn {
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 0.75rem;
 
-  &::before {
-    content: 'yps';
-    display: block;
-    text-transform: uppercase;
-    color: $accent;
-  }
-
-  &::after {
-    content: '';
-    display: block;
-    position: absolute;
-    left: 50%;
-    bottom: 0;
-    transform: translateX(-50%);
-    height: 5px;
-    width: 50px;
+  &.primary {
+    border-color: $accent;
     background-color: $accent;
+    color: #ffffff;
   }
 }
