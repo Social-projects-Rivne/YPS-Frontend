@@ -3,7 +3,6 @@ export interface IFormField {
   type: string;
   label: string;
   placeholder: string;
-  // pattern?: string;
-  // errorMessage?: string;
+  errorMsg?: string;
   name: string;
 }
