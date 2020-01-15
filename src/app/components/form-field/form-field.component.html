@@ -4,9 +4,7 @@
   [type]="field.type"
   (change)="onChange($event.target.value)"
   [placeholder]="field.placeholder"
+  [ngClass]="{'error': field.errorMsg != null }"
 />
 <label [for]="field.id" class="form-field-label" >{{ field.label }}</label>
-
-<!-- <div class="error-messages" *ngIf="!!errorMessages">
-  <p class="error-mesage" *ngFor="let mesage of errorMessages" >{{mesage}}</p>
-</div> -->
+<p class="error-message" *ngIf="!!field.errorMsg" >{{ field.errorMsg }}</p>
