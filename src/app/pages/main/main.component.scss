@@ -1,0 +1,41 @@
+.container {
+    display: grid;
+    grid-gap: 2rem;
+    padding: 0 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+
+    .content {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+        grid-gap: 2rem 4rem;
+        
+        .welcome-text > h1 {
+            text-align: center;
+        }
+        
+        .sub-text {
+            text-align: center;
+            text-transform: capitalize;
+            font-size: 2rem;
+            .graph-img {
+                width: 100%;
+            }
+        }
+    }
+
+    .link {
+        font-size: 25px;
+        text-transform: capitalize;
+        &.login-link {
+            justify-self: start;
+        }
+        &.registration-link {
+            justify-self: end;
+            float: right;
+        }
+    }
+}
+
+
+
