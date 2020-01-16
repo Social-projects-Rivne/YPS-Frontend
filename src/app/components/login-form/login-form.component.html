@@ -1,0 +1,21 @@
+<form
+  class="form"
+  [formGroup]="form"
+  (ngSubmit)="onSubmit()"
+>
+  <h1 class="title">account login</h1>
+  <yps-form-field
+    *ngFor="let field of fields"
+    [field]="field"
+    [formControlName]="field.name"
+  >
+  </yps-form-field>
+  <div class="wrap">
+    <div class="checkbox-field">
+      <input type="checkbox" formControlName="remember" class="remember-control" id="remember-control">
+      <label class="remember" for="remember-control">remember me</label>
+    </div>
+    <a href="#" class="forgot-link">Forgot password?</a>
+  </div>
+  <button type="submit" class="btn login-btn primary">login</button>
+</form>

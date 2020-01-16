@@ -1,0 +1,10 @@
+<input
+  class="form-field-control"
+  [id]="field.id"
+  [type]="field.type"
+  (change)="onChange($event.target.value)"
+  [placeholder]="field.placeholder"
+  [ngClass]="{'error': field.errorMsg != null }"
+/>
+<label [for]="field.id" class="form-field-label" >{{ field.label }}</label>
+<p class="error-message" *ngIf="!!field.errorMsg" >{{ field.errorMsg }}</p>
