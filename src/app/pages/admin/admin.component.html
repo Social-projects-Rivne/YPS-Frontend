@@ -1,7 +1,7 @@
 <header>
 	<ul class="navbar">
 		<li>
-			<p>YPS</p>
+			<img src="../../../assets/images/yps-icon.png" class="logo_admin">
 		</li>
 		<li style="float: right;"><a href="/login">Log out</a></li>
 		<li style="float: right;">
@@ -17,10 +17,27 @@
 		<button (click)="onClick2()">Schools</button>
 	</div>
 	<div class="content">
-		<div *ngIf="!isCollapsed">
-			<div class="profile">
-
-			</div>
+		<div *ngIf="!isCollapsed" class="profile">
+				<ul class="photo_edit">
+					<li>
+						<img src="../../../assets/images/default-user-image.jpg" class="photo"/>
+					</li>
+					<li>
+						<button class="photo_upl">Upload new photo</button>
+					</li>
+				</ul>
+				<div class="info">
+					<ul class="name_edit">
+						<li>
+							<h3 *ngFor="let user of user">Name: {{user.name}}</h3>
+							<div></div>
+						</li>
+						<li>
+							<h3 *ngFor="let user of user">Last name: {{user.surname}}</h3>
+							<div></div>
+						</li>
+					</ul>
+				</div>	
 		</div>
 		<div *ngIf="!isCollapsed1">
 			<h3>Paris</h3>

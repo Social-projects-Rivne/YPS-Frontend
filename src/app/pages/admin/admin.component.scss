@@ -6,11 +6,8 @@
 .navbar {
     list-style-type: none;
     margin: 0;
-    padding: 0;
+    padding: 2px 0 0 0;
     overflow: hidden;
-    grid-column-start: 1;
-    grid-column-end: 3;
-    grid-row-start: 1;
   }
  .navbar:only-child li {
     float: left;
@@ -22,18 +19,7 @@
     padding: 14px 16px;
     text-decoration: none;
   }
- ul{
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  grid-column-start: 1;
-  grid-row-start: 1;
-  grid-row-end: auto;
- }
- li {
-  float: inline-start;
-}
-  li a {
+  .navbar:only-child li a{
     display: block;
     text-align: center;
     padding: 14px 16px;
@@ -43,13 +29,16 @@
     grid-column-start: 2;
     grid-row-start: 1;
     grid-row-end: auto;
+    margin-left: 20px;
+    padding: 20px;
+    display: grid;
   }
  /* Style the tab */
   .tab {
     grid-column-start: 1;
     grid-row-start: 1;
     grid-row-end: auto;
-    float: right;
+    float: left;
     width: 100%;
   }
   /* Style the buttons that are used to open the tab content */
@@ -61,7 +50,7 @@
     width: 100%;
     border: none;
     outline: none;
-    text-align: right;
+    text-align: left;
     cursor: pointer;
     transition: 0.3s;
   }
@@ -73,9 +62,48 @@
   .tab button.active {
     background-color: #ccc;
   }
-  /* Style the tab content */
-  .tabcontent {
-    padding: 10px 12px;
-    width: 70%;
-    height: auto;
+  .profile{
+    grid-column-start: 1;
+    grid-row-start: 1;
+    grid-row-end: auto;
+    display: grid;
+    grid-auto-columns: 150px auto;
   }
+  .logo_admin{
+    float: left;
+    height: 25%;
+    width: 25%;
+  }
+  .photo{
+    height: 200px;
+    width: 150px;
+  }
+  .photo_upl{
+    border-radius: 50px;
+    cursor: pointer;
+  }
+  .photo_upl:hover {
+    background-color: #ddd;
+  }
+  .photo_edit{
+    grid-column-start: 1;
+    grid-row-start: 1;
+    grid-row-end: auto;
+  }
+  .info{
+    grid-column-start: 2;
+    grid-row-start: 1;
+  }
+  .name_edit{
+    grid-column-start: 2;
+    grid-row-start: 1;
+    grid-row-end: auto;
+    padding-left: 20px;
+    list-style-type: none;
+    margin: 0;
+    overflow: hidden;
+  }
+.name_edit li{
+  text-align: left; 
+  display: block;
+}

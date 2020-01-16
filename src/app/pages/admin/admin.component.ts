@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PageService } from 'src/app/services/page.service';
+import {user} from "../admin/mock_date";
 
 @Component({
   selector: 'yps-admin',
@@ -10,6 +11,9 @@ export class AdminComponent implements OnInit {
   isCollapsed: boolean=false;
   isCollapsed1: boolean=true;
   isCollapsed2: boolean=true;
+
+  user=user;
+
   constructor(private pageService: PageService) { }
 
   ngOnInit() {
