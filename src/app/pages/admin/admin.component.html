@@ -1,54 +1,68 @@
-<header>
-	<ul class="navbar">
-		<li>
-			<img src="../../../assets/images/yps-icon.png" class="logo_admin">
-		</li>
-		<li style="float: right;"><a href="/login">Log out</a></li>
-		<li style="float: right;">
-			<p>Admin</p>
-		</li>
-	</ul>
-</header>
+<div class="admin_page">
+	<header class="navbar">
+		<img src="../../../assets/images/yps-icon.png" class="logo_admin">
+		<p class="nav_user">{{name}} - Admin</p>
+		<div class="nav_logout">
+			<a href="/login">Log out</a>
+		</div>
+	</header>
 
-<body class="wrapper">
-	<div class="tab">
-		<button (click)="onClick()">Profile</button>
-		<button (click)="onClick1()">New Requests</button>
-		<button (click)="onClick2()">Schools</button>
-	</div>
-	<div class="content">
-		<div *ngIf="!isCollapsed" class="profile">
+	<div class="wrapper">
+		<div class="tab">
+			<button (click)="onClick()">Profile</button>
+			<button (click)="onClick1()">New Requests</button>
+			<button (click)="onClick2()">Schools</button>
+		</div>
+		<div class="content">
+			<div *ngIf="!isCollapsed" class="profile">
 				<ul class="photo_edit">
 					<li>
-						<img src="../../../assets/images/default-user-image.jpg" class="photo"/>
+						<img src="../../../assets/images/default-user-image.jpg" class="photo" />
 					</li>
 					<li>
-						<button class="photo_upl">Upload new photo</button>
+						<button (click)="uploadPhoto()" class="photo_upl">Upload new photo</button>
 					</li>
 				</ul>
 				<div class="info">
+					<ul class="label_info">
+						<li class="l_name">
+							<p>Name:</p>
+						</li>
+						<li class="l_lname">
+							<p>Last name:</p>
+						</li>
+						<li class="l_lname">
+							<p>Email:</p>
+						</li>
+					</ul>
 					<ul class="name_edit">
 						<li>
-							<h3 *ngFor="let user of user">Name: {{user.name}}</h3>
+							<h3>{{name}}</h3>
 							<div></div>
 						</li>
 						<li>
-							<h3 *ngFor="let user of user">Last name: {{user.surname}}</h3>
+							<h3>{{surname}}</h3>
+							<div></div>
+						</li>
+						<li>
+							<h3>{{email}}</h3>
 							<div></div>
 						</li>
 					</ul>
-				</div>	
-		</div>
-		<div *ngIf="!isCollapsed1">
-			<h3>Paris</h3>
-			<p>Paris is the capital of France.</p>
-		</div>
-		<div *ngIf="!isCollapsed2">
-			<h3>Tokyo</h3>
-			<p>Tokyo is the capital of Japan.</p>
+				</div>
+				<div class="notifications">
+					<h1>Hello</h1>
+				</div>
+			</div>
+			<div *ngIf="!isCollapsed1">
+				<h3>Paris</h3>
+				<p>Paris is the capital of France.</p>
+			</div>
+			<div *ngIf="!isCollapsed2">
+				<h3>Tokyo</h3>
+				<p>Tokyo is the capital of Japan.</p>
+			</div>
 		</div>
 	</div>
-</body>
-
-
-
+	
+</div>

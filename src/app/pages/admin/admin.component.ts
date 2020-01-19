@@ -1,18 +1,20 @@
 import { Component, OnInit } from '@angular/core';
 import { PageService } from 'src/app/services/page.service';
-import {user} from "../admin/mock_date";
 
 @Component({
   selector: 'yps-admin',
   templateUrl: './admin.component.html',
-  styleUrls: ['./admin.component.scss']
+  styleUrls: ['./admin.component.scss'],
 })
 export class AdminComponent implements OnInit {
   isCollapsed: boolean=false;
   isCollapsed1: boolean=true;
   isCollapsed2: boolean=true;
 
-  user=user;
+  name: string="Pedro";
+  surname: string="Velaskes";
+  email: string="admin@yps.com"
+
 
   constructor(private pageService: PageService) { }
 
@@ -34,5 +36,8 @@ export class AdminComponent implements OnInit {
     this.isCollapsed2=false;
     this.isCollapsed=true;
     this.isCollapsed1=true;
+  }
+  uploadPhoto(){
+
   }
 } 

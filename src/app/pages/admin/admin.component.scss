@@ -1,45 +1,58 @@
-.wrapper{
+.admin_page{
   display: grid;
   grid-auto-rows: auto;
   grid-auto-columns: 150px auto;
+  row-gap: 1rem;
 }
 .navbar {
-    list-style-type: none;
-    margin: 0;
-    padding: 2px 0 0 0;
-    overflow: hidden;
+  display: grid;
+  grid-column-start: 1;
+  grid-row-start: 1;
+  grid-column-end: 3;
+  grid-auto-columns: auto auto 80px;
+  grid-auto-rows: 40px;
   }
- .navbar:only-child li {
-    float: left;
-    text-align: center; 
-  }
-  .navbar:only-child li p{
-    display: block;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-  }
-  .navbar:only-child li a{
-    display: block;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-  }
-  .content{
+ .logo_admin{
+    padding-left: 2px;
+    padding-top: 2px;
+    justify-self: start;
+    align-self: center;
+    height: 100%;
+  } 
+  .navbar .nav_user{
     grid-column-start: 2;
     grid-row-start: 1;
-    grid-row-end: auto;
-    margin-left: 20px;
-    padding: 20px;
-    display: grid;
+    justify-self: end;
+    align-self: center;
   }
- /* Style the tab */
-  .tab {
+  .navbar .nav_logout{
+    grid-column-start: 3;
+    grid-row-start: 1;
+    justify-self: center;
+    align-self: center;
+  }
+.wrapper{
+  grid-column-start: 1;
+  grid-row-start: 2;
+  grid-row-end: 3;
+  grid-column-end: 3;
+  display: grid;
+  grid-auto-rows: auto;
+  grid-auto-columns: 150px auto;
+  grid-gap: 1rem;
+}
+.notifications{
+  grid-column-start: 2;
+  grid-row-start: 3;
+  grid-row-end: 4;
+  grid-column-end: 3;
+}
+/* Style the tab */
+.tab {
     grid-column-start: 1;
     grid-row-start: 1;
     grid-row-end: auto;
     float: left;
-    width: 100%;
   }
   /* Style the buttons that are used to open the tab content */
   .tab button {
@@ -58,52 +71,72 @@
   .tab button:hover {
     background-color: #ddd;
   }
-  /* Create an active/current "tab button" class */
-  .tab button.active {
-    background-color: #ccc;
+.content{
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: auto;
+  display: grid;
+  align-items: stretch
   }
   .profile{
     grid-column-start: 1;
+    grid-column-end: 2;
     grid-row-start: 1;
     grid-row-end: auto;
     display: grid;
     grid-auto-columns: 150px auto;
-  }
-  .logo_admin{
-    float: left;
-    height: 25%;
-    width: 25%;
-  }
-  .photo{
-    height: 200px;
-    width: 150px;
-  }
-  .photo_upl{
-    border-radius: 50px;
-    cursor: pointer;
-  }
-  .photo_upl:hover {
-    background-color: #ddd;
   }
   .photo_edit{
     grid-column-start: 1;
     grid-row-start: 1;
     grid-row-end: auto;
   }
+  .photo_edit li .photo{
+    height: 200px;
+    width: 150px;
+  }
+  .photo_edit li .photo_upl{
+    border-radius: 50px;
+    cursor: pointer;
+  }
+  .photo_upl:hover {
+    background-color: #ddd;
+  }
   .info{
     grid-column-start: 2;
+    grid-column-end: 3;
     grid-row-start: 1;
+    grid-row-end: auto;
+    display: grid;
+    padding-left: 1rem;
+    grid-auto-columns: 100px auto;
+    grid-template-rows: repeat(2, 1fr)
   }
-  .name_edit{
+
+  .label_info{
+    grid-column-start: 1;
+    grid-row-start: 1;
+    grid-row-end: auto;
+    list-style-type: none;
+    display: grid;
+  }
+  .l_name{
+    grid-column-start: 1;
+    grid-row-start: 1;
+    justify-self: self-start;
+  }
+
+  .name_edit{ 
     grid-column-start: 2;
     grid-row-start: 1;
     grid-row-end: auto;
-    padding-left: 20px;
     list-style-type: none;
-    margin: 0;
-    overflow: hidden;
+    justify-self: self-start;
+    display: grid;
+    grid-auto-rows: auto;
   }
 .name_edit li{
-  text-align: left; 
   display: block;
+  justify-self: self-start;
 }
