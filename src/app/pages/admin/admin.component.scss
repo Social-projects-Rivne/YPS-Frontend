@@ -41,12 +41,12 @@
   grid-auto-columns: 150px auto;
   grid-gap: 1rem;
 }
-.notifications{
-  grid-column-start: 2;
-  grid-row-start: 3;
-  grid-row-end: 4;
-  grid-column-end: 3;
-}
+// .notifications{
+//   grid-column-start: 2;
+//   grid-row-start: 3;
+//   grid-row-end: 4;
+//   grid-column-end: 3;
+// }
 /* Style the tab */
 .tab {
     grid-column-start: 1;
@@ -107,11 +107,10 @@
     grid-column-start: 2;
     grid-column-end: 3;
     grid-row-start: 1;
-    grid-row-end: auto;
+    grid-row-end: 2;
     display: grid;
     padding-left: 1rem;
     grid-auto-columns: 100px auto;
-    grid-template-rows: repeat(2, 1fr)
   }
 
   .label_info{
@@ -120,23 +119,26 @@
     grid-row-end: auto;
     list-style-type: none;
     display: grid;
+    grid-template-rows: repeat(4, 1fr);
   }
-  .l_name{
-    grid-column-start: 1;
-    grid-row-start: 1;
+  .label_info li{
+    // grid-column-start: 1;
+    // grid-row-start: 1;
     justify-self: self-start;
+    align-self: center;
   }
 
   .name_edit{ 
     grid-column-start: 2;
     grid-row-start: 1;
-    grid-row-end: auto;
+    grid-row-end: 2;
     list-style-type: none;
     justify-self: self-start;
     display: grid;
-    grid-auto-rows: auto;
+    grid-template-rows: repeat(4, 1fr);
   }
 .name_edit li{
   display: block;
   justify-self: self-start;
+  align-self: center;
 }
