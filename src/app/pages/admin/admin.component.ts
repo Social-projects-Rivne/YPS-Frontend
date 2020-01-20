@@ -11,8 +11,9 @@ export class AdminComponent implements OnInit {
   isCollapsed1: boolean=true;
   isCollapsed2: boolean=true;
 
-  name: string="Pedro";
-  surname: string="Velaskes";
+  name: string="Petro";
+  surname: string="Petrovskiy";
+  phone: string="+380-90-00-00-001"
   email: string="admin@yps.com"
 
 
@@ -37,7 +38,12 @@ export class AdminComponent implements OnInit {
     this.isCollapsed=true;
     this.isCollapsed1=true;
   }
+  selectFile() {
+    let element: HTMLElement = document.querySelector('input[type="file"]') as HTMLElement;
+    element.click();
+  }
   uploadPhoto(){
-
+    
+    console.log(document.getElementsByClassName("photo"));
   }
 } 

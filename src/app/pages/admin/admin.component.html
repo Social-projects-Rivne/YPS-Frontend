@@ -15,44 +15,28 @@
 		</div>
 		<div class="content">
 			<div *ngIf="!isCollapsed" class="profile">
-				<ul class="photo_edit">
-					<li>
-						<img src="../../../assets/images/default-user-image.jpg" class="photo" />
-					</li>
-					<li>
-						<button (click)="uploadPhoto()" class="photo_upl">Upload new photo</button>
-					</li>
-				</ul>
+				<img src="../../../assets/images/default-user-image.jpg" class="photo" />
+				<button class="btn uploadPhoto primary" (click)="file.click()">Upload file</button>
+				<input type="file" accept="image/*" #file style="visibility: hidden;">
+				<!-- <input #file type="file" accept="image/*" (change)="upload(file.files)">
+				<button #upload (click)="file.click()">Upload file</button> -->
 				<div class="info">
-					<ul class="label_info">
-						<li class="l_name">
-							<p>Name:</p>
-						</li>
-						<li class="l_lname">
-							<p>Last name:</p>
-						</li>
-						<li class="l_lname">
-							<p>Email:</p>
-						</li>
-					</ul>
-					<ul class="name_edit">
-						<li>
-							<h3>{{name}}</h3>
-							<div></div>
-						</li>
-						<li>
-							<h3>{{surname}}</h3>
-							<div></div>
-						</li>
-						<li>
-							<h3>{{email}}</h3>
-							<div></div>
-						</li>
-					</ul>
+					<div class="label_info">
+						<p>FirstName :</p>
+						<p>Surname :</p>
+						<p>Email:</p>
+						<p>Phone</p>
+					</div>
+					<div class="name_edit">
+						<h3>{{name}}</h3>
+						<h3>{{surname}}</h3>
+						<h3>{{email}}</h3>
+						<h3>{{phone}}</h3>
+					</div>
 				</div>
-				<!-- <div class="notifications">
-					<h1>Hello</h1>
-				</div> -->
+				<div class="notifications">
+
+				</div>
 			</div>
 			<div *ngIf="!isCollapsed1">
 				<h3>Paris</h3>
@@ -64,5 +48,5 @@
 			</div>
 		</div>
 	</div>
-	
+
 </div>

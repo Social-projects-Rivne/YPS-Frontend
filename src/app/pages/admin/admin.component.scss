@@ -1,7 +1,8 @@
+@import 'src/vars.scss';
 .admin_page{
   display: grid;
   grid-auto-rows: auto;
-  grid-auto-columns: 150px auto;
+  grid-auto-columns: 10rem auto;
   row-gap: 1rem;
 }
 .navbar {
@@ -38,7 +39,7 @@
   grid-column-end: 3;
   display: grid;
   grid-auto-rows: auto;
-  grid-auto-columns: 150px auto;
+  grid-auto-columns: 10rem auto;
   grid-gap: 1rem;
 }
 // .notifications{
@@ -59,18 +60,16 @@
     display: block;
     background-color: inherit;
     color: black;
-    padding: 22px 16px;
     width: 100%;
     border: none;
     outline: none;
     text-align: left;
-    cursor: pointer;
     transition: 0.3s;
+    &:hover {
+      background-color: #ddd;
+    }
   }
   /* Change background color of buttons on hover */
-  .tab button:hover {
-    background-color: #ddd;
-  }
 .content{
   grid-column-start: 2;
   grid-column-end: 3;
@@ -85,32 +84,32 @@
     grid-row-start: 1;
     grid-row-end: auto;
     display: grid;
-    grid-auto-columns: 150px auto;
+    grid-auto-columns: 9.5rem auto;
+    grid-gap: 1rem;
   }
-  .photo_edit{
-    grid-column-start: 1;
-    grid-row-start: 1;
-    grid-row-end: auto;
+ .photo{
+    height: 13rem;
+    width: 9.5rem;
   }
-  .photo_edit li .photo{
-    height: 200px;
-    width: 150px;
+  .uploadPhoto{
+    justify-self: center;
+    transition: $transition;
+    padding: 0.5rem;
+    width: 100%;
+    &:hover {
+      border-color: $accent;
+      background-color: #ffffff;
+      color: $accent;
+    }
   }
-  .photo_edit li .photo_upl{
-    border-radius: 50px;
-    cursor: pointer;
-  }
-  .photo_upl:hover {
-    background-color: #ddd;
-  }
+
   .info{
     grid-column-start: 2;
     grid-column-end: 3;
     grid-row-start: 1;
     grid-row-end: 2;
     display: grid;
-    padding-left: 1rem;
-    grid-auto-columns: 100px auto;
+    grid-auto-columns: 7.5rem auto;
   }
 
   .label_info{
@@ -121,13 +120,7 @@
     display: grid;
     grid-template-rows: repeat(4, 1fr);
   }
-  .label_info li{
-    // grid-column-start: 1;
-    // grid-row-start: 1;
-    justify-self: self-start;
-    align-self: center;
-  }
-
+ 
   .name_edit{ 
     grid-column-start: 2;
     grid-row-start: 1;
@@ -137,8 +130,3 @@
     display: grid;
     grid-template-rows: repeat(4, 1fr);
   }
-.name_edit li{
-  display: block;
-  justify-self: self-start;
-  align-self: center;
-}
