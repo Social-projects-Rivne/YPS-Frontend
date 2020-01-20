@@ -1,9 +1,21 @@
-.Button{
-background-color:blue ;
-color: white;
-padding: 5px;
-}
+@import 'src/vars.scss';
 
-.Container{
-  margin: 10px;
+
+
+a {
+    position: relative;
+
+    .text {
+        position: absolute;
+        left: -10px;
+        opacity: 0;
+        transition: all .5s ease;
+    }
+    &:hover{
+        .text {
+            left: 30px;
+            opacity: 1;
+        }
+        
+    }
 }

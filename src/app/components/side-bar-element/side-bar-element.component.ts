@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ILink } from 'src/app/models/ILink';
+import {MatIconRegistry} from '@angular/material/icon';
 
 @Component({
   selector: 'yps-side-bar-element',
