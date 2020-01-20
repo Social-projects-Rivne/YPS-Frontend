@@ -18,9 +18,9 @@ export class AdminComponent implements OnInit {
   email: string="admin@yps.com"
   src_photo: string="../../../assets/images/default-user-image.jpg";
 
-  selectedFile: null;
+  selectedFile: File=null;
 
-  constructor(private pageService: PageService) { }
+  constructor(private pageService: PageService, private http:HttpClient) { }
 
   ngOnInit() {
     this.pageService.append(' | Admin Panel');
@@ -43,9 +43,9 @@ export class AdminComponent implements OnInit {
   }
 
   onFileSelected(event) {
-    this.selectedFile= event.target.files[0];
+    this.selectedFile= <File>event.target.files[0];
   }
   onUpload() {
-
+    // this.http.post
   }
 } 
