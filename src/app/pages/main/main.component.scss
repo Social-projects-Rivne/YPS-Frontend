@@ -1,98 +1,9 @@
 @import 'src/vars.scss';
-
 :host {
     display: grid;
     grid-gap: 2rem;
     padding: 0 2rem;
     max-width: 1000px;
     margin: 0 auto;
-
-    /* Styling main content section */
-    .main-content {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
-        grid-gap: 2rem 4rem;
-        
-        .welcome-text h1 {
-                text-transform: capitalize;
-            }
-         
-        .graph-section {
-            text-transform: capitalize;
-            .graph-img {
-                width: 100%;
-            }
-        }
-    }
-    
-    /* Styling links section */
-    .link {
-        font-size: 1rem;
-        font-weight: 600;
-        color: $accent;
-        text-decoration: underline;
-        text-transform: capitalize;
-        &.login-link {
-            justify-self: start;
-        }
-        &.registration-link {
-            justify-self: end;
-            float: right;
-        }
-    }
-    
-    .boxes-info h1 {
-        text-align: center;
-        text-transform: capitalize;
-        font-size: 2rem;
-    }
-    
-    /* Styling about roles section */
-    .boxes {
-        display: grid;
-        grid-gap: 2rem;
-        grid-template-columns: 1fr 1fr 1fr;
-        .box {
-            padding-left: 1rem;
-            position: relative;
-            align-self: start;
-
-            h3 {
-                color: #d9d9d9;
-            }
-            
-            &::before {
-                content: '';
-                height: 0.5rem;
-                width: 0.5rem;
-                background-color: $accent;
-                position: absolute;
-                top: 10px;
-                left: 2px;
-                border-radius: 50%;
-            }
-            
-            &::after {
-                content: '';
-                width: 1px;
-                background-color: #d9d9d9;
-                position: absolute;
-                top: 25px;
-                bottom: 0;
-                left: 5px;
-            }
-        }
-    }
 }
-
-@media (max-width: 800px) {
-    .welcome-text h1 {
-                text-align: center;
-            }
-    .graph-section h1  {
-        text-align: center;
-    }          
-}
-
-
 

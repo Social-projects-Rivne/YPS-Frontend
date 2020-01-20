@@ -1,0 +1,44 @@
+@import 'src/vars.scss';
+
+/* Styling main content section */
+.main-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+    grid-gap: 2rem 4rem;
+    
+    .welcome-text h1 {
+            text-transform: capitalize;
+        }
+     
+    .graph-section {
+        text-transform: capitalize;
+        .graph-img {
+            width: 100%;
+        }
+    }
+}
+
+/* Styling links section */
+.link {
+    font-size: 1rem;
+    font-weight: 600;
+    color: $accent;
+    text-decoration: underline;
+    text-transform: capitalize;
+    &.login-link {
+        justify-self: start;
+    }
+    &.registration-link {
+        justify-self: end;
+        float: right;
+    }
+}
+
+@media (max-width: 800px) {
+    .welcome-text h1 {
+                text-align: center;
+            }
+    .graph-section h1 {
+        text-align: center;
+    }          
+}
