@@ -1,0 +1,43 @@
+@import 'src/vars.scss';
+
+.boxes-info h1 {
+    text-align: center;
+    text-transform: capitalize;
+    font-size: 2rem;
+}
+/* Styling about roles section */
+.boxes {
+    display: grid;
+    grid-gap: 2rem;
+    grid-template-columns: 1fr 1fr 1fr;
+    .box {
+        padding-left: 1rem;
+        position: relative;
+        align-self: start;
+
+        h3 {
+            color: #d9d9d9;
+        }
+        
+        &::before {
+            content: '';
+            height: 0.5rem;
+            width: 0.5rem;
+            background-color: $accent;
+            position: absolute;
+            top: 10px;
+            left: 2px;
+            border-radius: 50%;
+        }
+        
+        &::after {
+            content: '';
+            width: 1px;
+            background-color: #d9d9d9;
+            position: absolute;
+            top: 25px;
+            bottom: 0;
+            left: 5px;
+        }
+    }
+}

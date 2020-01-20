@@ -7,6 +7,8 @@ import { AppComponent } from './app.component';
 import { WelcomeComponent } from './components/welcome/welcome.component';
 import { FormFieldComponent } from './components/form-field/form-field.component';
 import { LoginFormComponent } from './components/login-form/login-form.component';
+import { MainToolsSectionComponent } from './components/main-tools-section/main-tools-section.component';
+import { MainContentSectionComponent } from './components/main-content-section/main-content-section.component';
 
 
 @NgModule({
@@ -15,7 +17,9 @@ import { LoginFormComponent } from './components/login-form/login-form.component
     RoutingComponents,
     WelcomeComponent,
     FormFieldComponent,
-    LoginFormComponent
+    LoginFormComponent,
+    MainToolsSectionComponent,
+    MainContentSectionComponent
   ],
   imports: [
     BrowserModule,
