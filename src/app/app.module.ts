@@ -7,6 +7,8 @@ import { AppComponent } from './app.component';
 import { WelcomeComponent } from './components/welcome/welcome.component';
 import { FormFieldComponent } from './components/form-field/form-field.component';
 import { LoginFormComponent } from './components/login-form/login-form.component';
+import { SideBarComponent } from './components/side-bar/side-bar.component';
+import {SideBarElementComponent} from './components/side-bar-element/side-bar-element.component';
 
 
 @NgModule({
@@ -15,7 +17,9 @@ import { LoginFormComponent } from './components/login-form/login-form.component
     RoutingComponents,
     WelcomeComponent,
     FormFieldComponent,
-    LoginFormComponent
+    LoginFormComponent,
+    SideBarComponent,
+    SideBarElementComponent
   ],
   imports: [
     BrowserModule,
