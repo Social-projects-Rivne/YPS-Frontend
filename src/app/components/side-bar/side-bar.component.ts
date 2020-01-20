@@ -20,14 +20,14 @@ export class SideBarComponent implements OnInit {
 
   links:ILink[]=[
     {
-      fieldName:'loooool',
-      linkPath:'loooool',
-      iconPath:'loool'
+      fieldName:'Profile',
+      linkPath:'',
+      iconPath:''
     },
     {
-      fieldName:'loooool',
-      linkPath:'loooool',
-      iconPath:'loool'
+      fieldName:'Journal',
+      linkPath:'',
+      iconPath:''
     }
   ];
   constructor() {}
