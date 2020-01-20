@@ -15,11 +15,11 @@
 		</div>
 		<div class="content">
 			<div *ngIf="!isCollapsed" class="profile">
-				<img src="../../../assets/images/default-user-image.jpg" class="photo" />
-				<button class="btn uploadPhoto primary" (click)="file.click()">Upload file</button>
-				<input type="file" accept="image/*" #file style="visibility: hidden;">
-				<!-- <input #file type="file" accept="image/*" (change)="upload(file.files)">
-				<button #upload (click)="file.click()">Upload file</button> -->
+				<div class="photo_edit">
+					<img [src]="src_photo" class="photo" />
+					<input type="file" style="display: none;" accept="image/*" (change)="onFileSelected($event)" #file>
+					<button type="button" (click)="onUpload()" class="btn uploadPhoto primary">Upload</button>
+				</div>
 				<div class="info">
 					<div class="label_info">
 						<p>FirstName :</p>
@@ -33,9 +33,6 @@
 						<h3>{{email}}</h3>
 						<h3>{{phone}}</h3>
 					</div>
-				</div>
-				<div class="notifications">
-
 				</div>
 			</div>
 			<div *ngIf="!isCollapsed1">

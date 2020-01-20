@@ -34,20 +34,14 @@
   }
 .wrapper{
   grid-column-start: 1;
+  grid-column-end: 3;
   grid-row-start: 2;
   grid-row-end: 3;
-  grid-column-end: 3;
   display: grid;
   grid-auto-rows: auto;
   grid-auto-columns: 10rem auto;
   grid-gap: 1rem;
 }
-// .notifications{
-//   grid-column-start: 2;
-//   grid-row-start: 3;
-//   grid-row-end: 4;
-//   grid-column-end: 3;
-// }
 /* Style the tab */
 .tab {
     grid-column-start: 1;
@@ -82,17 +76,31 @@
     grid-column-start: 1;
     grid-column-end: 2;
     grid-row-start: 1;
-    grid-row-end: auto;
+    grid-row-end: 2;
     display: grid;
     grid-auto-columns: 9.5rem auto;
+    grid-auto-rows: auto;
     grid-gap: 1rem;
+  }
+  .photo_edit{
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    display: grid;
+    grid-auto-columns: 9.5rem;
+    grid-auto-rows: auto;
+    grid-gap: 0.4rem;
   }
  .photo{
     height: 13rem;
     width: 9.5rem;
   }
   .uploadPhoto{
-    justify-self: center;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 3;
+    grid-row-end: 4;
     transition: $transition;
     padding: 0.5rem;
     width: 100%;
