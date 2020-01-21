@@ -8,6 +8,9 @@ import { AppComponent } from './app.component';
 import { WelcomeComponent } from './components/welcome/welcome.component';
 import { FormFieldComponent } from './components/form-field/form-field.component';
 import { LoginFormComponent } from './components/login-form/login-form.component';
+import { SchoolEventFormComponent } from './components/school-event-form/school-event-form.component';
+import { NavBarFormComponent } from './components/nav-bar-form/nav-bar-form.component';
+import { HeaderFormComponent } from './components/header-form/header-form.component';
 import { MainToolsSectionComponent } from './components/main-tools-section/main-tools-section.component';
 import { MainContentSectionComponent } from './components/main-content-section/main-content-section.component';
 
@@ -18,6 +21,9 @@ import { MainContentSectionComponent } from './components/main-content-section/m
     WelcomeComponent,
     FormFieldComponent,
     LoginFormComponent,
+    SchoolEventFormComponent,
+    NavBarFormComponent,
+    HeaderFormComponent,
     MasterButComponent,
     MainToolsSectionComponent,
     MainContentSectionComponent
