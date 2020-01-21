@@ -23,12 +23,9 @@ import { MainContentSectionComponent } from './components/main-content-section/m
     WelcomeComponent,
     FormFieldComponent,
     LoginFormComponent,
-<<<<<<< HEAD
-    MasterButComponent
-=======
+    MasterButComponent,
     MainToolsSectionComponent,
     MainContentSectionComponent
->>>>>>> dev
   ],
   imports: [
     BrowserModule,
