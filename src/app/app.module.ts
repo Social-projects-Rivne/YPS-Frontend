@@ -8,6 +8,7 @@ import { WelcomeComponent } from './components/welcome/welcome.component';
 import { FormFieldComponent } from './components/form-field/form-field.component';
 import { LoginFormComponent } from './components/login-form/login-form.component';
 import { HttpClientModule } from '@angular/common/http';
+import { QuotesBoxComponent } from './components/quotes-box/quotes-box.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { HttpClientModule } from '@angular/common/http';
     RoutingComponents,
     WelcomeComponent,
     FormFieldComponent,
-    LoginFormComponent
+    LoginFormComponent,
+    QuotesBoxComponent
   ],
   imports: [
     BrowserModule,
