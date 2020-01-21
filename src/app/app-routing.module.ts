@@ -1,3 +1,4 @@
+import { MasterComponent } from './pages/master/master.component';
 import { MainComponent } from './pages/main/main.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
@@ -7,6 +8,7 @@ import { AdminComponent } from './pages/admin/admin.component';
 const routes: Routes = [
   { path: '', component: MainComponent },
   { path: 'login', component: LoginComponent },
+  { path: 'master', component: MasterComponent },
   { path: 'admin', component: AdminComponent}
 ];
 
@@ -21,5 +23,6 @@ export class AppRoutingModule { }
 export const RoutingComponents = [
   MainComponent,
   LoginComponent,
+  MasterComponent,
   AdminComponent
 ];

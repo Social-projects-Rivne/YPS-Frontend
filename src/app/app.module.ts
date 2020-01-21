@@ -1,3 +1,4 @@
+import { MasterButComponent } from './components/master-but/master-but.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -10,7 +11,6 @@ import { LoginFormComponent } from './components/login-form/login-form.component
 import { MainToolsSectionComponent } from './components/main-tools-section/main-tools-section.component';
 import { MainContentSectionComponent } from './components/main-content-section/main-content-section.component';
 
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,6 +18,7 @@ import { MainContentSectionComponent } from './components/main-content-section/m
     WelcomeComponent,
     FormFieldComponent,
     LoginFormComponent,
+    MasterButComponent,
     MainToolsSectionComponent,
     MainContentSectionComponent
   ],
