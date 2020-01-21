@@ -2,9 +2,11 @@ import { MainComponent } from './pages/main/main.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { LoginComponent } from './pages/login/login.component';
+import { SchoolMainComponent } from './pages/school-main/school-main.component';
 
 const routes: Routes = [
   { path: '', component: MainComponent },
+  { path: 'school-main', component: SchoolMainComponent },
   { path: 'login', component: LoginComponent }
 ];
 
@@ -18,5 +20,6 @@ export class AppRoutingModule { }
 // ! Put All The Routing/Pages Components Here
 export const RoutingComponents = [
   MainComponent,
-  LoginComponent
+  LoginComponent,
+  SchoolMainComponent
 ];
