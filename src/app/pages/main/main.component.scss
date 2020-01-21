@@ -1,0 +1,9 @@
+@import 'src/vars.scss';
+:host {
+    display: grid;
+    grid-gap: 2rem;
+    padding: 0 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
