@@ -8,11 +8,8 @@ import { AdminComponent } from './pages/admin/admin.component';
 const routes: Routes = [
   { path: '', component: MainComponent },
   { path: 'login', component: LoginComponent },
-<<<<<<< HEAD
-  { path: 'master', component: MasterComponent }
-=======
+  { path: 'master', component: MasterComponent },
   { path: 'admin', component: AdminComponent}
->>>>>>> dev
 ];
 
 @NgModule({
@@ -26,9 +23,6 @@ export class AppRoutingModule { }
 export const RoutingComponents = [
   MainComponent,
   LoginComponent,
-<<<<<<< HEAD
-  MasterComponent
-=======
+  MasterComponent,
   AdminComponent
->>>>>>> dev
 ];
