@@ -3,11 +3,13 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { LoginComponent } from './pages/login/login.component';
 import { SchoolMainComponent } from './pages/school-main/school-main.component';
+import { AdminComponent } from './pages/admin/admin.component';
 
 const routes: Routes = [
   { path: '', component: MainComponent },
   { path: 'school-main', component: SchoolMainComponent },
-  { path: 'login', component: LoginComponent }
+  { path: 'login', component: LoginComponent },
+  { path: 'admin', component: AdminComponent}
 ];
 
 @NgModule({
@@ -21,5 +23,6 @@ export class AppRoutingModule { }
 export const RoutingComponents = [
   MainComponent,
   LoginComponent,
-  SchoolMainComponent
+  SchoolMainComponent,
+  AdminComponent
 ];

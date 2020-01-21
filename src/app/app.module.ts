@@ -10,6 +10,8 @@ import { LoginFormComponent } from './components/login-form/login-form.component
 import { SchoolEventFormComponent } from './components/school-event-form/school-event-form.component';
 import { NavBarFormComponent } from './components/nav-bar-form/nav-bar-form.component';
 import { HeaderFormComponent } from './components/header-form/header-form.component';
+import { MainToolsSectionComponent } from './components/main-tools-section/main-tools-section.component';
+import { MainContentSectionComponent } from './components/main-content-section/main-content-section.component';
 
 
 @NgModule({
@@ -21,7 +23,9 @@ import { HeaderFormComponent } from './components/header-form/header-form.compon
     LoginFormComponent,
     SchoolEventFormComponent,
     NavBarFormComponent,
-    HeaderFormComponent
+    HeaderFormComponent,
+    MainToolsSectionComponent,
+    MainContentSectionComponent
   ],
   imports: [
     BrowserModule,
