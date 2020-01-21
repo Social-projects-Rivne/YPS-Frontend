@@ -11,11 +11,6 @@ import { LoginFormComponent } from './components/login-form/login-form.component
 import { MainToolsSectionComponent } from './components/main-tools-section/main-tools-section.component';
 import { MainContentSectionComponent } from './components/main-content-section/main-content-section.component';
 
-
-
-
-
-
 @NgModule({
   declarations: [
     AppComponent,
