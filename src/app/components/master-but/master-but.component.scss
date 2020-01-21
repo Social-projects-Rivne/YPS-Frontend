@@ -1,0 +1,37 @@
+@import 'src/vars.scss';
+
+:host{
+    display: grid;
+    margin-top: 1rem;
+
+    .form{
+        width: 50%;
+        justify-self: center;
+    }
+    .form-field-label {
+        text-transform: uppercase;
+        font-size: 0.75rem;
+        font-weight: 600;
+        color: #acacac;
+        grid-row: 1 / 3;
+      }
+    .m{
+        margin-top: 0.5rem;
+    }
+    .but-div{
+        display: grid;
+        
+
+        .add-btn{
+            justify-self: end;
+            transition: $transition;
+            width: 15rem;
+
+            &:hover {
+                border-color: $accent;
+                background-color: #ffffff;
+                color: $accent;
+              }
+        }
+    }
+}

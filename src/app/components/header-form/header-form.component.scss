@@ -1,0 +1,46 @@
+@import 'src/vars.scss';
+
+:host{
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  min-width: 1000px;
+  background-color: $accent;
+  height: 4rem;
+
+  .first{
+    width: 85%;
+    display: flex;
+    justify-content: start;
+    vertical-align: center;
+    padding-left: 2rem;
+    justify-items: flex-start !important;
+    h1{
+      // padding-left: 2rem;
+      color: white;
+      font-size: 2rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  .third{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 15%;
+    padding-right: 2rem;
+
+    button{
+      padding: 0.7rem;
+      color: white;
+      border-radius: 3px;
+      // height: 2rem;
+      display: flex;
+      align-content: center;
+      justify-content: center;
+      border-color: white;
+    }
+  }
+}
