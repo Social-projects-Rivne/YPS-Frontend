@@ -1,3 +1,4 @@
+import { MasterButComponent } from './components/master-but/master-but.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -13,7 +14,6 @@ import { HeaderFormComponent } from './components/header-form/header-form.compon
 import { MainToolsSectionComponent } from './components/main-tools-section/main-tools-section.component';
 import { MainContentSectionComponent } from './components/main-content-section/main-content-section.component';
 
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,6 +24,7 @@ import { MainContentSectionComponent } from './components/main-content-section/m
     SchoolEventFormComponent,
     NavBarFormComponent,
     HeaderFormComponent,
+    MasterButComponent,
     MainToolsSectionComponent,
     MainContentSectionComponent
   ],
