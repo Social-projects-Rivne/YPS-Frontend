@@ -15,6 +15,7 @@ import { NavBarFormComponent } from './components/nav-bar-form/nav-bar-form.comp
 import { HeaderFormComponent } from './components/header-form/header-form.component';
 import { MainToolsSectionComponent } from './components/main-tools-section/main-tools-section.component';
 import { MainContentSectionComponent } from './components/main-content-section/main-content-section.component';
+import { UserSubFormComponent } from './components/user-sub-form/user-sub-form.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { MainContentSectionComponent } from './components/main-content-section/m
     HeaderFormComponent,
     MasterButComponent,
     MainToolsSectionComponent,
-    MainContentSectionComponent
+    MainContentSectionComponent,
+    UserSubFormComponent
   ],
   imports: [
     BrowserModule,
