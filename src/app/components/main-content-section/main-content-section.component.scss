@@ -21,6 +21,7 @@
 /* Styling links section */
     .btn {
         transition: $transition;
+        margin-top: 1rem;
       &:hover {
         border-color: $accent;
         background-color: #ffffff;
