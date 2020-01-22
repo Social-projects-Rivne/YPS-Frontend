@@ -8,6 +8,8 @@ import { AppComponent } from './app.component';
 import { WelcomeComponent } from './components/welcome/welcome.component';
 import { FormFieldComponent } from './components/form-field/form-field.component';
 import { LoginFormComponent } from './components/login-form/login-form.component';
+import { HttpClientModule } from '@angular/common/http';
+import { QuotesBoxComponent } from './components/quotes-box/quotes-box.component';
 import { SchoolEventFormComponent } from './components/school-event-form/school-event-form.component';
 import { NavBarFormComponent } from './components/nav-bar-form/nav-bar-form.component';
 import { HeaderFormComponent } from './components/header-form/header-form.component';
@@ -21,6 +23,7 @@ import { MainContentSectionComponent } from './components/main-content-section/m
     WelcomeComponent,
     FormFieldComponent,
     LoginFormComponent,
+    QuotesBoxComponent,
     SchoolEventFormComponent,
     NavBarFormComponent,
     HeaderFormComponent,
@@ -32,7 +35,8 @@ import { MainContentSectionComponent } from './components/main-content-section/m
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

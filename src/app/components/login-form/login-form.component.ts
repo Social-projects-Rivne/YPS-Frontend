@@ -5,6 +5,9 @@ import { patternValidator } from 'src/utils/validators/pattern-validator';
 import { requiredValidator } from 'src/utils/validators/required-validator';
 import { minLengthValidator } from 'src/utils/validators/min-length-validatot';
 import { validationHelper } from 'src/utils/helpers/validation-helper';
+import { HttpClient } from '@angular/common/http';
+import { set, get } from 'js-cookie';
+
 
 @Component({
   selector: 'yps-login-form',
@@ -33,7 +36,10 @@ export class LoginFormComponent implements OnInit {
     },
   ];
 
-  constructor(private formBuilder: FormBuilder) {}
+  constructor(
+    private formBuilder: FormBuilder, 
+    private http: HttpClient
+  ) {}
 
   ngOnInit() {
     // * Initializing form controls and validation for them.
@@ -63,6 +69,13 @@ export class LoginFormComponent implements OnInit {
 
     this.fields = fields;
 
-    console.info(`This form is ${isValid ? 'valid' : 'invalid'}`);
+    console.info(`Login form is ${isValid ? 'valid' : 'invalid'}`);
+    if (isValid) {
+      const url: string = "https://localhost:5001/api/Auth/SignIn";
+      return this.http.post(url, this.form.value).subscribe((res: { token: string }) => {
+        console.log("login response", res);
+        set('token', res.token);
+      });
+    }
   }
 }
