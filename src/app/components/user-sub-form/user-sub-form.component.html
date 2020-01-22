@@ -1,1 +1,8 @@
-<p>user-sub-form works!</p>
+<div [formGroup]="userSubForm">
+  <yps-form-field 
+    *ngFor="let field of fields" 
+    [field]="field" 
+    [formControlName]="field.name"
+  >
+  </yps-form-field>
+</div>
