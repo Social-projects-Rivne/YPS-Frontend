@@ -1,1 +1,47 @@
-<p>admin-panel works!</p>
+<div class="admin_page">
+	<header class="navbar">
+		<img src="../../../assets/images/yps-icon.png" class="logo_admin">
+		<p class="nav_user">{{name}} - Admin</p>
+		<div class="nav_logout">
+			<a href="/login">Log out</a>
+		</div>
+	</header>
+
+	<div class="wrapper">
+		<div class="tab">
+			<button (click)="onClick()">Profile</button>
+			<button (click)="onClick1()">New Requests</button>
+			<button (click)="onClick2()">Schools</button>
+		</div>
+		<div class="content">
+			<div *ngIf="!isCollapsed" class="profile">
+				<div class="photo_edit">
+					<img [src]="src_photo" class="photo" />
+					<input type="file" style="display: none;" accept="image/*" (change)="onFileSelected($event)" #file>
+					<button type="button" (click)="onUpload()" class="btn uploadPhoto primary">Upload</button>
+				</div>
+				<div class="info">
+					<div class="label_info">
+						<p>FirstName :</p>
+						<p>Surname :</p>
+						<p>Email:</p>
+						<p>Phone</p>
+					</div>
+					<div class="name_edit">
+						<h3>{{name}}</h3>
+						<h3>{{surname}}</h3>
+						<h3>{{email}}</h3>
+						<h3>{{phone}}</h3>
+					</div>
+				</div>
+			</div>
+			<div *ngIf="!isCollapsed1">
+				<h3>No new Requests</h3>
+			</div>
+			<div *ngIf="!isCollapsed2">
+				<h3>Empty</h3>
+			</div>
+		</div>
+	</div>
+
+</div>
