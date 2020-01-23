@@ -1,6 +1,11 @@
+
+import { SideBarElementComponent } from './components/side-bar-element/side-bar-element.component';
+import { SideBarComponent } from './components/side-bar/side-bar.component';
+
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatIconModule } from '@angular/material/icon';
 
 import { AppRoutingModule, RoutingComponents } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -14,6 +19,7 @@ import { NavBarFormComponent } from './components/nav-bar-form/nav-bar-form.comp
 import { HeaderFormComponent } from './components/header-form/header-form.component';
 import { MainToolsSectionComponent } from './components/main-tools-section/main-tools-section.component';
 import { MainContentSectionComponent } from './components/main-content-section/main-content-section.component';
+import { AdminPanelComponent } from './components/admin-cabinet/admin-panel/admin-panel.component';
 import { UserSubFormComponent } from './components/user-sub-form/user-sub-form.component';
 import { AddPupilFormComponent } from './components/add-pupil-form/add-pupil-form.component';
 import { MatSelectModule } from '@angular/material/select';
@@ -32,8 +38,12 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
     HeaderFormComponent,
     MainToolsSectionComponent,
     MainContentSectionComponent,
+    AdminPanelComponent,
+    SideBarComponent,
+    SideBarElementComponent,
     UserSubFormComponent,
     AddPupilFormComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -42,7 +52,8 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
     ReactiveFormsModule,
     HttpClientModule,
     NoopAnimationsModule,
-    MatSelectModule
+    MatSelectModule,
+    MatIconModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
