@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { PageService } from 'src/app/services/page.service';
-// import {HttpClient} from '@angular/common/http'
 
 @Component({
   selector: 'yps-admin',
@@ -14,6 +13,4 @@ export class AdminComponent implements OnInit {
   ngOnInit() {
     this.pageService.append(' | Admin Panel');
   }
- 
- 
 } 
