@@ -16,6 +16,8 @@ import { NavBarFormComponent } from './components/nav-bar-form/nav-bar-form.comp
 import { HeaderFormComponent } from './components/header-form/header-form.component';
 import { MainToolsSectionComponent } from './components/main-tools-section/main-tools-section.component';
 import { MainContentSectionComponent } from './components/main-content-section/main-content-section.component';
+import { AdminPanelComponent } from './components/admin-cabinet/admin-panel/admin-panel.component';
+
 
 @NgModule({
   declarations: [
@@ -23,7 +25,15 @@ import { MainContentSectionComponent } from './components/main-content-section/m
     RoutingComponents,
     WelcomeComponent,
     FormFieldComponent,
-    LoginFormComponent
+    LoginFormComponent,
+    QuotesBoxComponent,
+    SchoolEventFormComponent,
+    NavBarFormComponent,
+    HeaderFormComponent,
+    MasterButComponent,
+    MainToolsSectionComponent,
+    MainContentSectionComponent,
+    AdminPanelComponent
   ],
   imports: [
     BrowserModule,
