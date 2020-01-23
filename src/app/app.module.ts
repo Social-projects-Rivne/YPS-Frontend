@@ -1,6 +1,8 @@
+
 import { SideBarElementComponent } from './components/side-bar-element/side-bar-element.component';
 import { SideBarComponent } from './components/side-bar/side-bar.component';
 import { MasterButComponent } from './components/master-but/master-but.component';
+
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -19,7 +21,8 @@ import { HeaderFormComponent } from './components/header-form/header-form.compon
 import { MainToolsSectionComponent } from './components/main-tools-section/main-tools-section.component';
 import { MainContentSectionComponent } from './components/main-content-section/main-content-section.component';
 import { AdminPanelComponent } from './components/admin-cabinet/admin-panel/admin-panel.component';
-
+import { UserSubFormComponent } from './components/user-sub-form/user-sub-form.component';
+import { AddPupilFormComponent } from './components/add-pupil-form/add-pupil-form.component';
 
 @NgModule({
   declarations: [
@@ -32,12 +35,14 @@ import { AdminPanelComponent } from './components/admin-cabinet/admin-panel/admi
     SchoolEventFormComponent,
     NavBarFormComponent,
     HeaderFormComponent,
-    MasterButComponent,
     MainToolsSectionComponent,
     MainContentSectionComponent,
     AdminPanelComponent,
     SideBarComponent,
     SideBarElementComponent
+    UserSubFormComponent,
+    AddPupilFormComponent,
+
   ],
   imports: [
     BrowserModule,

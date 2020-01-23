@@ -19,20 +19,18 @@
 }
 
 /* Styling links section */
-.link {
-    font-size: 1rem;
-    font-weight: 600;
-    color: $accent;
-    text-decoration: underline;
-    text-transform: capitalize;
-    &.login-link {
-        justify-self: start;
-    }
-    &.registration-link {
-        justify-self: end;
+    .btn {
+        transition: $transition;
+        margin-top: 1rem;
+      &:hover {
+        border-color: $accent;
+        background-color: #ffffff;
+        color: $accent;
+      }
+      &.reg-btn {
         float: right;
+      }
     }
-}
 
 @media (max-width: 800px) {
     .welcome-text h1 {
