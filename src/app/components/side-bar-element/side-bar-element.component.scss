@@ -4,18 +4,17 @@
 
 a {
     position: relative;
-
     .text {
         position: absolute;
         left: -10px;
         opacity: 0;
         transition: all .5s ease;
+        font-size:20px;
     }
-    &:hover{
+    &:hover{        
         .text {
             left: 30px;
             opacity: 1;
-        }
-        
-    }
+        }       
+    }    
 }

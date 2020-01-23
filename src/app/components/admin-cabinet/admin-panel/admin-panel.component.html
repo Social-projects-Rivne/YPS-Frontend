@@ -8,11 +8,10 @@
 	</header>
 
 	<div class="wrapper">
-		<div class="tab">
-			<button (click)="onClick()">Profile</button>
-			<button (click)="onClick1()">New Requests</button>
-			<button (click)="onClick2()">Schools</button>
-		</div>
+		<yps-side-bar class="tab"  [links]="[{fieldName:'Profile',linkPath:'',iconPath:'school'},{fieldName:'School Request',linkPath:'',iconPath:'school'},
+		{fieldName:'Schools',linkPath:'',iconPath:'school'}]">
+
+		</yps-side-bar>
 		<div class="content">
 			<div *ngIf="!isCollapsed" class="profile">
 				<div class="photo_edit">

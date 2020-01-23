@@ -1,3 +1,5 @@
+import { SideBarElementComponent } from './components/side-bar-element/side-bar-element.component';
+import { SideBarComponent } from './components/side-bar/side-bar.component';
 import { MasterButComponent } from './components/master-but/master-but.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -33,13 +35,17 @@ import { AdminPanelComponent } from './components/admin-cabinet/admin-panel/admi
     MasterButComponent,
     MainToolsSectionComponent,
     MainContentSectionComponent,
-    AdminPanelComponent
+    AdminPanelComponent,
+    SideBarComponent,
+    SideBarElementComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatIconModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

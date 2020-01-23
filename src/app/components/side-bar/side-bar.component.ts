@@ -18,18 +18,7 @@ import { ILink } from 'src/app/models/ILink';
 })
 export class SideBarComponent implements OnInit {
 
-  links:ILink[]=[
-    {
-      fieldName:'Profile',
-      linkPath:'',
-      iconPath:''
-    },
-    {
-      fieldName:'Journal',
-      linkPath:'',
-      iconPath:''
-    }
-  ];
+  @Input() links:ILink[];
   constructor() {}
 
   ngOnInit() {
