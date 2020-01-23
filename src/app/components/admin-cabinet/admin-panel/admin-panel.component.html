@@ -8,13 +8,10 @@
 	</header>
 
 	<div class="wrapper">
-		<div class="tab">
-			<button (click)="onClick()">Profile</button>
-			<button (click)="onClick1()">New Requests</button>
-			<button (click)="onClick2()">Schools</button>
-		</div>
+		<yps-side-bar class="tab"  [links]="[{fieldName:'Profile',linkPath:'',iconPath:'account_circle'},{fieldName:'School Request',linkPath:'',iconPath:'announcement'},
+		{fieldName:'Schools',linkPath:'',iconPath:'school'}]"></yps-side-bar>
 		<div class="content">
-			<div *ngIf="!isCollapsed" class="profile">
+			<div class="profile">
 				<div class="photo_edit">
 					<img [src]="src_photo" class="photo" />
 					<input type="file" style="display: none;" accept="image/*" (change)="onFileSelected($event)" #file>
@@ -35,12 +32,12 @@
 					</div>
 				</div>
 			</div>
-			<div *ngIf="!isCollapsed1">
+			<!-- <div *ngIf="!isCollapsed1">
 				<h3>No new Requests</h3>
 			</div>
 			<div *ngIf="!isCollapsed2">
 				<h3>Empty</h3>
-			</div>
+			</div> -->
 		</div>
 	</div>
 

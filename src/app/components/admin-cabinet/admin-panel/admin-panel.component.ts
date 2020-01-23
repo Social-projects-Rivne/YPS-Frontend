@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Routes } from '@angular/router';
+import { AdminInfoComponent } from '../admin-info/admin-info.component';
+
 
 @Component({
   selector: 'yps-admin-panel',
@@ -46,3 +49,8 @@ export class AdminPanelComponent implements OnInit {
     // this.http.post
   }
 }
+const routes: Routes = [
+  { path: '', component: AdminPanelComponent },
+  { path: 'profile', component: AdminInfoComponent },
+  
+];
