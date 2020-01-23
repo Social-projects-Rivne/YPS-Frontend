@@ -1,4 +1,3 @@
-import { MasterButComponent } from './components/master-but/master-but.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -15,6 +14,8 @@ import { NavBarFormComponent } from './components/nav-bar-form/nav-bar-form.comp
 import { HeaderFormComponent } from './components/header-form/header-form.component';
 import { MainToolsSectionComponent } from './components/main-tools-section/main-tools-section.component';
 import { MainContentSectionComponent } from './components/main-content-section/main-content-section.component';
+import { UserSubFormComponent } from './components/user-sub-form/user-sub-form.component';
+import { AddPupilFormComponent } from './components/add-pupil-form/add-pupil-form.component';
 
 @NgModule({
   declarations: [
@@ -27,9 +28,10 @@ import { MainContentSectionComponent } from './components/main-content-section/m
     SchoolEventFormComponent,
     NavBarFormComponent,
     HeaderFormComponent,
-    MasterButComponent,
     MainToolsSectionComponent,
-    MainContentSectionComponent
+    MainContentSectionComponent,
+    UserSubFormComponent,
+    AddPupilFormComponent,
   ],
   imports: [
     BrowserModule,
