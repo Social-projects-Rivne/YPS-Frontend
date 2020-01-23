@@ -1,1 +1,16 @@
-<p>add-pupil-form works!</p>
+<form
+  class="form"
+  [formGroup]="form"
+  (ngSubmit)="onSubmit()"
+>
+  <h1 class="title">add pupil</h1>
+  <yps-form-field class="m"
+    *ngFor="let field of fields"
+    [field]="field"
+    [formControlName]="field.name"
+  >
+  </yps-form-field>
+  <yps-user-sub-form formControlName="user-sub-form">
+  </yps-user-sub-form>
+  <button type="submit" class="btn primary">submit</button>
+</form>
