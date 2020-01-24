@@ -1,3 +1,4 @@
+import { ILink } from 'src/app/models/ILink';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,6 +7,23 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./admin-panel.component.scss']
 })
 export class AdminPanelComponent implements OnInit {
+  sideLinks:ILink[]=
+  [{
+      fieldName:'Profile',
+      linkPath:'',
+      iconPath:'account_circle'
+    },
+    {
+      fieldName:'School Request',
+      linkPath:'',
+      iconPath:'announcement'
+    },
+    {
+      fieldName:'Schools',
+      linkPath:'',
+      iconPath:'school'
+  }];
+
   isCollapsed: boolean=false;
   isCollapsed1: boolean=true;
   isCollapsed2: boolean=true;
