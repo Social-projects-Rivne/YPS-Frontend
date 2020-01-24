@@ -22,6 +22,8 @@ import { MainContentSectionComponent } from './components/main-content-section/m
 import { AdminPanelComponent } from './components/admin-cabinet/admin-panel/admin-panel.component';
 import { UserSubFormComponent } from './components/user-sub-form/user-sub-form.component';
 import { AddPupilFormComponent } from './components/add-pupil-form/add-pupil-form.component';
+import { MatSelectModule } from '@angular/material/select';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -48,8 +50,10 @@ import { AddPupilFormComponent } from './components/add-pupil-form/add-pupil-for
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
+    HttpClientModule,
+    NoopAnimationsModule,
+    MatSelectModule,
     MatIconModule,
-    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
