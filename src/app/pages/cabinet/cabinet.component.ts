@@ -12,7 +12,7 @@ export class CabinetComponent implements OnInit {
     {
       fieldName:"Pupils",
       linkPath:'',
-      iconPath:"emoji_people"
+      iconPath:"child_care"
     },
     {
       fieldName:"Parents",
@@ -22,7 +22,7 @@ export class CabinetComponent implements OnInit {
     {
       fieldName:"Teachers",
       linkPath:'',
-      iconPath:"supervised_user_circle"
+      iconPath:"emoji_people"
     }
   ];
   constructor() { }
