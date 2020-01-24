@@ -5,13 +5,15 @@ import { LoginComponent } from './pages/login/login.component';
 import { SchoolMainComponent } from './pages/school-main/school-main.component';
 import { AdminComponent } from './pages/admin/admin.component';
 import { CabinetComponent } from './pages/cabinet/cabinet.component';
+import { RegisterSchoolComponent } from './pages/register-school/register-school.component';
 
 const routes: Routes = [
   { path: '', component: MainComponent },
   { path: 'school-main', component: SchoolMainComponent },
   { path: 'login', component: LoginComponent },
   { path: 'admin', component: AdminComponent},
-  { path: 'cabinet', component: CabinetComponent}
+  { path: 'cabinet', component: CabinetComponent},
+  { path: 'register-school', component: RegisterSchoolComponent},
 ];
 
 @NgModule({
@@ -27,5 +29,6 @@ export const RoutingComponents = [
   LoginComponent,
   SchoolMainComponent,
   AdminComponent,
-  CabinetComponent
+  CabinetComponent,
+  RegisterSchoolComponent
 ];
