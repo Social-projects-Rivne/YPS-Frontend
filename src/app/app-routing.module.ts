@@ -1,3 +1,4 @@
+import { HeaderFormComponent } from './components/header-form/header-form.component';
 import { MainComponent } from './pages/main/main.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
@@ -14,6 +15,7 @@ const routes: Routes = [
   { path: 'admin', component: AdminComponent},
   { path: 'cabinet', component: CabinetComponent},
   { path: 'register-school', component: RegisterSchoolComponent},
+  {path:'cabinet/pupils',component:HeaderFormComponent}
 ];
 
 @NgModule({

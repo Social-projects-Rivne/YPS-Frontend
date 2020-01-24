@@ -7,14 +7,7 @@ import { ILink } from 'src/app/models/ILink';
 @Component({
   selector: 'yps-side-bar',
   templateUrl: './side-bar.component.html',
-  styleUrls: ['./side-bar.component.scss'],
-  providers:[
-    {
-      provide: NG_VALUE_ACCESSOR,
-      useExisting: forwardRef(() => SideBarComponent),
-      multi: true
-    }
-  ]
+  styleUrls: ['./side-bar.component.scss']
 })
 export class SideBarComponent implements OnInit {
 

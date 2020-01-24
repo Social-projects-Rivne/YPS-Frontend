@@ -11,17 +11,17 @@ export class CabinetComponent implements OnInit {
   sideLinks: ILink[] = [
     {
       fieldName:"Pupils",
-      linkPath:'',
+      linkPath:null,
       iconPath:"child_care"
     },
     {
       fieldName:"Parents",
-      linkPath:'',
+      linkPath:null,
       iconPath:"supervised_user_circle"
     },
     {
       fieldName:"Teachers",
-      linkPath:'',
+      linkPath:null,
       iconPath:"emoji_people"
     }
   ];
