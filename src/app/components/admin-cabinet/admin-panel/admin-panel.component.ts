@@ -22,7 +22,8 @@ export class AdminPanelComponent implements OnInit {
       fieldName:'Schools',
       linkPath:'',
       iconPath:'school'
-    }];
+  }];
+
   isCollapsed: boolean=false;
   isCollapsed1: boolean=true;
   isCollapsed2: boolean=true;
