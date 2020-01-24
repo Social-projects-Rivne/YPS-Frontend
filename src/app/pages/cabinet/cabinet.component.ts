@@ -1,3 +1,4 @@
+import { ILink } from 'src/app/models/ILink';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,6 +8,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CabinetComponent implements OnInit {
 
+  sideLinks: ILink[] = [
+    {
+      fieldName:"Pupils",
+      linkPath:'',
+      iconPath:"emoji_people"
+    },
+    {
+      fieldName:"Parents",
+      linkPath:'',
+      iconPath:"supervised_user_circle"
+    },
+    {
+      fieldName:"Teachers",
+      linkPath:'',
+      iconPath:"supervised_user_circle"
+    }
+  ];
   constructor() { }
 
   ngOnInit() {

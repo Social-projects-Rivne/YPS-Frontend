@@ -2,16 +2,18 @@
   display: grid;
   grid-template-columns: auto 1fr auto 20rem;
   grid-template-rows: auto 1fr;
-  min-height: 100vh;
+  
+  
   .cabinet-header {
-    border-bottom: 1px solid #acacac;
     grid-column: 1 / -1;
     padding: 2rem;
   }
 
   .sidebar {
-    border-right: 1px solid #acacac;
-    padding: 7rem;
+    display: grid;
+    grid-gap: 2rem;
+    align-self:start;
+    padding: 1rem;
   }
 
   .add-user {

@@ -1,7 +1,6 @@
 
 import { SideBarElementComponent } from './components/side-bar-element/side-bar-element.component';
 import { SideBarComponent } from './components/side-bar/side-bar.component';
-import { MasterButComponent } from './components/master-but/master-but.component';
 
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -39,7 +38,7 @@ import { AddPupilFormComponent } from './components/add-pupil-form/add-pupil-for
     MainContentSectionComponent,
     AdminPanelComponent,
     SideBarComponent,
-    SideBarElementComponent
+    SideBarElementComponent,
     UserSubFormComponent,
     AddPupilFormComponent,
 
