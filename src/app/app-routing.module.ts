@@ -11,6 +11,7 @@ const routes: Routes = [
   { path: 'school-main', component: SchoolMainComponent },
   { path: 'login', component: LoginComponent },
   { path: 'admin', component: AdminComponent},
+  { path: 'admin/profile', component: AdminComponent},
   { path: 'cabinet', component: CabinetComponent}
 ];
 

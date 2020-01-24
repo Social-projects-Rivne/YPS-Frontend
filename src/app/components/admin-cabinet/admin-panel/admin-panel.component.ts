@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Routes } from '@angular/router';
-import { AdminInfoComponent } from '../admin-info/admin-info.component';
 
 
 @Component({
@@ -18,7 +16,7 @@ export class AdminPanelComponent implements OnInit {
   phone: string="+380-90-00-00-001"
   email: string="admin@yps.com"
   src_photo: string="../../../assets/images/default-user-image.jpg";
-
+  
   selectedFile: File=null;
 
   constructor() { }
@@ -26,21 +24,21 @@ export class AdminPanelComponent implements OnInit {
   ngOnInit() {
   }
  
-  onClick(){
-    this.isCollapsed=false;
-    this.isCollapsed1=true;
-    this.isCollapsed2=true;
-  }
-  onClick1(){
-    this.isCollapsed1=false;
-    this.isCollapsed=true;
-    this.isCollapsed2=true;
-  }
-  onClick2(){
-    this.isCollapsed2=false;
-    this.isCollapsed=true;
-    this.isCollapsed1=true;
-  }
+  // onClick(){
+  //   this.isCollapsed=false;
+  //   this.isCollapsed1=true;
+  //   this.isCollapsed2=true;
+  // }
+  // onClick1(){
+  //   this.isCollapsed1=false;
+  //   this.isCollapsed=true;
+  //   this.isCollapsed2=true;
+  // }
+  // onClick2(){
+  //   this.isCollapsed2=false;
+  //   this.isCollapsed=true;
+  //   this.isCollapsed1=true;
+  // }
 
   onFileSelected(event) {
     this.selectedFile= <File>event.target.files[0];
@@ -49,8 +47,3 @@ export class AdminPanelComponent implements OnInit {
     // this.http.post
   }
 }
-const routes: Routes = [
-  { path: '', component: AdminPanelComponent },
-  { path: 'profile', component: AdminInfoComponent },
-  
-];

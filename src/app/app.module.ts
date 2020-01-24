@@ -1,6 +1,11 @@
+
+import { SideBarElementComponent } from './components/side-bar-element/side-bar-element.component';
+import { SideBarComponent } from './components/side-bar/side-bar.component';
+
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatIconModule } from '@angular/material/icon';
 
 import { AppRoutingModule, RoutingComponents } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -14,10 +19,10 @@ import { NavBarFormComponent } from './components/nav-bar-form/nav-bar-form.comp
 import { HeaderFormComponent } from './components/header-form/header-form.component';
 import { MainToolsSectionComponent } from './components/main-tools-section/main-tools-section.component';
 import { MainContentSectionComponent } from './components/main-content-section/main-content-section.component';
+import { AdminPanelComponent } from './components/admin-cabinet/admin-panel/admin-panel.component';
 import { UserSubFormComponent } from './components/user-sub-form/user-sub-form.component';
 import { AddPupilFormComponent } from './components/add-pupil-form/add-pupil-form.component';
-import { AdminPanelComponent } from './components/admin-cabinet/admin-panel/admin-panel.component';
-
+import { AdminInfoComponent } from './components/admin-cabinet/admin-info/admin-info.component';
 
 @NgModule({
   declarations: [
@@ -32,15 +37,20 @@ import { AdminPanelComponent } from './components/admin-cabinet/admin-panel/admi
     HeaderFormComponent,
     MainToolsSectionComponent,
     MainContentSectionComponent,
+    AdminPanelComponent,
+    SideBarComponent,
+    SideBarElementComponent,
     UserSubFormComponent,
     AddPupilFormComponent,
-    AdminPanelComponent
+    AdminInfoComponent
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
+    MatIconModule,
     HttpClientModule
   ],
   providers: [],

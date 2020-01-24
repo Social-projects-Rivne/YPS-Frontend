@@ -9,36 +9,9 @@
 
 	<div class="wrapper">
 		<yps-side-bar class="tab"  [links]="[{fieldName:'Profile',linkPath:'',iconPath:'account_circle'},{fieldName:'School Request',linkPath:'',iconPath:'announcement'},
-		{fieldName:'Schools',linkPath:'',iconPath:'school'}]"></yps-side-bar>
-		<div class="content">
-			<div class="profile">
-				<div class="photo_edit">
-					<img [src]="src_photo" class="photo" />
-					<input type="file" style="display: none;" accept="image/*" (change)="onFileSelected($event)" #file>
-					<button type="button" (click)="onUpload()" class="btn uploadPhoto primary">Upload</button>
-				</div>
-				<div class="info">
-					<div class="label_info">
-						<p>FirstName :</p>
-						<p>Surname :</p>
-						<p>Email:</p>
-						<p>Phone</p>
-					</div>
-					<div class="name_edit">
-						<h3>{{name}}</h3>
-						<h3>{{surname}}</h3>
-						<h3>{{email}}</h3>
-						<h3>{{phone}}</h3>
-					</div>
-				</div>
-			</div>
-			<!-- <div *ngIf="!isCollapsed1">
-				<h3>No new Requests</h3>
-			</div>
-			<div *ngIf="!isCollapsed2">
-				<h3>Empty</h3>
-			</div> -->
-		</div>
+		{fieldName:'Schools',linkPath:'',iconPath:'school'}]">
+		</yps-side-bar>
+		<yps-admin-info class="content"></yps-admin-info>
 	</div>
 
 </div>
