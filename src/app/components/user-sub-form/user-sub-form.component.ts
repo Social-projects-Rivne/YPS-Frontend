@@ -2,6 +2,7 @@ import { Component, OnInit, forwardRef, OnDestroy } from '@angular/core';
 import { FormGroup, FormBuilder, NG_VALUE_ACCESSOR, NG_VALIDATORS, ControlValueAccessor, FormControl } from '@angular/forms';
 import { IFormField } from 'src/app/models/IFormField';
 import { Subscription } from 'rxjs';
+import { requiredValidator } from 'src/utils/validators/required-validator';
 
 @Component({
   selector: 'yps-user-sub-form',
@@ -28,26 +29,53 @@ export class UserSubFormComponent implements OnInit, OnDestroy, ControlValueAcce
       id: "user-first-name-field",
       type: "text",
       label: "first name",
-      placeholder: "enter your first name",
+      placeholder: "enter user first name",
       name: "first-name",
+      errorMsg: null
+    },
+    {
+      id: "user-surname-field",
+      type: "text",
+      label: "surname",
+      placeholder: "enter user surname",
+      name: "surname",
       errorMsg: null
     },
     {
       id: "user-middle-name-field",
       type: "text",
       label: "middle name",
-      placeholder: "enter your middle name",
+      placeholder: "enter user middle name",
       name: "middle-name",
       errorMsg: null
     },
+    {
+      id: "user-phone-number-field",
+      type: "number",
+      label: "phone number",
+      placeholder: "enter user phone number",
+      name: "phone-number",
+      errorMsg: null
+    },
+    {
+      id: "user-email-field",
+      type: "text",
+      label: "email",
+      placeholder: "enter user email",
+      name: "email",
+      errorMsg: null
+    }
   ] 
 
   constructor(private formBuilder: FormBuilder) { }
 
   ngOnInit() {
     this.userSubForm = this.formBuilder.group({
-      "first-name": [null],
-      "middle-name": [null],
+      "first-name": [null, requiredValidator("first name is required")],
+      "surname": [null, requiredValidator("surname is required")],
+      "middle-name": [null, requiredValidator("middle name is required")],
+      "phone-number": [null, requiredValidator("phone number is required")],
+      "email": [null, requiredValidator("email is required")],
     });
 
     this.subscriptions.push(
@@ -71,7 +99,9 @@ export class UserSubFormComponent implements OnInit, OnDestroy, ControlValueAcce
     this.onTouched = fn;
   }
 
-  onChange: any = (value: any) => {};
+  onChange: any = (value: any) => {
+    console.log('onChange');
+  };
   onTouched: any = () => {};
   
   validate(_: FormControl) {}
