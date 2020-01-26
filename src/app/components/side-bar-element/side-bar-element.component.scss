@@ -1,7 +1,5 @@
 @import 'src/vars.scss';
 
-
-
 a {
     position: relative;
     .text {
@@ -13,12 +11,12 @@ a {
     }
     &:hover{        
         .text {
-            color:#83A9F3;;
+            color:$accent;
             left: 30px;
             opacity: 1;
         }       
     } 
     mat-icon{
-    color:#83A9F3;
+    color:$accent;
     }   
 }

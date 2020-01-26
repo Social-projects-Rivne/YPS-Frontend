@@ -2,37 +2,11 @@
 
 .admin_page{
   display: grid;
-  grid-auto-rows: auto;
+  // grid-auto-rows: auto;
   grid-auto-columns: 10rem auto;
   row-gap: 1rem;
 }
-.navbar {
-  display: grid;
-  grid-column-start: 1;
-  grid-row-start: 1;
-  grid-column-end: 3;
-  grid-auto-columns: auto auto 80px;
-  grid-auto-rows: 40px;
-  }
- .logo_admin{
-    padding-left: 2px;
-    padding-top: 2px;
-    justify-self: start;
-    align-self: center;
-    height: 100%;
-  } 
-  .navbar .nav_user{
-    grid-column-start: 2;
-    grid-row-start: 1;
-    justify-self: end;
-    align-self: center;
-  }
-  .navbar .nav_logout{
-    grid-column-start: 3;
-    grid-row-start: 1;
-    justify-self: center;
-    align-self: center;
-  }
+
 .wrapper{
   grid-column-start: 1;
   grid-column-end: 3;

@@ -1,17 +1,8 @@
-<div class="admin_page">
-	<header class="navbar">
-		<img src="../../../assets/images/yps-icon.png" class="logo_admin">
-		<p class="nav_user">{{name}} - Admin</p>
-		<div class="nav_logout">
-			<a href="/login">Log out</a>
-		</div>
-	</header>
+<yps-admin-navbar></yps-admin-navbar>
 
+<div class="admin_page">
 	<div class="wrapper">
-		<yps-side-bar class="tab"  [links]="[{fieldName:'Profile',linkPath:'',iconPath:'account_circle'},{fieldName:'School Request',linkPath:'',iconPath:'announcement'},
-		{fieldName:'Schools',linkPath:'',iconPath:'school'}]">
-		</yps-side-bar>
+		<yps-side-bar class="tab"  [links]="sideLinks"></yps-side-bar>
 		<yps-admin-info class="content"></yps-admin-info>
 	</div>
-
 </div>

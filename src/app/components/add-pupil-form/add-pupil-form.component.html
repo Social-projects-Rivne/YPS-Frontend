@@ -4,13 +4,21 @@
   (ngSubmit)="onSubmit()"
 >
   <h1 class="title">add pupil</h1>
-  <yps-form-field class="m"
+  <yps-user-sub-form formControlName="user-sub-form" #formRef>
+  </yps-user-sub-form>
+  <yps-form-field
     *ngFor="let field of fields"
     [field]="field"
     [formControlName]="field.name"
   >
   </yps-form-field>
-  <yps-user-sub-form formControlName="user-sub-form">
-  </yps-user-sub-form>
+  <mat-form-field>
+    <mat-label>Select a class</mat-label>
+    <mat-select formControlName="select-class" disableRipple>
+      <mat-option value="1">7-a</mat-option>
+      <mat-option value="2">10-b</mat-option>
+      <mat-option value="3">11-c</mat-option>
+    </mat-select>
+  </mat-form-field>
   <button type="submit" class="btn primary">submit</button>
 </form>
