@@ -25,6 +25,7 @@ import { AddPupilFormComponent } from './components/add-pupil-form/add-pupil-for
 import { MatSelectModule } from '@angular/material/select';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { RegisterSchoolComponent } from './pages/register-school/register-school.component';
+import { RegisterHeadmasterComponent } from './pages/register-headmaster/register-headmaster.component';
 
 @NgModule({
   declarations: [
@@ -45,6 +46,7 @@ import { RegisterSchoolComponent } from './pages/register-school/register-school
     UserSubFormComponent,
     AddPupilFormComponent,
     RegisterSchoolComponent,
+    RegisterHeadmasterComponent,
     
   ],
   imports: [

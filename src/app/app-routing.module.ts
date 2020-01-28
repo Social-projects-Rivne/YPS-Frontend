@@ -6,6 +6,7 @@ import { SchoolMainComponent } from './pages/school-main/school-main.component';
 import { AdminComponent } from './pages/admin/admin.component';
 import { CabinetComponent } from './pages/cabinet/cabinet.component';
 import { RegisterSchoolComponent } from './pages/register-school/register-school.component';
+import { RegisterHeadmasterComponent } from './pages/register-headmaster/register-headmaster.component';
 
 const routes: Routes = [
   { path: '', component: MainComponent },
@@ -14,6 +15,7 @@ const routes: Routes = [
   { path: 'admin', component: AdminComponent},
   { path: 'cabinet', component: CabinetComponent},
   { path: 'register-school', component: RegisterSchoolComponent},
+  { path: 'register-headmaster', component: RegisterHeadmasterComponent}
 ];
 
 @NgModule({
