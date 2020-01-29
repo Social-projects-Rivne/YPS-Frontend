@@ -39,7 +39,7 @@ import { AddPupilFormComponent } from './components/add-pupil-form/add-pupil-for
     MainContentSectionComponent,
     AdminPanelComponent,
     SideBarComponent,
-    SideBarElementComponent
+    SideBarElementComponent,
     UserSubFormComponent,
     AddPupilFormComponent,
 
