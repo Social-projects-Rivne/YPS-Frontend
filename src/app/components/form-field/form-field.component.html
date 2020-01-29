@@ -2,6 +2,7 @@
   class="form-field-control"
   [id]="field.id"
   [type]="field.type"
+  ngModel
   (change)="onChange($event.target.value)"
   [placeholder]="field.placeholder"
   [ngClass]="{'error': field.errorMsg != null }"
