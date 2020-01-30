@@ -11,5 +11,4 @@ export class MasterCabinetsComponent implements OnInit {
 
   ngOnInit() {
   }
-
 }

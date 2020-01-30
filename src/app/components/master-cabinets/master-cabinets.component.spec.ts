@@ -12,7 +12,6 @@ describe('MasterCabinetsComponent', () => {
     })
     .compileComponents();
   }));
-
   beforeEach(() => {
     fixture = TestBed.createComponent(MasterCabinetsComponent);
     component = fixture.componentInstance;
