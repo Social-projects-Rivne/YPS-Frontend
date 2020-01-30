@@ -25,6 +25,11 @@ import { AddPupilFormComponent } from './components/add-pupil-form/add-pupil-for
 import { MatSelectModule } from '@angular/material/select';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { RegisterSchoolComponent } from './pages/register-school/register-school.component';
+import { TeachersComponent } from './pages/teachers/teachers.component';
+import { PupilsComponent } from './pages/pupils/pupils.component';
+import { ParentsComponent } from './pages/parents/parents.component';
+import { HeadassistantsComponent } from './pages/headassistants/headassistants.component';
+import { MastersComponent } from './pages/masters/masters.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +50,11 @@ import { RegisterSchoolComponent } from './pages/register-school/register-school
     UserSubFormComponent,
     AddPupilFormComponent,
     RegisterSchoolComponent,
-    
+    TeachersComponent,
+    PupilsComponent,
+    ParentsComponent,
+    HeadassistantsComponent,
+    MastersComponent,
   ],
   imports: [
     BrowserModule,
