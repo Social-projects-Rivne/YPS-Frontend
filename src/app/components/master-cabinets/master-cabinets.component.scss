@@ -1,0 +1,30 @@
+@import 'src/vars.scss';
+
+:host{
+    display: grid;
+    grid-template-columns: auto 1fr;
+    padding: 1rem;
+    
+    .photo_edit{
+        display: grid;
+    }
+    .photo{
+        height: 13rem;
+        width: 9.5rem;     
+    }
+
+    .name_edit{
+        margin-left: 2rem;
+        //outline: 2px solid #000;
+    }
+    .uploadPhoto{
+        transition: $transition;
+        padding: 0.5rem;
+        width: 100%;
+        &:hover {
+          border-color: $accent;
+          background-color: #ffffff;
+          color: $accent;
+        }
+      }
+}
