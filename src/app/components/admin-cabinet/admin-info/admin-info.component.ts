@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { set, get } from 'js-cookie';
+import { HttpClient, HttpParams } from '@angular/common/http';
 
 @Component({
   selector: 'yps-admin-info',
@@ -6,15 +8,21 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./admin-info.component.scss']
 })
 export class AdminInfoComponent implements OnInit {
-  name: string="Petro";
-  surname: string="Petrovskiy";
-  phone: string="+380-90-00-00-001"
-  email: string="admin@yps.com"
-  src_photo: string="../../../../assets/images/default-user-image.jpg";
-  
-  constructor() { }
+ 
+  constructor(
+    private http: HttpClient
+    ) { }
 
   ngOnInit() {
+   
+    // const url: string = "https://localhost:44372/api/Admin?Id=";
+    // const params = new HttpParams()
+    // .set('', this.id)
+    
+
+    // var user= this.http.get(url+ this.id);
+    // this.name;
+    // console.log(user);
   }
 
 }

@@ -1,5 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output } from '@angular/core';
 import { ILink } from 'src/app/models/ILink';
+import { set, get } from 'js-cookie';
+import { HttpClient } from '@angular/common/http';
+import { UserinfoService } from 'src/app/services/userinfo.service';
+import { User } from 'src/app/models/AdminView';
+
 
 
 
@@ -12,7 +17,7 @@ export class AdminPanelComponent implements OnInit {
   sideLinks:ILink[]=
   [{
       fieldName:'Profile',
-      linkPath:'',
+      linkPath:'/admin',
       iconPath:'account_circle'
     },
     {
@@ -22,46 +27,19 @@ export class AdminPanelComponent implements OnInit {
     },
     {
       fieldName:'Schools',
-      linkPath:'',
+      linkPath:'/login',
       iconPath:'school'
   }];
-  isCollapsed: boolean=false;
-  isCollapsed1: boolean=true;
-  isCollapsed2: boolean=true;
-
-  name: string="Petro";
-  surname: string="Petrovskiy";
-  phone: string="+380-90-00-00-001"
-  email: string="admin@yps.com"
-  src_photo: string="../../../assets/images/default-user-image.jpg";
   
-  selectedFile: File=null;
-
-  constructor() { }
+  @Output() user: User;
+  constructor(
+    private userService: UserinfoService
+  ){ }
 
   ngOnInit() {
-  }
+    this.userService.getUser()
+      .subscribe(date=>this.user=date);
+   }
  
-  // onClick(){
-  //   this.isCollapsed=false;
-  //   this.isCollapsed1=true;
-  //   this.isCollapsed2=true;
-  // }
-  // onClick1(){
-  //   this.isCollapsed1=false;
-  //   this.isCollapsed=true;
-  //   this.isCollapsed2=true;
-  // }
-  // onClick2(){
-  //   this.isCollapsed2=false;
-  //   this.isCollapsed=true;
-  //   this.isCollapsed1=true;
-  // }
-
-  onFileSelected(event) {
-    this.selectedFile= <File>event.target.files[0];
-  }
-  onUpload() {
-    // this.http.post
-  }
+  
 }
