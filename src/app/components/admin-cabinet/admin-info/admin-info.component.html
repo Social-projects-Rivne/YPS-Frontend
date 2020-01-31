@@ -1,14 +1,13 @@
 <div class="info">
     <div class="label_info">
-        <p>FirstName :</p>
-        <p>Surname :</p>
-        <p>Email:</p>
-        <p>Phone</p>
+       
     </div>
     <div class="name_edit">
-        <h3>{{name}}</h3>
-        <h3>{{surname}}</h3>
-        <h3>{{email}}</h3>
-        <h3>{{phone}}</h3>
+        <h3>{{user.firstName}}</h3>
+        <h3>{{user.surname}}</h3>
+        <h3>{{user.middleName}}</h3>  
+        <h3>{{user.phoneNumber}}</h3>
+        <h3>{{user.email}}</h3>
+        <button (click)="show()">Show</button>
     </div>
 </div>

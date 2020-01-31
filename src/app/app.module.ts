@@ -3,7 +3,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { MatIconModule } from '@angular/material/icon';
 
 import { AppRoutingModule, RoutingComponents } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -19,10 +18,11 @@ import { MainToolsSectionComponent } from './components/main-tools-section/main-
 import { MainContentSectionComponent } from './components/main-content-section/main-content-section.component';
 import { UserSubFormComponent } from './components/user-sub-form/user-sub-form.component';
 import { AddPupilFormComponent } from './components/add-pupil-form/add-pupil-form.component';
-import { MatSelectModule } from '@angular/material/select';
-import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AdminCabinetModule } from './components/admin-cabinet/admin-cabinet.module';
 import { SharingModule } from './components/sharing/sharing.module';
+import { from } from 'rxjs';
+import { MatButtonModule, MatIconModule, MatSelectModule } from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -39,6 +39,7 @@ import { SharingModule } from './components/sharing/sharing.module';
     MainContentSectionComponent,
     UserSubFormComponent,
     AddPupilFormComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -46,11 +47,12 @@ import { SharingModule } from './components/sharing/sharing.module';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    NoopAnimationsModule,
-    MatSelectModule,
-    MatIconModule,
+    BrowserAnimationsModule,
     AdminCabinetModule,
-    SharingModule
+    SharingModule,
+    MatButtonModule,
+    MatIconModule,
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]
