@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { IFormField } from 'src/app/models/IFormField';
 import { FormGroup, FormBuilder } from '@angular/forms';
+import { validationHelper } from 'src/utils/helpers/validation-helper';
+import { requiredValidator } from 'src/utils/validators/required-validator';
 
 @Component({
   selector: 'yps-add-pupil-form',
@@ -8,65 +10,24 @@ import { FormGroup, FormBuilder } from '@angular/forms';
   styleUrls: ['./add-pupil-form.component.scss']
 })
 export class AddPupilFormComponent implements OnInit {
-
+  @ViewChild('formRef', { static: false }) userSubFormRef: { fields: IFormField[], userSubForm: FormGroup }; 
   form: FormGroup;
   
-  fields: IFormField[] = [
-    // {
-    //   id: "fname-field",
-    //   type: "text",
-    //   label: "first name",
-    //   placeholder: "enter first name",
-    //   name: "first-name",
-    //   errorMsg: null
-    // },
-    // {
-    //   id: "sname-field",
-    //   type: "text",
-    //   label: "second name",
-    //   placeholder: "enter second name",
-    //   name: "second-name",
-    //   errorMsg: null
-    // },
-    // {
-    //   id: "mname-field",
-    //   type: "text",
-    //   label: "middle name",
-    //   placeholder: "enter middle name",
-    //   name: "middle-name",
-    //   errorMsg: null
-    // },
-    {
-      id:"phone",
-      type:"number",
-      label:"phone number",
-      placeholder:"enter phone number",
-      name:"phone",
-      errorMsg:null
-    },
-    {
-      id:"email",
-      type:"string",
-      label:"email",
-      placeholder:"enter email",
-      name:"email",
-      errorMsg:null
-    }
-  ];
+  fields: IFormField[] = [];
   constructor(private formBuilder: FormBuilder) {}
- 
 
   ngOnInit() {
     this.form = this.formBuilder.group({
-      // "first-name": [null,[requiredValidator("Input first name")]],
-      // "second-name": [null],
-      // "middle-name": [null],
-      "phone":[null],
-      "email":[null],
-      "user-sub-form": [null]
+      "user-sub-form": [null],
+      "select-class": [null]
     });
   }
+  
   onSubmit = () => {
-    console.info(this.form.value);
+    const thisFormValidationResponse = validationHelper(this.form.controls, this.fields);
+    const subFormValidationResponse = validationHelper(this.userSubFormRef.userSubForm.controls, this.userSubFormRef.fields);
+    console.log('this.form.value', this.form.value);
+    this.fields = thisFormValidationResponse.fields;
+    this.userSubFormRef.fields = subFormValidationResponse.fields;
   }
 }

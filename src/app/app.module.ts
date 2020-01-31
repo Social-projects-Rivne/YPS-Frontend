@@ -1,7 +1,6 @@
 
 import { SideBarElementComponent } from './components/side-bar-element/side-bar-element.component';
 import { SideBarComponent } from './components/side-bar/side-bar.component';
-import { MasterButComponent } from './components/master-but/master-but.component';
 
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -23,8 +22,14 @@ import { MainContentSectionComponent } from './components/main-content-section/m
 import { AdminPanelComponent } from './components/admin-cabinet/admin-panel/admin-panel.component';
 import { UserSubFormComponent } from './components/user-sub-form/user-sub-form.component';
 import { AddPupilFormComponent } from './components/add-pupil-form/add-pupil-form.component';
-import { SchoolRequestsComponent } from './components/admin-cabinet/School Requests/school-requests/school-requests.component';
-import { SchoolRequestCardComponent } from './components/admin-cabinet/School Requests/school-request-card/school-request-card.component';
+import { MatSelectModule } from '@angular/material/select';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { RegisterSchoolComponent } from './pages/register-school/register-school.component';
+import { TeachersComponent } from './pages/teachers/teachers.component';
+import { PupilsComponent } from './pages/pupils/pupils.component';
+import { ParentsComponent } from './pages/parents/parents.component';
+import { HeadassistantsComponent } from './pages/headassistants/headassistants.component';
+import { MastersComponent } from './pages/masters/masters.component';
 
 @NgModule({
   declarations: [
@@ -44,17 +49,22 @@ import { SchoolRequestCardComponent } from './components/admin-cabinet/School Re
     SideBarElementComponent,
     UserSubFormComponent,
     AddPupilFormComponent,
-    SchoolRequestsComponent,
-    SchoolRequestCardComponent,
-
+    RegisterSchoolComponent,
+    TeachersComponent,
+    PupilsComponent,
+    ParentsComponent,
+    HeadassistantsComponent,
+    MastersComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
+    HttpClientModule,
+    NoopAnimationsModule,
+    MatSelectModule,
     MatIconModule,
-    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
