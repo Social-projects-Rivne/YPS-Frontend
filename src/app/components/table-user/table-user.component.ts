@@ -1,4 +1,5 @@
-import {Component} from '@angular/core';
+import { Component, OnInit,ViewChild } from '@angular/core';
+import { MatSort, MatTableDataSource } from '@angular/material';
 
 export interface PeriodicElement {
   name: string;
@@ -18,17 +19,21 @@ const ELEMENT_DATA: PeriodicElement[] = [
   {position: 8, name: 'Oxygen', weight: 15.9994, symbol: 'O'},
   {position: 9, name: 'Fluorine', weight: 18.9984, symbol: 'F'},
   {position: 10, name: 'Neon', weight: 20.1797, symbol: 'Ne'},
-];
+]
 @Component({
-  selector: 'yps-pupils',
-  templateUrl: './pupils.component.html',
-  styleUrls: ['./pupils.component.scss']
+  selector: 'yps-table-user',
+  templateUrl: './table-user.component.html',
+  styleUrls: ['./table-user.component.scss']
 })
-export class PupilsComponent {
+export class TableUserComponent implements OnInit {
+  
   displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
-  dataSource = ELEMENT_DATA;
-}
+  dataSource = new MatTableDataSource(ELEMENT_DATA);
 
-// const USER_DATA: IUser[] = [
-//   {Id:"1",Name:"Dmitriy", LastName:"Griy",MiddleName:"Bohdanovich",Class:"11-A",Phone:"06857010245",Email:"dsokgas@gmail.com"}
-// ];
+  @ViewChild(MatSort, {static: true}) sort: MatSort;
+
+  ngOnInit() {
+    this.dataSource.sort = this.sort;
+  }
+
+}

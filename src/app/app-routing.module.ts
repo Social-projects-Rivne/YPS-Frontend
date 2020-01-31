@@ -1,3 +1,5 @@
+
+import { MasterCabinetsComponent } from './components/master-cabinets/master-cabinets.component';
 import { MastersComponent } from './pages/masters/masters.component';
 import { HeadassistantsComponent } from './pages/headassistants/headassistants.component';
 import { TeachersComponent } from './pages/teachers/teachers.component';
@@ -12,12 +14,14 @@ import { AdminComponent } from './pages/admin/admin.component';
 import { CabinetComponent } from './pages/cabinet/cabinet.component';
 import { RegisterSchoolComponent } from './pages/register-school/register-school.component';
 
+
 const cabinetRoutes: Routes = [
-  { path:'pupils', component: PupilsComponent },
-  { path:'parents', component: ParentsComponent },
-  { path:'teachers', component: TeachersComponent },
-  { path:'head-assistants', component: HeadassistantsComponent },
-  { path:'masters', component: MastersComponent}
+  { path: '', component: MasterCabinetsComponent},
+  { path: 'pupils', component: PupilsComponent },
+  { path: 'parents', component: ParentsComponent },
+  { path: 'teachers', component: TeachersComponent },
+  { path: 'head-assistants', component: HeadassistantsComponent },
+  { path: 'masters', component: MastersComponent}
 ];
 
 const routes: Routes = [
@@ -44,5 +48,11 @@ export const RoutingComponents = [
   SchoolMainComponent,
   AdminComponent,
   CabinetComponent,
-  RegisterSchoolComponent
+  RegisterSchoolComponent,
+  TeachersComponent,
+  PupilsComponent,
+  ParentsComponent,
+  HeadassistantsComponent,
+  MastersComponent,
+  MasterCabinetsComponent
 ];

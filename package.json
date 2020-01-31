@@ -12,6 +12,9 @@
   "private": true,
   "dependencies": {
     "@angular-devkit/build-angular": "^0.803.23",
+    "@angular-devkit/build-optimizer": "^0.803.23",
+    "@angular-devkit/build-webpack": "^0.803.23",
+    "@angular-devkit/core": "^8.3.23",
     "@angular/animations": "~8.2.14",
     "@angular/cdk": "~8.2.3",
     "@angular/common": "~8.2.14",
@@ -22,6 +25,8 @@
     "@angular/platform-browser": "~8.2.14",
     "@angular/platform-browser-dynamic": "~8.2.14",
     "@angular/router": "^8.2.14",
+    "@ngtools/webpack": "^8.3.23",
+    "hammerjs": "^2.0.8",
     "js-cookie": "^2.2.1",
     "rxjs": "~6.4.0",
     "tslib": "^1.10.0",

@@ -1,12 +1,13 @@
 import { ILink } from 'src/app/models/ILink';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
+import { PageService } from 'src/app/services/page.service';
 
 @Component({
   selector: 'yps-cabinet',
   templateUrl: './cabinet.component.html',
   styleUrls: ['./cabinet.component.scss']
 })
-export class CabinetComponent implements OnInit {
+export class CabinetComponent implements OnInit{
 
   sideLinks: ILink[] = [
     {
@@ -40,9 +41,10 @@ export class CabinetComponent implements OnInit {
       iconPath:"how_to_reg"
     }
   ];
-  constructor() { }
+  constructor(private pageService: PageService) { }
 
   ngOnInit() {
+    this.pageService.set("YPS | Cabinet");
   }
 
 }
