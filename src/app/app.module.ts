@@ -26,6 +26,8 @@ import { MatSelectModule } from '@angular/material/select';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { RegisterSchoolComponent } from './pages/register-school/register-school.component';
 import { RegisterHeadmasterComponent } from './pages/register-headmaster/register-headmaster.component';
+import { AddHeadmasterFormComponent } from './components/add-headmaster-form/add-headmaster-form.component';
+
 
 @NgModule({
   declarations: [
@@ -47,7 +49,7 @@ import { RegisterHeadmasterComponent } from './pages/register-headmaster/registe
     AddPupilFormComponent,
     RegisterSchoolComponent,
     RegisterHeadmasterComponent,
-    
+    AddHeadmasterFormComponent
   ],
   imports: [
     BrowserModule,

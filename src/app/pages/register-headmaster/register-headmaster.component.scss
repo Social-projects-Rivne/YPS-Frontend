@@ -1,15 +1,5 @@
 :host {
-    .form {
-      display: grid;
-      grid-gap: 1rem;
-      padding: 2rem;
-      .title {
-        text-transform: uppercase;
-        text-align: center;
-      }
-  
-      .btn {
-        justify-self: center;
-      }
-    }
-  }
+    display: grid;
+    position: relative;
+
+}

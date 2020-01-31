@@ -1,0 +1,14 @@
+<form
+class="form"
+[formGroup]="form"
+(ngSubmit)="onSubmit()"
+>
+<h1 class="title">add Headmaster</h1>
+<yps-form-field
+  *ngFor="let field of fields"
+  [field]="field"
+  [formControlName]="field.name"
+>
+</yps-form-field>
+  <button type="submit" class="btn submit-btn primary">submit</button>
+</form>

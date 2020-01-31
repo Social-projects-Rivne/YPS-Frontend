@@ -1,0 +1,28 @@
+@import 'src/vars.scss';
+
+:host {
+  display: block;
+  width: 24rem;
+  margin: 0 auto;
+  
+  .form {
+   display: grid;
+   grid-gap: 1rem; 
+    .title {
+      text-align: center;
+      text-transform: uppercase;
+    }
+    .submit-btn {
+      justify-self: center;
+      transition: $transition;
+    }
+    
+
+
+
+
+
+
+
+  }
+}
