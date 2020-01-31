@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {MatCardModule} from '@angular/material/card';
 
 @Component({
   selector: 'yps-school-requests',

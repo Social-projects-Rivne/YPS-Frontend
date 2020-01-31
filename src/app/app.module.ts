@@ -30,6 +30,9 @@ import { PupilsComponent } from './pages/pupils/pupils.component';
 import { ParentsComponent } from './pages/parents/parents.component';
 import { HeadassistantsComponent } from './pages/headassistants/headassistants.component';
 import { MastersComponent } from './pages/masters/masters.component';
+import { SchoolRequestsComponent } from './components/admin-cabinet/School Requests/school-requests/school-requests.component';
+import { MatCard, MatCardModule } from '@angular/material/card';
+import { SchoolRequestCardComponent } from './components/admin-cabinet/School Requests/school-request-card/school-request-card.component';
 
 @NgModule({
   declarations: [
@@ -55,6 +58,9 @@ import { MastersComponent } from './pages/masters/masters.component';
     ParentsComponent,
     HeadassistantsComponent,
     MastersComponent,
+    SchoolRequestsComponent,
+    SchoolRequestCardComponent
+
   ],
   imports: [
     BrowserModule,
@@ -65,6 +71,7 @@ import { MastersComponent } from './pages/masters/masters.component';
     NoopAnimationsModule,
     MatSelectModule,
     MatIconModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]
