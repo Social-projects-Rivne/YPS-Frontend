@@ -23,6 +23,7 @@ import { UserSubFormComponent } from './components/user-sub-form/user-sub-form.c
 import { AddPupilFormComponent } from './components/add-pupil-form/add-pupil-form.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RegisterSchoolComponent } from './pages/register-school/register-school.component';
+import { SchoolRegisterFormComponent } from './components/school-register-form/school-register-form.component';
 import { MatIconModule, MatSelectModule, MatButtonModule, MatTableModule, MatSortModule, MatFormFieldModule} from '@angular/material';
 import { TableUserComponent } from './components/table-user/table-user.component';
 
@@ -45,6 +46,8 @@ import { TableUserComponent } from './components/table-user/table-user.component
     UserSubFormComponent,
     AddPupilFormComponent,
     RegisterSchoolComponent,
+    School_Register
+    SchoolRegisterFormComponent
     TableUserComponent
   ],
   imports: [
