@@ -2,7 +2,7 @@
   class="add-btn btn primary"
   (click)="toggleForm()"
 >
-  {{ formIsOpen ? "close" : "add pupil" }}
+  {{ formIsOpen ? "close" : "add parent" }}
 </button>
 <form
   *ngIf="formIsOpen"
@@ -10,7 +10,7 @@
   [formGroup]="form"
   (ngSubmit)="onSubmit()"
 >
-  <h1 class="title">add pupil</h1>
+  <h1 class="title">add parent</h1>
   <yps-user-sub-form formControlName="user" #formRef>
   </yps-user-sub-form>
   <yps-form-field

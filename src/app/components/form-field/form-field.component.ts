@@ -20,8 +20,6 @@ export class FormFieldComponent implements ControlValueAccessor {
 
   constructor() { }
   
-  // * Implementation of the ControlValueAccesor Interface.
-  // ! You can ignore it.
   writeValue(value: any): void {}
 
   registerOnChange(fn: any): void {
@@ -31,7 +29,6 @@ export class FormFieldComponent implements ControlValueAccessor {
     this.onTouched = fn;
   }
 
-  // ! Also can ignore, just regular methods for the implementation above
-  onChange: any = () => {};
-  onTouched: any = () => {};
+  onChange = (value: any) : any => {};
+  onTouched = () : any => {};
 }

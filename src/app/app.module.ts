@@ -26,6 +26,8 @@ import { RegisterSchoolComponent } from './pages/register-school/register-school
 import { SchoolRegisterFormComponent } from './components/school-register-form/school-register-form.component';
 import { MatIconModule, MatSelectModule, MatButtonModule, MatTableModule, MatSortModule, MatFormFieldModule} from '@angular/material';
 import { TableUserComponent } from './components/table-user/table-user.component';
+import { AddTeacherFormComponent } from './components/add-teacher-form/add-teacher-form.component';
+import { AddParentFormComponent } from './components/add-parent-form/add-parent-form.component';
 
 @NgModule({
   declarations: [
@@ -46,9 +48,10 @@ import { TableUserComponent } from './components/table-user/table-user.component
     UserSubFormComponent,
     AddPupilFormComponent,
     RegisterSchoolComponent,
-    School_Register
-    SchoolRegisterFormComponent
-    TableUserComponent
+    TableUserComponent,
+    AddTeacherFormComponent,
+    AddParentFormComponent,
+    SchoolRegisterFormComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,19 +1,28 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { IFormField } from 'src/app/models/IFormField';
-import { FormGroup, FormBuilder } from '@angular/forms';
+import { apiUrl } from 'src/constants/urls';
 import { validationHelper } from 'src/utils/helpers/validation-helper';
 import { requiredValidator } from 'src/utils/validators/required-validator';
-import { HttpClient } from '@angular/common/http';
-import { apiUrl } from 'src/constants/urls';
 
 @Component({
-  selector: 'yps-add-pupil-form',
-  templateUrl: './add-pupil-form.component.html',
-  styleUrls: ['./add-pupil-form.component.scss']
+  selector: 'yps-add-teacher-form',
+  templateUrl: './add-teacher-form.component.html',
+  styleUrls: ['./add-teacher-form.component.scss']
 })
-export class AddPupilFormComponent implements OnInit {
+export class AddTeacherFormComponent implements OnInit {
   form: FormGroup;
-  fields: IFormField[] = [];
+  fields: IFormField[] = [
+    {
+      id: "degree-field",
+      type: "text",
+      label: "degree",
+      placeholder: "enter degree",
+      name: "degree",
+      errorMsg: null
+    }
+  ];
   formIsOpen: boolean = false;
   @ViewChild('formRef', { static: false }) userSubFormRef: { fields: IFormField[], userSubForm: FormGroup }; 
 
@@ -25,7 +34,7 @@ export class AddPupilFormComponent implements OnInit {
   ngOnInit() {
     this.form = this.formBuilder.group({
       "user": [null],
-      "classId": [null]
+      "degree": [null, requiredValidator("degree is required")]
     });
   }
 
@@ -39,8 +48,8 @@ export class AddPupilFormComponent implements OnInit {
     this.userSubFormRef.fields = subFormValidationResponse.fields;
 
     if (thisFormValidationResponse.isValid && subFormValidationResponse.isValid) {
-      return this.http.post(apiUrl + "/Pupils", this.form.value).subscribe((res: any) => {
-        console.log('add pupil response', res);
+      return this.http.post(apiUrl + "/teachers", this.form.value).subscribe((res: any) => {
+        console.log('add teacher response', res);
       });
     }
   }
