@@ -54,9 +54,8 @@ import { SchoolRequestCardComponent } from './components/admin-cabinet/School Re
     UserSubFormComponent,
     AddPupilFormComponent,
     RegisterSchoolComponent,
-    School_Register
-    SchoolRegisterFormComponent
-    TableUserComponent
+    SchoolRegisterFormComponent,
+    TableUserComponent,
     TeachersComponent,
     PupilsComponent,
     ParentsComponent,
@@ -78,7 +77,7 @@ import { SchoolRequestCardComponent } from './components/admin-cabinet/School Re
     MatButtonModule,
     MatTableModule,
     MatSortModule,
-    MatFormFieldModule
+    MatFormFieldModule,
     MatCardModule
   ],
   providers: [],
