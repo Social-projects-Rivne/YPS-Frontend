@@ -1,11 +1,9 @@
-
 import { SideBarElementComponent } from './components/side-bar-element/side-bar-element.component';
 import { SideBarComponent } from './components/side-bar/side-bar.component';
 
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { MatIconModule } from '@angular/material/icon';
 
 import { AppRoutingModule, RoutingComponents } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -22,12 +20,13 @@ import { MainContentSectionComponent } from './components/main-content-section/m
 import { AdminPanelComponent } from './components/admin-cabinet/admin-panel/admin-panel.component';
 import { UserSubFormComponent } from './components/user-sub-form/user-sub-form.component';
 import { AddPupilFormComponent } from './components/add-pupil-form/add-pupil-form.component';
-import { MatSelectModule } from '@angular/material/select';
-import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RegisterSchoolComponent } from './pages/register-school/register-school.component';
 import { RegisterHeadmasterComponent } from './pages/register-headmaster/register-headmaster.component';
 import { AddHeadmasterFormComponent } from './components/add-headmaster-form/add-headmaster-form.component';
 
+import { MatIconModule, MatSelectModule, MatButtonModule, MatTableModule, MatSortModule, MatFormFieldModule} from '@angular/material';
+import { TableUserComponent } from './components/table-user/table-user.component';
 
 @NgModule({
   declarations: [
@@ -49,7 +48,8 @@ import { AddHeadmasterFormComponent } from './components/add-headmaster-form/add
     AddPupilFormComponent,
     RegisterSchoolComponent,
     RegisterHeadmasterComponent,
-    AddHeadmasterFormComponent
+    AddHeadmasterFormComponent,
+    TableUserComponent
   ],
   imports: [
     BrowserModule,
@@ -57,9 +57,13 @@ import { AddHeadmasterFormComponent } from './components/add-headmaster-form/add
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    NoopAnimationsModule,
+    BrowserAnimationsModule,
     MatSelectModule,
     MatIconModule,
+    MatButtonModule,
+    MatTableModule,
+    MatSortModule,
+    MatFormFieldModule
   ],
   providers: [],
   bootstrap: [AppComponent]
