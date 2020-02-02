@@ -1,0 +1,19 @@
+@import 'src/vars.scss';
+
+:host {
+  display: grid;
+  grid-template-columns: 1fr auto 20rem;
+  grid-template-rows: auto 1fr;
+  grid-gap: 1rem;
+  .add-user {
+    margin-top: 2rem;
+    align-self: start;
+    transition: $transition;
+
+    &:hover {
+      border-color: $accent;
+      background-color: #ffffff;
+      color: $accent;
+    }
+  }
+}

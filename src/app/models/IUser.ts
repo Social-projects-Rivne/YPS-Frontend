@@ -1,9 +1,11 @@
 export interface IUser {
-    Id : string;
-    Name : string;
+    Id : number;
+    FirstName : string;
+    Surname : string;
     MiddleName : string;
-    LastName : string;
     Class : string;
-    Phone : string;
+    PhoneNumber: string;
     Email : string;
+    DateOfBirth : string; 
+    //WorkInfo : string;
 }
