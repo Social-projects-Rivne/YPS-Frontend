@@ -3,16 +3,20 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { LoginComponent } from './pages/login/login.component';
 import { SchoolMainComponent } from './pages/school-main/school-main.component';
-import { AdminComponent } from './pages/admin/admin.component';
+// import { AdminComponent } from './pages/admin/admin.component';
 import { CabinetComponent } from './pages/cabinet/cabinet.component';
+import { AdminInfoComponent } from './components/admin-cabinet/admin-info/admin-info.component';
 
 const routes: Routes = [
   { path: '', component: MainComponent },
   { path: 'school-main', component: SchoolMainComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'admin', component: AdminComponent},
-  { path: 'admin/profile', component: AdminComponent},
-  { path: 'cabinet', component: CabinetComponent}
+  {
+    path: 'admin',
+    loadChildren:()=>import('./components/admin-cabinet/admin-cabinet.module')
+    .then(mod=>mod.AdminCabinetModule)
+  },
+  { path: 'cabinet', component: CabinetComponent }
 ];
 
 @NgModule({
@@ -27,6 +31,6 @@ export const RoutingComponents = [
   MainComponent,
   LoginComponent,
   SchoolMainComponent,
-  AdminComponent,
+  // AdminComponent,
   CabinetComponent
 ];

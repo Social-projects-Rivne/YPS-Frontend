@@ -6,24 +6,28 @@ import { AdminInfoComponent } from './admin-info/admin-info.component';
 import { AdminNavbarComponent } from './admin-navbar/admin-navbar.component';
 import {MatButton, MatButtonModule, MatIconModule} from "@angular/material"
 import { SharingModule } from '../sharing/sharing.module';
+import { AdminRoutingModule } from './admin-routing.module';
+import { RequestsComponent } from './requests/requests.component';
 
 @NgModule({
   declarations: [
     AdminPanelComponent, 
     AdminInfoComponent, 
-    AdminNavbarComponent
+    AdminNavbarComponent, RequestsComponent
   ],
   imports: [
     CommonModule,
     FormsModule,
     MatButtonModule,
     MatIconModule,
-    SharingModule
+    SharingModule,
+    AdminRoutingModule
   ],
   exports: [
     AdminPanelComponent,
     AdminInfoComponent,
-    AdminNavbarComponent
+    AdminNavbarComponent,
+    RequestsComponent
    
   ],
   // schemas:[ CUSTOM_ELEMENTS_SCHEMA]

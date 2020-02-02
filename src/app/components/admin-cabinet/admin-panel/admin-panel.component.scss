@@ -1,16 +1,7 @@
 @import 'src/vars.scss';
 
-.wrapper{
-  display: grid;
-  grid-auto-columns: 10rem auto;
-  grid-gap: 1rem;
-}
-/* Style the tab */
 .tab {
-    grid-area: 1/ 1/ 2/ 2;
     float: left;
+    gap: 2rem;
+    padding-right: 6rem;
   }
-
-.content{
-  grid-area: 1/ 2/ auto/ auto;
-}

@@ -1,7 +1,5 @@
 <yps-admin-navbar></yps-admin-navbar>
 
+<yps-side-bar class="tab" [links]="sideLinks"></yps-side-bar>
 
-<div class="wrapper">
-	<yps-side-bar class="tab" [links]="sideLinks"></yps-side-bar>
-	<yps-admin-info class="content"></yps-admin-info>
-</div>
+<router-outlet></router-outlet>

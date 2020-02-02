@@ -11,12 +11,12 @@ export class AdminPanelComponent implements OnInit {
   sideLinks:ILink[]=
   [{
       fieldName:'Profile',
-      linkPath:'/admin',
+      linkPath:'./profile',
       iconPath:'account_circle'
     },
     {
       fieldName:'School Request',
-      linkPath:'',
+      linkPath:'./request',
       iconPath:'announcement'
     },
     {
@@ -27,10 +27,7 @@ export class AdminPanelComponent implements OnInit {
   
   constructor(
     private userService: UserinfoService
-  ){ 
-
-   
-  }
+  ){}
 
   ngOnInit() {
    }
