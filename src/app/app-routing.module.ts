@@ -12,8 +12,7 @@ const routes: Routes = [
   {
     path: 'admin',
     loadChildren:()=>import('./components/admin-cabinet/admin-cabinet.module')
-    .then(mod=>mod.AdminCabinetModule),
-    canActivate: 
+    .then(mod=>mod.AdminCabinetModule)    
   },
   { path: 'cabinet', component: CabinetComponent }
 ];
