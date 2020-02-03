@@ -6,7 +6,8 @@ import { requiredValidator } from 'src/utils/validators/required-validator';
 import { minLengthValidator } from 'src/utils/validators/min-length-validatot';
 import { validationHelper } from 'src/utils/helpers/validation-helper';
 import { HttpClient } from '@angular/common/http';
-import { set, get } from 'js-cookie';
+import { set } from 'js-cookie';
+import { apiUrl } from 'src/constants/urls';
 
 
 @Component({
@@ -42,8 +43,6 @@ export class LoginFormComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    // * Initializing form controls and validation for them.
-    // ! Use only your own validation methods.
     this.form = this.formBuilder.group({
       "email": [null, [
         requiredValidator("email is required."),
@@ -62,20 +61,23 @@ export class LoginFormComponent implements OnInit {
   }
 
   onSubmit() {
-    // * Validation method which sets error messages to fields if there are any errors.
-    // * Takes 2 parameters form controls and an array of fields.
-    // * Returns an object which contains new updated fields(you have to set updated fields to this.fields) and an isValid value.
     const { fields, isValid } = validationHelper(this.form.controls, this.fields);
 
     this.fields = fields;
 
-    console.info(`Login form is ${isValid ? 'valid' : 'invalid'}`);
     if (isValid) {
-      const url: string = "https://localhost:44372/api/Auth";
-      return this.http.post(url, this.form.value).subscribe((res: { token: string }) => {
-        console.log("login response", res);
-        set('token', res.token);
-      });
+      return this.http.post(apiUrl + "/auth", this.form.value)
+        .subscribe(
+          (successRes: { token: string }) => {
+            set('token', successRes.token);
+          },
+          (errorRes: any) => {
+            this.fields = this.fields.map(field => {
+              field.errorMsg = "incorrect email or password";
+              return field;
+            })
+          }
+        );
     }
   }
 }
