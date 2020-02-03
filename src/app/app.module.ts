@@ -25,11 +25,9 @@ import { MatIconModule, MatSelectModule, MatButtonModule, MatTableModule, MatSor
 import { TableUserComponent } from './components/table-user/table-user.component';
 import { AddTeacherFormComponent } from './components/add-teacher-form/add-teacher-form.component';
 import { AddParentFormComponent } from './components/add-parent-form/add-parent-form.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AdminCabinetModule } from './components/admin-cabinet/admin-cabinet.module';
 import { SharingModule } from './components/sharing/sharing.module';
 import { from } from 'rxjs';
-import { MatButtonModule, MatIconModule, MatSelectModule } from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -68,7 +66,7 @@ import { MatButtonModule, MatIconModule, MatSelectModule } from '@angular/materi
     MatButtonModule,
     MatTableModule,
     MatSortModule,
-    MatFormFieldModule
+    MatFormFieldModule,
     MatSelectModule
   ],
   providers: [],

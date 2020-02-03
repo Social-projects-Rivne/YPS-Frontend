@@ -32,8 +32,6 @@ const routes: Routes = [
     loadChildren:()=>import('./components/admin-cabinet/admin-cabinet.module')
     .then(mod=>mod.AdminCabinetModule)    
   },
-  { path: 'cabinet', component: CabinetComponent }
-  { path: 'admin', component: AdminComponent},
   { path: 'cabinet', component: CabinetComponent, children:cabinetRoutes},
   { path: 'register-school', component: RegisterSchoolComponent},
 ];
@@ -51,7 +49,6 @@ export const RoutingComponents = [
   MainComponent,
   LoginComponent,
   SchoolMainComponent,
-  AdminComponent,
   CabinetComponent,
   RegisterSchoolComponent,
   TeachersComponent,
@@ -59,7 +56,6 @@ export const RoutingComponents = [
   ParentsComponent,
   HeadassistantsComponent,
   MastersComponent,
-  MasterCabinetsComponent
-  // AdminComponent,
+  MasterCabinetsComponent,
   CabinetComponent
 ];
