@@ -1,17 +1,16 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { IFormField } from 'src/app/models/IFormField';
 import { FormGroup, FormBuilder } from '@angular/forms';
-import { validationHelper } from 'src/utils/helpers/validation-helper';
-import { requiredValidator } from 'src/utils/validators/required-validator';
+import { IFormField } from 'src/app/models/IFormField';
 import { HttpClient } from '@angular/common/http';
+import { validationHelper } from 'src/utils/helpers/validation-helper';
 import { apiUrl } from 'src/constants/urls';
 
 @Component({
-  selector: 'yps-add-pupil-form',
-  templateUrl: './add-pupil-form.component.html',
-  styleUrls: ['./add-pupil-form.component.scss','../../../scss/adding-forms.scss']
+  selector: 'yps-add-parent-form',
+  templateUrl: './add-parent-form.component.html',
+  styleUrls: ['./add-parent-form.component.scss','../../../scss/adding-forms.scss']
 })
-export class AddPupilFormComponent implements OnInit {
+export class AddParentFormComponent implements OnInit {
   form: FormGroup;
   fields: IFormField[] = [];
   formIsOpen: boolean = false;
@@ -39,8 +38,8 @@ export class AddPupilFormComponent implements OnInit {
     this.userSubFormRef.fields = subFormValidationResponse.fields;
 
     if (thisFormValidationResponse.isValid && subFormValidationResponse.isValid) {
-      return this.http.post(apiUrl + "/Pupils", this.form.value).subscribe((res: any) => {
-        console.log('add pupil response', res);
+      return this.http.post(apiUrl + "/parents", this.form.value).subscribe((res: any) => {
+        console.log('add parent response', res);
       });
     }
   }
