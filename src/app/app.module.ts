@@ -1,6 +1,4 @@
 
-import { SideBarElementComponent } from './components/side-bar-element/side-bar-element.component';
-import { SideBarComponent } from './components/side-bar/side-bar.component';
 
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -18,7 +16,6 @@ import { NavBarFormComponent } from './components/nav-bar-form/nav-bar-form.comp
 import { HeaderFormComponent } from './components/header-form/header-form.component';
 import { MainToolsSectionComponent } from './components/main-tools-section/main-tools-section.component';
 import { MainContentSectionComponent } from './components/main-content-section/main-content-section.component';
-import { AdminPanelComponent } from './components/admin-cabinet/admin-panel/admin-panel.component';
 import { UserSubFormComponent } from './components/user-sub-form/user-sub-form.component';
 import { AddPupilFormComponent } from './components/add-pupil-form/add-pupil-form.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -28,6 +25,9 @@ import { MatIconModule, MatSelectModule, MatButtonModule, MatTableModule, MatSor
 import { TableUserComponent } from './components/table-user/table-user.component';
 import { AddTeacherFormComponent } from './components/add-teacher-form/add-teacher-form.component';
 import { AddParentFormComponent } from './components/add-parent-form/add-parent-form.component';
+import { AdminCabinetModule } from './components/admin-cabinet/admin-cabinet.module';
+import { SharingModule } from './components/sharing/sharing.module';
+import { from } from 'rxjs';
 
 @NgModule({
   declarations: [
@@ -42,9 +42,6 @@ import { AddParentFormComponent } from './components/add-parent-form/add-parent-
     HeaderFormComponent,
     MainToolsSectionComponent,
     MainContentSectionComponent,
-    AdminPanelComponent,
-    SideBarComponent,
-    SideBarElementComponent,
     UserSubFormComponent,
     AddPupilFormComponent,
     RegisterSchoolComponent,
@@ -60,12 +57,17 @@ import { AddParentFormComponent } from './components/add-parent-form/add-parent-
     ReactiveFormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
+    AdminCabinetModule,
+    SharingModule,
+    MatButtonModule,
+    BrowserAnimationsModule,
     MatSelectModule,
     MatIconModule,
     MatButtonModule,
     MatTableModule,
     MatSortModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]
