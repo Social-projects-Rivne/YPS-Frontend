@@ -19,6 +19,7 @@ import { HeaderFormComponent } from './components/header-form/header-form.compon
 import { MainToolsSectionComponent } from './components/main-tools-section/main-tools-section.component';
 import { MainContentSectionComponent } from './components/main-content-section/main-content-section.component';
 import { AdminPanelComponent } from './components/admin-cabinet/admin-panel/admin-panel.component';
+import {AdminInfoComponent} from './components/admin-cabinet/admin-info/admin-info.component';
 import { UserSubFormComponent } from './components/user-sub-form/user-sub-form.component';
 import { AddPupilFormComponent } from './components/add-pupil-form/add-pupil-form.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -49,6 +50,7 @@ import { SchoolRequestCardComponent } from './components/admin-cabinet/School Re
     MainToolsSectionComponent,
     MainContentSectionComponent,
     AdminPanelComponent,
+    AdminInfoComponent,
     SideBarComponent,
     SideBarElementComponent,
     UserSubFormComponent,

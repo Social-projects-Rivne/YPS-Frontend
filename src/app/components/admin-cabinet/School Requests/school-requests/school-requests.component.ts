@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {MatCardModule} from '@angular/material/card';
+import { ISchoolRequestVM } from '../SchoolRequest/ISchoolRequestVM';
+import { Observable } from 'rxjs';
+import { SchoolRequestService } from 'src/app/services/school-request.service';
 
 @Component({
   selector: 'yps-school-requests',
@@ -8,9 +11,14 @@ import {MatCardModule} from '@angular/material/card';
 })
 export class SchoolRequestsComponent implements OnInit {
 
-  constructor() { }
+  Requests:ISchoolRequestVM[];
 
+  constructor(private requestClient:SchoolRequestService) { }
   ngOnInit() {
+    this.requestClient.get().subscribe(p=>{
+      this.Requests=p;
+    });
   }
+
 
 }

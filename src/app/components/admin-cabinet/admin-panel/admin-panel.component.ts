@@ -15,7 +15,7 @@ export class AdminPanelComponent implements OnInit {
     },
     {
       fieldName:'School Request',
-      linkPath:'',
+      linkPath:'../School Requests/school-requests/school-requests.component.html',
       iconPath:'announcement'
     },
     {
@@ -40,7 +40,7 @@ export class AdminPanelComponent implements OnInit {
 
   ngOnInit() {
   }
- 
+
   onClick(){
     this.isCollapsed=false;
     this.isCollapsed1=true;

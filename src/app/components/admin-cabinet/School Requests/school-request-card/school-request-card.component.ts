@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { ISchoolRequestVM } from '../SchoolRequest/ISchoolRequestVM';
 
 @Component({
   selector: 'yps-school-request-card',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SchoolRequestCardComponent implements OnInit {
 
-  constructor() { }
+
+  @Input() Request:ISchoolRequestVM;
+  constructor() {  }
 
   ngOnInit() {
+    console.log(this.Request);
   }
 
 }
