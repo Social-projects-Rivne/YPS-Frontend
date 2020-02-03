@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class SchoolRequestService {
 
-  private url: string = "https://localhost:44372/api/SchoolRequest";
+  private url: string = "https://localhost:44372/api/SchoolRequestProccesing";
   constructor(private http:HttpClient) { }
 
   get=():Observable<ISchoolRequestVM[]>=>{

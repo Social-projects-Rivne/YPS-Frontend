@@ -5,4 +5,5 @@ export interface ISchoolRequestVM{
   locality:string;
   address:string;
   email:string;
+  phoneNumb:string;
 }
