@@ -1,5 +1,6 @@
 import { ILink } from 'src/app/models/ILink';
 import { Component, OnInit } from '@angular/core';
+import { UserAdminInfoService } from 'src/app/services/userinfo.service';
 
 @Component({
   selector: 'yps-admin-panel',
@@ -10,57 +11,26 @@ export class AdminPanelComponent implements OnInit {
   sideLinks:ILink[]=
   [{
       fieldName:'Profile',
-      linkPath:'',
+      linkPath:'./profile',
       iconPath:'account_circle'
     },
     {
       fieldName:'School Request',
-      linkPath:'',
+      linkPath:'./request',
       iconPath:'announcement'
     },
     {
       fieldName:'Schools',
-      linkPath:'',
+      linkPath:'./schools',
       iconPath:'school'
   }];
-
-  isCollapsed: boolean=false;
-  isCollapsed1: boolean=true;
-  isCollapsed2: boolean=true;
-
-  name: string="Petro";
-  surname: string="Petrovskiy";
-  phone: string="+380-90-00-00-001"
-  email: string="admin@yps.com"
-  src_photo: string="../../../assets/images/default-user-image.jpg";
-
-  selectedFile: File=null;
-
-  constructor() { }
+  
+  constructor(
+    private userService: UserAdminInfoService
+  ){}
 
   ngOnInit() {
-  }
+   }
  
-  onClick(){
-    this.isCollapsed=false;
-    this.isCollapsed1=true;
-    this.isCollapsed2=true;
-  }
-  onClick1(){
-    this.isCollapsed1=false;
-    this.isCollapsed=true;
-    this.isCollapsed2=true;
-  }
-  onClick2(){
-    this.isCollapsed2=false;
-    this.isCollapsed=true;
-    this.isCollapsed1=true;
-  }
-
-  onFileSelected(event) {
-    this.selectedFile= <File>event.target.files[0];
-  }
-  onUpload() {
-    // this.http.post
-  }
+  
 }
