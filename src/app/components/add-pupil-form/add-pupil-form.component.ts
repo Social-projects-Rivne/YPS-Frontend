@@ -9,7 +9,7 @@ import { apiUrl } from 'src/constants/urls';
 @Component({
   selector: 'yps-add-pupil-form',
   templateUrl: './add-pupil-form.component.html',
-  styleUrls: ['./add-pupil-form.component.scss']
+  styleUrls: ['./add-pupil-form.component.scss','../../../scss/adding-forms.scss']
 })
 export class AddPupilFormComponent implements OnInit {
   form: FormGroup;

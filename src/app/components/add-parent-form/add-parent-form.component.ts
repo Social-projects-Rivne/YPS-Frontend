@@ -8,7 +8,7 @@ import { apiUrl } from 'src/constants/urls';
 @Component({
   selector: 'yps-add-parent-form',
   templateUrl: './add-parent-form.component.html',
-  styleUrls: ['./add-parent-form.component.scss']
+  styleUrls: ['./add-parent-form.component.scss','../../../scss/adding-forms.scss']
 })
 export class AddParentFormComponent implements OnInit {
   form: FormGroup;
