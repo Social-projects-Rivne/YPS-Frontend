@@ -1,3 +1,4 @@
+import { ILink } from 'src/app/models/ILink';
 import { Component, OnInit } from '@angular/core';
 import { ILink } from 'src/app/models/ILink';
 import { UserinfoService } from 'src/app/services/userinfo.service';

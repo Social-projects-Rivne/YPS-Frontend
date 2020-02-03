@@ -30,7 +30,7 @@ export class UserSubFormComponent implements OnInit, OnDestroy, ControlValueAcce
       type: "text",
       label: "first name",
       placeholder: "enter user first name",
-      name: "first-name",
+      name: "firstName",
       errorMsg: null
     },
     {
@@ -46,7 +46,7 @@ export class UserSubFormComponent implements OnInit, OnDestroy, ControlValueAcce
       type: "text",
       label: "middle name",
       placeholder: "enter user middle name",
-      name: "middle-name",
+      name: "middleName",
       errorMsg: null
     },
     {
@@ -54,7 +54,7 @@ export class UserSubFormComponent implements OnInit, OnDestroy, ControlValueAcce
       type: "number",
       label: "phone number",
       placeholder: "enter user phone number",
-      name: "phone-number",
+      name: "phoneNumber",
       errorMsg: null
     },
     {
@@ -71,10 +71,10 @@ export class UserSubFormComponent implements OnInit, OnDestroy, ControlValueAcce
 
   ngOnInit() {
     this.userSubForm = this.formBuilder.group({
-      "first-name": [null, requiredValidator("first name is required")],
+      "firstName": [null, requiredValidator("first name is required")],
       "surname": [null, requiredValidator("surname is required")],
-      "middle-name": [null, requiredValidator("middle name is required")],
-      "phone-number": [null, requiredValidator("phone number is required")],
+      "middleName": [null, requiredValidator("middle name is required")],
+      "phoneNumber": [null, requiredValidator("phone number is required")],
       "email": [null, requiredValidator("email is required")],
     });
 

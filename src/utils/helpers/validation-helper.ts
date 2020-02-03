@@ -15,7 +15,10 @@ export const validationHelper = (controls: { [key: string]: AbstractControl }, f
   for (const key of form_control_keys) {
     const errors = Object.values(!!controls[key].errors && controls[key].errors);
     if (!!errors && errors.length !== 0) {
-      fields.find(v => v.name == key).errorMsg = errors[0].errorMsg;
+      const foundField = fields.find(v => v.name == key);
+      if (!!foundField) {
+        foundField.errorMsg = errors[0].errorMsg;
+      }
       errorsStorage = [...errorsStorage ,...errors];
     }
   }

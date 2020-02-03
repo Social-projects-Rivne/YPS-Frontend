@@ -1,0 +1,24 @@
+<button 
+  class="add-btn btn primary"
+  (click)="toggleForm()"
+>
+  {{ formIsOpen ? "close" : "add teacher" }}
+</button>
+<form
+  *ngIf="formIsOpen"
+  class="form"
+  [formGroup]="form"
+  (ngSubmit)="onSubmit()"
+>
+  <h1 class="title">add teacher</h1>
+  <yps-user-sub-form formControlName="user" #formRef>
+  </yps-user-sub-form>
+  <yps-form-field
+    *ngFor="let field of fields"
+    [field]="field"
+    [formControlName]="field.name"
+  >
+  </yps-form-field>
+  <button type="submit" class="btn primary">submit</button>
+</form>
+

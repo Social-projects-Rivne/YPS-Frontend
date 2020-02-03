@@ -1,0 +1,26 @@
+<form
+  class="form"
+  [formGroup]="form"
+  (ngSubmit)="onSubmit()"
+>
+  <h1 class="title">register school</h1>
+   <yps-form-field
+    *ngFor="let field of fields"
+    [field]="field"
+    [formControlName]="field.name"
+  >
+  </yps-form-field>
+  <div class="wrap">
+    <div class="checkbox-field">
+      <input type="checkbox" formControlName="confirmation" class="confirmation-control" id="confirmation-control">
+      <label class="consent" [ngClass]="{'error': !!confErrorMsg}" for="confirmation-control">I agree to the processing of my information.</label>
+    </div>
+    <span class="error" *ngIf="!!confErrorMsg">{{confErrorMsg}}</span>
+    <div class="checkbox-field">
+      <input type="checkbox" formControlName="verified" class="verified-control" id="verified-control">
+      <label class="consent" [ngClass]="{'error': !!verErrorMsg}" for="verified-control">Entered information verified.</label>
+    </div>
+    <span class="error" *ngIf="!!verErrorMsg">{{verErrorMsg}}</span>
+  </div>
+  <button  type="submit" class="btn login-btn primary">register</button>
+</form>

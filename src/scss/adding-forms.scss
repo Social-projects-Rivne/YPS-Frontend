@@ -1,0 +1,42 @@
+@import 'src/vars.scss';
+
+:host {
+  display: grid;
+
+  .add-btn {
+    margin: 0 2rem;
+    justify-self: center;
+    align-self: start;
+    
+    transition: $transition;
+      &:hover{
+        border-color: $accent;
+        background-color: #ffffff;
+        color:$accent;
+      }
+  }
+
+  .form {
+    display: grid;
+    grid-gap: 1rem;
+    padding: 2rem;
+    width: 20rem;
+    align-self: start;
+
+    .title {
+      text-transform: uppercase;
+      text-align: center;
+    }
+
+    .btn {
+      justify-self: center;
+      transition: $transition;
+
+      &:hover{
+        border-color: $accent;
+        background-color: #ffffff;
+        color:$accent;
+      }
+    }
+  }
+}
