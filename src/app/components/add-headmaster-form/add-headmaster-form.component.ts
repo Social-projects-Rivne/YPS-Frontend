@@ -99,7 +99,7 @@ export class AddHeadmasterFormComponent implements OnInit {
     
     if (isValid) {
       console.log('this.form.value', this.form.value);
-      const url: string = "https://localhost:44372/api/HeadMaster";
+      const url: string = "https://localhost:5001/api/HeadMasters";
         return this.http.post(url, {user: this.form.value}).subscribe((res: any) => {
         console.log("headmaster response", res);
       });
