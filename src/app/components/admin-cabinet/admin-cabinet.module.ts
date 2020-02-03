@@ -8,12 +8,13 @@ import {MatButton, MatButtonModule, MatIconModule} from "@angular/material"
 import { SharingModule } from '../sharing/sharing.module';
 import { AdminRoutingModule } from './admin-routing.module';
 import { RequestsComponent } from './requests/requests.component';
+import { SchoolsComponent } from './schools/schools.component';
 
 @NgModule({
   declarations: [
     AdminPanelComponent, 
     AdminInfoComponent, 
-    AdminNavbarComponent, RequestsComponent
+    AdminNavbarComponent, RequestsComponent, SchoolsComponent
   ],
   imports: [
     CommonModule,
@@ -27,7 +28,8 @@ import { RequestsComponent } from './requests/requests.component';
     AdminPanelComponent,
     AdminInfoComponent,
     AdminNavbarComponent,
-    RequestsComponent
+    RequestsComponent,
+    SchoolsComponent
    
   ],
   // schemas:[ CUSTOM_ELEMENTS_SCHEMA]

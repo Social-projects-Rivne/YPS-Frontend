@@ -1,4 +1,4 @@
-import { Component, OnInit, Output } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ILink } from 'src/app/models/ILink';
 import { UserinfoService } from 'src/app/services/userinfo.service';
 
@@ -21,7 +21,7 @@ export class AdminPanelComponent implements OnInit {
     },
     {
       fieldName:'Schools',
-      linkPath:'/login',
+      linkPath:'./schools',
       iconPath:'school'
   }];
   
