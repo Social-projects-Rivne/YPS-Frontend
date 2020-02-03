@@ -1,8 +1,6 @@
 import { Component, OnInit, Output } from '@angular/core';
-import { IUser } from 'src/app/models/IUser';
-import { UserinfoService } from 'src/app/services/userinfo.service';
-import { ActivatedRoute, Router } from '@angular/router';
-import { Observable } from 'rxjs';
+import { IAdmin } from 'src/app/models/IAdmin';
+import { UserAdminInfoService } from 'src/app/services/userinfo.service';
 
 @Component({
   selector: 'yps-admin-info',
@@ -10,9 +8,9 @@ import { Observable } from 'rxjs';
   styleUrls: ['./admin-info.component.scss']
 })
 export class AdminInfoComponent implements OnInit {
-  user: IUser = {
+  user: IAdmin = {
     id: 1,
-    firstName: "",
+    firstName: null,
     surname:"",
     middleName: "",
     phoneNumber: "",
@@ -21,7 +19,7 @@ export class AdminInfoComponent implements OnInit {
     imageUrl: ""
   };
   constructor(
-    private userService: UserinfoService,
+    private userService: UserAdminInfoService,
     ) {  
     }
 

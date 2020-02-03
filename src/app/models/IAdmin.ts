@@ -1,4 +1,4 @@
-export interface IUser {
+export interface IAdmin {
     id: number;
     firstName: string;
     surname: string;
