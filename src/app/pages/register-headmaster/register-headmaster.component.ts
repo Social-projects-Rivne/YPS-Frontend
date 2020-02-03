@@ -12,8 +12,5 @@ export class RegisterHeadmasterComponent implements OnInit {
 
   ngOnInit() {
     this.pageService.set('YPS | Headmaster');
-    
   }
-
-
 }

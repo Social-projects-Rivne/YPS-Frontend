@@ -104,6 +104,5 @@ export class AddHeadmasterFormComponent implements OnInit {
         console.log("headmaster response", res);
       });
     }
-    
   }
 }
