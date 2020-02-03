@@ -19,6 +19,11 @@ export class SchoolRequestsComponent implements OnInit {
       this.Requests=p;
     });
   }
+  update(){
+    this.requestClient.get().subscribe(p=>{
+      this.Requests=p;
+    })
+  }
 
 
 }

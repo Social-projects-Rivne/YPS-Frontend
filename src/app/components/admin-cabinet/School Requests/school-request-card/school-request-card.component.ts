@@ -1,5 +1,8 @@
+import { SchoolRequestService } from 'src/app/services/school-request.service';
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit, Input } from '@angular/core';
 import { ISchoolRequestVM } from '../SchoolRequest/ISchoolRequestVM';
+import { SchoolRequestsComponent } from '../school-requests/school-requests.component';
 
 @Component({
   selector: 'yps-school-request-card',
@@ -10,10 +13,18 @@ export class SchoolRequestCardComponent implements OnInit {
 
 
   @Input() Request:ISchoolRequestVM;
-  constructor() {  }
+  constructor(private client:SchoolRequestService,private parent:SchoolRequestsComponent) {  }
 
   ngOnInit() {
-    console.log(this.Request);
   }
-
+  approve(){    
+    this.client.approve(this.Request.id).subscribe(p=>{
+      this.parent.update();
+    });
+  }
+  disapprove(){
+    this.client.disapprove(this.Request.id).subscribe(p=>{
+      this.parent.update();
+    });
+  }
 }

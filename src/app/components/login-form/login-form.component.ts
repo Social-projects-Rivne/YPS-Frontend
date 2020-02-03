@@ -71,7 +71,7 @@ export class LoginFormComponent implements OnInit {
 
     console.info(`Login form is ${isValid ? 'valid' : 'invalid'}`);
     if (isValid) {
-      const url: string = "https://localhost:5001/api/Auth/SignIn";
+      const url: string = "https://localhost:44372/api/Auth";
       return this.http.post(url, this.form.value).subscribe((res: { token: string }) => {
         console.log("login response", res);
         set('token', res.token);
