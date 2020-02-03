@@ -8,7 +8,6 @@ import { requiredValidator } from 'src/utils/validators/required-validator';
 import { minLengthValidator } from 'src/utils/validators/min-length-validatot';
 import { HttpClient } from '@angular/common/http';
 
-
 @Component({
   selector: 'yps-add-headmaster-form',
   templateUrl: './add-headmaster-form.component.html',
@@ -71,7 +70,7 @@ export class AddHeadmasterFormComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private http: HttpClient
-    ) { }
+    ) {}
 
   ngOnInit() {
     this.form = this.formBuilder.group({

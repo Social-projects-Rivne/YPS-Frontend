@@ -1,7 +1,5 @@
 import { SideBarElementComponent } from './components/side-bar-element/side-bar-element.component';
 import { SideBarComponent } from './components/side-bar/side-bar.component';
-
-
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
