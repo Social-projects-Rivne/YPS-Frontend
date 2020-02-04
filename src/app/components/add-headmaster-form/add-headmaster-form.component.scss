@@ -1,0 +1,85 @@
+@import 'src/vars.scss';
+
+:host {
+  display: block;
+  width: 24rem;
+  margin: 0 auto;
+
+  .form {
+    display: grid;
+    grid-gap: 1rem;
+    padding: 1rem;
+    .error{
+      color:#FF5360;
+      padding:0,0,5,0;
+    }
+    .title {
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+    .login-btn {
+      justify-self: center;
+      transition: $transition;
+
+      &:hover {
+        border-color: $accent;
+        background-color: #ffffff;
+        color: $accent;
+      }
+    }
+
+    .wrap {
+      display: grid;
+      font-size: 0.875rem;
+      color: #acacac;
+      
+      .checkbox-field {
+        display: grid;
+        grid-template-columns: 13px auto;
+        align-items: center;
+        justify-self: start;
+
+        .remember-control {
+          margin-bottom: -2px;
+
+          &:hover {
+            cursor: pointer;
+          }
+        }
+
+        .consent {
+          color: #acacac;
+          padding-left: 0.25rem;
+          transition: $transition;
+          &.error{
+            color: #FF5360;
+          }
+
+          &::first-letter {
+            text-transform: capitalize;
+          }
+
+          &:hover {
+            cursor: pointer;
+          }
+        }
+
+        &:hover {
+          .consent {
+            color: $accent;
+          }
+        }
+      }
+
+      .forgot-link {
+        justify-self: end;
+        transition: $transition;
+
+        &:hover {
+          color: $accent;
+        }
+      }
+    }
+  }
+}
