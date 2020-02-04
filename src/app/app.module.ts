@@ -5,8 +5,6 @@ import { PupilsComponent } from './pages/pupils/pupils.component';
 import { TeachersComponent } from './pages/teachers/teachers.component';
 import { TableUserComponent } from './components/table-user/table-user.component';
 import { RegisterSchoolComponent } from './pages/register-school/register-school.component';
-
-
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -26,6 +24,10 @@ import { MainContentSectionComponent } from './components/main-content-section/m
 import { UserSubFormComponent } from './components/user-sub-form/user-sub-form.component';
 import { AddPupilFormComponent } from './components/add-pupil-form/add-pupil-form.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { RegisterSchoolComponent } from './pages/register-school/register-school.component';
+import { RegisterHeadmasterComponent } from './pages/register-headmaster/register-headmaster.component';
+import { AddHeadmasterFormComponent } from './components/add-headmaster-form/add-headmaster-form.component';
+import { SchoolRegisterFormComponent } from './components/school-register-form/school-register-form.component';
 import { MatIconModule, MatSelectModule, MatButtonModule, MatTableModule, MatSortModule, MatFormFieldModule} from '@angular/material';
 import { AddTeacherFormComponent } from './components/add-teacher-form/add-teacher-form.component';
 import { AddParentFormComponent } from './components/add-parent-form/add-parent-form.component';
@@ -50,6 +52,8 @@ import { from } from 'rxjs';
     UserSubFormComponent,
     AddPupilFormComponent,
     RegisterSchoolComponent,
+    RegisterHeadmasterComponent,
+    AddHeadmasterFormComponent,
     TableUserComponent,
     AddTeacherFormComponent,
     AddParentFormComponent,
@@ -60,7 +64,8 @@ import { from } from 'rxjs';
     PupilsComponent,
     ParentsComponent,
     HeadassistantsComponent,
-    MastersComponent
+    MastersComponent,
+    SchoolRegisterFormComponent
 
   ],
   imports: [

@@ -1,4 +1,3 @@
-
 import { MasterCabinetsComponent } from './components/master-cabinets/master-cabinets.component';
 import { MastersComponent } from './pages/masters/masters.component';
 import { HeadassistantsComponent } from './pages/headassistants/headassistants.component';
@@ -12,6 +11,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { SchoolMainComponent } from './pages/school-main/school-main.component';
 import { CabinetComponent } from './pages/cabinet/cabinet.component';
 import { RegisterSchoolComponent } from './pages/register-school/register-school.component';
+import { RegisterHeadmasterComponent } from './pages/register-headmaster/register-headmaster.component';
 
 
 const cabinetRoutes: Routes = [
@@ -34,6 +34,7 @@ const routes: Routes = [
   },
   { path: 'cabinet', component: CabinetComponent, children:cabinetRoutes},
   { path: 'register-school', component: RegisterSchoolComponent},
+  { path: 'register-headmaster', component: RegisterHeadmasterComponent}
 ];
 
 @NgModule({
