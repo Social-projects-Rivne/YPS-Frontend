@@ -1,3 +1,4 @@
+import { MastersComponent } from './pages/masters/masters.component';
 import { HeadassistantsComponent } from './pages/headassistants/headassistants.component';
 import { ParentsComponent } from './pages/parents/parents.component';
 import { PupilsComponent } from './pages/pupils/pupils.component';
@@ -25,8 +26,6 @@ import { MainContentSectionComponent } from './components/main-content-section/m
 import { UserSubFormComponent } from './components/user-sub-form/user-sub-form.component';
 import { AddPupilFormComponent } from './components/add-pupil-form/add-pupil-form.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { RegisterSchoolComponent } from './pages/register-school/register-school.component';
-import { SchoolRegisterFormComponent } from './components/school-register-form/school-register-form.component';
 import { MatIconModule, MatSelectModule, MatButtonModule, MatTableModule, MatSortModule, MatFormFieldModule} from '@angular/material';
 import { AddTeacherFormComponent } from './components/add-teacher-form/add-teacher-form.component';
 import { AddParentFormComponent } from './components/add-parent-form/add-parent-form.component';

@@ -4,7 +4,6 @@ import { CommonModule } from '@angular/common';
 import { AdminInfoComponent } from './admin-info/admin-info.component';
 import { Routes, RouterModule } from '@angular/router';
 import { AdminPanelComponent } from './admin-panel/admin-panel.component';
-import { RequestsComponent } from './requests/requests.component';
 import { SchoolsComponent } from './schools/schools.component';
 
 const adminRoutes: Routes = [

@@ -1,3 +1,4 @@
+import { SchoolRequestCardComponent } from './School Requests/school-request-card/school-request-card.component';
 import { MatCardModule } from '@angular/material/card';
 import { SchoolRequestsComponent } from './School Requests/school-requests/school-requests.component';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
@@ -9,14 +10,14 @@ import { AdminNavbarComponent } from './admin-navbar/admin-navbar.component';
 import {MatButton, MatButtonModule, MatIconModule, MatCard} from "@angular/material"
 import { SharingModule } from '../sharing/sharing.module';
 import { AdminRoutingModule } from './admin-routing.module';
-import { RequestsComponent } from './requests/requests.component';
 import { SchoolsComponent } from './schools/schools.component';
+import { SchoolRequestService } from 'src/app/services/school-request.service';
 
 @NgModule({
   declarations: [
     AdminPanelComponent, 
     AdminInfoComponent, 
-    AdminNavbarComponent, RequestsComponent, SchoolsComponent
+    AdminNavbarComponent, SchoolRequestsComponent, SchoolsComponent,SchoolRequestCardComponent
   ],
   imports: [
     CommonModule,
@@ -31,7 +32,7 @@ import { SchoolsComponent } from './schools/schools.component';
     AdminPanelComponent,
     AdminInfoComponent,
     AdminNavbarComponent,
-    RequestsComponent,
+    SchoolRequestsComponent,
     SchoolsComponent
    
   ],
