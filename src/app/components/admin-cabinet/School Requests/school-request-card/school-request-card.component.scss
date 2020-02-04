@@ -1,0 +1,21 @@
+@import 'src/vars.scss';
+.card{
+  border:1px solid black;
+  margin: 0.2rem;
+  width: 25rem;
+}
+button {
+  background-color:$accent;
+  color:white;
+    &:hover{
+      background-color: white;
+      color:black;
+    }
+}
+.buttonRow{
+  display: flex;
+  justify-content: center;
+}
+span{
+  color:$accent;
+}
