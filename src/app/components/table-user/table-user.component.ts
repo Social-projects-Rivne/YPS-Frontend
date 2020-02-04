@@ -1,4 +1,4 @@
-import { IUser } from './../../models/IUser';
+import { IUser } from '../../models/IPupil';
 import { Component, OnInit, Input } from '@angular/core';
 
 @Component({

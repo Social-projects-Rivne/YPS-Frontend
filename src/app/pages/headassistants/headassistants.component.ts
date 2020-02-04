@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { IUser } from 'src/app/models/IUser';
+import { IUser } from 'src/app/models/IPupil';
 
 @Component({
   selector: 'yps-headassistants',
