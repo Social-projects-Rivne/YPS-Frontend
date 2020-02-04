@@ -16,7 +16,7 @@ export class AdminPanelComponent implements OnInit {
     },
     {
       fieldName:'School Request',
-      linkPath:'./request',
+      linkPath:'./schoolRequest',
       iconPath:'announcement'
     },
     {
