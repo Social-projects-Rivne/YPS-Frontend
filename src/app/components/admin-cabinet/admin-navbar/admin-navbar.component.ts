@@ -1,7 +1,7 @@
 import { Component, OnInit, Input, Output } from '@angular/core';
-import { IUser } from 'src/app/models/IUser';
-import { UserinfoService } from 'src/app/services/userinfo.service';
-import { Router, NavigationExtras } from '@angular/router';
+import { IAdmin } from 'src/app/models/IAdmin';
+import { UserAdminInfoService } from 'src/app/services/userinfo.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'yps-admin-navbar',
@@ -12,7 +12,7 @@ export class AdminNavbarComponent implements OnInit {
   // public admin: User;
   // public user: IUser;
 
-  admin:  IUser = {
+  admin:  IAdmin = {
     id: 1,
     firstName: "",
     surname:"",
@@ -23,7 +23,7 @@ export class AdminNavbarComponent implements OnInit {
     imageUrl: ""
   };
   constructor(
-    private userService: UserinfoService,public router: Router
+    private userService: UserAdminInfoService,public router: Router
   ) {}
 
   ngOnInit() {

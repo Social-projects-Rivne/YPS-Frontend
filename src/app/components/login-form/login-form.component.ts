@@ -64,7 +64,7 @@ export class LoginFormComponent implements OnInit {
     const { fields, isValid } = validationHelper(this.form.controls, this.fields);
 
     this.fields = fields;
-
+    console.info(`Login form is ${isValid ? 'valid' : 'invalid'}`);
     if (isValid) {
       return this.http.post(apiUrl + "/auth", this.form.value)
         .subscribe(

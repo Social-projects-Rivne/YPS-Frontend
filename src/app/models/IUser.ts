@@ -1,10 +1,11 @@
 export interface IUser {
-    id: number;
-    firstName: string;
-    surname: string;
-    middleName: string;
-    phoneNumber: string;
-    email: string;
-    dateOfBirth: string;
-    imageUrl: string;
+    Id : number;
+    FirstName : string;
+    Surname : string;
+    MiddleName : string;
+    Class : string;
+    PhoneNumber: string;
+    Email : string;
+    DateOfBirth : string; 
+    //WorkInfo : string;
 }

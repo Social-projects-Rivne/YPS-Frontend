@@ -1,6 +1,6 @@
-import { Component, OnInit, Output } from '@angular/core';
 import { ILink } from 'src/app/models/ILink';
-import { UserinfoService } from 'src/app/services/userinfo.service';
+import { Component, OnInit } from '@angular/core';
+import { UserAdminInfoService } from 'src/app/services/userinfo.service';
 
 @Component({
   selector: 'yps-admin-panel',
@@ -21,12 +21,12 @@ export class AdminPanelComponent implements OnInit {
     },
     {
       fieldName:'Schools',
-      linkPath:'./login',
+      linkPath:'./schools',
       iconPath:'school'
   }];
   
   constructor(
-    private userService: UserinfoService
+    private userService: UserAdminInfoService
   ){}
 
   ngOnInit() {

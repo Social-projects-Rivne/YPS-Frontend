@@ -9,15 +9,14 @@ import { AdminNavbarComponent } from './admin-navbar/admin-navbar.component';
 import {MatButton, MatButtonModule, MatIconModule, MatCard} from "@angular/material"
 import { SharingModule } from '../sharing/sharing.module';
 import { AdminRoutingModule } from './admin-routing.module';
-import { SchoolRequestCardComponent } from './School Requests/school-request-card/school-request-card.component';
+import { RequestsComponent } from './requests/requests.component';
+import { SchoolsComponent } from './schools/schools.component';
 
 @NgModule({
   declarations: [
     AdminPanelComponent, 
     AdminInfoComponent, 
-    AdminNavbarComponent,
-    SchoolRequestsComponent,
-    SchoolRequestCardComponent
+    AdminNavbarComponent, RequestsComponent, SchoolsComponent
   ],
   imports: [
     CommonModule,
@@ -32,8 +31,9 @@ import { SchoolRequestCardComponent } from './School Requests/school-request-car
     AdminPanelComponent,
     AdminInfoComponent,
     AdminNavbarComponent,
-   SchoolRequestsComponent,
-   SchoolRequestCardComponent
+    RequestsComponent,
+    SchoolsComponent
+   
   ],
   // schemas:[ CUSTOM_ELEMENTS_SCHEMA]
 })
