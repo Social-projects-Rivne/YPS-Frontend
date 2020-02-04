@@ -20,7 +20,4 @@ export class SchoolRequestService {
   disapprove=(id:number):Observable<any>=>{
   return this.http.delete<any>(this.url+"?id="+id);
   };
-  
-
-
 }
