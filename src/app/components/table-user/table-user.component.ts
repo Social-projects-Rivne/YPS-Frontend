@@ -1,4 +1,3 @@
-import { IUser } from './../../models/IUser';
 import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
@@ -8,7 +7,7 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class TableUserComponent implements OnInit {
 
-  @Input() data: IUser[];
+  @Input() data: any[];
   
   @Input() columns: any;
  
