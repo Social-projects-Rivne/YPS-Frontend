@@ -24,17 +24,15 @@ import { MainContentSectionComponent } from './components/main-content-section/m
 import { UserSubFormComponent } from './components/user-sub-form/user-sub-form.component';
 import { AddPupilFormComponent } from './components/add-pupil-form/add-pupil-form.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { RegisterSchoolComponent } from './pages/register-school/register-school.component';
 import { RegisterHeadmasterComponent } from './pages/register-headmaster/register-headmaster.component';
 import { AddHeadmasterFormComponent } from './components/add-headmaster-form/add-headmaster-form.component';
-import { SchoolRegisterFormComponent } from './components/school-register-form/school-register-form.component';
 import { MatIconModule, MatSelectModule, MatButtonModule, MatTableModule, MatSortModule, MatFormFieldModule} from '@angular/material';
 import { AddTeacherFormComponent } from './components/add-teacher-form/add-teacher-form.component';
 import { AddParentFormComponent } from './components/add-parent-form/add-parent-form.component';
 import { AdminCabinetModule } from './components/admin-cabinet/admin-cabinet.module';
 import { SharingModule } from './components/sharing/sharing.module';
-import {SchoolRegisterFormComponent} from './components/school-register-form/school-register-form.component';
 import { from } from 'rxjs';
+import { SchoolRegisterFormComponent } from './components/school-register-form/school-register-form.component';
 
 @NgModule({
   declarations: [
@@ -57,8 +55,6 @@ import { from } from 'rxjs';
     TableUserComponent,
     AddTeacherFormComponent,
     AddParentFormComponent,
-    SchoolRegisterFormComponent,
-    SchoolRegisterFormComponent,
     TableUserComponent,
     TeachersComponent,
     PupilsComponent,
@@ -66,7 +62,6 @@ import { from } from 'rxjs';
     HeadassistantsComponent,
     MastersComponent,
     SchoolRegisterFormComponent
-
   ],
   imports: [
     BrowserModule,

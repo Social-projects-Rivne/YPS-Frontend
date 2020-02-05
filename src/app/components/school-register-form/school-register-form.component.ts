@@ -127,7 +127,7 @@ export class SchoolRegisterFormComponent implements OnInit {
     this.verErrorMsg = !!verHasError ? verHasError.required.errorMsg : null;
 
     if (isValid) {
-      const url: string = "https://localhost:44372/api/SchoolRequest";
+      const url: string = "https://localhost:5001/api/SchoolRequests";
         return this.http.post(url, this.form.value).subscribe(
         (res) =>{
           this.router.navigate(['/']);
