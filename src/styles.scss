@@ -23,6 +23,8 @@ h6 {
 a {
   text-decoration: none;
   color: currentColor;
+  outline: none;
+  
   &:hover {
     opacity: 0.8;
   }

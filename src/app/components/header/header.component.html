@@ -4,7 +4,9 @@
   class="yps-icon hovered-el"
   routerLink="/"
 >
-<h3 class="school-name hovered-el" routerLink="/school">{{ schoolName }}</h3>
-<h3 class="user-name hovered-el" routerLink="/cabinet">{{ userName }}</h3>
+<h3 
+  class="school-name hovered-el" 
+  routerLink="/school"
+>{{ schoolName }}</h3>
+<h3 class="user-name hovered-el" [routerLink]="cabinetUrl">{{ userName }}</h3>
 <button class="btn logout-btn" (click)="logout()">logout</button>
-

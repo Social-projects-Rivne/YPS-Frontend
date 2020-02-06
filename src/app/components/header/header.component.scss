@@ -16,7 +16,6 @@
 
   .school-name {
     display: block;
-    padding: 0.5rem 0.75rem;
     justify-self: start;
     color: #ffffff;
   }
@@ -43,6 +42,7 @@
 }
 
 .hovered-el {
+  outline: none;
   cursor: pointer;
   transition: $transition;
 

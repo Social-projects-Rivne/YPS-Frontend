@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
 export class HeaderComponent implements OnInit {
   @Input() userName: string;
   @Input() schoolName: string;
+  @Input() cabinetUrl: string;
 
   constructor(private router: Router) { }
 
