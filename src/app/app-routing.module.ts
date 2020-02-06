@@ -12,29 +12,34 @@ import { SchoolMainComponent } from './pages/school-main/school-main.component';
 import { CabinetComponent } from './pages/cabinet/cabinet.component';
 import { RegisterSchoolComponent } from './pages/register-school/register-school.component';
 import { RegisterHeadmasterComponent } from './pages/register-headmaster/register-headmaster.component';
+import { AdminInfoComponent } from './components/admin-info/admin-info.component';
+import { AdminPanelComponent } from './pages/admin-panel/admin-panel.component';
+import { SchoolRequestsComponent } from './components/School Requests/school-requests/school-requests.component';
 
 
 const cabinetRoutes: Routes = [
-  { path: '', component: MasterCabinetsComponent},
+  { path: '', component: MasterCabinetsComponent },
   { path: 'pupils', component: PupilsComponent },
   { path: 'parents', component: ParentsComponent },
   { path: 'teachers', component: TeachersComponent },
   { path: 'head-assistants', component: HeadassistantsComponent },
-  { path: 'masters', component: MastersComponent}
+  { path: 'masters', component: MastersComponent }
+];
+
+const adminRoutes: Routes = [
+  { path: '', component: AdminInfoComponent },
+  { path: 'profile', component: AdminInfoComponent },
+  { path: 'schoolRequest', component: SchoolRequestsComponent }
 ];
 
 const routes: Routes = [
   { path: '', component: MainComponent },
   { path: 'school-main', component: SchoolMainComponent },
   { path: 'login', component: LoginComponent },
-  {
-    path: 'admin',
-    loadChildren:()=>import('./components/admin-cabinet/admin-cabinet.module')
-    .then(mod=>mod.AdminCabinetModule)    
-  },
-  { path: 'cabinet', component: CabinetComponent, children:cabinetRoutes},
-  { path: 'register-school', component: RegisterSchoolComponent},
-  { path: 'register-headmaster', component: RegisterHeadmasterComponent}
+  { path: 'admin', component: AdminPanelComponent, children: adminRoutes },
+  { path: 'cabinet', component: CabinetComponent, children: cabinetRoutes },
+  { path: 'register-school', component: RegisterSchoolComponent },
+  { path: 'register-headmaster', component: RegisterHeadmasterComponent }
 ];
 
 @NgModule({
@@ -58,5 +63,6 @@ export const RoutingComponents = [
   HeadassistantsComponent,
   MastersComponent,
   MasterCabinetsComponent,
-  CabinetComponent
+  CabinetComponent,
+  AdminPanelComponent
 ];

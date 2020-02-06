@@ -8,7 +8,7 @@ import { IAdmin } from '../models/IAdmin';
 })
 export class UserAdminInfoService {
   private url: string = "https://localhost:5001/api/Admin?Id=";
-  id: string= "2";
+  id: string= "1";
   constructor(private http: HttpClient) { }
 
    getUser(): Observable<IAdmin> {
