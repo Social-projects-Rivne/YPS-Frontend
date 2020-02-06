@@ -18,7 +18,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { QuotesBoxComponent } from './components/quotes-box/quotes-box.component';
 import { SchoolEventFormComponent } from './components/school-event-form/school-event-form.component';
 import { NavBarFormComponent } from './components/nav-bar-form/nav-bar-form.component';
-import { HeaderFormComponent } from './components/header-form/header-form.component';
 import { MainToolsSectionComponent } from './components/main-tools-section/main-tools-section.component';
 import { MainContentSectionComponent } from './components/main-content-section/main-content-section.component';
 import { UserSubFormComponent } from './components/user-sub-form/user-sub-form.component';
@@ -33,6 +32,7 @@ import { AdminCabinetModule } from './components/admin-cabinet/admin-cabinet.mod
 import { SharingModule } from './components/sharing/sharing.module';
 import { from } from 'rxjs';
 import { SchoolRegisterFormComponent } from './components/school-register-form/school-register-form.component';
+import { HeaderComponent } from './components/header/header.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +44,6 @@ import { SchoolRegisterFormComponent } from './components/school-register-form/s
     QuotesBoxComponent,
     SchoolEventFormComponent,
     NavBarFormComponent,
-    HeaderFormComponent,
     MainToolsSectionComponent,
     MainContentSectionComponent,
     UserSubFormComponent,
@@ -61,7 +60,8 @@ import { SchoolRegisterFormComponent } from './components/school-register-form/s
     ParentsComponent,
     HeadassistantsComponent,
     MastersComponent,
-    SchoolRegisterFormComponent
+    SchoolRegisterFormComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,

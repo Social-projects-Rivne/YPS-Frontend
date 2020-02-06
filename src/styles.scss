@@ -62,11 +62,15 @@ input {
     color: #ffffff;
   }
 }
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+@media (max-width: 1400px) {
+  html {
+    font-size: 15px;
+  }
+}
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+@media (max-width: 900px) {
+  html {
+    font-size: 14px;
+  }
+}
