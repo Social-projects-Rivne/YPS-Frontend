@@ -1,7 +1,8 @@
-import { ISchoolRequestVM } from './../components/admin-cabinet/School Requests/SchoolRequest/ISchoolRequestVM';
+import { ISchoolRequestVM } from '../components/School Requests/SchoolRequest/ISchoolRequestVM';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, from } from 'rxjs';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -12,6 +13,7 @@ export class SchoolRequestService {
 
   get=():Observable<ISchoolRequestVM[]>=>{
   return this.http.get<ISchoolRequestVM[]>(this.url);
+  
   };
 
   approve=(id:number):Observable<any>=>{  
