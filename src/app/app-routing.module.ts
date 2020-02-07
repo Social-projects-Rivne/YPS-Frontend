@@ -15,7 +15,7 @@ import { RegisterHeadmasterComponent } from './pages/register-headmaster/registe
 
 
 const cabinetRoutes: Routes = [
-  { path: '', component: MasterCabinetsComponent},
+  { path: '', component: MasterCabinetsComponent },
   { path: 'pupils', component: PupilsComponent },
   { path: 'parents', component: ParentsComponent },
   { path: 'teachers', component: TeachersComponent },
@@ -32,20 +32,17 @@ const routes: Routes = [
     loadChildren:()=>import('./components/admin-cabinet/admin-cabinet.module')
     .then(mod=>mod.AdminCabinetModule)    
   },
-  { path: 'cabinet', component: CabinetComponent, children:cabinetRoutes},
-  { path: 'register-school', component: RegisterSchoolComponent},
-  { path: 'register-headmaster', component: RegisterHeadmasterComponent}
+  { path: 'cabinet', component: CabinetComponent, children:cabinetRoutes },
+  { path: 'register-school', component: RegisterSchoolComponent },
+  { path: 'register-headmaster', component: RegisterHeadmasterComponent }
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-
 export class AppRoutingModule { }
 
-// * Array of Routing Components for importing to AppModule
-// ! Put All The Routing/Pages Components Here
 export const RoutingComponents = [
   MainComponent,
   LoginComponent,
