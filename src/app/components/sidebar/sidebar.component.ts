@@ -6,7 +6,7 @@ import { ILink } from 'src/app/models/ILink';
   templateUrl: './sidebar.component.html',
   styleUrls: ['./sidebar.component.scss']
 })
-export class SideBarComponent implements OnInit {
+export class SidebarComponent implements OnInit {
   @Input() links: ILink[];
 
   constructor() {}

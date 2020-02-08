@@ -11,7 +11,7 @@ export class AdminPanelComponent implements OnInit {
   sideLinks: ILink[] = [
     {
       value: 'Profile',
-      path: './profile',
+      path: './',
       icon: 'account_circle'
     },
     {

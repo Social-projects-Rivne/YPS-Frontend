@@ -1,0 +1,23 @@
+@import 'src/vars.scss';
+
+.info {
+  display: grid;
+  grid-auto-columns: 9.5rem auto;
+  grid-gap: 1.5rem;
+}
+
+.label_info {
+  grid-area: 1/1/2/2;
+}
+
+.name_edit { 
+  grid-area: 1/2/2/3;
+  justify-self: self-start;
+  display: grid;
+  grid-template-rows: repeat(5, 1fr);
+}
+
+.userphoto {
+  height: 13rem;
+  width: 9.5rem;
+}

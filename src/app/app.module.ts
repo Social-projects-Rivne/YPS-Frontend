@@ -25,14 +25,20 @@ import { AddPupilFormComponent } from './components/add-pupil-form/add-pupil-for
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RegisterHeadmasterComponent } from './pages/register-headmaster/register-headmaster.component';
 import { AddHeadmasterFormComponent } from './components/add-headmaster-form/add-headmaster-form.component';
-import { MatIconModule, MatSelectModule, MatButtonModule, MatTableModule, MatSortModule, MatFormFieldModule} from '@angular/material';
+import { MatIconModule, MatSelectModule, MatButtonModule, MatTableModule, MatSortModule, MatFormFieldModule, MatCard, MatCardModule} from '@angular/material';
 import { AddTeacherFormComponent } from './components/add-teacher-form/add-teacher-form.component';
 import { AddParentFormComponent } from './components/add-parent-form/add-parent-form.component';
-import { AdminCabinetModule } from './components/admin-cabinet/admin-cabinet.module';
-import { SharingModule } from './components/sharing/sharing.module';
 import { from } from 'rxjs';
 import { SchoolRegisterFormComponent } from './components/school-register-form/school-register-form.component';
+import { AdminInfoComponent } from './components/admin-info/admin-info.component';
+import { AdminNavbarComponent } from './components/admin-navbar/admin-navbar.component';
+import { SidebarComponent } from './components/sidebar/sidebar.component';
+import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
+import { SchoolRequestsComponent } from './components/School Requests/school-requests/school-requests.component';
+import { SchoolRequestCardComponent } from './components/School Requests/school-request-card/school-request-card.component';
 import { HeaderComponent } from './components/header/header.component';
+
 
 @NgModule({
   declarations: [
@@ -61,6 +67,11 @@ import { HeaderComponent } from './components/header/header.component';
     HeadassistantsComponent,
     MastersComponent,
     SchoolRegisterFormComponent,
+    AdminInfoComponent,
+    AdminNavbarComponent,
+    SidebarComponent, 
+    SchoolRequestsComponent,
+    SchoolRequestCardComponent,
     HeaderComponent
   ],
   imports: [
@@ -70,8 +81,6 @@ import { HeaderComponent } from './components/header/header.component';
     ReactiveFormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    AdminCabinetModule,
-    SharingModule,
     MatButtonModule,
     BrowserAnimationsModule,
     MatSelectModule,
@@ -80,7 +89,10 @@ import { HeaderComponent } from './components/header/header.component';
     MatTableModule,
     MatSortModule,
     MatFormFieldModule,
-    MatSelectModule
+    CommonModule,
+    RouterModule,
+    MatSelectModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]
