@@ -8,6 +8,8 @@ import { validationHelper } from 'src/utils/helpers/validation-helper';
 import { HttpClient } from '@angular/common/http';
 import { set } from 'js-cookie';
 import { apiUrl } from 'src/constants/urls';
+import { AuthService } from 'src/app/services/auth.service';
+import { NavigationExtras, Router } from '@angular/router';
 
 
 @Component({
@@ -39,7 +41,9 @@ export class LoginFormComponent implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder, 
-    private http: HttpClient
+    private http: HttpClient,
+    private authService: AuthService,
+    public router: Router
   ) {}
 
   ngOnInit() {
@@ -70,6 +74,23 @@ export class LoginFormComponent implements OnInit {
         .subscribe(
           (successRes: { token: string }) => {
             set('token', successRes.token);
+            this.authService.isLoggedIn=true;
+            if (this.authService.isLoggedIn) {
+              // Get the redirect URL from our auth service
+              // If no redirect has been set, use the default
+              let redirect = this.authService.redirectUrl ? this.router.parseUrl
+              (this.authService.redirectUrl) : '/admin';
+      
+              // Set our navigation extras object
+              // that passes on our global query params and fragment
+              let navigationExtras: NavigationExtras = {
+                queryParamsHandling: 'preserve',
+                preserveFragment: true
+              };
+      
+              // Redirect the user
+              this.router.navigateByUrl(redirect, navigationExtras);
+            }
           },
           (errorRes: any) => {
             this.fields = this.fields.map(field => {

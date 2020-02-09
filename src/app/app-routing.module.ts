@@ -15,6 +15,7 @@ import { RegisterHeadmasterComponent } from './pages/register-headmaster/registe
 import { AdminInfoComponent } from './components/admin-info/admin-info.component';
 import { AdminPanelComponent } from './pages/admin-panel/admin-panel.component';
 import { SchoolRequestsComponent } from './components/School Requests/school-requests/school-requests.component';
+import { AuthGuard } from './guards/auth.guard';
 
 
 const cabinetRoutes: Routes = [
@@ -27,16 +28,16 @@ const cabinetRoutes: Routes = [
 ];
 
 const adminRoutes: Routes = [
-  { path: '', component: AdminInfoComponent },
-  { path: 'profile', component: AdminInfoComponent },
-  { path: 'schoolRequest', component: SchoolRequestsComponent }
+  { path: '', canActivateChild: [AuthGuard], component: AdminInfoComponent },
+  { path: 'profile', canActivateChild: [AuthGuard], component: AdminInfoComponent },
+  { path: 'schoolRequest', canActivateChild: [AuthGuard], component: SchoolRequestsComponent }
 ];
 
 const routes: Routes = [
   { path: '', component: MainComponent },
   { path: 'school-main', component: SchoolMainComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'admin', component: AdminPanelComponent, children: adminRoutes },
+  { path: 'admin', component: AdminPanelComponent,canActivate: [AuthGuard], children: adminRoutes },
   { path: 'cabinet', component: CabinetComponent, children: cabinetRoutes },
   { path: 'register-school', component: RegisterSchoolComponent },
   { path: 'register-headmaster', component: RegisterHeadmasterComponent }
