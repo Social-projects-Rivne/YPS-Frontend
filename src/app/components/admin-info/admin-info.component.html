@@ -1,6 +1,6 @@
 <div class="info">
     <div class="label_info">
-       <img class="userphoto" src="{{user.imageUrl}}">
+       <img class="userphoto" *ngIf="user.imageUrl" src="{{user.imageUrl}}">
     </div>
     <div class="name_edit">
         <h2>{{user.firstName}}</h2>

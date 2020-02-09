@@ -32,8 +32,7 @@ import { from } from 'rxjs';
 import { SchoolRegisterFormComponent } from './components/school-register-form/school-register-form.component';
 import { AdminInfoComponent } from './components/admin-info/admin-info.component';
 import { AdminNavbarComponent } from './components/admin-navbar/admin-navbar.component';
-import { SideBarComponent } from './components/side-bar/side-bar.component';
-import { SideBarElementComponent } from './components/side-bar-element/side-bar-element.component';
+import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { SchoolRequestsComponent } from './components/School Requests/school-requests/school-requests.component';
@@ -70,8 +69,7 @@ import { HeaderComponent } from './components/header/header.component';
     SchoolRegisterFormComponent,
     AdminInfoComponent,
     AdminNavbarComponent,
-    SideBarComponent, 
-    SideBarElementComponent,
+    SidebarComponent, 
     SchoolRequestsComponent,
     SchoolRequestCardComponent,
     HeaderComponent

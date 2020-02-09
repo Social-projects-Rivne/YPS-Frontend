@@ -16,7 +16,6 @@ import { AdminInfoComponent } from './components/admin-info/admin-info.component
 import { AdminPanelComponent } from './pages/admin-panel/admin-panel.component';
 import { SchoolRequestsComponent } from './components/School Requests/school-requests/school-requests.component';
 
-
 const cabinetRoutes: Routes = [
   { path: '', component: MasterCabinetsComponent },
   { path: 'pupils', component: PupilsComponent },
@@ -28,7 +27,6 @@ const cabinetRoutes: Routes = [
 
 const adminRoutes: Routes = [
   { path: '', component: AdminInfoComponent },
-  { path: 'profile', component: AdminInfoComponent },
   { path: 'schoolRequest', component: SchoolRequestsComponent }
 ];
 
@@ -46,11 +44,8 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-
 export class AppRoutingModule { }
 
-// * Array of Routing Components for importing to AppModule
-// ! Put All The Routing/Pages Components Here
 export const RoutingComponents = [
   MainComponent,
   LoginComponent,
