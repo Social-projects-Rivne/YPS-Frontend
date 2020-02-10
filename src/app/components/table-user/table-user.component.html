@@ -1,8 +1,8 @@
 <table mat-table [dataSource]="data" class="mat-elevation-z8">
   <ng-container *ngFor="let column of columns" [matColumnDef]="column.def">
-    <th mat-header-cell *matHeaderCellDef>{{ column.label }}</th>
-    <td mat-cell *matCellDef="let element">{{ element[column.def] }}</td>
+    <mat-header-cell *matHeaderCellDef>{{ column.label }}</mat-header-cell>>
+    <mat-cell *matCellDef="let element">{{ element[column.def] }}</mat-cell>
   </ng-container>
-  <tr mat-header-row *matHeaderRowDef="columnTitles"></tr>
-  <tr mat-row *matRowDef="let row; columns: columnTitles;"></tr>
+  <mat-header-row *matHeaderRowDef="columnTitles"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: columnTitles;"></mat-row>
 </table>
