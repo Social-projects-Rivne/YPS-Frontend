@@ -6,10 +6,11 @@ import { requiredValidator } from 'src/utils/validators/required-validator';
 import { minLengthValidator } from 'src/utils/validators/min-length-validatot';
 import { validationHelper } from 'src/utils/helpers/validation-helper';
 import { HttpClient } from '@angular/common/http';
-import { set } from 'js-cookie';
+import { set, get } from 'js-cookie';
 import { apiUrl } from 'src/constants/urls';
 import { AuthService } from 'src/app/services/auth.service';
 import { NavigationExtras, Router } from '@angular/router';
+import { ILogin } from 'src/app/models/ILogin';
 
 
 @Component({
@@ -40,11 +41,11 @@ export class LoginFormComponent implements OnInit {
   ];
 
   constructor(
-    private formBuilder: FormBuilder, 
+    private formBuilder: FormBuilder,
     private http: HttpClient,
     private authService: AuthService,
     public router: Router
-  ) {}
+  ) { }
 
   ngOnInit() {
     this.form = this.formBuilder.group({
@@ -73,23 +74,34 @@ export class LoginFormComponent implements OnInit {
       return this.http.post(apiUrl + "/auth", this.form.value)
         .subscribe(
           (successRes: { token: string }) => {
+
             set('token', successRes.token);
-            this.authService.isLoggedIn=true;
-            if (this.authService.isLoggedIn) {
+
+            this.authService.isLoggedIn = true;
+            if (this.authService.isLoggedIn == true) {
               // Get the redirect URL from our auth service
               // If no redirect has been set, use the default
-              let redirect = this.authService.redirectUrl ? this.router.parseUrl
-              (this.authService.redirectUrl) : '/admin';
-      
-              // Set our navigation extras object
-              // that passes on our global query params and fragment
-              let navigationExtras: NavigationExtras = {
-                queryParamsHandling: 'preserve',
-                preserveFragment: true
-              };
-      
-              // Redirect the user
-              this.router.navigateByUrl(redirect, navigationExtras);
+              let token = get('token');
+              const json = JSON.parse(token);
+              console.log(json['role']);
+              switch (json['role']) {
+                case 'admin':
+                  let redirect = this.authService.redirectUrl ? this.router.parseUrl
+                    (this.authService.redirectUrl) : '/admin';
+
+                  // Set our navigation extras object
+                  // that passes on our global query params and fragment
+                  let navigationExtras: NavigationExtras = {
+                    queryParamsHandling: 'preserve',
+                    preserveFragment: true
+                  };
+                  // Redirect the user
+                  this.router.navigateByUrl(redirect, navigationExtras);
+                  break;
+
+                default:
+                  break;
+              }
             }
           },
           (errorRes: any) => {

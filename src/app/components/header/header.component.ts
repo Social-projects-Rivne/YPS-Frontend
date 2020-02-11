@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { get, remove } from 'js-cookie';
 import { Router } from '@angular/router';
+import { AuthService } from 'src/app/services/auth.service';
 @Component({
   selector: 'yps-header',
   templateUrl: './header.component.html',
@@ -11,7 +12,8 @@ export class HeaderComponent implements OnInit {
   @Input() schoolName: string;
   @Input() cabinetUrl: string;
 
-  constructor(private router: Router) { }
+  constructor(private router: Router,
+    private authService: AuthService) { }
 
   ngOnInit() {
   }
@@ -22,7 +24,7 @@ export class HeaderComponent implements OnInit {
     if (!!token) {
       remove('token');
     }
-    
+    this.authService.isLoggedIn=false;
     this.router.navigate(["/"]);
   }
 }

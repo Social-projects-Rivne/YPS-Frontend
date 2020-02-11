@@ -25,15 +25,6 @@ export class AdminInfoComponent implements OnInit {
 
   ngOnInit() {
     this.userService.getUser()
-    .subscribe(data =>this.user =data
-    //    {
-    //   console.log("result", data);
-    // }
-    
-    );
+    .subscribe(data =>this.user = data);
   }
-  show(){
-    console.log(this.user);
-  }
-
 }
