@@ -5,6 +5,6 @@ export interface IParent {
     middleName : string;
     phoneNumber: string;
     email : string;
-    info : string[];
+    children : string[];
     workInfo : string; 
 }

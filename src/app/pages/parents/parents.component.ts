@@ -17,7 +17,7 @@ export class ParentsComponent implements OnInit {
     { def: "phoneNumber", label: "Phone" },
     { def: "email", label: "Email" },
     { def: "workInfo", label: "Work Info" },
-    { def: "info", label: "Children"}
+    { def: "children", label: "Children"}
   ];
 
   constructor(private service:ParentService) {}
