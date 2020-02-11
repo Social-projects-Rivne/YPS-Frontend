@@ -18,7 +18,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { QuotesBoxComponent } from './components/quotes-box/quotes-box.component';
 import { SchoolEventFormComponent } from './components/school-event-form/school-event-form.component';
 import { NavBarFormComponent } from './components/nav-bar-form/nav-bar-form.component';
-import { HeaderFormComponent } from './components/header-form/header-form.component';
 import { MainToolsSectionComponent } from './components/main-tools-section/main-tools-section.component';
 import { MainContentSectionComponent } from './components/main-content-section/main-content-section.component';
 import { UserSubFormComponent } from './components/user-sub-form/user-sub-form.component';
@@ -33,12 +32,13 @@ import { from } from 'rxjs';
 import { SchoolRegisterFormComponent } from './components/school-register-form/school-register-form.component';
 import { AdminInfoComponent } from './components/admin-info/admin-info.component';
 import { AdminNavbarComponent } from './components/admin-navbar/admin-navbar.component';
-import { SideBarComponent } from './components/side-bar/side-bar.component';
-import { SideBarElementComponent } from './components/side-bar-element/side-bar-element.component';
+import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { SchoolRequestsComponent } from './components/School Requests/school-requests/school-requests.component';
 import { SchoolRequestCardComponent } from './components/School Requests/school-request-card/school-request-card.component';
+import { HeaderComponent } from './components/header/header.component';
+
 
 @NgModule({
   declarations: [
@@ -50,7 +50,6 @@ import { SchoolRequestCardComponent } from './components/School Requests/school-
     QuotesBoxComponent,
     SchoolEventFormComponent,
     NavBarFormComponent,
-    HeaderFormComponent,
     MainToolsSectionComponent,
     MainContentSectionComponent,
     UserSubFormComponent,
@@ -70,10 +69,10 @@ import { SchoolRequestCardComponent } from './components/School Requests/school-
     SchoolRegisterFormComponent,
     AdminInfoComponent,
     AdminNavbarComponent,
-    SideBarComponent, 
-    SideBarElementComponent,
+    SidebarComponent, 
     SchoolRequestsComponent,
-    SchoolRequestCardComponent
+    SchoolRequestCardComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,

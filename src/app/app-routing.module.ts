@@ -17,7 +17,6 @@ import { AdminPanelComponent } from './pages/admin-panel/admin-panel.component';
 import { SchoolRequestsComponent } from './components/School Requests/school-requests/school-requests.component';
 import { AuthGuard } from './guards/auth.guard';
 
-
 const cabinetRoutes: Routes = [
   { path: '', component: MasterCabinetsComponent },
   { path: 'pupils', component: PupilsComponent },
@@ -29,7 +28,6 @@ const cabinetRoutes: Routes = [
 
 const adminRoutes: Routes = [
   { path: '', canActivateChild: [AuthGuard], component: AdminInfoComponent },
-  { path: 'profile', canActivateChild: [AuthGuard], component: AdminInfoComponent },
   { path: 'schoolRequest', canActivateChild: [AuthGuard], component: SchoolRequestsComponent }
 ];
 
@@ -47,11 +45,8 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-
 export class AppRoutingModule { }
 
-// * Array of Routing Components for importing to AppModule
-// ! Put All The Routing/Pages Components Here
 export const RoutingComponents = [
   MainComponent,
   LoginComponent,

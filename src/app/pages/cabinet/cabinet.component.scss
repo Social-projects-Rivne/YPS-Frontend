@@ -8,28 +8,5 @@
   
   .cabinet-header {
     grid-column: 1 / -1;
-    padding: 2rem;
   }
-
-  .sidebar {
-    display: grid;
-    grid-gap: 2rem;
-    align-self:start;
-    padding: 1rem;
-  }
-
-  // .add-user {
-  //   margin-top: 2rem;
-  //   align-self: start;
-  //   transition: $transition;
-
-  //   &:hover {
-  //     border-color: $accent;
-  //     background-color: #ffffff;
-  //     color: $accent;
-  //   }
-  // }
-  // .content{
-  //   background-color: #f5f4f4;
-  // }
 }
