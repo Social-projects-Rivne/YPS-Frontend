@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { IFormField } from 'src/app/models/IFormField';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup , FormControl , Validators} from '@angular/forms';
 import { patternValidator } from 'src/utils/validators/pattern-validator';
 import { requiredValidator } from 'src/utils/validators/required-validator';
 import { minLengthValidator } from 'src/utils/validators/min-length-validatot';
@@ -17,6 +17,9 @@ import { apiUrl } from 'src/constants/urls';
 })
 export class LoginFormComponent implements OnInit {
   form: FormGroup;
+  iterations: number;
+  showCaptcha: boolean = false;
+  myRecaptcha = new FormControl(false);
 
   fields: IFormField[] = [
     {
@@ -38,11 +41,13 @@ export class LoginFormComponent implements OnInit {
   ];
 
   constructor(
-    private formBuilder: FormBuilder, 
+    private formBuilder: FormBuilder,
     private http: HttpClient
   ) {}
 
   ngOnInit() {
+    this.iterations = 1;
+    this.showCaptcha = false;
     this.form = this.formBuilder.group({
       "email": [null, [
         requiredValidator("email is required."),
@@ -56,22 +61,47 @@ export class LoginFormComponent implements OnInit {
         requiredValidator("password is required."),
         minLengthValidator(7, "password must be at least 7 characters.")
       ]],
-      "remember": [null]
+      "remember": [null],
+
+
     });
+
   }
 
   onSubmit() {
     const { fields, isValid } = validationHelper(this.form.controls, this.fields);
 
     this.fields = fields;
-
     if (isValid) {
+      if(this.showCaptcha == true && this.iterations > 3 && this.iterations % 2 ==0) {
+
+        this.form.removeControl("myRecaptcha");
+        this.showCaptcha = false;
+        console.log("captcha remove");
+     }
       return this.http.post(apiUrl + "/auth", this.form.value)
         .subscribe(
           (successRes: { token: string }) => {
             set('token', successRes.token);
           },
           (errorRes: any) => {
+            if(this.iterations == 3 && this.showCaptcha == false )
+            {
+              this.showCaptcha = true;
+              this.form.addControl("myRecaptcha", new FormControl(null));
+
+            }
+
+            if(this.showCaptcha == false && this.iterations > 3 && this.iterations % 2 ==0){
+             this.showCaptcha = true;
+             this.form.addControl("myRecaptcha", new FormControl(null));
+             console.log("captcha init");
+            }
+
+
+
+            this.iterations = this.iterations + 1;
+
             this.fields = this.fields.map(field => {
               field.errorMsg = "incorrect email or password";
               return field;

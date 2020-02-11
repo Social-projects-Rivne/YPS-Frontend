@@ -28,6 +28,7 @@ import { MatIconModule, MatSelectModule, MatButtonModule, MatTableModule, MatSor
 import { TableUserComponent } from './components/table-user/table-user.component';
 import { AddTeacherFormComponent } from './components/add-teacher-form/add-teacher-form.component';
 import { AddParentFormComponent } from './components/add-parent-form/add-parent-form.component';
+import { RecaptchaModule } from 'angular-google-recaptcha';
 
 @NgModule({
   declarations: [
@@ -65,7 +66,10 @@ import { AddParentFormComponent } from './components/add-parent-form/add-parent-
     MatButtonModule,
     MatTableModule,
     MatSortModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    RecaptchaModule.forRoot({
+      siteKey: '6LefHtYUAAAAABkKaKlf2kwUSmQleDf0HAZiUQse',
+    }),
   ],
   providers: [],
   bootstrap: [AppComponent]

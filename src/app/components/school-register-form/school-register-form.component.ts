@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { IFormField } from 'src/app/models/IFormField';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, FormControl} from '@angular/forms';
 import { patternValidator } from 'src/utils/validators/pattern-validator';
 import { requiredValidator } from 'src/utils/validators/required-validator';
 import { minLengthValidator } from 'src/utils/validators/min-length-validatot';
@@ -17,9 +17,11 @@ import {Router} from '@angular/router';
 })
 export class SchoolRegisterFormComponent implements OnInit {
   form: FormGroup;
-
+  myRecaptcha = new FormControl(false);
   confErrorMsg: string = null;
   verErrorMsg: string = null;
+  showCaptcha = false;
+  iterations: number;
 
   fields: IFormField[] = [
     {
@@ -77,9 +79,9 @@ export class SchoolRegisterFormComponent implements OnInit {
     private router: Router
     ){}
 
-
   ngOnInit() {
-
+    this.iterations = 1;
+    this.showCaptcha = false;
      this.form = this.formBuilder.group({
       "name": [null, [
         requiredValidator("schoolName is required."),
@@ -108,8 +110,10 @@ export class SchoolRegisterFormComponent implements OnInit {
         "phone number is invalid")
       ]],
        "confirmation": [null ,boolRequiredValidator("You need to confirm the information!!!")],
-        "verified": [null, boolRequiredValidator("You must confirm that you have entered correctly!!!")]
+        "verified": [null, boolRequiredValidator("You must confirm that you have entered correctly!!!")],
+        "myRecaptcha": [null]
     });
+
   }
    onSubmit() {
     // * Validation method which sets error messages to fields if there are any errors.
@@ -127,12 +131,32 @@ export class SchoolRegisterFormComponent implements OnInit {
     this.verErrorMsg = !!verHasError ? verHasError.required.errorMsg : null;
 
     if (isValid) {
-      const url: string = "https://localhost:44372/api/SchoolRequest";
+      if(this.showCaptcha == true && this.iterations > 1 && this.iterations % 2 ==0) {
+
+        this.form.removeControl("myRecaptcha");
+        this.showCaptcha = false;
+        console.log("captcha remove");
+     }
+      const url: string = "https://localhost:44372/api/SchoolRequests";
         return this.http.post(url, this.form.value).subscribe(
         (res) =>{
           this.router.navigate(['/']);
         },
         (res) => {
+          if(this.iterations == 1 && this.showCaptcha == false )
+          {
+            this.showCaptcha = true;
+            this.form.addControl("myRecaptcha", new FormControl(null));
+            console.log("captcha init");
+
+          }
+
+          if(this.showCaptcha == false && this.iterations > 1 && this.iterations % 2 ==0){
+           this.showCaptcha = true;
+           this.form.addControl("myRecaptcha", new FormControl(null));
+           console.log("captcha init");
+          }
+          this.iterations = this.iterations + 1;
           this.fields.find(x => x.name == "email").errorMsg = "Something incorrect";
           this.fields.find(x => x.name == "address").errorMsg = "Something incorrect";
         }
