@@ -13,14 +13,14 @@ export class TeachersComponent implements OnInit {
     private userService: TeacherinfoService
   ) {}
 
-  teachersData: ITeacher[] = TEACHERS_DATA;
+  teachersData: ITeacher[];
 
   columns = [
     { def: "id", label: "Id" },
     { def: "firstName", label: "Name" },
     { def: "surname", label: "Surname" },
     { def: "middleName", label: "Middle name" },
-    { def: "className" , label: "Class" },
+    { def: "className", label: "Class" },
     { def: "phoneNumber", label: "Phone" },
     { def: "email", label: "Email" },
     { def: "dateOfBirth", label: "Date of birth"},
@@ -29,11 +29,6 @@ export class TeachersComponent implements OnInit {
 
   ngOnInit() {
     this.userService.getTeachers()
-     .subscribe(data=>this.teachersData = data
-     )
+      .subscribe(data => this.teachersData = data)
   }
 }
-
-const TEACHERS_DATA: ITeacher[] = [
-  {id : null, firstName : "", surname : "", middleName : "", className : "", degree : "",  phoneNumber : "", email : "", dateOfBirth : ""}
-];
