@@ -7,7 +7,7 @@ import { IAdmin } from '../models/IAdmin';
   providedIn: 'root'
 })
 export class UserAdminInfoService {
-  private url: string = "https://localhost:44372/api/Admin?Id=";
+  private url: string = "https://localhost:5001/api/Admin?Id=";
   id: string= "1";
   constructor(private http: HttpClient) { }
 
