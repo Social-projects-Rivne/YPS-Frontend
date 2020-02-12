@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { IFormField } from 'src/app/models/IFormField';
-import { FormBuilder, FormGroup, FormControl} from '@angular/forms';
+import { FormBuilder, FormGroup, FormControl } from '@angular/forms';
 import { patternValidator } from 'src/utils/validators/pattern-validator';
 import { requiredValidator } from 'src/utils/validators/required-validator';
 import { minLengthValidator } from 'src/utils/validators/min-length-validatot';
@@ -82,36 +82,36 @@ export class SchoolRegisterFormComponent implements OnInit {
   ngOnInit() {
     this.iterations = 1;
     this.showCaptcha = false;
-     this.form = this.formBuilder.group({
-      "name": [null, [
-        requiredValidator("schoolName is required."),
-      ]],
-       "shortName": [null, [
-        requiredValidator("shortName is required."),
-      ]],
-       "locality": [null, [
-        requiredValidator("locality is required."),
-      ]],
-       "address": [null, [
-        requiredValidator("address is required."),
-      ]],
-      "email": [null, [
-        requiredValidator("email is required."),
-        minLengthValidator(7, "email must be at least 7 characters."),
-        patternValidator(
-          /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/,
-          "email is invalid."
-        )
-      ]],
-       "phoneNumb": [null, [
-        requiredValidator("phoneNumb is required."),
-        patternValidator(
-          /^[(]{0,1}[0-9]{3}[)]{0,1}[-\s\.]{0,1}[0-9]{3}[-\s\.]{0,1}[0-9]{4}$/ ,
-        "phone number is invalid")
-      ]],
-       "confirmation": [null ,boolRequiredValidator("You need to confirm the information!!!")],
-        "verified": [null, boolRequiredValidator("You must confirm that you have entered correctly!!!")],
-        "myRecaptcha": [null]
+    this.form = this.formBuilder.group({
+     "name": [null, [
+       requiredValidator("schoolName is required."),
+     ]],
+      "shortName": [null, [
+       requiredValidator("shortName is required."),
+     ]],
+      "locality": [null, [
+       requiredValidator("locality is required."),
+     ]],
+      "address": [null, [
+       requiredValidator("address is required."),
+     ]],
+     "email": [null, [
+       requiredValidator("email is required."),
+       minLengthValidator(7, "email must be at least 7 characters."),
+       patternValidator(
+         /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/,
+         "email is invalid."
+       )
+     ]],
+      "phoneNumb": [null, [
+       requiredValidator("phoneNumb is required."),
+       patternValidator(
+         /^[(]{0,1}[0-9]{3}[)]{0,1}[-\s\.]{0,1}[0-9]{3}[-\s\.]{0,1}[0-9]{4}$/ ,
+       "phone number is invalid")
+     ]],
+      "confirmation": [null ,boolRequiredValidator("You need to confirm the information!!!")],
+       "verified": [null, boolRequiredValidator("You must confirm that you have entered correctly!!!")],
+       "myRecaptcha": [null]
     });
 
   }
@@ -131,10 +131,9 @@ export class SchoolRegisterFormComponent implements OnInit {
     this.verErrorMsg = !!verHasError ? verHasError.required.errorMsg : null;
 
     if (isValid) {
-      if(this.showCaptcha == true && this.iterations > 1 && this.iterations % 2 ==0) {
+      if (this.showCaptcha == true && this.iterations > 1 && this.iterations % 2 ==0) {
         this.form.removeControl("myRecaptcha");
         this.showCaptcha = false;
-        console.log("captcha remove");
      }
       const url: string = "https://localhost:44372/api/SchoolRequests";
         return this.http.post(url, this.form.value).subscribe(
@@ -142,14 +141,16 @@ export class SchoolRegisterFormComponent implements OnInit {
           this.router.navigate(['/']);
         },
         (res) => {
-          if(this.iterations == 1 && this.showCaptcha == false )
+          if (this.iterations == 1 && this.showCaptcha == false )
           {
             this.showCaptcha = true;
             this.form.addControl("myRecaptcha", new FormControl(null));
           }
-          if(this.showCaptcha == false && this.iterations > 1 && this.iterations % 2 ==0){
-           this.showCaptcha = true;
-           this.form.addControl("myRecaptcha", new FormControl(null));
+          
+          if (this.showCaptcha == false && this.iterations > 1 && this.iterations % 2 ==0)
+          {
+            this.showCaptcha = true;
+            this.form.addControl("myRecaptcha", new FormControl(null));
           }
           this.iterations = this.iterations + 1;
           this.fields.find(x => x.name == "email").errorMsg = "Something incorrect";
