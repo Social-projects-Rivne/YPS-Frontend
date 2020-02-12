@@ -1,17 +1,25 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { IAdmin } from '../models/IAdmin';
+import { get } from 'js-cookie';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserAdminInfoService {
-  private url: string = "https://localhost:5001/api/Admin?Id=";
-  id: string= "1";
+  private url: string = "https://localhost:5001/api/Admin";
+  
   constructor(private http: HttpClient) { }
-
-   getUser(): Observable<IAdmin> {
-    return this.http.get<IAdmin>(this.url+ this.id);
+  getUser(): Observable<IAdmin> {
+    let token = get('token');
+    const json = JSON.parse(token);
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type':  'application/json',
+        'Authorization': 'Bearer '+ json['token']
+      })};
+    return this.http.get<IAdmin>(this.url, httpOptions); 
    }
 }

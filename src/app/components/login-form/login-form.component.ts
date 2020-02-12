@@ -10,7 +10,6 @@ import { set, get } from 'js-cookie';
 import { apiUrl } from 'src/constants/urls';
 import { AuthService } from 'src/app/services/auth.service';
 import { NavigationExtras, Router } from '@angular/router';
-import { ILogin } from 'src/app/models/ILogin';
 
 
 @Component({
