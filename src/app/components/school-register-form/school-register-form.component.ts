@@ -137,7 +137,6 @@ export class SchoolRegisterFormComponent implements OnInit {
         console.log("captcha remove");
      }
       const url: string = "https://localhost:44372/api/SchoolRequests";
-      const url: string = "https://localhost:5001/api/SchoolRequests";
         return this.http.post(url, this.form.value).subscribe(
         (res) =>{
           this.router.navigate(['/']);
