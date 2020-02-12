@@ -18,4 +18,5 @@
     <a href="#" class="forgot-link">Forgot password?</a>
   </div>
   <button type="submit" class="btn login-btn primary">login</button>
+  <recaptcha *ngIf="iterations >= 3 && showCaptcha"  formControlName="myRecaptcha"  ></recaptcha>
 </form>
