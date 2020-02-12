@@ -70,24 +70,26 @@ export class LoginFormComponent implements OnInit {
     this.fields = fields;
     console.info(`Login form is ${isValid ? 'valid' : 'invalid'}`);
     if (isValid) {
-      if(this.showCaptcha == true && this.iterations > 3 && this.iterations % 2 ==0) {
+      if (this.showCaptcha == true && this.iterations > 3 && this.iterations % 2 ==0) 
+      {
         this.form.removeControl("myRecaptcha");
         this.showCaptcha = false;
-     }
+      }
       return this.http.post(apiUrl + "/auth", this.form.value)
         .subscribe(
           (successRes: { token: string }) => {
             set('token', successRes.token);
           },
           (errorRes: any) => {
-            if(this.iterations == 3 && this.showCaptcha == false )
+            if (this.iterations == 3 && this.showCaptcha == false )
             {
               this.showCaptcha = true;
               this.form.addControl("myRecaptcha", new FormControl(null));
             }
-            if(this.showCaptcha == false && this.iterations > 3 && this.iterations % 2 ==0){
-             this.showCaptcha = true;
-             this.form.addControl("myRecaptcha", new FormControl(null));
+            if (this.showCaptcha == false && this.iterations > 3 && this.iterations % 2 ==0)
+            {
+              this.showCaptcha = true;
+              this.form.addControl("myRecaptcha", new FormControl(null));
             }
             this.iterations = this.iterations + 1;
             this.fields = this.fields.map(field => {
