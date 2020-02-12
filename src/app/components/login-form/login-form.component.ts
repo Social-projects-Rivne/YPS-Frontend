@@ -62,22 +62,17 @@ export class LoginFormComponent implements OnInit {
         minLengthValidator(7, "password must be at least 7 characters.")
       ]],
       "remember": [null],
-
-
     });
-
   }
-
   onSubmit() {
     const { fields, isValid } = validationHelper(this.form.controls, this.fields);
 
     this.fields = fields;
+    console.info(`Login form is ${isValid ? 'valid' : 'invalid'}`);
     if (isValid) {
       if(this.showCaptcha == true && this.iterations > 3 && this.iterations % 2 ==0) {
-
         this.form.removeControl("myRecaptcha");
         this.showCaptcha = false;
-        console.log("captcha remove");
      }
       return this.http.post(apiUrl + "/auth", this.form.value)
         .subscribe(
@@ -89,19 +84,12 @@ export class LoginFormComponent implements OnInit {
             {
               this.showCaptcha = true;
               this.form.addControl("myRecaptcha", new FormControl(null));
-
             }
-
             if(this.showCaptcha == false && this.iterations > 3 && this.iterations % 2 ==0){
              this.showCaptcha = true;
              this.form.addControl("myRecaptcha", new FormControl(null));
-             console.log("captcha init");
             }
-
-
-
             this.iterations = this.iterations + 1;
-
             this.fields = this.fields.map(field => {
               field.errorMsg = "incorrect email or password";
               return field;

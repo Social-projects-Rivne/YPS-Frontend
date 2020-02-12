@@ -1,4 +1,3 @@
-
 import { MasterCabinetsComponent } from './components/master-cabinets/master-cabinets.component';
 import { MastersComponent } from './pages/masters/masters.component';
 import { HeadassistantsComponent } from './pages/headassistants/headassistants.component';
@@ -10,43 +9,47 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { LoginComponent } from './pages/login/login.component';
 import { SchoolMainComponent } from './pages/school-main/school-main.component';
-import { AdminComponent } from './pages/admin/admin.component';
 import { CabinetComponent } from './pages/cabinet/cabinet.component';
 import { RegisterSchoolComponent } from './pages/register-school/register-school.component';
-
+import { RegisterHeadmasterComponent } from './pages/register-headmaster/register-headmaster.component';
+import { AdminInfoComponent } from './components/admin-info/admin-info.component';
+import { AdminPanelComponent } from './pages/admin-panel/admin-panel.component';
+import { SchoolRequestsComponent } from './components/School Requests/school-requests/school-requests.component';
 
 const cabinetRoutes: Routes = [
-  { path: '', component: MasterCabinetsComponent},
+  { path: '', component: MasterCabinetsComponent },
   { path: 'pupils', component: PupilsComponent },
   { path: 'parents', component: ParentsComponent },
   { path: 'teachers', component: TeachersComponent },
   { path: 'head-assistants', component: HeadassistantsComponent },
-  { path: 'masters', component: MastersComponent}
+  { path: 'masters', component: MastersComponent }
+];
+
+const adminRoutes: Routes = [
+  { path: '', component: AdminInfoComponent },
+  { path: 'schoolRequest', component: SchoolRequestsComponent }
 ];
 
 const routes: Routes = [
   { path: '', component: MainComponent },
   { path: 'school-main', component: SchoolMainComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'admin', component: AdminComponent},
-  { path: 'cabinet', component: CabinetComponent, children:cabinetRoutes},
-  { path: 'register-school', component: RegisterSchoolComponent},
+  { path: 'admin', component: AdminPanelComponent, children: adminRoutes },
+  { path: 'cabinet', component: CabinetComponent, children: cabinetRoutes },
+  { path: 'register-school', component: RegisterSchoolComponent },
+  { path: 'register-headmaster', component: RegisterHeadmasterComponent }
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-
 export class AppRoutingModule { }
 
-// * Array of Routing Components for importing to AppModule
-// ! Put All The Routing/Pages Components Here
 export const RoutingComponents = [
   MainComponent,
   LoginComponent,
   SchoolMainComponent,
-  AdminComponent,
   CabinetComponent,
   RegisterSchoolComponent,
   TeachersComponent,
@@ -54,5 +57,7 @@ export const RoutingComponents = [
   ParentsComponent,
   HeadassistantsComponent,
   MastersComponent,
-  MasterCabinetsComponent
+  MasterCabinetsComponent,
+  CabinetComponent,
+  AdminPanelComponent
 ];

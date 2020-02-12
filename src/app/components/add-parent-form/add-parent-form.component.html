@@ -27,5 +27,13 @@
       <mat-option value="3">11-c</mat-option>
     </mat-select>
   </mat-form-field>
+  <mat-form-field *ngIf="form.controls.classId.value != null && !!form.controls.childId">
+    <mat-label>Select a child</mat-label>
+    <mat-select formControlName="childId" disableRipple>
+      <mat-option value="1">child one</mat-option>
+      <mat-option value="2">child one</mat-option>
+      <mat-option value="3">child one</mat-option>
+    </mat-select>
+  </mat-form-field>
   <button type="submit" class="btn primary">submit</button>
 </form>

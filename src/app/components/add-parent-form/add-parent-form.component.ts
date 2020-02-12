@@ -1,18 +1,28 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { FormGroup, FormBuilder } from '@angular/forms';
+import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
 import { IFormField } from 'src/app/models/IFormField';
 import { HttpClient } from '@angular/common/http';
 import { validationHelper } from 'src/utils/helpers/validation-helper';
 import { apiUrl } from 'src/constants/urls';
+import { requiredValidator } from 'src/utils/validators/required-validator';
 
 @Component({
   selector: 'yps-add-parent-form',
   templateUrl: './add-parent-form.component.html',
-  styleUrls: ['./add-parent-form.component.scss']
+  styleUrls: ['./add-parent-form.component.scss','../../../scss/adding-forms.scss']
 })
 export class AddParentFormComponent implements OnInit {
   form: FormGroup;
-  fields: IFormField[] = [];
+  fields: IFormField[] = [
+    {
+      id: "work-info-field",
+      type: "text",
+      label: "work info",
+      placeholder: "enter user work information",
+      name: "workInfo",
+      errorMsg: null
+    }
+  ];
   formIsOpen: boolean = false;
   @ViewChild('formRef', { static: false }) userSubFormRef: { fields: IFormField[], userSubForm: FormGroup }; 
 
@@ -24,7 +34,12 @@ export class AddParentFormComponent implements OnInit {
   ngOnInit() {
     this.form = this.formBuilder.group({
       "user": [null],
+      "workInfo": [null, requiredValidator("work info is required")],
       "classId": [null]
+    });
+    // TODO: do something
+    this.form.controls.classId.valueChanges.subscribe(value => {
+      this.form.addControl("childId", new FormControl(null));
     });
   }
 

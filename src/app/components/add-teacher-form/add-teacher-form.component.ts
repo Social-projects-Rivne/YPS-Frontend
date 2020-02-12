@@ -9,7 +9,7 @@ import { requiredValidator } from 'src/utils/validators/required-validator';
 @Component({
   selector: 'yps-add-teacher-form',
   templateUrl: './add-teacher-form.component.html',
-  styleUrls: ['./add-teacher-form.component.scss']
+  styleUrls: ['./add-teacher-form.component.scss','../../../scss/adding-forms.scss']
 })
 export class AddTeacherFormComponent implements OnInit {
   form: FormGroup;
