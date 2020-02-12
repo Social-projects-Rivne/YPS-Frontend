@@ -61,7 +61,7 @@ export class LoginFormComponent implements OnInit {
         requiredValidator("password is required."),
         minLengthValidator(7, "password must be at least 7 characters.")
       ]],
-      "remember": [null],
+      "remember": [null]
     });
   }
   onSubmit() {
