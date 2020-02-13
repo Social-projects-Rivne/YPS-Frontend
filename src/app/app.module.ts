@@ -25,7 +25,7 @@ import { AddPupilFormComponent } from './components/add-pupil-form/add-pupil-for
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RegisterHeadmasterComponent } from './pages/register-headmaster/register-headmaster.component';
 import { AddHeadmasterFormComponent } from './components/add-headmaster-form/add-headmaster-form.component';
-import { MatIconModule, MatSelectModule, MatButtonModule, MatTableModule, MatSortModule, MatFormFieldModule, MatCard, MatCardModule} from '@angular/material';
+import { MatIconModule, MatSelectModule, MatButtonModule, MatTableModule, MatSortModule, MatFormFieldModule, MatCard, MatCardModule, MatProgressSpinnerModule} from '@angular/material';
 import { AddTeacherFormComponent } from './components/add-teacher-form/add-teacher-form.component';
 import { AddParentFormComponent } from './components/add-parent-form/add-parent-form.component';
 import { RecaptchaModule } from 'angular-google-recaptcha';
@@ -95,7 +95,8 @@ import { HeaderComponent } from './components/header/header.component';
     CommonModule,
     RouterModule,
     MatSelectModule,
-    MatCardModule
+    MatCardModule,
+    MatProgressSpinnerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

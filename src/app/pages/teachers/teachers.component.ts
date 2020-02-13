@@ -27,8 +27,12 @@ export class TeachersComponent implements OnInit {
     { def:"degree", label:"Degree"}
   ];
 
-  ngOnInit() {
+  getTeachersData = () => {
     this.userService.getTeachers()
       .subscribe(data => this.teachersData = data)
+  }
+  
+  ngOnInit() {
+    this.getTeachersData();
   }
 }

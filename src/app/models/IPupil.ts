@@ -1,5 +1,5 @@
 export interface IPupil {
-    Id : number;
+    id : number;
     firstName : string;
     surname : string;
     middleName : string;
