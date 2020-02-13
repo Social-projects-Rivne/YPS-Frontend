@@ -25,7 +25,13 @@ import { AddPupilFormComponent } from './components/add-pupil-form/add-pupil-for
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RegisterHeadmasterComponent } from './pages/register-headmaster/register-headmaster.component';
 import { AddHeadmasterFormComponent } from './components/add-headmaster-form/add-headmaster-form.component';
-import { MatIconModule, MatSelectModule, MatButtonModule, MatTableModule, MatSortModule, MatFormFieldModule, MatCard, MatCardModule} from '@angular/material';
+import { MatButtonModule } from '@angular/material/button';
+import { MatCard, MatCardModule } from '@angular/material/card';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatIconModule } from '@angular/material/icon';
+import { MatSelectModule } from '@angular/material/select';
+import { MatSortModule } from '@angular/material/sort';
+import { MatTableModule } from '@angular/material/table';
 import { AddTeacherFormComponent } from './components/add-teacher-form/add-teacher-form.component';
 import { AddParentFormComponent } from './components/add-parent-form/add-parent-form.component';
 import { from } from 'rxjs';
