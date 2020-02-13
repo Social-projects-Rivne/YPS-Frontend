@@ -28,6 +28,7 @@ import { AddHeadmasterFormComponent } from './components/add-headmaster-form/add
 import { MatIconModule, MatSelectModule, MatButtonModule, MatTableModule, MatSortModule, MatFormFieldModule, MatCard, MatCardModule} from '@angular/material';
 import { AddTeacherFormComponent } from './components/add-teacher-form/add-teacher-form.component';
 import { AddParentFormComponent } from './components/add-parent-form/add-parent-form.component';
+import { RecaptchaModule } from 'angular-google-recaptcha';
 import { from } from 'rxjs';
 import { SchoolRegisterFormComponent } from './components/school-register-form/school-register-form.component';
 import { AdminInfoComponent } from './components/admin-info/admin-info.component';
@@ -38,7 +39,6 @@ import { RouterModule } from '@angular/router';
 import { SchoolRequestsComponent } from './components/School Requests/school-requests/school-requests.component';
 import { SchoolRequestCardComponent } from './components/School Requests/school-request-card/school-request-card.component';
 import { HeaderComponent } from './components/header/header.component';
-
 
 @NgModule({
   declarations: [
@@ -89,6 +89,9 @@ import { HeaderComponent } from './components/header/header.component';
     MatTableModule,
     MatSortModule,
     MatFormFieldModule,
+    RecaptchaModule.forRoot({
+      siteKey: '6LefHtYUAAAAABkKaKlf2kwUSmQleDf0HAZiUQse',
+    }),
     CommonModule,
     RouterModule,
     MatSelectModule,
