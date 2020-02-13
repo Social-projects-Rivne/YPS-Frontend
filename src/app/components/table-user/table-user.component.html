@@ -1,6 +1,6 @@
 <table mat-table [dataSource]="data" class="mat-elevation-z8">
   <ng-container *ngFor="let column of columns" [matColumnDef]="column.def">
-    <td mat-header-cell *matHeaderCellDef>{{ column.label }}</td>
+    <th mat-header-cell *matHeaderCellDef>{{ column.label }}</th>
     <td mat-cell *matCellDef="let element">{{ element[column.def] }}</td>
   </ng-container>
   <tr mat-header-row *matHeaderRowDef="columnTitles"></tr>
