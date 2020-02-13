@@ -13,14 +13,12 @@ export class ParentService {
   constructor(private http:HttpClient) { }
 
   get=():Observable<IParent[]> =>{
-    let token=get('token');
-    const json=JSON.parse(token);
-    const httpOptions={
-      headers:new HttpHeaders({
-        'ContentType': 'application/json',
-        'Authorization': 'Bearer'+json['token']
-      })
-    }
+    let token = get('token');
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type':  'application/json',
+        'Authorization': 'Bearer '+ token
+      })};
       return this.http.get<IParent[]>(this.url,httpOptions);
   }
 }
