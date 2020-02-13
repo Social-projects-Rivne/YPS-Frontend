@@ -28,6 +28,7 @@ import { AddHeadmasterFormComponent } from './components/add-headmaster-form/add
 
 import { AddTeacherFormComponent } from './components/add-teacher-form/add-teacher-form.component';
 import { AddParentFormComponent } from './components/add-parent-form/add-parent-form.component';
+import { RecaptchaModule } from 'angular-google-recaptcha';
 import { SchoolRegisterFormComponent } from './components/school-register-form/school-register-form.component';
 import { AdminInfoComponent } from './components/admin-info/admin-info.component';
 import { AdminNavbarComponent } from './components/admin-navbar/admin-navbar.component';
@@ -89,7 +90,9 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
     ReactiveFormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    BrowserAnimationsModule,
+    RecaptchaModule.forRoot({
+      siteKey: '6LefHtYUAAAAABkKaKlf2kwUSmQleDf0HAZiUQse',
+    }),
     CommonModule,
     RouterModule,
     MatButtonModule,

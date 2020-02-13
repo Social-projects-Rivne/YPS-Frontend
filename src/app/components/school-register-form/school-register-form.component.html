@@ -23,4 +23,5 @@
     <span class="error" *ngIf="!!verErrorMsg">{{verErrorMsg}}</span>
   </div>
   <button  type="submit" class="btn login-btn primary">register</button>
+  <recaptcha *ngIf="iterations >= 1 && showCaptcha" formControlName="myRecaptcha"  ></recaptcha>
 </form>
