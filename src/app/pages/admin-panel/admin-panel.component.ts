@@ -1,6 +1,6 @@
 import { ILink } from 'src/app/models/ILink';
 import { Component, OnInit } from '@angular/core';
-import { UserAdminInfoService } from 'src/app/services/userinfo.service';
+import { UserAdminInfoService } from 'src/app/services/admin.service';
 
 @Component({
   selector: 'yps-admin-panel',

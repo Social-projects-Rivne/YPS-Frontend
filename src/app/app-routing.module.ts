@@ -18,12 +18,12 @@ import { SchoolRequestsComponent } from './components/School Requests/school-req
 import { AuthGuard } from './guards/auth.guard';
 
 const cabinetRoutes: Routes = [
-  { path: '', component: MasterCabinetsComponent },
-  { path: 'pupils', component: PupilsComponent },
-  { path: 'parents', component: ParentsComponent },
-  { path: 'teachers', component: TeachersComponent },
-  { path: 'head-assistants', component: HeadassistantsComponent },
-  { path: 'masters', component: MastersComponent }
+  { path: '', canActivateChild: [AuthGuard], component: MasterCabinetsComponent },
+  { path: 'pupils', canActivateChild: [AuthGuard], component: PupilsComponent },
+  { path: 'parents', canActivateChild: [AuthGuard], component: ParentsComponent },
+  { path: 'teachers', canActivateChild: [AuthGuard], component: TeachersComponent },
+  { path: 'head-assistants', canActivateChild: [AuthGuard], component: HeadassistantsComponent },
+  { path: 'masters', canActivateChild: [AuthGuard], component: MastersComponent }
 ];
 
 const adminRoutes: Routes = [
@@ -33,12 +33,12 @@ const adminRoutes: Routes = [
 
 const routes: Routes = [
   { path: '', component: MainComponent },
-  { path: 'school-main', component: SchoolMainComponent },
+  { path: 'school-main', canActivate: [AuthGuard], component: SchoolMainComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'admin', component: AdminPanelComponent,canActivate: [AuthGuard], children: adminRoutes },
-  { path: 'cabinet', component: CabinetComponent, children: cabinetRoutes },
+  { path: 'admin', component: AdminPanelComponent, canActivate: [AuthGuard], children: adminRoutes },
+  { path: 'cabinet', component: CabinetComponent, canActivate: [AuthGuard], children: cabinetRoutes },
   { path: 'register-school', component: RegisterSchoolComponent },
-  { path: 'register-headmaster', component: RegisterHeadmasterComponent }
+  { path: 'register-headmaster', canActivate: [AuthGuard], component: RegisterHeadmasterComponent }
 ];
 
 @NgModule({

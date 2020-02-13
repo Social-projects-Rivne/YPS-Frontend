@@ -14,11 +14,11 @@ export class UserAdminInfoService {
   constructor(private http: HttpClient) { }
   getUser(): Observable<IAdmin> {
     let token = get('token');
-    const json = JSON.parse(token);
+    
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type':  'application/json',
-        'Authorization': 'Bearer '+ json['token']
+        'Authorization': 'Bearer '+ token
       })};
     return this.http.get<IAdmin>(this.url, httpOptions); 
    }

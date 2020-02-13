@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, Output } from '@angular/core';
 import { IAdmin } from 'src/app/models/IAdmin';
-import { UserAdminInfoService } from 'src/app/services/userinfo.service';
+import { UserAdminInfoService } from 'src/app/services/admin.service';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
 

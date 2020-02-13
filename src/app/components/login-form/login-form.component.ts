@@ -72,18 +72,16 @@ export class LoginFormComponent implements OnInit {
     if (isValid) {
       return this.http.post(apiUrl + "/auth", this.form.value)
         .subscribe(
-          (successRes: { token: string }) => {
+          (successRes: { token: string, role: string }) => {
 
             set('token', successRes.token);
-
+            
             this.authService.isLoggedIn = true;
             if (this.authService.isLoggedIn == true) {
               // Get the redirect URL from our auth service
               // If no redirect has been set, use the default
-              let token = get('token');
-              const json = JSON.parse(token);
-              console.log(json['role']);
-              switch (json['role']) {
+              console.log(successRes.role)
+              switch (successRes.role) {
                 case 'admin':
                   let redirect = this.authService.redirectUrl ? this.router.parseUrl
                     (this.authService.redirectUrl) : '/admin';
@@ -97,7 +95,19 @@ export class LoginFormComponent implements OnInit {
                   // Redirect the user
                   this.router.navigateByUrl(redirect, navigationExtras);
                   break;
-
+                  case 'master':
+                    let redirect1 = this.authService.redirectUrl ? this.router.parseUrl
+                      (this.authService.redirectUrl) : '/cabinet';
+  
+                    // Set our navigation extras object
+                    // that passes on our global query params and fragment
+                    let navigationExtras1: NavigationExtras = {
+                      queryParamsHandling: 'preserve',
+                      preserveFragment: true
+                    };
+                    // Redirect the user
+                    this.router.navigateByUrl(redirect1, navigationExtras1);
+                    break;
                 default:
                   break;
               }
