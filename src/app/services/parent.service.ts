@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 })
 export class ParentService {
 
-  private url: string = "https://localhost:5001/api/Parent";
+  private url: string = "https://localhost:5001/api/Parents";
   constructor(private http:HttpClient) { }
 
   get=(id:Number):Observable<IParent[]> =>{
