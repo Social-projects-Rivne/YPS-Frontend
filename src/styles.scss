@@ -1,6 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 @import './fonts.scss';
 @import './vars.scss';
+@import "@angular/material/prebuilt-themes/deeppurple-amber.css";
 
 * {
   color: #333333;
@@ -75,5 +76,3 @@ input {
     font-size: 14px;
   }
 }
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
