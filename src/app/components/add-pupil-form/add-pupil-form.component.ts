@@ -19,7 +19,7 @@ export class AddPupilFormComponent implements OnInit {
   classes: IClassToSelect[];
   formIsOpen: boolean = false;
 
-  @ViewChild('formRef', { static: false }) userSubFormRef: { fields: IFormField[], userSubForm: FormGroup };
+  @ViewChild('formRef') userSubFormRef: { fields: IFormField[], userSubForm: FormGroup };
 
   constructor(
     private formBuilder: FormBuilder,
