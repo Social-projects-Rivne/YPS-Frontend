@@ -18,13 +18,8 @@ export class HeaderComponent implements OnInit {
   ngOnInit() {
   }
 
+  
   logout = () => {
-    let token = get('token');
-
-    if (!!token) {
-      remove('token');
-    }
-    this.authService.isLoggedIn=false;
-    this.router.navigate(["/"]);
+    this.authService.logout();
   }
 }

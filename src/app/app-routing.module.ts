@@ -16,6 +16,7 @@ import { AdminInfoComponent } from './components/admin-info/admin-info.component
 import { AdminPanelComponent } from './pages/admin-panel/admin-panel.component';
 import { SchoolRequestsComponent } from './components/School Requests/school-requests/school-requests.component';
 import { AuthGuard } from './guards/auth.guard';
+import { LoginGuard } from './guards/login.guard';
 
 const cabinetRoutes: Routes = [
   { path: '', canActivateChild: [AuthGuard], component: MasterCabinetsComponent },

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { IFormField } from 'src/app/models/IFormField';
-import { FormBuilder, FormGroup , FormControl , Validators} from '@angular/forms';
+import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
 import { patternValidator } from 'src/utils/validators/pattern-validator';
 import { requiredValidator } from 'src/utils/validators/required-validator';
 import { minLengthValidator } from 'src/utils/validators/min-length-validatot';
@@ -48,7 +48,7 @@ export class LoginFormComponent implements OnInit {
     private authService: AuthService,
     public router: Router
   ) { }
-   
+
 
   ngOnInit() {
     this.iterations = 1;
@@ -75,62 +75,49 @@ export class LoginFormComponent implements OnInit {
     this.fields = fields;
     console.info(`Login form is ${isValid ? 'valid' : 'invalid'}`);
     if (isValid) {
-      if (this.showCaptcha == true && this.iterations > 3 && this.iterations % 2 ==0) 
-      {
+      if (this.showCaptcha == true && this.iterations > 3 && this.iterations % 2 == 0) {
         this.form.removeControl("myRecaptcha");
         this.showCaptcha = false;
       }
       return this.http.post(apiUrl + "/auth", this.form.value)
         .subscribe(
           (successRes: { token: string, role: string }) => {
-
             set('token', successRes.token);
-            
+            //Save user auth
             this.authService.isLoggedIn = true;
-            if (this.authService.isLoggedIn == true) {
-              // Get the redirect URL from our auth service
-              // If no redirect has been set, use the default
-              console.log(successRes.role)
-              switch (successRes.role) {
-                case 'admin':
-                  let redirect = this.authService.redirectUrl ? this.router.parseUrl
-                    (this.authService.redirectUrl) : '/admin';
-
-                  // Set our navigation extras object
-                  // that passes on our global query params and fragment
-                  let navigationExtras: NavigationExtras = {
-                    queryParamsHandling: 'preserve',
-                    preserveFragment: true
-                  };
-                  // Redirect the user
-                  this.router.navigateByUrl(redirect, navigationExtras);
-                  break;
-                  case 'master':
-                    let redirect1 = this.authService.redirectUrl ? this.router.parseUrl
-                      (this.authService.redirectUrl) : '/cabinet';
-  
-                    // Set our navigation extras object
-                    // that passes on our global query params and fragment
-                    let navigationExtras1: NavigationExtras = {
-                      queryParamsHandling: 'preserve',
-                      preserveFragment: true
-                    };
-                    // Redirect the user
-                    this.router.navigateByUrl(redirect1, navigationExtras1);
-                    break;
-                default:
-                  break;
-              }
+            this.authService.role = successRes.role;
+            // Get the redirect URL from our auth service
+            // If no redirect has been set, use the default
+            switch (this.authService.role) {
+              case 'admin':
+                this.authService.redirectUrl = '/admin';
+                // Set our navigation extras object
+                // that passes on our global query params and fragment
+                let navigationExtras: NavigationExtras = {
+                  queryParamsHandling: 'preserve',
+                  preserveFragment: true
+                };
+                // Redirect the user
+                this.router.navigateByUrl(this.authService.redirectUrl, navigationExtras);
+                break;
+              case 'master':
+                this.authService.redirectUrl = '/cabinet';
+                let navigationExtras1: NavigationExtras = {
+                  queryParamsHandling: 'preserve',
+                  preserveFragment: true
+                };
+                this.router.navigateByUrl(this.authService.redirectUrl, navigationExtras1);
+                break;
+              default:
+                break;
             }
           },
           (errorRes: any) => {
-            if (this.iterations == 3 && this.showCaptcha == false )
-            {
+            if (this.iterations == 3 && this.showCaptcha == false) {
               this.showCaptcha = true;
               this.form.addControl("myRecaptcha", new FormControl(null));
             }
-            if (this.showCaptcha == false && this.iterations > 3 && this.iterations % 2 ==0)
-            {
+            if (this.showCaptcha == false && this.iterations > 3 && this.iterations % 2 == 0) {
               this.showCaptcha = true;
               this.form.addControl("myRecaptcha", new FormControl(null));
             }
