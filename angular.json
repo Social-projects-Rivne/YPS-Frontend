@@ -28,7 +28,7 @@
               "src/assets"
             ],
             "styles": [
-              "./node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css",
+              "src/mat-custom-theme.scss",
               "src/styles.scss"
             ],
             "scripts": []
@@ -93,7 +93,7 @@
               "src/assets"
             ],
             "styles": [
-              "./node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css",
+              "src/mat-custom-theme.scss",
               "src/styles.scss"
             ],
             "scripts": []

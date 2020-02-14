@@ -6,37 +6,30 @@
   grid-gap: 2rem;
   align-items: center;
   padding: 0.75rem 2rem;
-  border-bottom: 1px solid #e9e9e9;
-  background-color: $accent;
+  border-bottom: 1px solid $light;
 
   .yps-icon {
     display: block;
-    width: 4rem;
+    width: 3rem;
+    justify-self: center;
   }
 
   .school-name {
     display: block;
     justify-self: start;
-    color: #ffffff;
   }
 
   .user-name {
-    color: #ffffff;
     text-transform: capitalize;
   }
 
   .logout-btn {
     padding: 0.75rem 1rem;
     background-color: none;
-    border-color: none;
-    color: #ffffff;
-    font-size: 0.75rem;
-    transition: $transition;
 
     &:hover {
-      border-color: $primary_red;
-      background: $primary_red;
-      color: #ffffff;
+      border-color: $red;
+      color: $red;
     }
   }
 }
