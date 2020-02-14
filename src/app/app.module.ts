@@ -25,11 +25,10 @@ import { AddPupilFormComponent } from './components/add-pupil-form/add-pupil-for
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RegisterHeadmasterComponent } from './pages/register-headmaster/register-headmaster.component';
 import { AddHeadmasterFormComponent } from './components/add-headmaster-form/add-headmaster-form.component';
-import { MatIconModule, MatSelectModule, MatButtonModule, MatTableModule, MatSortModule, MatFormFieldModule, MatCard, MatCardModule} from '@angular/material';
+
 import { AddTeacherFormComponent } from './components/add-teacher-form/add-teacher-form.component';
 import { AddParentFormComponent } from './components/add-parent-form/add-parent-form.component';
 import { RecaptchaModule } from 'angular-google-recaptcha';
-import { from } from 'rxjs';
 import { SchoolRegisterFormComponent } from './components/school-register-form/school-register-form.component';
 import { AdminInfoComponent } from './components/admin-info/admin-info.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
@@ -38,6 +37,16 @@ import { RouterModule } from '@angular/router';
 import { SchoolRequestsComponent } from './components/School Requests/school-requests/school-requests.component';
 import { SchoolRequestCardComponent } from './components/School Requests/school-request-card/school-request-card.component';
 import { HeaderComponent } from './components/header/header.component';
+
+import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatIconModule } from '@angular/material/icon';
+import { MatSortModule } from '@angular/material/sort';
+import { MatTableModule } from '@angular/material/table';
+import { MatSelectModule } from '@angular/material/select';
+import { MatInputModule } from '@angular/material/input';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 
 @NgModule({
   declarations: [
@@ -79,21 +88,20 @@ import { HeaderComponent } from './components/header/header.component';
     ReactiveFormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    MatButtonModule,
-    BrowserAnimationsModule,
-    MatSelectModule,
-    MatIconModule,
-    MatSelectModule,
-    MatTableModule,
-    MatSortModule,
-    MatFormFieldModule,
     RecaptchaModule.forRoot({
       siteKey: '6LefHtYUAAAAABkKaKlf2kwUSmQleDf0HAZiUQse',
     }),
     CommonModule,
     RouterModule,
+    MatButtonModule,
+    MatCardModule,
+    MatFormFieldModule,
+    MatIconModule,
+    MatSortModule,
+    MatTableModule,
     MatSelectModule,
-    MatCardModule
+    MatInputModule,
+    MatCheckboxModule
   ],
   providers: [],
   bootstrap: [AppComponent]
