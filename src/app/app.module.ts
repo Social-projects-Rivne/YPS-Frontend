@@ -33,6 +33,7 @@ import { SharingModule } from './components/sharing/sharing.module';
 import { from } from 'rxjs';
 import { SchoolRegisterFormComponent } from './components/school-register-form/school-register-form.component';
 import { HeaderComponent } from './components/header/header.component';
+import { RegisterHeadmasterResponseComponent } from './pages/register-headmaster-response/register-headmaster-response.component';
 
 @NgModule({
   declarations: [
@@ -61,7 +62,8 @@ import { HeaderComponent } from './components/header/header.component';
     HeadassistantsComponent,
     MastersComponent,
     SchoolRegisterFormComponent,
-    HeaderComponent
+    HeaderComponent,
+    RegisterHeadmasterResponseComponent
   ],
   imports: [
     BrowserModule,

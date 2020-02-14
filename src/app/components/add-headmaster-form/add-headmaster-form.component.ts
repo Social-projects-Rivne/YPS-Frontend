@@ -7,6 +7,7 @@ import { validationHelper } from 'src/utils/helpers/validation-helper';
 import { requiredValidator } from 'src/utils/validators/required-validator';
 import { minLengthValidator } from 'src/utils/validators/min-length-validatot';
 import { HttpClient } from '@angular/common/http';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'yps-add-headmaster-form',
@@ -18,74 +19,25 @@ export class AddHeadmasterFormComponent implements OnInit {
   subscriptions: Subscription[] = [];
   fields: IFormField[] = [
     {
-      id: "user-first-name-field",
-      type: "text",
-      label: "first name",
-      placeholder: "enter user first name",
-      name: "firstName",
-      errorMsg: null
-    },
-    {
-      id: "user-surname-field",
-      type: "text",
-      label: "surname",
-      placeholder: "enter user surname",
-      name: "surname",
-      errorMsg: null
-    },
-    {
-      id: "user-middle-name-field",
-      type: "text",
-      label: "middle name",
-      placeholder: "enter user middle name",
-      name: "middleName",
-      errorMsg: null
-    },
-    {
-      id: "user-phone-number-field",
-      type: "number",
-      label: "phone number",
-      placeholder: "enter user phone number",
-      name: "phoneNumber",
-      errorMsg: null
-    },
-    {
-      id: "user-email-field",
-      type: "text",
-      label: "email",
-      placeholder: "enter user email",
-      name: "email",
-      errorMsg: null
-    },
-    {
       id: "user-password-field",
       type: "password",
       label: "password",
       placeholder: "enter your password",
       name: "password",
       errorMsg: null
-    },
+    }
   ];
-
+  @ViewChild('formRef', { static: false }) userSubFormRef: { fields: IFormField[], userSubForm: FormGroup };
+  
   constructor(
     private formBuilder: FormBuilder,
-    private http: HttpClient
+    private http: HttpClient,
+    private router: Router
     ) {}
 
   ngOnInit() {
     this.form = this.formBuilder.group({
-      "firstName": [null, requiredValidator("first name is required")],
-      "surname": [null, requiredValidator("surname is required")],
-      "middleName": [null, requiredValidator("middle name is required")],
-      "phoneNumber": [null, requiredValidator("phone number is required")],
-      "email": [null, [
-        requiredValidator("email is required."),
-        minLengthValidator(7, "email must be at least 7 characters."),
-        patternValidator(
-          /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/,
-          "email is invalid."
-        )
-      ]],
+      "user": [null],
       "password": [null, [
         requiredValidator("password is required."),
         minLengthValidator(7, "password must be at least 7 characters.")]],
@@ -93,13 +45,19 @@ export class AddHeadmasterFormComponent implements OnInit {
   }
 
   onSubmit = () => {
-    const { fields, isValid} = validationHelper(this.form.controls, this.fields);
-    this.fields = fields;
+    const thisFormValidationResponse = validationHelper(this.form.controls, this.fields);
+    const subFormValidationResponse = validationHelper(this.userSubFormRef.userSubForm.controls, this.userSubFormRef.fields);
     
-    if (isValid) {
-      console.log('this.form.value', this.form.value);
+    this.fields = thisFormValidationResponse.fields;
+    this.userSubFormRef.fields = subFormValidationResponse.fields;
+    
+    if (thisFormValidationResponse.isValid && subFormValidationResponse.isValid) {
       const url: string = "https://localhost:5001/api/HeadMasters";
-        return this.http.post(url, {user: this.form.value}).subscribe((res: any) => {
+        return this.http.post(url, this.form.value).subscribe(
+        (res) => {
+          this.router.navigate(['/register-headmaster-response']);
+        },
+        (res: any) => {
         console.log("headmaster response", res);
       });
     }
