@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, UrlTree, Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { AuthService } from '../services/auth.service';
+import { get } from 'js-cookie';
 
 @Injectable({
   providedIn: 'root'
@@ -15,15 +16,19 @@ export class LoginGuard implements CanActivate {
     return this.checkNav(url);;
   }
   checkNav(url: string): boolean {
-    if (this.authService.isLoggedIn) { 
-      this.router.navigate([this.authService.redirectUrl]);
-      return true; }
-
     // Store the attempted URL for redirecting
     this.authService.redirectUrl = url;
-
-    // Navigate to the login page with extras
-    this.router.navigate(['/login']);
+    let token = get('token');
+    if (!token) { return true; }
+    //Redirect to user cabinet authorized user 
+    if (this.authService.hasAdminRole()) {
+      this.router.navigate(['/admin']);
+    } else if (this.authService.hasMasterRole()) {
+      this.router.navigate(['/cabinet']);
+    } else if (this.authService.hasHeadMasterRole()) {
+      this.router.navigate(['/cabinet']);
+    }
+    //Add new redirect after adding new cabinet
     return false;
   }
 }

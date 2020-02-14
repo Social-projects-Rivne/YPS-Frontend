@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { IAdmin } from '../models/IAdmin';
 import { get } from 'js-cookie';
+import { HelperService } from './helper.service';
 
 
 @Injectable({
@@ -11,7 +12,7 @@ import { get } from 'js-cookie';
 export class UserAdminInfoService {
   private url: string = "https://localhost:5001/api/Admin";
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private header: HelperService) { }
   getUser(): Observable<IAdmin> {
     let token = get('token');
     const httpOptions = {

@@ -83,12 +83,10 @@ export class LoginFormComponent implements OnInit {
         .subscribe(
           (successRes: { token: string, role: string }) => {
             set('token', successRes.token);
-            //Save user auth
-            this.authService.isLoggedIn = true;
-            this.authService.role = successRes.role;
+            set('role', successRes.role);
             // Get the redirect URL from our auth service
             // If no redirect has been set, use the default
-            switch (this.authService.role) {
+            switch (successRes.role) {
               case 'admin':
                 this.authService.redirectUrl = '/admin';
                 // Set our navigation extras object
@@ -107,6 +105,14 @@ export class LoginFormComponent implements OnInit {
                   preserveFragment: true
                 };
                 this.router.navigateByUrl(this.authService.redirectUrl, navigationExtras1);
+                break;
+              case 'head-master':
+                this.authService.redirectUrl = '/cabinet';
+                let navigationExtras2: NavigationExtras = {
+                  queryParamsHandling: 'preserve',
+                  preserveFragment: true
+                };
+                this.router.navigateByUrl(this.authService.redirectUrl, navigationExtras2);
                 break;
               default:
                 break;
