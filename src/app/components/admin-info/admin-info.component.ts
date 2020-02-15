@@ -1,6 +1,6 @@
 import { Component, OnInit, Output } from '@angular/core';
 import { IAdmin } from 'src/app/models/IAdmin';
-import { UserAdminInfoService } from 'src/app/services/userinfo.service';
+import { UserAdminInfoService } from 'src/app/services/User/userinfo.service';
 
 @Component({
   selector: 'yps-admin-info',

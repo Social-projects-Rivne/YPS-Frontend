@@ -1,3 +1,4 @@
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { MasterCabinetsComponent } from './components/master-cabinets/master-cabinets.component';
 import { MastersComponent } from './pages/masters/masters.component';
 import { HeadassistantsComponent } from './pages/headassistants/headassistants.component';
@@ -37,7 +38,9 @@ const routes: Routes = [
   { path: 'admin', component: AdminPanelComponent, children: adminRoutes },
   { path: 'cabinet', component: CabinetComponent, children: cabinetRoutes },
   { path: 'register-school', component: RegisterSchoolComponent },
-  { path: 'register-headmaster', component: RegisterHeadmasterComponent }
+  { path: 'register-headmaster', component: RegisterHeadmasterComponent },
+  { path: '**', redirectTo: '404' },
+  { path: '404', component: PageNotFoundComponent }
 ];
 
 @NgModule({
