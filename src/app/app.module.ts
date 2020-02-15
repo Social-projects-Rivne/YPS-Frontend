@@ -30,7 +30,6 @@ import { AddParentFormComponent } from './components/add-parent-form/add-parent-
 import { RecaptchaModule } from 'angular-google-recaptcha';
 import { SchoolRegisterFormComponent } from './components/school-register-form/school-register-form.component';
 import { AdminInfoComponent } from './components/admin-info/admin-info.component';
-import { AdminNavbarComponent } from './components/admin-navbar/admin-navbar.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
@@ -77,7 +76,6 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
     MastersComponent,
     SchoolRegisterFormComponent,
     AdminInfoComponent,
-    AdminNavbarComponent,
     SidebarComponent, 
     SchoolRequestsComponent,
     SchoolRequestCardComponent,
