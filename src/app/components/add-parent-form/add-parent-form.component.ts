@@ -5,6 +5,8 @@ import { HttpClient } from '@angular/common/http';
 import { validationHelper } from 'src/utils/helpers/validation-helper';
 import { apiUrl } from 'src/constants/urls';
 import { requiredValidator } from 'src/utils/validators/required-validator';
+import { IClassToSelect } from 'src/app/models/IClassToSelect';
+import { IPupilToSelect } from 'src/app/models/IPupilToSelect';
 
 @Component({
   selector: 'yps-add-parent-form',
@@ -24,6 +26,9 @@ export class AddParentFormComponent implements OnInit {
     }
   ];
   formIsOpen: boolean = false;
+  classes: IClassToSelect[];
+  pupils: IPupilToSelect[];
+
   @ViewChild('formRef') userSubFormRef: { fields: IFormField[], userSubForm: FormGroup }; 
 
   constructor(
@@ -37,10 +42,19 @@ export class AddParentFormComponent implements OnInit {
       "workInfo": [null, requiredValidator("work info is required")],
       "classId": [null]
     });
-    // TODO: do something
+
     this.form.controls.classId.valueChanges.subscribe(value => {
-      this.form.addControl("childId", new FormControl(null));
+      this.http.get(`${apiUrl}/pupils/getbyclass/${value}`)
+      .subscribe((successRes: IPupilToSelect[]) => {
+        this.pupils = successRes;
+        this.form.addControl("pupilId", new FormControl(null));
+      });
     });
+
+    this.http.get(`${apiUrl}/classes/getbyschool/1`)
+      .subscribe((successRes: IClassToSelect[]) => {
+        this.classes = successRes;
+      });
   }
 
   toggleForm = () => this.formIsOpen = !this.formIsOpen;
@@ -53,9 +67,12 @@ export class AddParentFormComponent implements OnInit {
     this.userSubFormRef.fields = subFormValidationResponse.fields;
 
     if (thisFormValidationResponse.isValid && subFormValidationResponse.isValid) {
-      return this.http.post(apiUrl + "/parents", this.form.value).subscribe((res: any) => {
-        console.log('add parent response', res);
-      });
+      return this.http.post(apiUrl + "/parents", this.form.value)
+        .subscribe(
+          (res: any) => {
+            console.log('add parent response', res);
+          }
+        );
     }
   }
 }
