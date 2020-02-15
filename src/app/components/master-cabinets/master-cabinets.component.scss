@@ -5,25 +5,35 @@
     grid-template-columns: auto 1fr;
     padding: 1rem;
     
-    .photo_edit{
+    .photo_edit {
         display: grid;
     }
-    .photo{
+
+    .photo {
         height: 13rem;
         width: 9.5rem;     
     }
-    .name_edit{
+
+    .name_edit {
+        display: grid;
         margin-left: 2rem;
-        //outline: 2px solid #000;
+        align-self: start;
+        grid-gap: 1rem;
+
+        .number, .email {
+            color: $grey;
+        }
     }
-    .uploadPhoto{
+
+    .uploadPhoto {
         transition: $transition;
         padding: 0.5rem;
         width: 100%;
+
         &:hover {
           border-color: $accent;
           background-color: #ffffff;
           color: $accent;
         }
-      }
+    }
 }

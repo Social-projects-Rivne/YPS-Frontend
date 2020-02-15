@@ -14,16 +14,13 @@ export class TeacherinfoService {
   
   constructor(private http: HttpClient) { }
 
-  
-
   getTeachers=():Observable<ITeacher[]>=>{
     let token = get('token');
-    
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type':  'application/json',
         'Authorization': 'Bearer '+ token
       })};
-    return this.http.get<ITeacher[]>(this.url+this.schoolId);
+    return this.http.get<ITeacher[]>(this.url+this.schoolId, httpOptions);
   }
 }
