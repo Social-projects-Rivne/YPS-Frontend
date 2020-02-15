@@ -13,6 +13,7 @@ export class TableUserComponent implements OnInit {
  
   columnTitles: string[];
 
+  @Input() isLoading : boolean;
 
   ngOnInit() {
     this.columnTitles = this.columns.map((value: { def: string; }) => value.def);
