@@ -1,7 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 @import './fonts.scss';
 @import './vars.scss';
-@import "@angular/material/prebuilt-themes/deeppurple-amber.css";
 
 * {
   color: $black;
@@ -47,7 +46,7 @@ button {
 
 input {
   border: none;
-  border-bottom: 1px solid $gray;
+  border-bottom: 1px solid $grey;
   padding: 0.5rem;
 }
 

@@ -28,7 +28,7 @@
               "src/assets"
             ],
             "styles": [
-              "src/mat-custom-theme.scss",
+              "src/custom-theme.scss",
               "src/styles.scss"
             ],
             "scripts": []
@@ -93,7 +93,7 @@
               "src/assets"
             ],
             "styles": [
-              "src/mat-custom-theme.scss",
+              "src/custom-theme.scss",
               "src/styles.scss"
             ],
             "scripts": []
