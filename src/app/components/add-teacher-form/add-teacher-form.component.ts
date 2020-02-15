@@ -24,7 +24,7 @@ export class AddTeacherFormComponent implements OnInit {
     }
   ];
   formIsOpen: boolean = false;
-  @ViewChild('formRef', { static: false }) userSubFormRef: { fields: IFormField[], userSubForm: FormGroup }; 
+  @ViewChild('formRef') userSubFormRef: { fields: IFormField[], userSubForm: FormGroup }; 
 
   constructor(
     private formBuilder: FormBuilder,

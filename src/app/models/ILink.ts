@@ -1,5 +1,5 @@
-export interface ILink{
-  fieldName:string;
-  linkPath:string;
-  iconPath:string;
+export interface ILink {
+  icon: string;
+  value: string;
+  path: string;
 }

@@ -19,12 +19,10 @@
     [formControlName]="field.name"
   >
   </yps-form-field>
-  <mat-form-field>
+  <mat-form-field appearance="fill">
     <mat-label>Select a class</mat-label>
     <mat-select formControlName="classId" disableRipple>
-      <mat-option value="1">7-a</mat-option>
-      <mat-option value="2">10-b</mat-option>
-      <mat-option value="3">11-c</mat-option>
+      <mat-option *ngFor="let class of classes" [value]="class.id">{{ class.name }}</mat-option>
     </mat-select>
   </mat-form-field>
   <button type="submit" class="btn primary">submit</button>

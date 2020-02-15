@@ -9,9 +9,6 @@ import { Router } from '@angular/router';
   styleUrls: ['./admin-navbar.component.scss']
 })
 export class AdminNavbarComponent implements OnInit {
-  // public admin: User;
-  // public user: IUser;
-
   admin:  IAdmin = {
     id: 1,
     firstName: "",
@@ -30,10 +27,4 @@ export class AdminNavbarComponent implements OnInit {
     this.userService.getUser()
     .subscribe(date => this.admin = date);
   }
-  // onClick(){
-  //   let redirect = 'localhost:4200/admin';
-
-  //   // Redirect the user
-  //   this.router.
-  // }
 }

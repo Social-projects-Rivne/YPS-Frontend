@@ -8,43 +8,42 @@ import { PageService } from 'src/app/services/page.service';
   styleUrls: ['./cabinet.component.scss']
 })
 export class CabinetComponent implements OnInit{
-
   sideLinks: ILink[] = [
     {
-      fieldName:"Profile",
-      linkPath:'/cabinet',
-      iconPath:"account_circle"
+      value: "Profile",
+      path:'/cabinet',
+      icon:"account_circle"
     },
     {
-      fieldName:"Pupils",
-      linkPath:'/cabinet/pupils',
-      iconPath:"child_care"
+      value: "Pupils",
+      path:'/cabinet/pupils',
+      icon:"face"
     },
     {
-      fieldName:"Parents",
-      linkPath:'/cabinet/parents',
-      iconPath:"supervised_user_circle"
+      value: "Parents",
+      path: '/cabinet/parents',
+      icon: "supervised_user_circle"
     },
     {
-      fieldName:"Teachers",
-      linkPath:'/cabinet/teachers',
-      iconPath:"emoji_people"
+      value: "Teachers",
+      path: '/cabinet/teachers',
+      icon: "emoji_people"
     },
     {
-      fieldName:"HeadAssistant",
-      linkPath:'/cabinet/head-assistants',
-      iconPath:"person_add"
+      value: "HeadAssistant",
+      path: '/cabinet/head-assistants',
+      icon: "person_add"
     },
     {
-      fieldName:"Master",
-      linkPath:'/cabinet/masters',
-      iconPath:"how_to_reg"
+      value: "Master",
+      path: '/cabinet/masters',
+      icon: "how_to_reg"
     }
   ];
+
   constructor(private pageService: PageService) { }
 
   ngOnInit() {
     this.pageService.set("YPS | Cabinet");
   }
-
 }

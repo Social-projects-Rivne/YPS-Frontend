@@ -8,29 +8,25 @@ import { UserAdminInfoService } from 'src/app/services/userinfo.service';
   styleUrls: ['./admin-panel.component.scss']
 })
 export class AdminPanelComponent implements OnInit {
-  sideLinks:ILink[]=
-  [{
-      fieldName:'Profile',
-      linkPath:'./profile',
-      iconPath:'account_circle'
+  sideLinks: ILink[] = [
+    {
+      value: 'Profile',
+      path: './',
+      icon: 'account_circle'
     },
     {
-      fieldName:'School Request',
-      linkPath:'./schoolRequest',
-      iconPath:'announcement'
+      value: 'School Request',
+      path: './schoolRequest',
+      icon: 'announcement'
     },
     {
-      fieldName:'Schools',
-      linkPath:'./schools',
-      iconPath:'school'
-  }];
+      value: 'Schools',
+      path: './schools',
+      icon: 'school'
+    }
+  ];
   
-  constructor(
-    private userService: UserAdminInfoService
-  ){}
+  constructor(private userService: UserAdminInfoService){}
 
-  ngOnInit() {
-   }
- 
-  
+  ngOnInit() {}
 }

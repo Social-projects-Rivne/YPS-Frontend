@@ -15,25 +15,29 @@ import { RegisterHeadmasterComponent } from './pages/register-headmaster/registe
 import { RegisterHeadmasterResponseComponent } from './pages/register-headmaster-response/register-headmaster-response.component';
 
 
+import { AdminInfoComponent } from './components/admin-info/admin-info.component';
+import { AdminPanelComponent } from './pages/admin-panel/admin-panel.component';
+import { SchoolRequestsComponent } from './components/School Requests/school-requests/school-requests.component';
 
 const cabinetRoutes: Routes = [
-  { path: '', component: MasterCabinetsComponent},
+  { path: '', component: MasterCabinetsComponent },
   { path: 'pupils', component: PupilsComponent },
   { path: 'parents', component: ParentsComponent },
   { path: 'teachers', component: TeachersComponent },
   { path: 'head-assistants', component: HeadassistantsComponent },
-  { path: 'masters', component: MastersComponent}
+  { path: 'masters', component: MastersComponent }
+];
+
+const adminRoutes: Routes = [
+  { path: '', component: AdminInfoComponent },
+  { path: 'schoolRequest', component: SchoolRequestsComponent }
 ];
 
 const routes: Routes = [
   { path: '', component: MainComponent },
   { path: 'school-main', component: SchoolMainComponent },
   { path: 'login', component: LoginComponent },
-  {
-    path: 'admin',
-    loadChildren:()=>import('./components/admin-cabinet/admin-cabinet.module')
-    .then(mod=>mod.AdminCabinetModule)    
-  },
+  { path: 'admin', component: AdminPanelComponent, children: adminRoutes },
   { path: 'cabinet', component: CabinetComponent, children:cabinetRoutes},
   { path: 'register-school', component: RegisterSchoolComponent},
   { path: 'register-headmaster', component: RegisterHeadmasterComponent},
@@ -44,11 +48,8 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-
 export class AppRoutingModule { }
 
-// * Array of Routing Components for importing to AppModule
-// ! Put All The Routing/Pages Components Here
 export const RoutingComponents = [
   MainComponent,
   LoginComponent,
@@ -61,5 +62,6 @@ export const RoutingComponents = [
   HeadassistantsComponent,
   MastersComponent,
   MasterCabinetsComponent,
-  CabinetComponent
+  CabinetComponent,
+  AdminPanelComponent
 ];
