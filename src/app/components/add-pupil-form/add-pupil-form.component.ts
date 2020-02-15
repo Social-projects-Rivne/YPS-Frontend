@@ -34,7 +34,6 @@ export class AddPupilFormComponent implements OnInit {
 
     this.http.get(`${apiUrl}/classes/getbyschool/1`)
       .subscribe((successRes: IClassToSelect[]) => {
-        console.log("get classes", successRes);
         this.classes = successRes;
       });
   }
