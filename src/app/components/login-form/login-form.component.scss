@@ -17,13 +17,6 @@
 
     .login-btn {
       justify-self: center;
-      transition: $transition;
-
-      &:hover {
-        border-color: $accent;
-        background-color: #ffffff;
-        color: $accent;
-      }
     }
 
     .wrap {
