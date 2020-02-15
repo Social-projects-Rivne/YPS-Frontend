@@ -25,13 +25,11 @@ import { AddPupilFormComponent } from './components/add-pupil-form/add-pupil-for
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RegisterHeadmasterComponent } from './pages/register-headmaster/register-headmaster.component';
 import { AddHeadmasterFormComponent } from './components/add-headmaster-form/add-headmaster-form.component';
-
 import { AddTeacherFormComponent } from './components/add-teacher-form/add-teacher-form.component';
 import { AddParentFormComponent } from './components/add-parent-form/add-parent-form.component';
 import { RecaptchaModule } from 'angular-google-recaptcha';
 import { SchoolRegisterFormComponent } from './components/school-register-form/school-register-form.component';
 import { AdminInfoComponent } from './components/admin-info/admin-info.component';
-import { AdminNavbarComponent } from './components/admin-navbar/admin-navbar.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
@@ -48,6 +46,7 @@ import { MatTableModule } from '@angular/material/table';
 import { MatSelectModule } from '@angular/material/select';
 import { MatInputModule } from '@angular/material/input';
 import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 @NgModule({
   declarations: [
@@ -77,7 +76,6 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
     MastersComponent,
     SchoolRegisterFormComponent,
     AdminInfoComponent,
-    AdminNavbarComponent,
     SidebarComponent, 
     SchoolRequestsComponent,
     SchoolRequestCardComponent,
@@ -102,6 +100,8 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
     MatSortModule,
     MatTableModule,
     MatSelectModule,
+    MatCardModule,
+    MatProgressSpinnerModule,
     MatInputModule,
     MatCheckboxModule
   ],

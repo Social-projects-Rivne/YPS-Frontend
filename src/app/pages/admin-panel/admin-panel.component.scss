@@ -1,7 +1,12 @@
 @import 'src/vars.scss';
 
-.tab {
-    float: left;
-    gap: 2rem;
-    padding-right: 6rem;
+:host{
+  display: grid;
+  grid-template-columns: auto auto 1fr;
+  grid-template-rows: auto 1fr;
+  grid-gap: 1rem;
+  
+  .cabinet-header {
+    grid-column: 1 / -1;
   }
+}

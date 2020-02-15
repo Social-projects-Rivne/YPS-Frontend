@@ -15,29 +15,41 @@ import { RegisterHeadmasterComponent } from './pages/register-headmaster/registe
 import { AdminInfoComponent } from './components/admin-info/admin-info.component';
 import { AdminPanelComponent } from './pages/admin-panel/admin-panel.component';
 import { SchoolRequestsComponent } from './components/School Requests/school-requests/school-requests.component';
+import { AuthGuard } from './guards/auth.guard';
+import { LoginGuard } from './guards/login.guard';
+import { MasterGuard } from './guards/master.guard';
+import { AdminGuard } from './guards/admin.guard';
+import { TeacherGuard } from './guards/teacher.guard';
+import { StudentGuard } from './guards/student.guard';
+import { ParentGuard } from './guards/parent.guard';
+import { HeadAssistentGuard } from './guards/head-assistent.guard';
 
 const cabinetRoutes: Routes = [
-  { path: '', component: MasterCabinetsComponent },
-  { path: 'pupils', component: PupilsComponent },
-  { path: 'parents', component: ParentsComponent },
-  { path: 'teachers', component: TeachersComponent },
-  { path: 'head-assistants', component: HeadassistantsComponent },
-  { path: 'masters', component: MastersComponent }
+  { path: '', canActivateChild: [AuthGuard], component: MasterCabinetsComponent },
+  { path: 'pupils', canActivateChild: [AuthGuard], component: PupilsComponent },
+  { path: 'parents', canActivateChild: [AuthGuard], component: ParentsComponent },
+  { path: 'teachers', canActivateChild: [AuthGuard], component: TeachersComponent },
+  { path: 'head-assistants', canActivateChild: [AuthGuard], component: HeadassistantsComponent },
+  { path: 'masters', canActivateChild: [AuthGuard], component: MastersComponent }
 ];
 
 const adminRoutes: Routes = [
-  { path: '', component: AdminInfoComponent },
-  { path: 'schoolRequest', component: SchoolRequestsComponent }
+  { path: '', canActivateChild: [AuthGuard], component: AdminInfoComponent },
+  { path: 'schoolRequest', canActivateChild: [AuthGuard], component: SchoolRequestsComponent }
 ];
 
 const routes: Routes = [
   { path: '', component: MainComponent },
-  { path: 'school-main', component: SchoolMainComponent },
-  { path: 'login', component: LoginComponent },
-  { path: 'admin', component: AdminPanelComponent, children: adminRoutes },
-  { path: 'cabinet', component: CabinetComponent, children: cabinetRoutes },
-  { path: 'register-school', component: RegisterSchoolComponent },
-  { path: 'register-headmaster', component: RegisterHeadmasterComponent }
+  {
+    path: 'school-main',
+    canActivate: [AuthGuard, TeacherGuard, StudentGuard, ParentGuard, HeadAssistentGuard, MasterGuard],
+    component: SchoolMainComponent
+  },
+  { path: 'login', canActivate: [LoginGuard], component: LoginComponent },
+  { path: 'admin', component: AdminPanelComponent, canActivate: [AuthGuard, AdminGuard], children: adminRoutes },
+  { path: 'cabinet', component: CabinetComponent, canActivate: [AuthGuard, MasterGuard], children: cabinetRoutes },
+  { path: 'register-school', canActivate: [LoginGuard], component: RegisterSchoolComponent },
+  { path: 'register-headmaster', canActivate: [AuthGuard], component: RegisterHeadmasterComponent }
 ];
 
 @NgModule({

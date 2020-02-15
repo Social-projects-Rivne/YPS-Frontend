@@ -1,12 +1,12 @@
 import { TestBed } from '@angular/core/testing';
 
-import { UserinfoService } from './userinfo.service';
+import { ParentService } from './parent.service';
 
-describe('UserinfoService', () => {
+describe('ParentService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
 
   it('should be created', () => {
-    const service: UserinfoService = TestBed.get(UserinfoService);
+    const service: ParentService = TestBed.get(ParentService);
     expect(service).toBeTruthy();
   });
 });
