@@ -1,6 +1,6 @@
+import { UserAdminInfoService } from './../../services/admin.service';
 import { Component, OnInit, Output } from '@angular/core';
 import { IAdmin } from 'src/app/models/IAdmin';
-import { UserAdminInfoService } from 'src/app/services/admin.service';
 
 @Component({
   selector: 'yps-admin-info',
@@ -18,10 +18,7 @@ export class AdminInfoComponent implements OnInit {
     dateOfBirth: "",
     imageUrl: ""
   };
-  constructor(
-    private userService: UserAdminInfoService,
-    ) {  
-    }
+  constructor(private userService: UserAdminInfoService) {}
 
   ngOnInit() {
     this.userService.getUser()

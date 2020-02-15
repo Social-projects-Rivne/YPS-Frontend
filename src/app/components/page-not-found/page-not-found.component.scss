@@ -1,0 +1,61 @@
+@import 'src/vars.scss';
+
+:host{
+    .container{
+        display:grid;
+        grid-template-columns: 50% 50%;
+        grid-template-rows: 100vh;
+
+        .left-side{
+            background-color: $accent;
+            display: grid;
+
+            .alien{
+                display: grid;
+                align-self: center;
+                justify-items: center;
+
+                .alien-img{
+                    width: 50%;
+                }
+            }          
+        }
+
+        .rigth-side{
+            //@debug: $light;
+            display: grid;
+
+            .main-content{
+                display: grid;
+                align-self: center;
+                justify-items: center;
+                grid-template-rows: auto 2fr 1fr;
+                .bg{
+                    background: url(../../../assets/images/1.jpg);
+                    -webkit-background-clip:text;
+                    -webkit-text-fill-color: transparent;
+                    h1{
+                        font-size: 10rem;
+                        letter-spacing: 0.5rem;
+                    }  
+                }
+                
+                
+                p{
+                    text-transform: uppercase;
+                    font-size: 1.3rem;
+                }
+                .btn {
+                    transition: $transition;
+                    padding-left: 2.7rem;
+                    padding-right: 2.7rem;
+                    &:hover {
+                      border-color: $accent;
+                      background-color: #ffffff;
+                      color: $accent;
+                    }
+                }
+            }
+        }
+    }
+}
