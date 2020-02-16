@@ -10,7 +10,6 @@ import { get } from 'js-cookie';
 
 export class TeacherinfoService {
   private url: string = "https://localhost:5001/api/Teachers/";
-  schoolId: string = "1";
   
   constructor(private http: HttpClient) { }
 
@@ -21,6 +20,6 @@ export class TeacherinfoService {
         'Content-Type':  'application/json',
         'Authorization': 'Bearer '+ token
       })};
-    return this.http.get<ITeacher[]>(this.url+this.schoolId, httpOptions);
+    return this.http.get<ITeacher[]>(this.url, httpOptions);
   }
 }
