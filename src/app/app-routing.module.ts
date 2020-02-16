@@ -52,7 +52,7 @@ const routes: Routes = [
   { path: 'admin', component: AdminPanelComponent, canActivate: [AuthGuard, AdminGuard], children: adminRoutes },
   { path: 'cabinet', component: CabinetComponent, canActivate: [AuthGuard, MasterGuard], children: cabinetRoutes },
   { path: 'register-school', canActivate: [LoginGuard], component: RegisterSchoolComponent },
-  { path: 'register-headmaster', canActivate: [AuthGuard], component: RegisterHeadmasterComponent },
+  { path: 'register-headmaster', component: RegisterHeadmasterComponent },
   { path: 'register-headmaster-response', component: RegisterHeadmasterResponseComponent}
 ];
 
