@@ -1,3 +1,4 @@
+import { AuthService } from 'src/app/services/auth/auth.service';
 import { Component, OnInit } from '@angular/core';
 import { IFormField } from 'src/app/models/IFormField';
 import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
@@ -8,9 +9,7 @@ import { validationHelper } from 'src/utils/helpers/validation-helper';
 import { HttpClient } from '@angular/common/http';
 import { set, get } from 'js-cookie';
 import { apiUrl } from 'src/constants/urls';
-import { AuthService } from 'src/app/services/auth/auth.service';
 import { NavigationExtras, Router } from '@angular/router';
-
 
 @Component({
   selector: 'yps-login-form',
