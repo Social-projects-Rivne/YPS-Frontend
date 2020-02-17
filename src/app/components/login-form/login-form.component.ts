@@ -58,7 +58,7 @@ export class LoginFormComponent implements OnInit {
         minLengthValidator(7, "email must be at least 7 characters."),
         patternValidator(
           /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/,
-          "email is invalid."
+          "invalid email, should be similar to example@email.com."
         )
       ]],
       "password": [null, [

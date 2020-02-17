@@ -3,6 +3,8 @@ import { FormGroup, FormBuilder, NG_VALUE_ACCESSOR, NG_VALIDATORS, ControlValueA
 import { IFormField } from 'src/app/models/IFormField';
 import { Subscription } from 'rxjs';
 import { requiredValidator } from 'src/utils/validators/required-validator';
+import { minLengthValidator } from 'src/utils/validators/min-length-validatot';
+import { patternValidator } from 'src/utils/validators/pattern-validator';
 
 @Component({
   selector: 'yps-user-sub-form',
@@ -74,8 +76,21 @@ export class UserSubFormComponent implements OnInit, OnDestroy, ControlValueAcce
       "firstName": [null, requiredValidator("first name is required")],
       "surname": [null, requiredValidator("surname is required")],
       "middleName": [null, requiredValidator("middle name is required")],
-      "phoneNumber": [null, requiredValidator("phone number is required")],
-      "email": [null, requiredValidator("email is required")],
+      "phoneNumber": [null, [
+        requiredValidator("phone number is required"),
+        minLengthValidator(7, "email must be at least 7 characters."),
+        patternValidator(
+          /^[(]{0,1}[0-9]{3}[)]{0,1}[-\s\.]{0,1}[0-9]{3}[-\s\.]{0,1}[0-9]{4}$/ ,
+        "invalid phone number, should be similar to 0973456784")
+      ]],
+      "email": [null, [
+        requiredValidator("email is required."),
+        minLengthValidator(7, "email must be at least 7 characters."),
+        patternValidator(
+          /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/,
+          "invalid email, should be similar to example@email.com."
+        )
+      ]],
     });
 
     this.subscriptions.push(
