@@ -1,7 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 @import './fonts.scss';
 @import './vars.scss';
-
+@import url('https://fonts.googleapis.com/css?family=Montserrat:900&display=swap');
 * {
   color: $black;
   padding: 0;
@@ -66,6 +66,7 @@ input {
   &:hover {
     border-color: $accent;
     color: $accent;
+    background: #fff;
   }
 }
 

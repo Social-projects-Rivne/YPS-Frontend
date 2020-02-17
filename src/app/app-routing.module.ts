@@ -53,10 +53,10 @@ const routes: Routes = [
   { path: 'admin', component: AdminPanelComponent, canActivate: [AuthGuard, AdminGuard], children: adminRoutes },
   { path: 'cabinet', component: CabinetComponent, canActivate: [AuthGuard, MasterGuard], children: cabinetRoutes },
   { path: 'register-school', canActivate: [LoginGuard], component: RegisterSchoolComponent },
-  { path: '**', redirectTo: '404' },
-  { path: '404', component: PageNotFoundComponent },
   { path: 'register-headmaster', component: RegisterHeadmasterComponent },
-  { path: 'register-headmaster-response', component: RegisterHeadmasterResponseComponent}
+  { path: 'register-headmaster-response', component: RegisterHeadmasterResponseComponent},
+  { path: '404', component: PageNotFoundComponent },
+  { path: '**', redirectTo: '404' },
 ];
 
 @NgModule({
