@@ -1,6 +1,6 @@
 import { ITeacher } from './../../models/ITeachet';
 import { Component, OnInit } from '@angular/core';
-import { TeacherinfoService } from 'src/app/services/teacherinfo.service';
+import { TeacherinfoService } from 'src/app/services/Teacher/teacherinfo.service';
 
 @Component({
   selector: 'yps-teachers',

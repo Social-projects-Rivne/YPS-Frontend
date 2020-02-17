@@ -1,6 +1,6 @@
 import { IPupil } from '../../models/IPupil';
 import {Component,OnInit} from '@angular/core';
-import { PupilinfoService } from './../../services/pupilinfo.service';
+import { PupilinfoService } from '../../services/Pupil/pupilinfo.service';
 
 @Component({
   selector: 'yps-pupils',

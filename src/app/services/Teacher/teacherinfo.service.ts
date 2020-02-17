@@ -1,9 +1,8 @@
+import { ITeacher } from './../../models/ITeachet';
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { ITeacher } from '../models/ITeachet';
 import { get } from 'js-cookie';
-
 @Injectable({
   providedIn: 'root'
 })

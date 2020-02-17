@@ -1,0 +1,47 @@
+@import 'src/vars.scss';
+
+:host{
+    display:grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 100vh;
+
+    .alien {
+        display: grid;
+        justify-items: center;
+        align-items: center;
+        background-color: $black;
+
+        .alien-img{
+            width: 45%;
+        }
+    }          
+
+    .info-404 {
+        display: grid;
+        align-self: center;
+        justify-items: center;
+        grid-template-rows: auto auto 2fr 1fr;
+
+        .ooops {
+            text-transform: capitalize;
+        }
+
+        .error-404 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 10rem;
+            letter-spacing: 0.5rem;
+            color: $accent;
+        }  
+        
+        .not-found {
+            text-align: center;
+            max-width: 25rem;
+            color:$gray;
+            font-size: 1.3rem;
+            
+            &::first-letter {
+                text-transform: capitalize;
+            }
+        }
+    }
+}
