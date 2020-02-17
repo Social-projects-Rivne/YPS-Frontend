@@ -22,7 +22,7 @@
         }
 
         .rigth-side{
-            //@debug: $light;
+            // background-color: #3b3a36;
             display: grid;
 
             .main-content{
@@ -31,9 +31,9 @@
                 justify-items: center;
                 grid-template-rows: auto 2fr 1fr;
                 .bg{
-                    background: url(../../../assets/images/1.jpg);
-                    -webkit-background-clip:text;
-                    -webkit-text-fill-color: transparent;
+                    // background: url(../../../assets/images/cute-alians.jpg)  no-repeat center/cover;;
+                    // -webkit-background-clip:text;
+                    // -webkit-text-fill-color: transparent;
                     h1{
                         font-size: 10rem;
                         letter-spacing: 0.5rem;
@@ -42,13 +42,16 @@
                 
                 
                 p{
+                    // color:$accent;
                     text-transform: uppercase;
                     font-size: 1.3rem;
                 }
                 .btn {
+                    // background-color: #c0dfd9;
+                    // border-radius: 2rem;
                     transition: $transition;
-                    padding-left: 2.7rem;
-                    padding-right: 2.7rem;
+                    // padding-left: 2.7rem;
+                    // padding-right: 2.7rem;
                     &:hover {
                       border-color: $accent;
                       background-color: #ffffff;

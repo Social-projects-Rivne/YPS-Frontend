@@ -1,4 +1,4 @@
-import { UserAdminInfoService } from './../../services/admin.service';
+import { UserAdminInfoService } from './../../services/admin/admin.service';
 import { Component, OnInit, Output } from '@angular/core';
 import { IAdmin } from 'src/app/models/IAdmin';
 
