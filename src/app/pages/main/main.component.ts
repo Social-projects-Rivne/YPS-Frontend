@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { PageService } from 'src/app/services/Page/page.service';
+import { PageService } from 'src/app/services/page-title/page.service';
 
 @Component({
   selector: 'yps-main',

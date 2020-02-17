@@ -1,4 +1,4 @@
-import { SchoolRequestService } from 'src/app/services/School-request/school-request.service';
+import { SchoolRequestService } from 'src/app/services/school-requests/school-request.service';
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit, Input } from '@angular/core';
 import { ISchoolRequestVM } from '../SchoolRequest/ISchoolRequestVM';
