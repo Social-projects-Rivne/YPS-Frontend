@@ -36,6 +36,7 @@ import { RouterModule } from '@angular/router';
 import { SchoolRequestsComponent } from './components/School Requests/school-requests/school-requests.component';
 import { SchoolRequestCardComponent } from './components/School Requests/school-request-card/school-request-card.component';
 import { HeaderComponent } from './components/header/header.component';
+import { RegisterHeadmasterResponseComponent } from './pages/register-headmaster-response/register-headmaster-response.component';
 
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
@@ -66,7 +67,6 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
     RegisterSchoolComponent,
     RegisterHeadmasterComponent,
     AddHeadmasterFormComponent,
-    TableUserComponent,
     AddTeacherFormComponent,
     AddParentFormComponent,
     TableUserComponent,
@@ -76,6 +76,7 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
     HeadassistantsComponent,
     MastersComponent,
     SchoolRegisterFormComponent,
+    RegisterHeadmasterResponseComponent,
     AdminInfoComponent,
     SidebarComponent, 
     SchoolRequestsComponent,

@@ -4,6 +4,8 @@ class="form"
 (ngSubmit)="onSubmit()"
 >
 <h1 class="title">register headmaster</h1>
+<yps-user-sub-form formControlName="user" #formRef>
+</yps-user-sub-form>
 <yps-form-field
   *ngFor="let field of fields"
   [field]="field"

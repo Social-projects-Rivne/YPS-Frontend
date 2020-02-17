@@ -13,6 +13,9 @@ import { SchoolMainComponent } from './pages/school-main/school-main.component';
 import { CabinetComponent } from './pages/cabinet/cabinet.component';
 import { RegisterSchoolComponent } from './pages/register-school/register-school.component';
 import { RegisterHeadmasterComponent } from './pages/register-headmaster/register-headmaster.component';
+import { RegisterHeadmasterResponseComponent } from './pages/register-headmaster-response/register-headmaster-response.component';
+
+
 import { AdminInfoComponent } from './components/admin-info/admin-info.component';
 import { AdminPanelComponent } from './pages/admin-panel/admin-panel.component';
 import { SchoolRequestsComponent } from './components/School Requests/school-requests/school-requests.component';
@@ -50,10 +53,10 @@ const routes: Routes = [
   { path: 'admin', component: AdminPanelComponent, canActivate: [AuthGuard, AdminGuard], children: adminRoutes },
   { path: 'cabinet', component: CabinetComponent, canActivate: [AuthGuard, MasterGuard], children: cabinetRoutes },
   { path: 'register-school', canActivate: [LoginGuard], component: RegisterSchoolComponent },
-  { path: 'register-headmaster', canActivate: [AuthGuard], component: RegisterHeadmasterComponent },
-  { path: 'school-main', component: SchoolMainComponent },
   { path: '**', redirectTo: '404' },
-  { path: '404', component: PageNotFoundComponent }
+  { path: '404', component: PageNotFoundComponent },
+  { path: 'register-headmaster', component: RegisterHeadmasterComponent },
+  { path: 'register-headmaster-response', component: RegisterHeadmasterResponseComponent}
 ];
 
 @NgModule({
