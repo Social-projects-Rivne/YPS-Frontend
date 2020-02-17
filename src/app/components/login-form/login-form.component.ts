@@ -81,9 +81,10 @@ export class LoginFormComponent implements OnInit {
       }
       return this.http.post(apiUrl + "/auth", this.form.value)
         .subscribe(
-          (successRes: { token: string, role: string }) => {
+          (successRes: { token: string,refreshToken: string , role: string }) => {
             set('token', successRes.token);
             set('role', successRes.role);
+            set('refreshToken',successRes.refreshToken);
             // Get the redirect URL from our auth service
             // If no redirect has been set, use the default
             switch (successRes.role) {
