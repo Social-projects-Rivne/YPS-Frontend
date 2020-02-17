@@ -1,4 +1,4 @@
-import { ISchoolRequestVM } from '../components/School Requests/SchoolRequest/ISchoolRequestVM';
+import { ISchoolRequestVM } from '../../components/School Requests/SchoolRequest/ISchoolRequestVM';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, from } from 'rxjs';

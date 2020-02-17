@@ -1,7 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 @import './fonts.scss';
 @import './vars.scss';
-
+@import url('https://fonts.googleapis.com/css?family=Montserrat:900&display=swap');
 * {
   color: $black;
   padding: 0;
@@ -46,7 +46,7 @@ button {
 
 input {
   border: none;
-  border-bottom: 1px solid $grey;
+  border-bottom: 1px solid $gray;
   padding: 0.5rem;
 }
 
@@ -59,10 +59,14 @@ input {
   font-weight: 600;
   font-size: 0.7rem;
   transition: $transition;
+  border-color: $accent;
+  background-color: $accent;
+  color: #fff;
 
   &:hover {
     border-color: $accent;
     color: $accent;
+    background: #fff;
   }
 }
 

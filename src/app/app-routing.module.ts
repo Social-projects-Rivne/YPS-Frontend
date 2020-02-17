@@ -1,3 +1,4 @@
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { MasterCabinetsComponent } from './components/master-cabinets/master-cabinets.component';
 import { MastersComponent } from './pages/masters/masters.component';
 import { HeadassistantsComponent } from './pages/headassistants/headassistants.component';
@@ -53,7 +54,9 @@ const routes: Routes = [
   { path: 'cabinet', component: CabinetComponent, canActivate: [AuthGuard, MasterGuard], children: cabinetRoutes },
   { path: 'register-school', canActivate: [LoginGuard], component: RegisterSchoolComponent },
   { path: 'register-headmaster', component: RegisterHeadmasterComponent },
-  { path: 'register-headmaster-response', component: RegisterHeadmasterResponseComponent}
+  { path: 'register-headmaster-response', component: RegisterHeadmasterResponseComponent},
+  { path: '404', component: PageNotFoundComponent },
+  { path: '**', redirectTo: '404' },
 ];
 
 @NgModule({
