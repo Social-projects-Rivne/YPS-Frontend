@@ -1,12 +1,31 @@
+@import "src/vars";
+
 :host {
-    .main-info {
-        display: grid;
-        grid-gap: 1rem;
-        text-align: center;
-        text-transform: capitalize;
-        padding: 6rem;
+    display: grid;
+    grid-gap: 2rem;
+    text-align: center;
+    justify-items: center;
+    align-content: start;
+
+    .success {
+        text-transform: capitalize;    
     }
-    .link {
-        font-size: 1.5rem;
+
+    .congr {
+        color: $grey;
+        max-width: 20rem;
+        &::first-letter {
+            text-transform: uppercase;
+        }
+    }
+
+    .btn {
+        transition: $transition;
+        margin-top: 1rem;
+      &:hover {
+        border-color: $accent;
+        background-color: #ffffff;
+        color: $accent;
+      }
     }
 }
