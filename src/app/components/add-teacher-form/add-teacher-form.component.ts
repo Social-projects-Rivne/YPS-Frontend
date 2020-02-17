@@ -50,7 +50,7 @@ export class AddTeacherFormComponent implements OnInit {
     if (thisFormValidationResponse.isValid && subFormValidationResponse.isValid) {
       return this.http.post(apiUrl + "/teachers", this.form.value).subscribe((res: any) => {
         console.log('add teacher response', res);
-      });
+      }); 
     }
   }
 }

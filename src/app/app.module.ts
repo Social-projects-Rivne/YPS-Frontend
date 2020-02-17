@@ -36,6 +36,7 @@ import { RouterModule } from '@angular/router';
 import { SchoolRequestsComponent } from './components/School Requests/school-requests/school-requests.component';
 import { SchoolRequestCardComponent } from './components/School Requests/school-request-card/school-request-card.component';
 import { HeaderComponent } from './components/header/header.component';
+import { RegisterHeadmasterResponseComponent } from './pages/register-headmaster-response/register-headmaster-response.component';
 
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
@@ -65,7 +66,6 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
     RegisterSchoolComponent,
     RegisterHeadmasterComponent,
     AddHeadmasterFormComponent,
-    TableUserComponent,
     AddTeacherFormComponent,
     AddParentFormComponent,
     TableUserComponent,
@@ -75,6 +75,7 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
     HeadassistantsComponent,
     MastersComponent,
     SchoolRegisterFormComponent,
+    RegisterHeadmasterResponseComponent,
     AdminInfoComponent,
     SidebarComponent, 
     SchoolRequestsComponent,
