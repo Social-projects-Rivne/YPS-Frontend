@@ -8,7 +8,7 @@ import { validationHelper } from 'src/utils/helpers/validation-helper';
 import { HttpClient } from '@angular/common/http';
 import {boolRequiredValidator } from 'src/utils/validators/bool-required-validator';
 import {Router} from '@angular/router';
-
+import { apiUrl } from 'src/constants/urls';
 
 @Component({
   selector: 'yps-school-register-form',
@@ -116,17 +116,16 @@ export class SchoolRegisterFormComponent implements OnInit {
 
   }
    onSubmit() {
-    // * Validation method which sets error messages to fields if there are any errors.
-    // * Takes 2 parameters form controls and an array of fields.
-    // * Returns an object which contains new updated fields(you have to set updated fields to this.fields) and an isValid value.
     const { fields, isValid } = validationHelper(this.form.controls, this.fields);
 
     this.fields = fields;
 
     const confHasError = this.form.controls.confirmation.errors;
     const verHasError = this.form.controls.verified.errors;
+
     this.confErrorMsg = null;
     this.verErrorMsg = null;
+
     this.confErrorMsg = !!confHasError ? confHasError.required.errorMsg : null;
     this.verErrorMsg = !!verHasError ? verHasError.required.errorMsg : null;
 
@@ -134,29 +133,30 @@ export class SchoolRegisterFormComponent implements OnInit {
       if (this.showCaptcha == true && this.iterations > 1 && this.iterations % 2 ==0) {
         this.form.removeControl("myRecaptcha");
         this.showCaptcha = false;
-     }
-      const url: string = "https://localhost:44372/api/SchoolRequests";
-        return this.http.post(url, this.form.value).subscribe(
-        (res) =>{
-          this.router.navigate(['/']);
-        },
-        (res) => {
-          if (this.iterations == 1 && this.showCaptcha == false )
-          {
-            this.showCaptcha = true;
-            this.form.addControl("myRecaptcha", new FormControl(null));
+      }
+
+      return this.http.post(apiUrl + "/SchoolRequests", this.form.value)
+        .subscribe(
+          (res) => {
+            this.router.navigate(['/']);
+          },
+          (res) => {
+            if (this.iterations == 1 && this.showCaptcha == false) {
+              this.showCaptcha = true;
+              this.form.addControl("myRecaptcha", new FormControl(null));
+            }
+            
+            if (this.showCaptcha == false && this.iterations > 1 && this.iterations % 2 ==0) {
+              this.showCaptcha = true;
+              this.form.addControl("myRecaptcha", new FormControl(null));
+            }
+
+            this.iterations = this.iterations + 1;
+
+            this.fields.find(x => x.name == "email").errorMsg = "Email already exists";
+            this.fields.find(x => x.name == "address").errorMsg = "Address already exists";
           }
-          
-          if (this.showCaptcha == false && this.iterations > 1 && this.iterations % 2 ==0)
-          {
-            this.showCaptcha = true;
-            this.form.addControl("myRecaptcha", new FormControl(null));
-          }
-          this.iterations = this.iterations + 1;
-          this.fields.find(x => x.name == "email").errorMsg = "Something incorrect";
-          this.fields.find(x => x.name == "address").errorMsg = "Something incorrect";
-        }
-      );
+        );
     }
   }
 }
