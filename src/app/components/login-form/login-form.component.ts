@@ -113,6 +113,14 @@ export class LoginFormComponent implements OnInit {
                 };
                 this.router.navigateByUrl(this.authService.redirectUrl, navigationExtras2);
                 break;
+              case 'parent':
+                this.authService.redirectUrl = '/parent';
+                let navigationExtras3: NavigationExtras = {
+                  queryParamsHandling: 'preserve',
+                  preserveFragment: true
+                };
+                this.router.navigateByUrl(this.authService.redirectUrl, navigationExtras3);
+                break;  
               default:
                 break;
             }

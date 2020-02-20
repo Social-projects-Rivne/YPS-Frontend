@@ -10,9 +10,10 @@ import {get} from 'js-cookie';
 export class ParentService {
 
   private url: string = "https://localhost:5001/api/Parents";
+  
   constructor(private http:HttpClient) { }
 
-  get=():Observable<IParent[]> =>{
+  getParentsInfo=():Observable<IParent[]> =>{
     let token = get('token');
     const httpOptions = {
       headers: new HttpHeaders({
