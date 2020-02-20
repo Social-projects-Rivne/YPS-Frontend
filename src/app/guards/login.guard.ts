@@ -27,6 +27,8 @@ export class LoginGuard implements CanActivate {
       this.router.navigate(['/cabinet']);
     } else if (this.authService.hasHeadMasterRole()) {
       this.router.navigate(['/cabinet']);
+    }else if (this.authService.hasTeacherRole()) {
+      this.router.navigate(['/teacher']);
     }
     //Add new redirect after adding new cabinet
     return false;

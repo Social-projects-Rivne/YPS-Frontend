@@ -27,6 +27,8 @@ import { TeacherGuard } from './guards/teacher.guard';
 import { StudentGuard } from './guards/student.guard';
 import { ParentGuard } from './guards/parent.guard';
 import { HeadAssistentGuard } from './guards/head-assistent.guard';
+import { TeacherCabinetComponent } from './pages/teacher-cabinet/teacher-cabinet.component';
+import { TeacherInfoComponent } from './components/teacher-info/teacher-info.component';
 
 const cabinetRoutes: Routes = [
   { path: '', canActivateChild: [AuthGuard], component: MasterCabinetsComponent },
@@ -39,6 +41,10 @@ const cabinetRoutes: Routes = [
 
 const adminRoutes: Routes = [
   { path: '', canActivateChild: [AuthGuard], component: AdminInfoComponent },
+  { path: 'schoolRequest', canActivateChild: [AuthGuard], component: SchoolRequestsComponent }
+];
+const teacherRoutes: Routes = [
+  { path: '', canActivateChild: [AuthGuard], component: TeacherInfoComponent },
   { path: 'schoolRequest', canActivateChild: [AuthGuard], component: SchoolRequestsComponent }
 ];
 
@@ -54,7 +60,13 @@ const routes: Routes = [
   { path: 'cabinet', component: CabinetComponent, canActivate: [AuthGuard, MasterGuard], children: cabinetRoutes },
   { path: 'register-school', canActivate: [LoginGuard], component: RegisterSchoolComponent },
   { path: 'register-headmaster', component: RegisterHeadmasterComponent },
-  { path: 'register-headmaster-response', component: RegisterHeadmasterResponseComponent},
+  { path: 'register-headmaster-response', component: RegisterHeadmasterResponseComponent },
+  {
+    path: 'teacher',
+    canActivate: [AuthGuard, TeacherGuard],
+    component: TeacherCabinetComponent,
+    children: teacherRoutes
+  },
   { path: '404', component: PageNotFoundComponent },
   { path: '**', redirectTo: '404' },
 ];
