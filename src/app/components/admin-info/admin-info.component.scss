@@ -15,6 +15,10 @@
   justify-self: self-start;
   display: grid;
   grid-template-rows: repeat(5, 1fr);
+  
+  .number, .email {
+    color: $gray;
+}
 }
 
 .userphoto {

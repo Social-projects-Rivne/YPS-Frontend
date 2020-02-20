@@ -27,9 +27,9 @@ export class TeacherCabinetComponent implements OnInit {
       icon: 'date_range'
     },
     {
-      value: 'Schools',
-      path: './schools',
-      icon: 'school'
+      value: 'Materials',
+      path: './materials',
+      icon: 'menu_book'
     }
   ];
   user: ITeacher = {

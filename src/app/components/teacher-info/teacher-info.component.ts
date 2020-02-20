@@ -25,8 +25,6 @@ export class TeacherInfoComponent implements OnInit {
   constructor(private pageService: PageService, private userService: TeacherinfoService) { }
 
   ngOnInit(): void {
-    // this.pageService.set("YPS | Teacher");
     this.userService.getTeacherByID().subscribe(data =>this.user=data);
   }
-
 }

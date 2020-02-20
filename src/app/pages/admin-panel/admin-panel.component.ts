@@ -40,6 +40,7 @@ export class AdminPanelComponent implements OnInit {
   constructor(private userService: UserAdminInfoService, private pageService: PageService) { }
 
   ngOnInit() {
+    this.pageService.set("YPS | Admin");
     this.userService.getUser()
     .subscribe(data => this.user = data);
   }

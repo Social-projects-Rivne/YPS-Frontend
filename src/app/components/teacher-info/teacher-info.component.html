@@ -1,1 +1,13 @@
-<p>teacher-info works!</p>
+<div class="photo_edit">
+    <img src="{{user.imageUrl}}" class="photo" />
+    <input type="file" style="display: none;" accept="image/*" #file>
+    <button type="button" class="btn uploadPhoto primary">Upload</button>
+</div>
+<div class="name_edit">
+    <h2 class="full-name">{{user.surname}} {{user.firstName}} {{user.middleName}}</h2>
+    <h3 class="email">{{user.email}} </h3>
+    <h3 class="digit number">{{user.phoneNumber}} </h3>
+    <h3 class="date">{{user.dateOfBirth | slice:0:10 }} </h3>
+    <h3 class="class_teacher">You are class teacher: {{user.className}} </h3>
+    <h3>{{user.degree}}</h3>
+</div>
