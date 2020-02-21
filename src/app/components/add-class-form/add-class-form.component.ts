@@ -2,11 +2,8 @@ import { maxLengthValidator } from './../../../utils/validators/max-length-valid
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 import { IFormField } from 'src/app/models/IFormField';
-//
-import { PupilinfoService } from '../../services/pupils/pupilinfo.service';
 import { requiredValidator } from 'src/utils/validators/required-validator';
 import { validationHelper } from 'src/utils/helpers/validation-helper';
-import { minLengthValidator } from 'src/utils/validators/min-length-validatot';
 
 @Component({
   selector: 'yps-add-class-form',
@@ -56,5 +53,4 @@ export class AddClassFormComponent implements OnInit {
       //request
     }
   }
-
 }
