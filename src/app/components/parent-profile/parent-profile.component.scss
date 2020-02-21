@@ -20,7 +20,7 @@
         align-self: start;
         grid-gap: 1rem;
 
-        .number, .email {
+        .number, .email, .workinfo, .dateOfBirth {
             color: $gray;
         }
     }
