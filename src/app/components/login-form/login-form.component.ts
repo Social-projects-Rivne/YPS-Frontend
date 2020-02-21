@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import { Component, OnInit } from "@angular/core";
 import { IFormField } from "src/app/models/IFormField";
 import {
@@ -16,7 +15,6 @@ import { set, get } from "js-cookie";
 import { apiUrl } from "src/constants/urls";
 import { AuthService } from "src/app/services/auth/auth.service";
 import { NavigationExtras, Router } from "@angular/router";
-=======
 import { AuthService } from 'src/app/services/auth/auth.service';
 import { Component, OnInit } from '@angular/core';
 import { IFormField } from 'src/app/models/IFormField';
@@ -29,7 +27,6 @@ import { HttpClient } from '@angular/common/http';
 import { set, get } from 'js-cookie';
 import { apiUrl } from 'src/constants/urls';
 import { NavigationExtras, Router } from '@angular/router';
->>>>>>> 16894c7802e9d1c082089603b50f1f0a7d3239c2
 
 @Component({
   selector: "yps-login-form",
@@ -72,7 +69,6 @@ export class LoginFormComponent implements OnInit {
     this.iterations = 1;
     this.showCaptcha = false;
     this.form = this.formBuilder.group({
-<<<<<<< HEAD
       email: [
         null,
         [
@@ -92,7 +88,6 @@ export class LoginFormComponent implements OnInit {
         ]
       ],
       remember: [null]
-=======
       "email": [null, [
         requiredValidator("email is required."),
         minLengthValidator(7, "email must be at least 7 characters."),
@@ -106,7 +101,6 @@ export class LoginFormComponent implements OnInit {
         minLengthValidator(7, "password must be at least 7 characters.")
       ]],
       "remember": [null]
->>>>>>> 16894c7802e9d1c082089603b50f1f0a7d3239c2
     });
   }
   onSubmit() {
