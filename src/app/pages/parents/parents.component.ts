@@ -1,4 +1,4 @@
-import { ParentService } from '../../services/Parent/parent.service';
+import { ParentService } from '../../services/parents/parent.service';
 import { IParent } from './../../models/IParent';
 import { Component, OnInit } from '@angular/core';
 
