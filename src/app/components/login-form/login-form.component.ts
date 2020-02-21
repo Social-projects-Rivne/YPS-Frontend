@@ -68,6 +68,7 @@ export class LoginFormComponent implements OnInit {
       "remember": [null]
     });
   }
+  
   onSubmit() {
     const { fields, isValid } = validationHelper(this.form.controls, this.fields);
 

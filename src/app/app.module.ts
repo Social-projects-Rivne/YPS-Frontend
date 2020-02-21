@@ -49,6 +49,8 @@ import { MatInputModule } from '@angular/material/input';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import { ClassesComponent } from './pages/classes/classes.component';
+import { AddClassFormComponent } from './components/add-class-form/add-class-form.component';
 
 @NgModule({
   declarations: [
@@ -82,7 +84,9 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
     SchoolRequestsComponent,
     SchoolRequestCardComponent,
     HeaderComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    ClassesComponent,
+    AddClassFormComponent
   ],
   imports: [
     BrowserModule,
