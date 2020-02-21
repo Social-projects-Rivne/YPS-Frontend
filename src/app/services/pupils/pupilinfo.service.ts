@@ -1,19 +1,28 @@
+import { get } from 'js-cookie';
 import { IPupil } from '../../models/IPupil';
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PupilinfoService {
-  private url: string = "https://localhost:5001/api/Pupils/GetBySchool/";
-  schoolId: string = "1";
-
+  private url: string = "https://localhost:5001/api/Pupils/GetBySchool";
+  
   constructor(private http: HttpClient) { }
 
   getPupils=(): Observable<IPupil[]> => {
-    return this.http.get<IPupil[]>(this.url+this.schoolId);
+
+    let token = get('token');
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer ' + token
+      })
+    };
+    
+    return this.http.get<IPupil[]>(this.url,httpOptions);
   }
 }
 

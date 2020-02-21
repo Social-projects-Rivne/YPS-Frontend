@@ -1,20 +1,4 @@
-import { Component, OnInit } from "@angular/core";
-import { IFormField } from "src/app/models/IFormField";
-import {
-  FormBuilder,
-  FormGroup,
-  FormControl,
-  Validators
-} from "@angular/forms";
-import { patternValidator } from "src/utils/validators/pattern-validator";
-import { requiredValidator } from "src/utils/validators/required-validator";
-import { minLengthValidator } from "src/utils/validators/min-length-validatot";
-import { validationHelper } from "src/utils/helpers/validation-helper";
-import { HttpClient } from "@angular/common/http";
-import { set, get } from "js-cookie";
 import { apiUrl } from "src/constants/urls";
-import { AuthService } from "src/app/services/auth/auth.service";
-import { NavigationExtras, Router } from "@angular/router";
 import { AuthService } from 'src/app/services/auth/auth.service';
 import { Component, OnInit } from '@angular/core';
 import { IFormField } from 'src/app/models/IFormField';
@@ -25,7 +9,6 @@ import { minLengthValidator } from 'src/utils/validators/min-length-validatot';
 import { validationHelper } from 'src/utils/helpers/validation-helper';
 import { HttpClient } from '@angular/common/http';
 import { set, get } from 'js-cookie';
-import { apiUrl } from 'src/constants/urls';
 import { NavigationExtras, Router } from '@angular/router';
 
 @Component({
@@ -69,25 +52,6 @@ export class LoginFormComponent implements OnInit {
     this.iterations = 1;
     this.showCaptcha = false;
     this.form = this.formBuilder.group({
-      email: [
-        null,
-        [
-          requiredValidator("email is required."),
-          minLengthValidator(7, "email must be at least 7 characters."),
-          patternValidator(
-            /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/,
-            "email is invalid."
-          )
-        ]
-      ],
-      password: [
-        null,
-        [
-          requiredValidator("password is required."),
-          minLengthValidator(7, "password must be at least 7 characters.")
-        ]
-      ],
-      remember: [null]
       "email": [null, [
         requiredValidator("email is required."),
         minLengthValidator(7, "email must be at least 7 characters."),
@@ -103,6 +67,7 @@ export class LoginFormComponent implements OnInit {
       "remember": [null]
     });
   }
+  
   onSubmit() {
     const { fields, isValid } = validationHelper(
       this.form.controls,

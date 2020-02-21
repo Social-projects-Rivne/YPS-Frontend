@@ -17,7 +17,6 @@ import { LoginFormComponent } from './components/login-form/login-form.component
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { QuotesBoxComponent } from './components/quotes-box/quotes-box.component';
 import { SchoolEventFormComponent } from './components/school-event-form/school-event-form.component';
-import { NavBarFormComponent } from './components/nav-bar-form/nav-bar-form.component';
 import { MainToolsSectionComponent } from './components/main-tools-section/main-tools-section.component';
 import { MainContentSectionComponent } from './components/main-content-section/main-content-section.component';
 import { UserSubFormComponent } from './components/user-sub-form/user-sub-form.component';
@@ -49,6 +48,8 @@ import { MatInputModule } from '@angular/material/input';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import { ClassesComponent } from './pages/classes/classes.component';
+import { AddClassFormComponent } from './components/add-class-form/add-class-form.component';
 import {TokenInterceptor} from './helpers/token.interceptor';
 
 @NgModule({
@@ -60,7 +61,6 @@ import {TokenInterceptor} from './helpers/token.interceptor';
     LoginFormComponent,
     QuotesBoxComponent,
     SchoolEventFormComponent,
-    NavBarFormComponent,
     MainToolsSectionComponent,
     MainContentSectionComponent,
     UserSubFormComponent,
@@ -83,7 +83,9 @@ import {TokenInterceptor} from './helpers/token.interceptor';
     SchoolRequestsComponent,
     SchoolRequestCardComponent,
     HeaderComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    ClassesComponent,
+    AddClassFormComponent
   ],
   imports: [
     BrowserModule,
