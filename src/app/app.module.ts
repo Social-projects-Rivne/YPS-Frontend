@@ -14,7 +14,7 @@ import { AppComponent } from './app.component';
 import { WelcomeComponent } from './components/welcome/welcome.component';
 import { FormFieldComponent } from './components/form-field/form-field.component';
 import { LoginFormComponent } from './components/login-form/login-form.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { QuotesBoxComponent } from './components/quotes-box/quotes-box.component';
 import { SchoolEventFormComponent } from './components/school-event-form/school-event-form.component';
 import { NavBarFormComponent } from './components/nav-bar-form/nav-bar-form.component';
@@ -49,6 +49,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import {TokenInterceptor} from './helpers/token.interceptor';
 
 @NgModule({
   declarations: [
@@ -78,7 +79,7 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
     SchoolRegisterFormComponent,
     RegisterHeadmasterResponseComponent,
     AdminInfoComponent,
-    SidebarComponent, 
+    SidebarComponent,
     SchoolRequestsComponent,
     SchoolRequestCardComponent,
     HeaderComponent,
@@ -108,7 +109,11 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
     MatInputModule,
     MatCheckboxModule
   ],
-  providers: [],
+  providers: [{
+    provide: HTTP_INTERCEPTORS,
+     useClass: TokenInterceptor,
+      multi: true}
+    ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

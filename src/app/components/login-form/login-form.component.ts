@@ -1,3 +1,20 @@
+import { Component, OnInit } from "@angular/core";
+import { IFormField } from "src/app/models/IFormField";
+import {
+  FormBuilder,
+  FormGroup,
+  FormControl,
+  Validators
+} from "@angular/forms";
+import { patternValidator } from "src/utils/validators/pattern-validator";
+import { requiredValidator } from "src/utils/validators/required-validator";
+import { minLengthValidator } from "src/utils/validators/min-length-validatot";
+import { validationHelper } from "src/utils/helpers/validation-helper";
+import { HttpClient } from "@angular/common/http";
+import { set, get } from "js-cookie";
+import { apiUrl } from "src/constants/urls";
+import { AuthService } from "src/app/services/auth/auth.service";
+import { NavigationExtras, Router } from "@angular/router";
 import { AuthService } from 'src/app/services/auth/auth.service';
 import { Component, OnInit } from '@angular/core';
 import { IFormField } from 'src/app/models/IFormField';
@@ -12,9 +29,9 @@ import { apiUrl } from 'src/constants/urls';
 import { NavigationExtras, Router } from '@angular/router';
 
 @Component({
-  selector: 'yps-login-form',
-  templateUrl: './login-form.component.html',
-  styleUrls: ['./login-form.component.scss']
+  selector: "yps-login-form",
+  templateUrl: "./login-form.component.html",
+  styleUrls: ["./login-form.component.scss"]
 })
 export class LoginFormComponent implements OnInit {
   form: FormGroup;
@@ -38,7 +55,7 @@ export class LoginFormComponent implements OnInit {
       placeholder: "enter your password",
       name: "password",
       errorMsg: null
-    },
+    }
   ];
 
   constructor(
@@ -46,13 +63,31 @@ export class LoginFormComponent implements OnInit {
     private http: HttpClient,
     private authService: AuthService,
     public router: Router
-  ) { }
-
+  ) {}
 
   ngOnInit() {
     this.iterations = 1;
     this.showCaptcha = false;
     this.form = this.formBuilder.group({
+      email: [
+        null,
+        [
+          requiredValidator("email is required."),
+          minLengthValidator(7, "email must be at least 7 characters."),
+          patternValidator(
+            /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/,
+            "email is invalid."
+          )
+        ]
+      ],
+      password: [
+        null,
+        [
+          requiredValidator("password is required."),
+          minLengthValidator(7, "password must be at least 7 characters.")
+        ]
+      ],
+      remember: [null]
       "email": [null, [
         requiredValidator("email is required."),
         minLengthValidator(7, "email must be at least 7 characters."),
@@ -69,70 +104,90 @@ export class LoginFormComponent implements OnInit {
     });
   }
   onSubmit() {
-    const { fields, isValid } = validationHelper(this.form.controls, this.fields);
+    const { fields, isValid } = validationHelper(
+      this.form.controls,
+      this.fields
+    );
 
     this.fields = fields;
-    console.info(`Login form is ${isValid ? 'valid' : 'invalid'}`);
+    console.info(`Login form is ${isValid ? "valid" : "invalid"}`);
     if (isValid) {
-      if (this.showCaptcha == true && this.iterations > 3 && this.iterations % 2 == 0) {
+      if (
+        this.showCaptcha == true &&
+        this.iterations > 3 &&
+        this.iterations % 2 == 0
+      ) {
         this.form.removeControl("myRecaptcha");
         this.showCaptcha = false;
       }
-      return this.http.post(apiUrl + "/auth", this.form.value)
-        .subscribe(
-          (successRes: { token: string, role: string }) => {
-            set('token', successRes.token);
-            set('role', successRes.role);
-            // Get the redirect URL from our auth service
-            // If no redirect has been set, use the default
-            switch (successRes.role) {
-              case 'admin':
-                this.authService.redirectUrl = '/admin';
-                // Set our navigation extras object
-                // that passes on our global query params and fragment
-                let navigationExtras: NavigationExtras = {
-                  queryParamsHandling: 'preserve',
-                  preserveFragment: true
-                };
-                // Redirect the user
-                this.router.navigateByUrl(this.authService.redirectUrl, navigationExtras);
-                break;
-              case 'master':
-                this.authService.redirectUrl = '/cabinet';
-                let navigationExtras1: NavigationExtras = {
-                  queryParamsHandling: 'preserve',
-                  preserveFragment: true
-                };
-                this.router.navigateByUrl(this.authService.redirectUrl, navigationExtras1);
-                break;
-              case 'head-master':
-                this.authService.redirectUrl = '/cabinet';
-                let navigationExtras2: NavigationExtras = {
-                  queryParamsHandling: 'preserve',
-                  preserveFragment: true
-                };
-                this.router.navigateByUrl(this.authService.redirectUrl, navigationExtras2);
-                break;
-              default:
-                break;
-            }
-          },
-          (errorRes: any) => {
-            if (this.iterations == 3 && this.showCaptcha == false) {
-              this.showCaptcha = true;
-              this.form.addControl("myRecaptcha", new FormControl(null));
-            }
-            if (this.showCaptcha == false && this.iterations > 3 && this.iterations % 2 == 0) {
-              this.showCaptcha = true;
-              this.form.addControl("myRecaptcha", new FormControl(null));
-            }
-            this.iterations = this.iterations + 1;
-            this.fields = this.fields.map(field => {
-              field.errorMsg = "incorrect email or password";
-              return field;
-            })
+      return this.http.post(apiUrl + "/auth", this.form.value).subscribe(
+        (successRes: { token: string; refreshToken: string; role: string }) => {
+          set("token", successRes.token);
+          set("role", successRes.role);
+          set("refreshToken", successRes.refreshToken);
+          // Get the redirect URL from our auth service
+          // If no redirect has been set, use the default
+          switch (successRes.role) {
+            case "admin":
+              this.authService.redirectUrl = "/admin";
+              // Set our navigation extras object
+              // that passes on our global query params and fragment
+              let navigationExtras: NavigationExtras = {
+                queryParamsHandling: "preserve",
+                preserveFragment: true
+              };
+              // Redirect the user
+              this.router.navigateByUrl(
+                this.authService.redirectUrl,
+                navigationExtras
+              );
+              break;
+            case "master":
+              this.authService.redirectUrl = "/cabinet";
+              let navigationExtras1: NavigationExtras = {
+                queryParamsHandling: "preserve",
+                preserveFragment: true
+              };
+              this.router.navigateByUrl(
+                this.authService.redirectUrl,
+                navigationExtras1
+              );
+              break;
+            case "head-master":
+              this.authService.redirectUrl = "/cabinet";
+              let navigationExtras2: NavigationExtras = {
+                queryParamsHandling: "preserve",
+                preserveFragment: true
+              };
+              this.router.navigateByUrl(
+                this.authService.redirectUrl,
+                navigationExtras2
+              );
+              break;
+            default:
+              break;
           }
-        );
+        },
+        (errorRes: any) => {
+          if (this.iterations == 3 && this.showCaptcha == false) {
+            this.showCaptcha = true;
+            this.form.addControl("myRecaptcha", new FormControl(null));
+          }
+          if (
+            this.showCaptcha == false &&
+            this.iterations > 3 &&
+            this.iterations % 2 == 0
+          ) {
+            this.showCaptcha = true;
+            this.form.addControl("myRecaptcha", new FormControl(null));
+          }
+          this.iterations = this.iterations + 1;
+          this.fields = this.fields.map(field => {
+            field.errorMsg = "incorrect email or password";
+            return field;
+          });
+        }
+      );
     }
   }
 }
