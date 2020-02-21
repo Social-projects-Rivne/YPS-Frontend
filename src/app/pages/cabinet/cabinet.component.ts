@@ -38,6 +38,11 @@ export class CabinetComponent implements OnInit{
       value: "Master",
       path: '/cabinet/masters',
       icon: "how_to_reg"
+    },
+    {
+      value: "Classes",
+      path: '/cabinet/classes',
+      icon:"school"
     }
   ];
 

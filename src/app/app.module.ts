@@ -14,7 +14,7 @@ import { AppComponent } from './app.component';
 import { WelcomeComponent } from './components/welcome/welcome.component';
 import { FormFieldComponent } from './components/form-field/form-field.component';
 import { LoginFormComponent } from './components/login-form/login-form.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { QuotesBoxComponent } from './components/quotes-box/quotes-box.component';
 import { SchoolEventFormComponent } from './components/school-event-form/school-event-form.component';
 import { MainToolsSectionComponent } from './components/main-tools-section/main-tools-section.component';
@@ -50,6 +50,9 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { TeacherCabinetComponent } from './pages/teacher-cabinet/teacher-cabinet.component';
 import { TeacherInfoComponent } from './components/teacher-info/teacher-info.component';
+import { ClassesComponent } from './pages/classes/classes.component';
+import { AddClassFormComponent } from './components/add-class-form/add-class-form.component';
+import {TokenInterceptor} from './helpers/token.interceptor';
 
 @NgModule({
   declarations: [
@@ -78,13 +81,15 @@ import { TeacherInfoComponent } from './components/teacher-info/teacher-info.com
     SchoolRegisterFormComponent,
     RegisterHeadmasterResponseComponent,
     AdminInfoComponent,
-    SidebarComponent, 
+    SidebarComponent,
     SchoolRequestsComponent,
     SchoolRequestCardComponent,
     HeaderComponent,
     PageNotFoundComponent,
     TeacherCabinetComponent,
-    TeacherInfoComponent
+    TeacherInfoComponent,
+    ClassesComponent,
+    AddClassFormComponent
   ],
   imports: [
     BrowserModule,
@@ -110,7 +115,11 @@ import { TeacherInfoComponent } from './components/teacher-info/teacher-info.com
     MatInputModule,
     MatCheckboxModule
   ],
-  providers: [],
+  providers: [{
+    provide: HTTP_INTERCEPTORS,
+     useClass: TokenInterceptor,
+      multi: true}
+    ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
