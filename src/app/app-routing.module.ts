@@ -62,7 +62,7 @@ const routes: Routes = [
   { path: 'register-headmaster', component: RegisterHeadmasterComponent },
   { path: 'register-headmaster-response', component: RegisterHeadmasterResponseComponent },
   {
-    path: 'teacher',
+    path: 'teacher', canActivateChild: [],
     canActivate: [AuthGuard, TeacherGuard],
     component: TeacherCabinetComponent,
     children: teacherRoutes

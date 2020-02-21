@@ -17,14 +17,19 @@ export class TeacherCabinetComponent implements OnInit {
       icon: 'account_circle'
     },
     {
+      value: 'Journal',
+      path: './journal',
+      icon: 'assignment'
+    },
+    {
       value: 'Events',
       path: './events',
-      icon: 'event'
+      icon: 'view_list'
     },
     {
       value: 'Schedule',
       path: './schedules',
-      icon: 'date_range'
+      icon: 'event'
     },
     {
       value: 'Materials',
