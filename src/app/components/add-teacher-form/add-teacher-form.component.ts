@@ -5,6 +5,7 @@ import { IFormField } from 'src/app/models/IFormField';
 import { apiUrl } from 'src/constants/urls';
 import { validationHelper } from 'src/utils/helpers/validation-helper';
 import { requiredValidator } from 'src/utils/validators/required-validator';
+import { HttpOptionsService } from 'src/app/services/http-options/http-options.service';
 
 @Component({
   selector: 'yps-add-teacher-form',
@@ -28,10 +29,13 @@ export class AddTeacherFormComponent implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder,
-    private http: HttpClient
+    private http: HttpClient,
+    private httpOptionsService: HttpOptionsService
   ) {}
 
   ngOnInit() {
+    this.httpOptionsService.loadHeaders();
+    
     this.form = this.formBuilder.group({
       "user": [null],
       "degree": [null, requiredValidator("degree is required")]
@@ -48,9 +52,13 @@ export class AddTeacherFormComponent implements OnInit {
     this.userSubFormRef.fields = subFormValidationResponse.fields;
 
     if (thisFormValidationResponse.isValid && subFormValidationResponse.isValid) {
-      return this.http.post(apiUrl + "/teachers", this.form.value).subscribe((res: any) => {
-        console.log('add teacher response', res);
-      }); 
+      return this.http.post(apiUrl + "/teachers", this.form.value, this.httpOptionsService.options)
+      .subscribe(
+        (successRes: any) => {
+          this.toggleForm();
+          console.log('add teacher response', successRes);
+        }
+      ); 
     }
   }
 }
