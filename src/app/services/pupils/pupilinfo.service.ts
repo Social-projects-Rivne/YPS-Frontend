@@ -8,14 +8,8 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class PupilinfoService {
-<<<<<<< HEAD
   private url: string = "https://localhost:5001/api/Pupils/GetBySchool";
   
-=======
-  private url: string = "https://localhost:5001/api/Pupils/GetBySchool/";
-  schoolId: string = "1";
-
->>>>>>> dev
   constructor(private http: HttpClient) { }
 
   getPupils=(): Observable<IPupil[]> => {
