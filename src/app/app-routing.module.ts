@@ -1,3 +1,4 @@
+import { ClassesComponent } from './pages/classes/classes.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { MasterCabinetsComponent } from './components/master-cabinets/master-cabinets.component';
 import { MastersComponent } from './pages/masters/masters.component';
@@ -36,7 +37,8 @@ const cabinetRoutes: Routes = [
   { path: 'parents', canActivateChild: [AuthGuard], component: ParentsComponent },
   { path: 'teachers', canActivateChild: [AuthGuard], component: TeachersComponent },
   { path: 'head-assistants', canActivateChild: [AuthGuard], component: HeadassistantsComponent },
-  { path: 'masters', canActivateChild: [AuthGuard], component: MastersComponent }
+  { path: 'masters', canActivateChild: [AuthGuard], component: MastersComponent },
+  { path: 'classes', canActivate: [AuthGuard], component: ClassesComponent}
 ];
 
 const adminRoutes: Routes = [

@@ -14,10 +14,9 @@ import { AppComponent } from './app.component';
 import { WelcomeComponent } from './components/welcome/welcome.component';
 import { FormFieldComponent } from './components/form-field/form-field.component';
 import { LoginFormComponent } from './components/login-form/login-form.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { QuotesBoxComponent } from './components/quotes-box/quotes-box.component';
 import { SchoolEventFormComponent } from './components/school-event-form/school-event-form.component';
-import { NavBarFormComponent } from './components/nav-bar-form/nav-bar-form.component';
 import { MainToolsSectionComponent } from './components/main-tools-section/main-tools-section.component';
 import { MainContentSectionComponent } from './components/main-content-section/main-content-section.component';
 import { UserSubFormComponent } from './components/user-sub-form/user-sub-form.component';
@@ -51,6 +50,9 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { ParentCabinetComponent } from './pages/parent-cabinet/parent-cabinet.component';
 import { ParentProfileComponent } from './components/parent-profile/parent-profile.component';
+import { ClassesComponent } from './pages/classes/classes.component';
+import { AddClassFormComponent } from './components/add-class-form/add-class-form.component';
+import {TokenInterceptor} from './helpers/token.interceptor';
 
 @NgModule({
   declarations: [
@@ -61,7 +63,6 @@ import { ParentProfileComponent } from './components/parent-profile/parent-profi
     LoginFormComponent,
     QuotesBoxComponent,
     SchoolEventFormComponent,
-    NavBarFormComponent,
     MainToolsSectionComponent,
     MainContentSectionComponent,
     UserSubFormComponent,
@@ -80,13 +81,15 @@ import { ParentProfileComponent } from './components/parent-profile/parent-profi
     SchoolRegisterFormComponent,
     RegisterHeadmasterResponseComponent,
     AdminInfoComponent,
-    SidebarComponent, 
+    SidebarComponent,
     SchoolRequestsComponent,
     SchoolRequestCardComponent,
     HeaderComponent,
     PageNotFoundComponent,
     ParentCabinetComponent,
-    ParentProfileComponent
+    ParentProfileComponent,
+    ClassesComponent,
+    AddClassFormComponent
   ],
   imports: [
     BrowserModule,
@@ -112,7 +115,11 @@ import { ParentProfileComponent } from './components/parent-profile/parent-profi
     MatInputModule,
     MatCheckboxModule
   ],
-  providers: [],
+  providers: [{
+    provide: HTTP_INTERCEPTORS,
+     useClass: TokenInterceptor,
+      multi: true}
+    ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

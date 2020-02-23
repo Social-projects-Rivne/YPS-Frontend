@@ -9,7 +9,6 @@ import { get } from 'js-cookie';
 
 export class TeacherinfoService {
   private url: string = "https://localhost:5001/api/Teachers/";
-  
   constructor(private http: HttpClient) { }
 
   getTeachers=():Observable<ITeacher[]>=>{
