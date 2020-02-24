@@ -30,6 +30,8 @@ import { ParentGuard } from './guards/parent.guard';
 import { HeadAssistentGuard } from './guards/head-assistent.guard';
 import { TeacherCabinetComponent } from './pages/teacher-cabinet/teacher-cabinet.component';
 import { TeacherInfoComponent } from './components/teacher-info/teacher-info.component';
+import { ParentCabinetComponent } from './pages/parent-cabinet/parent-cabinet.component';
+import { ParentProfileComponent } from './components/parent-profile/parent-profile.component';
 
 const cabinetRoutes: Routes = [
   { path: '', canActivateChild: [AuthGuard], component: MasterCabinetsComponent },
@@ -38,7 +40,7 @@ const cabinetRoutes: Routes = [
   { path: 'teachers', canActivateChild: [AuthGuard], component: TeachersComponent },
   { path: 'head-assistants', canActivateChild: [AuthGuard], component: HeadassistantsComponent },
   { path: 'masters', canActivateChild: [AuthGuard], component: MastersComponent },
-  { path: 'classes', canActivate: [AuthGuard], component: ClassesComponent}
+  { path: 'classes', canActivate: [AuthGuard], component: ClassesComponent }
 ];
 
 const adminRoutes: Routes = [
@@ -48,6 +50,10 @@ const adminRoutes: Routes = [
 const teacherRoutes: Routes = [
   { path: '', canActivateChild: [AuthGuard], component: TeacherInfoComponent },
   { path: 'schoolRequest', canActivateChild: [AuthGuard], component: SchoolRequestsComponent }
+];
+
+const parentRoutes: Routes = [
+  { path: '', canActivateChild: [AuthGuard], component: ParentProfileComponent }
 ];
 
 const routes: Routes = [
@@ -68,6 +74,12 @@ const routes: Routes = [
     canActivate: [AuthGuard, TeacherGuard],
     component: TeacherCabinetComponent,
     children: teacherRoutes
+  },
+  {
+    path: 'parent',
+    component: ParentCabinetComponent,
+    canActivate: [AuthGuard, ParentGuard],
+    children: parentRoutes
   },
   { path: '404', component: PageNotFoundComponent },
   { path: '**', redirectTo: '404' },
@@ -92,5 +104,6 @@ export const RoutingComponents = [
   MastersComponent,
   MasterCabinetsComponent,
   CabinetComponent,
-  AdminPanelComponent
+  AdminPanelComponent,
+  ParentCabinetComponent,
 ];

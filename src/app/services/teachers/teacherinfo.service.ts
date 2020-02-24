@@ -1,14 +1,12 @@
 import { ITeacher } from './../../models/ITeachet';
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { get } from 'js-cookie';
 import { apiUrl } from 'src/constants/urls';
 import { HttpOptionsService } from '../http-options/http-options.service';
 @Injectable({
   providedIn: 'root'
 })
-
 export class TeacherinfoService {
   private url: string = apiUrl + "/Teachers";
 
