@@ -9,9 +9,8 @@ import { apiUrl } from 'src/constants/urls';
   providedIn: 'root'
 })
 export class UserAdminInfoService {
-  private url: string = "https://localhost:5001/api/Admin";
-
   constructor(private http: HttpClient, private httpOptions: HttpOptionsService) { }
+  
   getUser(): Observable<IAdmin> {
     this.httpOptions.loadHeaders();
     return this.http.get<IAdmin>(apiUrl +"/Admin", this.httpOptions.options);
