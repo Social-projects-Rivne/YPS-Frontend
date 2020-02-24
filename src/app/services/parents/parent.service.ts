@@ -12,7 +12,6 @@ import { apiUrl } from 'src/constants/urls';
 export class ParentService {
 
   private url: string = apiUrl + "/Parents";
-  private profileinfourl: string = apiUrl + "/Parents/GetParentProfileInfo";
   
   constructor(private http:HttpClient) { }
 
@@ -33,6 +32,6 @@ export class ParentService {
         'Content-Type':  'application/json',
         'Authorization': 'Bearer '+ token
       })};
-      return this.http.get<IParent>(this.profileinfourl,httpOptions)
+      return this.http.get<IParent>(this.url + "/GetParentProfileInfo",httpOptions)
     }
 }
