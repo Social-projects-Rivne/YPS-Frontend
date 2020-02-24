@@ -36,7 +36,7 @@ export class ParentCabinetComponent implements OnInit {
     children: []
   };
   
-  constructor( private service: ParentService ) { }
+  constructor(private service: ParentService) { }
 
   getParentData = () => {
     this.service.getParentProfileInfo()
