@@ -20,7 +20,7 @@ export class SchoolRequestService {
 
   approve=(id:number):Observable<any>=>{  
   this.httpOptions.loadHeaders();
-  return this.http.post<any>(this.url+"?id="+id,{id:id},this.httpOptions.options);
+  return this.http.post<any>(this.url,{id:id},this.httpOptions.options);
   };
   
   disapprove=(id:number):Observable<any>=>{
