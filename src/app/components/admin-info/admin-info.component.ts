@@ -7,7 +7,6 @@ import { IAdmin } from 'src/app/models/IAdmin';
   templateUrl: './admin-info.component.html',
   styleUrls: ['./admin-info.component.scss']
 })
-
 export class AdminInfoComponent implements OnInit {
   user: IAdmin = {
     id: 1,
