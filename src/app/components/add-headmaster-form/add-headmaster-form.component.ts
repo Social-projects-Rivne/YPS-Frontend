@@ -1,3 +1,4 @@
+import { hostUrl } from './../../../constants/urls';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { IFormField } from 'src/app/models/IFormField';
 import { Subscription } from 'rxjs';
@@ -7,7 +8,8 @@ import { validationHelper } from 'src/utils/helpers/validation-helper';
 import { requiredValidator } from 'src/utils/validators/required-validator';
 import { minLengthValidator } from 'src/utils/validators/min-length-validatot';
 import { HttpClient } from '@angular/common/http';
-import {Router} from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
+import { RegisterHeadmasterComponent } from 'src/app/pages/register-headmaster/register-headmaster.component';
 
 @Component({
   selector: 'yps-add-headmaster-form',
@@ -32,7 +34,8 @@ export class AddHeadmasterFormComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private http: HttpClient,
-    private router: Router
+    private router: Router,
+    private route: ActivatedRoute
     ) {}
 
   ngOnInit() {
@@ -40,7 +43,7 @@ export class AddHeadmasterFormComponent implements OnInit {
       "user": [null],
       "password": [null, [
         requiredValidator("password is required."),
-        minLengthValidator(7, "password must be at least 7 characters.")]],
+        minLengthValidator(7, "password must be at least 7 characters.")]]
     });
   }
 
@@ -52,14 +55,17 @@ export class AddHeadmasterFormComponent implements OnInit {
     this.userSubFormRef.fields = subFormValidationResponse.fields;
     
     if (thisFormValidationResponse.isValid && subFormValidationResponse.isValid) {
-      const url: string = "https://localhost:5001/api/HeadMasters";
-        return this.http.post(url, this.form.value).subscribe(
-        (res) => {
-          this.router.navigate(['/register-headmaster-response']);
-        },
-        (res: any) => {
-        console.log("headmaster response", res);
-      });
+      const url: string = hostUrl+"/api/HeadMasters";
+      let link = this.route.snapshot.paramMap.get('link');
+      let requestData = { ...this.form.value, link }
+      return this.http.post(url, requestData)
+        .subscribe(
+          (res) => {
+            this.router.navigate(['/register-headmaster-response']);
+          },
+          (res: any) => {
+          console.log("headmaster response", res);
+        });
     }
   }
 }
