@@ -1,5 +1,8 @@
-.border-div{
-  width: 10rem;
-  height: 4rem;
-  border: 3px dashed grey;
+.example-card {
+  max-width: 400px;
+}
+
+.example-header-image {
+  background-image: url('/src/assets/images/alienbg.jpg');
+  background-size: cover;
 }

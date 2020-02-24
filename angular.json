@@ -127,5 +127,8 @@
       }
     }
   },
-  "defaultProject": "YPS-Frontend"
+  "defaultProject": "YPS-Frontend",
+  "cli": {
+    "analytics": false
+  }
 }
