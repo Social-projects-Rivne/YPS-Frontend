@@ -1,13 +1,14 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
 import { IFormField } from 'src/app/models/IFormField';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { validationHelper } from 'src/utils/helpers/validation-helper';
 import { apiUrl } from 'src/constants/urls';
 import { requiredValidator } from 'src/utils/validators/required-validator';
 import { IClassToSelect } from 'src/app/models/IClassToSelect';
 import { IPupilToSelect } from 'src/app/models/IPupilToSelect';
-
+import { get } from 'js-cookie';
+import { HttpOptionsService } from 'src/app/services/http-options/http-options.service';
 @Component({
   selector: 'yps-add-parent-form',
   templateUrl: './add-parent-form.component.html',
@@ -33,10 +34,13 @@ export class AddParentFormComponent implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder,
-    private http: HttpClient
+    private http: HttpClient,
+    private httpOptionsService: HttpOptionsService
   ) {}
 
   ngOnInit() {
+    this.httpOptionsService.loadHeaders();
+
     this.form = this.formBuilder.group({
       "user": [null],
       "workInfo": [null, requiredValidator("work info is required")],
@@ -44,14 +48,14 @@ export class AddParentFormComponent implements OnInit {
     });
 
     this.form.controls.classId.valueChanges.subscribe(value => {
-      this.http.get(`${apiUrl}/pupils/getbyclass/${value}`)
+      this.http.get(`${apiUrl}/pupils/getbyclass/${value}`, this.httpOptionsService.options)
       .subscribe((successRes: IPupilToSelect[]) => {
         this.pupils = successRes;
         this.form.addControl("pupilId", new FormControl(null));
       });
     });
 
-    this.http.get(`${apiUrl}/classes/getbyschool/1`)
+    this.http.get(`${apiUrl}/classes/getbyschool`, this.httpOptionsService.options)
       .subscribe((successRes: IClassToSelect[]) => {
         this.classes = successRes;
       });
@@ -67,9 +71,10 @@ export class AddParentFormComponent implements OnInit {
     this.userSubFormRef.fields = subFormValidationResponse.fields;
 
     if (thisFormValidationResponse.isValid && subFormValidationResponse.isValid) {
-      return this.http.post(apiUrl + "/parents", this.form.value)
+      return this.http.post(apiUrl + "/parents", this.form.value, this.httpOptionsService.options)
         .subscribe(
           (res: any) => {
+            this.toggleForm();
             console.log('add parent response', res);
           }
         );
