@@ -69,19 +69,11 @@ export class LoginFormComponent implements OnInit {
   }
 
   onSubmit() {
-    const { fields, isValid } = validationHelper(
-      this.form.controls,
-      this.fields
-    );
-
+    const { fields, isValid } = validationHelper(this.form.controls, this.fields);
     this.fields = fields;
     console.info(`Login form is ${isValid ? "valid" : "invalid"}`);
     if (isValid) {
-      if (
-        this.showCaptcha == true &&
-        this.iterations > 3 &&
-        this.iterations % 2 == 0
-      ) {
+      if (this.showCaptcha == true && this.iterations > 3 && this.iterations % 2 == 0) {
         this.form.removeControl("myRecaptcha");
         this.showCaptcha = false;
       }
@@ -102,10 +94,7 @@ export class LoginFormComponent implements OnInit {
                 preserveFragment: true
               };
               // Redirect the user
-              this.router.navigateByUrl(
-                this.authService.redirectUrl,
-                navigationExtras
-              );
+              this.router.navigateByUrl(this.authService.redirectUrl, navigationExtras);
               break;
             case "master":
               this.authService.redirectUrl = "/cabinet";
@@ -113,10 +102,7 @@ export class LoginFormComponent implements OnInit {
                 queryParamsHandling: "preserve",
                 preserveFragment: true
               };
-              this.router.navigateByUrl(
-                this.authService.redirectUrl,
-                navigationExtras1
-              );
+              this.router.navigateByUrl(this.authService.redirectUrl, navigationExtras1);
               break;
             case "head-master":
               this.authService.redirectUrl = "/cabinet";
@@ -124,10 +110,15 @@ export class LoginFormComponent implements OnInit {
                 queryParamsHandling: "preserve",
                 preserveFragment: true
               };
-              this.router.navigateByUrl(
-                this.authService.redirectUrl,
-                navigationExtras2
-              );
+              this.router.navigateByUrl(this.authService.redirectUrl, navigationExtras2);
+              break;
+            case "teacher":
+              this.authService.redirectUrl = "/teacher";
+              let navigationExtras3: NavigationExtras = {
+                queryParamsHandling: "preserve",
+                preserveFragment: true
+              };
+              this.router.navigateByUrl(this.authService.redirectUrl, navigationExtras3);
               break;
             default:
               break;
@@ -138,11 +129,7 @@ export class LoginFormComponent implements OnInit {
             this.showCaptcha = true;
             this.form.addControl("myRecaptcha", new FormControl(null));
           }
-          if (
-            this.showCaptcha == false &&
-            this.iterations > 3 &&
-            this.iterations % 2 == 0
-          ) {
+          if (this.showCaptcha == false && this.iterations > 3 && this.iterations % 2 == 0) {
             this.showCaptcha = true;
             this.form.addControl("myRecaptcha", new FormControl(null));
           }
