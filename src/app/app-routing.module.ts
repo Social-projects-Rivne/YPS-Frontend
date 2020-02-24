@@ -53,8 +53,8 @@ const teacherRoutes: Routes = [
 const routes: Routes = [
   { path: '', component: MainComponent },
   {
-    path: 'school',
-    // canActivate: [AuthGuard, TeacherGuard, StudentGuard, ParentGuard, HeadAssistentGuard, MasterGuard],
+    path: 'school-main',
+    canActivate: [AuthGuard],
     component: SchoolMainComponent
   },
   { path: 'login', canActivate: [LoginGuard], component: LoginComponent },
