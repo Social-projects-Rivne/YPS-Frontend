@@ -1,9 +1,9 @@
 import { IAdmin } from './../../models/IAdmin';
-import { HelperService } from './../helper/helper.service';
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { get } from 'js-cookie';
+import { HttpOptionsService } from '../http-options/http-options.service';
+import { apiUrl } from 'src/constants/urls';
 
 @Injectable({
   providedIn: 'root'
@@ -11,15 +11,9 @@ import { get } from 'js-cookie';
 export class UserAdminInfoService {
   private url: string = "https://localhost:5001/api/Admin";
 
-  constructor(private http: HttpClient, private header: HelperService) { }
+  constructor(private http: HttpClient, private httpOptions: HttpOptionsService) { }
   getUser(): Observable<IAdmin> {
-    let token = get('token');
-    const httpOptions = {
-      headers: new HttpHeaders({
-        'Content-Type': 'application/json',
-        'Authorization': 'Bearer ' + token
-      })
-    };
-    return this.http.get<IAdmin>(this.url, httpOptions);
+    this.httpOptions.loadHeaders();
+    return this.http.get<IAdmin>(apiUrl +"/Admin", this.httpOptions.options);
   }
 }
