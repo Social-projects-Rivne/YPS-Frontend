@@ -67,11 +67,10 @@ export class LoginFormComponent implements OnInit {
       "remember": [null]
     });
   }
-
+  
   onSubmit() {
     const { fields, isValid } = validationHelper(this.form.controls, this.fields);
-    this.fields = fields;
-    console.info(`Login form is ${isValid ? "valid" : "invalid"}`);
+
     if (isValid) {
       if (this.showCaptcha == true && this.iterations > 3 && this.iterations % 2 == 0) {
         this.form.removeControl("myRecaptcha");
@@ -82,47 +81,10 @@ export class LoginFormComponent implements OnInit {
           set("token", successRes.token);
           set("role", successRes.role);
           set("refreshToken", successRes.refreshToken);
-          // Get the redirect URL from our auth service
-          // If no redirect has been set, use the default
-          switch (successRes.role) {
-            case "admin":
-              this.authService.redirectUrl = "/admin";
-              // Set our navigation extras object
-              // that passes on our global query params and fragment
-              let navigationExtras: NavigationExtras = {
-                queryParamsHandling: "preserve",
-                preserveFragment: true
-              };
-              // Redirect the user
-              this.router.navigateByUrl(this.authService.redirectUrl, navigationExtras);
-              break;
-            case "master":
-              this.authService.redirectUrl = "/cabinet";
-              let navigationExtras1: NavigationExtras = {
-                queryParamsHandling: "preserve",
-                preserveFragment: true
-              };
-              this.router.navigateByUrl(this.authService.redirectUrl, navigationExtras1);
-              break;
-            case "head-master":
-              this.authService.redirectUrl = "/cabinet";
-              let navigationExtras2: NavigationExtras = {
-                queryParamsHandling: "preserve",
-                preserveFragment: true
-              };
-              this.router.navigateByUrl(this.authService.redirectUrl, navigationExtras2);
-              break;
-            case "teacher":
-              this.authService.redirectUrl = "/teacher";
-              let navigationExtras3: NavigationExtras = {
-                queryParamsHandling: "preserve",
-                preserveFragment: true
-              };
-              this.router.navigateByUrl(this.authService.redirectUrl, navigationExtras3);
-              break;
-            default:
-              break;
-          }
+         
+          const { role } = successRes;
+
+          this.router.navigate([`/${role == "master" || role == "head-master" ? "cabinet" : role}`]);
         },
         (errorRes: any) => {
           if (this.iterations == 3 && this.showCaptcha == false) {
