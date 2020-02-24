@@ -8,7 +8,6 @@ import { IParent } from 'src/app/models/IParent';
   styleUrls: ['./parent-profile.component.scss']
 })
 export class ParentProfileComponent implements OnInit {
-
   constructor(
     private service: ParentService
   ) { }
