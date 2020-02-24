@@ -28,6 +28,8 @@ import { TeacherGuard } from './guards/teacher.guard';
 import { StudentGuard } from './guards/student.guard';
 import { ParentGuard } from './guards/parent.guard';
 import { HeadAssistentGuard } from './guards/head-assistent.guard';
+import { ParentCabinetComponent } from './pages/parent-cabinet/parent-cabinet.component';
+import { ParentProfileComponent } from './components/parent-profile/parent-profile.component';
 
 const cabinetRoutes: Routes = [
   { path: '', canActivateChild: [AuthGuard], component: MasterCabinetsComponent },
@@ -44,6 +46,10 @@ const adminRoutes: Routes = [
   { path: 'schoolRequest', canActivateChild: [AuthGuard], component: SchoolRequestsComponent }
 ];
 
+const parentRoutes: Routes = [
+  { path: '', canActivateChild: [AuthGuard], component: ParentProfileComponent }
+];
+
 const routes: Routes = [
   { path: '', component: MainComponent },
   {
@@ -57,6 +63,7 @@ const routes: Routes = [
   { path: 'register-school', canActivate: [LoginGuard], component: RegisterSchoolComponent },
   { path: 'register-headmaster', component: RegisterHeadmasterComponent },
   { path: 'register-headmaster-response', component: RegisterHeadmasterResponseComponent},
+  { path: 'parent', component: ParentCabinetComponent, canActivate: [AuthGuard, ParentGuard], children: parentRoutes},
   { path: '404', component: PageNotFoundComponent },
   { path: '**', redirectTo: '404' },
 ];
@@ -80,5 +87,6 @@ export const RoutingComponents = [
   MastersComponent,
   MasterCabinetsComponent,
   CabinetComponent,
-  AdminPanelComponent
+  AdminPanelComponent,
+  ParentCabinetComponent,
 ];

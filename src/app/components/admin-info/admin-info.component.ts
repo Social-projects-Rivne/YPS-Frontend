@@ -18,6 +18,7 @@ export class AdminInfoComponent implements OnInit {
     dateOfBirth: "",
     imageUrl: ""
   };
+  
   constructor(private userService: UserAdminInfoService) {}
 
   ngOnInit() {

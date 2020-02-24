@@ -25,7 +25,7 @@ export class ParentsComponent implements OnInit {
   
   parentsData : IParent[] ;
   ngOnInit() {
-    this.service.get().subscribe(p=>{
+    this.service.getParentsInfo().subscribe(p=>{
       this.parentsData=p
     });
   }
