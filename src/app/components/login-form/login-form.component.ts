@@ -46,7 +46,7 @@ export class LoginFormComponent implements OnInit {
     private http: HttpClient,
     private authService: AuthService,
     public router: Router
-  ) {}
+  ) { }
 
   ngOnInit() {
     this.iterations = 1;
@@ -72,7 +72,7 @@ export class LoginFormComponent implements OnInit {
     const { fields, isValid } = validationHelper(this.form.controls, this.fields);
 
     this.fields = fields;
-
+    
     if (isValid) {
       if (this.showCaptcha == true && this.iterations > 3 && this.iterations % 2 == 0) {
         this.form.removeControl("myRecaptcha");

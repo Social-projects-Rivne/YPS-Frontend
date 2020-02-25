@@ -2,23 +2,24 @@ import { IParent } from '../../models/IParent';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import {get} from 'js-cookie';
+import { apiUrl } from 'src/constants/urls';
+import { HttpOptionsService } from '../http-options/http-options.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ParentService {
 
-  private url: string = "https://localhost:5001/api/Parents";
-  constructor(private http:HttpClient) { }
+  private url: string = apiUrl + "/Parents";
+  
+  constructor(private http:HttpClient, private httpOptionsService: HttpOptionsService) { }
 
-  get=():Observable<IParent[]> =>{
-    let token = get('token');
-    const httpOptions = {
-      headers: new HttpHeaders({
-        'Content-Type':  'application/json',
-        'Authorization': 'Bearer '+ token
-      })};
-      return this.http.get<IParent[]>(this.url,httpOptions);
+  getParentsInfo = () : Observable<IParent[]> =>{
+    return this.http.get<IParent[]>(this.url, this.httpOptionsService.options);
+  }
+
+  getParentProfileInfo = () :Observable<IParent> => {
+    this.httpOptionsService.loadHeaders();
+    return this.http.get<IParent>(this.url + "/GetParentProfileInfo", this.httpOptionsService.options)
   }
 }

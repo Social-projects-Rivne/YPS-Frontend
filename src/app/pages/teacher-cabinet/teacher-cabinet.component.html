@@ -1,0 +1,5 @@
+<yps-header *ngIf="teacher != null" [schoolName]="teacher.schoolName" [userName]="teacher.firstName" class="cabinet-header"></yps-header>
+<yps-sidebar class="sidebar" [links]="sideLinks">
+</yps-sidebar>
+
+<router-outlet></router-outlet>
