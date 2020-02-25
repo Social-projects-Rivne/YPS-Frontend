@@ -51,6 +51,8 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
 import { ClassesComponent } from './pages/classes/classes.component';
 import { AddClassFormComponent } from './components/add-class-form/add-class-form.component';
 import {TokenInterceptor} from './helpers/token.interceptor';
+import { ClassListComponent } from './components/class-list/class-list.component';
+import { ClassItemComponent } from './components/class-item/class-item.component';
 
 @NgModule({
   declarations: [
@@ -85,7 +87,9 @@ import {TokenInterceptor} from './helpers/token.interceptor';
     HeaderComponent,
     PageNotFoundComponent,
     ClassesComponent,
-    AddClassFormComponent
+    AddClassFormComponent,
+    ClassListComponent,
+    ClassItemComponent
   ],
   imports: [
     BrowserModule,

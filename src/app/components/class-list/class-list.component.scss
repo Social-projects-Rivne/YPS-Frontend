@@ -1,0 +1,12 @@
+@import "src/vars";
+
+:host {
+  display: grid;
+  grid-gap: 1rem;
+
+  .header-class {
+    font-weight: bold;
+    text-transform: capitalize !important;
+    color: $accent;
+  }
+}
