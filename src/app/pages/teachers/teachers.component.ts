@@ -1,4 +1,4 @@
-import { ITeacher } from './../../models/ITeachet';
+import { ITeacher } from './../../models/ITeacher';
 import { Component, OnInit } from '@angular/core';
 import { TeacherinfoService } from 'src/app/services/teachers/teacherinfo.service';
 
