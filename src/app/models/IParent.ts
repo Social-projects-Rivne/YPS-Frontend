@@ -1,10 +1,13 @@
 export interface IParent {
-    Id : number;
+    id : number;
     firstName : string;
     surname : string;
     middleName : string;
     phoneNumber: string;
+    dateOfBirth: string;
     email : string;
+    imageUrl: string;
     children : string[];
-    workInfo : string; 
+    workinfo : string;
+    schoolName: string;
 }

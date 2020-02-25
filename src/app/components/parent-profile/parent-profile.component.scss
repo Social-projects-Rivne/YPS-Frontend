@@ -5,9 +5,8 @@
     grid-template-columns: auto 1fr;
     padding: 1rem;
     
-    .photo_edit {
+    .photo-edit {
         display: grid;
-        grid-row: auto;
     }
 
     .photo {
@@ -15,18 +14,18 @@
         width: 9.5rem;     
     }
 
-    .name_edit {
+    .name-edit {
         display: grid;
         margin-left: 2rem;
         align-self: start;
         grid-gap: 1rem;
 
-        .number, .email {
+        .number, .email, .work-info, .date-of-birth {
             color: $gray;
         }
     }
 
-    .uploadPhoto {
+    .upload-photo {
         transition: $transition;
         padding: 0.5rem;
         width: 100%;

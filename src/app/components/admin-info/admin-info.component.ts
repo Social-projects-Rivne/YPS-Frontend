@@ -8,20 +8,12 @@ import { IAdmin } from 'src/app/models/IAdmin';
   styleUrls: ['./admin-info.component.scss']
 })
 export class AdminInfoComponent implements OnInit {
-  user: IAdmin = {
-    id: 1,
-    firstName: null,
-    surname:"",
-    middleName: "",
-    phoneNumber: "",
-    email: "",
-    dateOfBirth: "",
-    imageUrl: ""
-  };
+  admin: IAdmin = null;
+  
   constructor(private userService: UserAdminInfoService) {}
 
   ngOnInit() {
     this.userService.getUser()
-    .subscribe(data =>this.user = data);
+    .subscribe(data => this.admin = data);
   }
 }
