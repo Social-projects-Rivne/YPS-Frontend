@@ -1,12 +1,10 @@
-<div class="info">
-    <div class="label_info">
-       <img class="userphoto" *ngIf="user.imageUrl" src="{{user.imageUrl}}">
+<div *ngIf="admin != null" class="info">
+    <div class="label-info">
+       <img class="admin-photo" [src]="admin.imageUrl">
     </div>
-    <div class="name_edit">
-        <h2>{{user.firstName}}</h2>
-        <h2>{{user.surname}}</h2>
-        <h2>{{user.middleName}}</h2>  
-        <h2>{{user.phoneNumber}}</h2>
-        <h2>{{user.email}}</h2>
+    <div class="name-edit">
+        <h2 class="full-name">{{admin.surname}} {{admin.firstName}} {{admin.middleName}}</h2>
+        <h3 class="digit number">{{admin.phoneNumber}}</h3>
+        <h3 class="email">{{admin.email}}</h3>
     </div>
 </div>
