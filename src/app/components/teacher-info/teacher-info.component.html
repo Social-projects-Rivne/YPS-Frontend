@@ -1,0 +1,13 @@
+<div *ngIf="teacher != null" class="photo-edit">
+    <img [src]="teacher.imageUrl" class="photo" />
+    <input type="file" style="display: none;" accept="image/*" #file>
+    <button type="button" class="btn upload-photo primary">Upload</button>
+</div>
+<div *ngIf="teacher != null" class="name-edit">
+    <h2 class="full-name">{{teacher.surname}} {{teacher.firstName}} {{teacher.middleName}}</h2>
+    <h3 class="email">{{teacher.email}} </h3>
+    <h3 class="digit number">{{teacher.phoneNumber}} </h3>
+    <h3 class="date">{{teacher.dateOfBirth}} </h3>
+    <h3 class="class-teacher">Your class: {{teacher.className}} </h3>
+    <h3>{{teacher.degree}}</h3>
+</div>
