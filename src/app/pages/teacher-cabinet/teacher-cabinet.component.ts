@@ -48,5 +48,4 @@ export class TeacherCabinetComponent implements OnInit {
         this.teacher = response;
       });
   }
-
 }
