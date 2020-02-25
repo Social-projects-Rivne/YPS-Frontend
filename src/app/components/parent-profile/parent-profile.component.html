@@ -1,0 +1,12 @@
+<div class="photo-edit">
+    <img src="{{user.imageUrl}}" class="photo" />
+    <input type="file" style="display: none;" accept="image/*" #file>
+    <button type="button" class="btn upload-photo primary">Upload</button>
+</div>
+<div class="name-edit">
+    <h2 class="full-name">{{user.firstName}} {{user.surname}} {{user.middleName}}</h2>
+    <h3 class="email">{{user.email}}</h3>
+    <h3 class="digit number">{{user.phoneNumber}}</h3>
+    <h3 class="date-of-birth">{{user.dateOfBirth}}</h3>
+    <h3 class="work-info">{{user.workinfo}}</h3>
+</div>

@@ -48,6 +48,8 @@ import { MatInputModule } from '@angular/material/input';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import { ParentCabinetComponent } from './pages/parent-cabinet/parent-cabinet.component';
+import { ParentProfileComponent } from './components/parent-profile/parent-profile.component';
 import { ClassesComponent } from './pages/classes/classes.component';
 import { AddClassFormComponent } from './components/add-class-form/add-class-form.component';
 import {TokenInterceptor} from './helpers/token.interceptor';
@@ -84,6 +86,8 @@ import {TokenInterceptor} from './helpers/token.interceptor';
     SchoolRequestCardComponent,
     HeaderComponent,
     PageNotFoundComponent,
+    ParentCabinetComponent,
+    ParentProfileComponent,
     ClassesComponent,
     AddClassFormComponent
   ],

@@ -1,0 +1,39 @@
+@import 'src/vars.scss';
+
+:host{
+    display: grid;
+    grid-template-columns: auto 1fr;
+    padding: 1rem;
+    
+    .photo-edit {
+        display: grid;
+    }
+
+    .photo {
+        height: 13rem;
+        width: 9.5rem;     
+    }
+
+    .name-edit {
+        display: grid;
+        margin-left: 2rem;
+        align-self: start;
+        grid-gap: 1rem;
+
+        .number, .email, .work-info, .date-of-birth {
+            color: $gray;
+        }
+    }
+
+    .upload-photo {
+        transition: $transition;
+        padding: 0.5rem;
+        width: 100%;
+
+        &:hover {
+          border-color: $accent;
+          background-color: #ffffff;
+          color: $accent;
+        }
+    }
+}
