@@ -1,3 +1,4 @@
+import { ITeacherToSelect } from './../../models/ITacherToSelect';
 import { ITeacher } from './../../models/ITeachet';
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
@@ -9,7 +10,6 @@ import { get } from 'js-cookie';
 
 export class TeacherinfoService {
   private url: string = "https://localhost:5001/api/Teachers/";
-  schoolId: string = "1";
   constructor(private http: HttpClient) { }
 
   getTeachers=():Observable<ITeacher[]>=>{
@@ -19,6 +19,18 @@ export class TeacherinfoService {
         'Content-Type':  'application/json',
         'Authorization': 'Bearer '+ token
       })};
-    return this.http.get<ITeacher[]>(this.url+this.schoolId, httpOptions);
+    return this.http.get<ITeacher[]>(this.url+"GetTeachers", httpOptions);
   }
+
+  getTeachersToSelect=():Observable<ITeacherToSelect[]>=>{
+    let token = get('token');
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type':  'application/json',
+        'Authorization': 'Bearer '+ token
+      })};
+    return this.http.get<ITeacherToSelect[]>(this.url+"GetTeachersShort", httpOptions);
+  }
+
+
 }

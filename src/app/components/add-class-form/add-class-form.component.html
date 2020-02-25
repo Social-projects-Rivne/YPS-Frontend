@@ -10,6 +10,13 @@
 *ngIf="formIsOpen">
     <h1 class="title">add class</h1>
     <yps-form-field *ngFor="let field of fields" [field]="field"
-    [formControlName]="field.name"></yps-form-field>
+    [formControlName]="field.name">
+    </yps-form-field>
+    <mat-form-field>
+        <mat-label>Select a class teacher</mat-label>
+        <mat-select formControlName="teacherId" disableRipple>
+          <mat-option *ngFor="let teacher of teachers" [value]="teacher.id">{{ teacher.fullName}}</mat-option>
+        </mat-select>
+    </mat-form-field>
     <button type="submit" class="btn primary">submit</button>
 </form>
