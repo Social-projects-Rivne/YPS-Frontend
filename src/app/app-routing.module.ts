@@ -32,6 +32,7 @@ import { TeacherCabinetComponent } from './pages/teacher-cabinet/teacher-cabinet
 import { TeacherInfoComponent } from './components/teacher-info/teacher-info.component';
 import { ParentCabinetComponent } from './pages/parent-cabinet/parent-cabinet.component';
 import { ParentProfileComponent } from './components/parent-profile/parent-profile.component';
+import { PupilEventsComponent } from './components/pupil-events/pupil-events.component';
 
 const cabinetRoutes: Routes = [
   { path: '', canActivateChild: [AuthGuard], component: MasterCabinetsComponent },
@@ -82,6 +83,7 @@ const routes: Routes = [
     children: parentRoutes
   },
   { path: '404', component: PageNotFoundComponent },
+  { path: 'events', component: PupilEventsComponent },
   { path: '**', redirectTo: '404' },
 ];
 

@@ -9,11 +9,15 @@ import { HttpOptionsService } from '../http-options/http-options.service';
   providedIn: 'root'
 })
 export class EventService {
-
+  private url: string = apiUrl + "/UpcomingEvents";
   constructor(private http: HttpClient, private HttpOptions: HttpOptionsService) { }
 
   getUpcomingEventsBySchool() : Observable<IEvent[]>{
     this.HttpOptions.loadHeaders();
-    return this.http.get<IEvent[]>(apiUrl + "/UpcomingEvents",this.HttpOptions.options);
+    return this.http.get<IEvent[]>(this.url + "/GetUpcomingEventsBySchool",this.HttpOptions.options);
+  }
+  getUpcomingEventsByPupil() : Observable<IEvent[]>{
+    this.HttpOptions.loadHeaders();
+    return this.http.get<IEvent[]>(this.url + "/GetUpcomingEventsByPupil",this.HttpOptions.options);
   }
 }
