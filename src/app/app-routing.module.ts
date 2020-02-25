@@ -48,7 +48,7 @@ const routes: Routes = [
   { path: '', component: MainComponent },
   {
     path: 'school-main',
-    canActivate: [AuthGuard, TeacherGuard, StudentGuard, ParentGuard, HeadAssistentGuard, MasterGuard],
+    // canActivate: [AuthGuard, TeacherGuard, StudentGuard, ParentGuard, HeadAssistentGuard, MasterGuard],
     component: SchoolMainComponent
   },
   { path: 'login', canActivate: [LoginGuard], component: LoginComponent },
@@ -57,7 +57,6 @@ const routes: Routes = [
   { path: 'register-school', canActivate: [LoginGuard], component: RegisterSchoolComponent },
   { path: 'register-headmaster', component: RegisterHeadmasterComponent },
   { path: 'register-headmaster-response', component: RegisterHeadmasterResponseComponent},
-  { path: 'school-main', component: SchoolMainComponent},
   { path: '404', component: PageNotFoundComponent },
   { path: '**', redirectTo: '404' },
 ];

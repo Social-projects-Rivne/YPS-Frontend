@@ -6,11 +6,9 @@
       <mat-card-subtitle>{{ event.degree }}</mat-card-subtitle>
     </mat-card-header>
     <mat-card-content>
-      <h2>{{ event.title }}</h2>
-      <h3>{{ event.content }}</h3>
-      <p>
-        {{ event.timeOfCreating }}
-      </p>
+      <h2 class="title">{{ event.title }} on {{event.scheduledDate}}</h2>
+      <p>{{ event.content }}</p>
+      <p class="date">{{ event.timeOfCreating }}</p>
     </mat-card-content>
   </mat-card>
 </div>

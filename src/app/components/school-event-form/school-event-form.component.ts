@@ -8,9 +8,8 @@ import { EventService } from '../../services/events/event.service'
   styleUrls: ['./school-event-form.component.scss']
 })
 export class SchoolEventFormComponent implements OnInit {
-
   public events: IEvent[] = [];
-
+  
   constructor(private _eventService: EventService) { }
 
   ngOnInit() {

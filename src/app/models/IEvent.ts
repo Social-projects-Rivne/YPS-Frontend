@@ -1,7 +1,8 @@
 export interface IEvent{
   id:number;
   schoolName:string;
-  timeOfCreating:Date;
+  timeOfCreating:string;
+  scheduledDate:string;
   teacherFullName:string;
   content:string;
   title:string;

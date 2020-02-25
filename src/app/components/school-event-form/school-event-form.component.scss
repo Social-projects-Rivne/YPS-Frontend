@@ -1,8 +1,33 @@
-.example-card {
-  max-width: 400px;
+@import 'src/vars.scss';
+
+:host{
+
+  display: grid;
+  justify-content: center;
+  grid-gap: 1rem;
+
+  .example-card {
+    display: grid;
+    min-width: 7rem;
+    max-width: auto;
+    box-shadow: none;
+    border: 1px solid $light;
+    border-radius: 0%;
+  }
+
+  .example-header-image {
+    background-image: url(/assets/images/default-user-image.jpg);
+    background-size: cover;
+  }
+
+  .date{
+    display: grid;
+    font-size: 0.7rem;
+    justify-content: end;
+  }
 }
 
-.example-header-image {
-  background-image: url('/src/assets/images/alienbg.jpg');
-  background-size: cover;
+.title{
+  color: $accent;
 }
+
