@@ -71,6 +71,8 @@ export class LoginFormComponent implements OnInit {
   onSubmit() {
     const { fields, isValid } = validationHelper(this.form.controls, this.fields);
 
+    this.fields = fields;
+    
     if (isValid) {
       if (this.showCaptcha == true && this.iterations > 3 && this.iterations % 2 == 0) {
         this.form.removeControl("myRecaptcha");
