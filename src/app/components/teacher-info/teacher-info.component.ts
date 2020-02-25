@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ITeacher } from 'src/app/models/ITeachet';
+import { ITeacher } from 'src/app/models/ITeacher';
 import { PageService } from 'src/app/services/page-title/page.service';
 import { TeacherinfoService } from 'src/app/services/teachers/teacherinfo.service';
 
@@ -9,22 +9,13 @@ import { TeacherinfoService } from 'src/app/services/teachers/teacherinfo.servic
   styleUrls: ['./teacher-info.component.scss']
 })
 export class TeacherInfoComponent implements OnInit {
-  user: ITeacher = {
-    id: null,
-    firstName: "",
-    surname:"",
-    middleName: "",
-    phoneNumber: "",
-    email: "",
-    dateOfBirth: "",
-    imageUrl: "",
-    className: "",
-    degree: "",
-    schoolName: ""
-  };
+  teacher: ITeacher = null;
   constructor(private pageService: PageService, private userService: TeacherinfoService) { }
 
   ngOnInit(): void {
-    this.userService.getTeacherByID().subscribe(data =>this.user=data);
+    this.userService.getTeacherByID()
+      .subscribe(response => {
+        this.teacher = response;
+      });
   }
 }

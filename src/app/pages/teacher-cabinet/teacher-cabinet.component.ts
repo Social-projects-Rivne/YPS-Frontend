@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output } from '@angular/core';
 import { ILink } from 'src/app/models/ILink';
 import { PageService } from 'src/app/services/page-title/page.service';
-import { ITeacher } from 'src/app/models/ITeachet';
+import { ITeacher } from 'src/app/models/ITeacher';
 import { TeacherinfoService } from 'src/app/services/teachers/teacherinfo.service';
 
 @Component({
@@ -37,24 +37,16 @@ export class TeacherCabinetComponent implements OnInit {
       icon: 'menu_book'
     }
   ];
-  user: ITeacher = {
-    id: null,
-    firstName: "",
-    surname:"",
-    middleName: "",
-    phoneNumber: "",
-    email: "",
-    dateOfBirth: "",
-    imageUrl: "",
-    className: "",
-    degree: "",
-    schoolName: ""
-  };
+
+  teacher: ITeacher = null;
   constructor(private pageService: PageService, private userService: TeacherinfoService) { }
 
   ngOnInit(): void {
     this.pageService.set("YPS | Teacher");
-    this.userService.getTeacherByID().subscribe(data =>this.user=data);
+    this.userService.getTeacherByID()
+      .subscribe(response => {
+        this.teacher = response;
+      });
   }
 
 }

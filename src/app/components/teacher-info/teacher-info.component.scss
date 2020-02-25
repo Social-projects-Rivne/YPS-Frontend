@@ -5,7 +5,7 @@
     grid-template-columns: auto 1fr;
     padding: 1rem;
     
-    .photo_edit {
+    .photo-edit {
         display: grid;
     }
 
@@ -14,7 +14,7 @@
         width: 9.5rem;     
     }
 
-    .name_edit {
+    .name-edit {
         display: grid;
         margin-left: 2rem;
         align-self: start;
@@ -23,12 +23,12 @@
         .number, .email {
             color: $gray;
         }
-        .class_teacher, .date {
+        .class-teacher, .date {
             color: $gray;
         }
     }
 
-    .uploadPhoto {
+    .upload-photo {
         transition: $transition;
         padding: 0.5rem;
         width: 100%;
