@@ -1,0 +1,27 @@
+@import 'src/vars.scss';
+:host {
+    display: grid;
+    border: 1px solid $light;
+    box-shadow: none;
+    padding: 1rem;
+    grid-gap: 0.5rem;
+
+    span {
+        color:$accent;
+    }
+
+    .index {
+        display: grid;
+        align-content: center;
+        font-weight: bold;
+        width: 2rem;
+        height: 2rem;
+        background-color: $accent;
+        color: #ffffff;
+        text-align: center;
+      }
+    }
+
+  
+
+  

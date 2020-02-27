@@ -53,6 +53,8 @@ import { ParentProfileComponent } from './components/parent-profile/parent-profi
 import { ClassesComponent } from './pages/classes/classes.component';
 import { AddClassFormComponent } from './components/add-class-form/add-class-form.component';
 import {TokenInterceptor} from './helpers/token.interceptor';
+import { ChildrenInfoComponent } from './components/children-info/children-info.component';
+import { PupilInfoCardComponent } from './components/pupil-info-card/pupil-info-card.component';
 
 @NgModule({
   declarations: [
@@ -89,7 +91,9 @@ import {TokenInterceptor} from './helpers/token.interceptor';
     ParentCabinetComponent,
     ParentProfileComponent,
     ClassesComponent,
-    AddClassFormComponent
+    AddClassFormComponent,
+    ChildrenInfoComponent,
+    PupilInfoCardComponent
   ],
   imports: [
     BrowserModule,

@@ -30,6 +30,7 @@ import { ParentGuard } from './guards/parent.guard';
 import { HeadAssistentGuard } from './guards/head-assistent.guard';
 import { ParentCabinetComponent } from './pages/parent-cabinet/parent-cabinet.component';
 import { ParentProfileComponent } from './components/parent-profile/parent-profile.component';
+import { ChildrenInfoComponent } from './components/children-info/children-info.component';
 
 const cabinetRoutes: Routes = [
   { path: '', canActivateChild: [AuthGuard], component: MasterCabinetsComponent },
@@ -47,7 +48,8 @@ const adminRoutes: Routes = [
 ];
 
 const parentRoutes: Routes = [
-  { path: '', canActivateChild: [AuthGuard], component: ParentProfileComponent }
+  { path: '', canActivateChild: [AuthGuard], component: ParentProfileComponent },
+  { path: 'children', canActivateChild: [AuthGuard], component: ChildrenInfoComponent}
 ];
 
 const routes: Routes = [
@@ -89,4 +91,5 @@ export const RoutingComponents = [
   CabinetComponent,
   AdminPanelComponent,
   ParentCabinetComponent,
+  ChildrenInfoComponent
 ];
