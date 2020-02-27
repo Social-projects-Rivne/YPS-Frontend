@@ -57,10 +57,11 @@
             background-color: $accent;
             text-transform: capitalize;
         }
-        .degree {
+        .degree, .work-info {
           border: 1px solid $light;
+          height: 3rem;
 
-          .degree-title {
+          .degree-title, .work-info-title {
             position: relative;
             top: -0.75rem;
             left: 2rem;
@@ -69,10 +70,10 @@
             background-color: $accent;
             text-transform: capitalize;
           }
-          .degree-value {
+          .degree-value, .work-info-value {
             position: relative;
-            top: 0.5rem;
-            left: 3rem;
+            top: 1rem;
+            // right: 3rem;
           }
         }
     }

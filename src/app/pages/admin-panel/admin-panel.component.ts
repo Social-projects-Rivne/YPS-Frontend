@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { UserAdminInfoService } from 'src/app/services/admin/admin.service';
 import { PageService } from 'src/app/services/page-title/page.service';
 import { IUser } from 'src/app/models/IUser';
+import { UserService } from 'src/app/services/user/user.service';
 
 @Component({
   selector: 'yps-admin-panel',
@@ -27,12 +28,11 @@ export class AdminPanelComponent implements OnInit {
       icon: 'school'
     }
   ];
-  admin: IUser=null;
-  constructor(private userService: UserAdminInfoService, private pageService: PageService) { }
+  constructor(public userService: UserService, private pageService: PageService) { }
 
   ngOnInit() {
     this.pageService.set("YPS | Admin");
-    this.userService.getUser()
-    .subscribe(data => this.admin = data);
+    this.userService.getUser("/Admin");
+
   }
 }
