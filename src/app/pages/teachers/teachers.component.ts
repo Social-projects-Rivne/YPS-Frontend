@@ -1,4 +1,4 @@
-import { ITeacher } from './../../models/ITeachet';
+import { ITeacher } from './../../models/ITeacher';
 import { Component, OnInit } from '@angular/core';
 import { TeacherinfoService } from 'src/app/services/teachers/teacherinfo.service';
 
@@ -9,7 +9,7 @@ import { TeacherinfoService } from 'src/app/services/teachers/teacherinfo.servic
 })
 export class TeachersComponent implements OnInit {
 
-  constructor( 
+  constructor(
     private userService: TeacherinfoService
   ) {}
 
@@ -31,7 +31,7 @@ export class TeachersComponent implements OnInit {
     this.userService.getTeachers()
       .subscribe(data => this.teachersData = data)
   }
-  
+
   ngOnInit() {
     this.getTeachersData();
   }
