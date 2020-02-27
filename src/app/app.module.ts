@@ -57,6 +57,8 @@ import { AddClassFormComponent } from './components/add-class-form/add-class-for
 import {TokenInterceptor} from './helpers/token.interceptor';
 import { ClassListComponent } from './components/class-list/class-list.component';
 import { ClassItemComponent } from './components/class-item/class-item.component';
+import { PupilCabinetComponent } from './pages/pupil-cabinet/pupil-cabinet.component';
+import { PupilInfoComponent } from './components/pupil-info/pupil-info.component';
 
 @NgModule({
   declarations: [
@@ -97,7 +99,9 @@ import { ClassItemComponent } from './components/class-item/class-item.component
     ClassesComponent,
     AddClassFormComponent,
     ClassListComponent,
-    ClassItemComponent
+    ClassItemComponent,
+    PupilCabinetComponent,
+    PupilInfoComponent
   ],
   imports: [
     BrowserModule,
