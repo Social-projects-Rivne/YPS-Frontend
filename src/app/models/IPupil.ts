@@ -6,5 +6,7 @@ export interface IPupil {
     className : string;
     phoneNumber: string;
     email : string;
-    dateOfBirth : string; 
+    dateOfBirth : string;
+    imageUrl: string;
+    schoolName: string;
 }
