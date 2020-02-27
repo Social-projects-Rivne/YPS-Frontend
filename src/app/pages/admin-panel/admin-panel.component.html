@@ -1,4 +1,4 @@
-<yps-header userName="{{user.firstName}}" class="cabinet-header"></yps-header>
+<yps-header *ngIf="admin != null" [userName]="admin.firstName" class="cabinet-header"></yps-header>
 <yps-sidebar class="sidebar" [links]="sideLinks">
 </yps-sidebar>
 

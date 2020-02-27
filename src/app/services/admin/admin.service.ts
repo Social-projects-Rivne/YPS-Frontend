@@ -1,4 +1,4 @@
-import { IAdmin } from './../../models/IAdmin';
+import { IUser } from './../../models/IUser';
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
@@ -11,8 +11,8 @@ import { apiUrl } from 'src/constants/urls';
 export class UserAdminInfoService {
   constructor(private http: HttpClient, private httpOptions: HttpOptionsService) { }
   
-  getUser(): Observable<IAdmin> {
+  getUser(): Observable<IUser> {
     this.httpOptions.loadHeaders();
-    return this.http.get<IAdmin>(apiUrl +"/Admin", this.httpOptions.options);
+    return this.http.get<IUser>(apiUrl +"/Admin", this.httpOptions.options);
   }
 }

@@ -58,6 +58,7 @@ import {TokenInterceptor} from './helpers/token.interceptor';
 import { ClassListComponent } from './components/class-list/class-list.component';
 import { ClassItemComponent } from './components/class-item/class-item.component';
 import { PupilEventsComponent } from './components/pupil-events/pupil-events.component';
+import { UserProfileComponent } from './components/user-profile/user-profile.component';
 
 @NgModule({
   declarations: [
@@ -99,7 +100,8 @@ import { PupilEventsComponent } from './components/pupil-events/pupil-events.com
     AddClassFormComponent,
     ClassListComponent,
     ClassItemComponent,
-    PupilEventsComponent
+    PupilEventsComponent,
+    UserProfileComponent
   ],
   imports: [
     BrowserModule,
