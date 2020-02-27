@@ -58,7 +58,9 @@ import {TokenInterceptor} from './helpers/token.interceptor';
 import { ClassListComponent } from './components/class-list/class-list.component';
 import { ClassItemComponent } from './components/class-item/class-item.component';
 import { PupilEventsComponent } from './components/pupil-events/pupil-events.component';
-import { UserProfileComponent } from './components/user-profile/user-profile.component';
+import { PupilCabinetComponent } from './pages/pupil-cabinet/pupil-cabinet.component';
+import { PupilInfoComponent } from './components/pupil-info/pupil-info.component';
+import { ProfileCardComponent } from './components/profile-card/profile-card.component';
 
 @NgModule({
   declarations: [
@@ -101,7 +103,9 @@ import { UserProfileComponent } from './components/user-profile/user-profile.com
     ClassListComponent,
     ClassItemComponent,
     PupilEventsComponent,
-    UserProfileComponent
+    PupilCabinetComponent,
+    PupilInfoComponent,
+    ProfileCardComponent,
   ],
   imports: [
     BrowserModule,

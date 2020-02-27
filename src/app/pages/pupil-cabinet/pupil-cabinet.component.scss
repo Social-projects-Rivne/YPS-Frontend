@@ -1,0 +1,12 @@
+@import 'src/vars.scss';
+
+:host{
+  display: grid;
+  grid-template-columns: auto auto 1fr;
+  grid-template-rows: auto 1fr;
+  grid-gap: 1rem;
+
+  .cabinet-header {
+    grid-column: 1 / -1;
+  }
+}

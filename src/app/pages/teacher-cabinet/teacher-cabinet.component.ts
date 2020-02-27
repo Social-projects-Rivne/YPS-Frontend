@@ -1,8 +1,8 @@
 import { Component, OnInit, Input, Output } from '@angular/core';
 import { ILink } from 'src/app/models/ILink';
 import { PageService } from 'src/app/services/page-title/page.service';
-import { ITeacher } from 'src/app/models/ITeacher';
 import { TeacherinfoService } from 'src/app/services/teachers/teacherinfo.service';
+import { IUser } from 'src/app/models/IUser';
 
 @Component({
   selector: 'yps-teacher-cabinet',
@@ -38,7 +38,7 @@ export class TeacherCabinetComponent implements OnInit {
     }
   ];
 
-  teacher: ITeacher = null;
+  public teacher: IUser = null;
   constructor(private pageService: PageService, private userService: TeacherinfoService) { }
 
   ngOnInit(): void {

@@ -4,12 +4,11 @@ export interface IUser {
     surname: string;
     middleName: string;
     email: string;
-    className?: string;
     dateOfBirth: string; 
-    imageUrl?: string;
     phoneNumber: string;
+    imageUrl: string;
+    className?: string;
     degree?: string;
     schoolName?: string;
-    children?: string[];
     workinfo?: string;
 }

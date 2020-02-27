@@ -1,6 +1,7 @@
 import { ITeacher } from './../../models/ITeacher';
 import { Component, OnInit } from '@angular/core';
 import { TeacherinfoService } from 'src/app/services/teachers/teacherinfo.service';
+import { IUser } from 'src/app/models/IUser';
 
 @Component({
   selector: 'yps-teachers',
@@ -13,7 +14,7 @@ export class TeachersComponent implements OnInit {
     private userService: TeacherinfoService
   ) {}
 
-  teachersData: ITeacher[];
+  teachersData: IUser[];
 
   columns = [
     { def: "id", label: "Id" },

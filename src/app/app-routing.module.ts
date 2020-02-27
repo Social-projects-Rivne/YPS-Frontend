@@ -33,6 +33,9 @@ import { TeacherInfoComponent } from './components/teacher-info/teacher-info.com
 import { ParentCabinetComponent } from './pages/parent-cabinet/parent-cabinet.component';
 import { ParentProfileComponent } from './components/parent-profile/parent-profile.component';
 import { PupilEventsComponent } from './components/pupil-events/pupil-events.component';
+import { PupilCabinetComponent } from './pages/pupil-cabinet/pupil-cabinet.component';
+import { PupilInfoComponent } from './components/pupil-info/pupil-info.component';
+import { TeacherProfileComponent } from './pages/teacher-profile/teacher-profile.component';
 
 const cabinetRoutes: Routes = [
   { path: '', canActivateChild: [AuthGuard], component: MasterCabinetsComponent },
@@ -49,12 +52,15 @@ const adminRoutes: Routes = [
   { path: 'schoolRequest', canActivateChild: [AuthGuard], component: SchoolRequestsComponent }
 ];
 const teacherRoutes: Routes = [
-  { path: '', canActivateChild: [AuthGuard], component: TeacherInfoComponent },
-  { path: 'schoolRequest', canActivateChild: [AuthGuard], component: SchoolRequestsComponent }
+  { path: '', canActivateChild: [AuthGuard], component: TeacherProfileComponent },
 ];
 
 const parentRoutes: Routes = [
   { path: '', canActivateChild: [AuthGuard], component: ParentProfileComponent }
+];
+const pupilRoutes: Routes = [
+  { path: '', canActivateChild: [AuthGuard], component: PupilInfoComponent },
+  { path: 'events', component: PupilEventsComponent }
 ];
 
 const routes: Routes = [
@@ -82,8 +88,13 @@ const routes: Routes = [
     canActivate: [AuthGuard, ParentGuard],
     children: parentRoutes
   },
+  {
+    path: 'pupil',
+    component: PupilCabinetComponent,
+    canActivate: [AuthGuard, StudentGuard],
+    children: pupilRoutes
+  },
   { path: '404', component: PageNotFoundComponent },
-  { path: 'events', component: PupilEventsComponent },
   { path: '**', redirectTo: '404' },
 ];
 
@@ -108,4 +119,5 @@ export const RoutingComponents = [
   CabinetComponent,
   AdminPanelComponent,
   ParentCabinetComponent,
+  TeacherProfileComponent
 ];
