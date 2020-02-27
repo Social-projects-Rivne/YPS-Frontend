@@ -83,7 +83,7 @@ export class LoginFormComponent implements OnInit {
           set("token", successRes.token);
           set("role", successRes.role);
           set("refreshToken", successRes.refreshToken);
-         
+          
           const { role } = successRes;
 
           this.router.navigate([`/${role == "master" || role == "head-master" ? "cabinet" : role}`]);
