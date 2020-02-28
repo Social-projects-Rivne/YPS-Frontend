@@ -47,7 +47,7 @@ export class TokenInterceptor implements HttpInterceptor {
               case 401:
                 return this.handleHttpResponseError(request, next);
               case 400:
-                return <any>this.acct.logout();
+                return throwError(this.handleError);
             }
           } else {
             return throwError(this.handleError);
