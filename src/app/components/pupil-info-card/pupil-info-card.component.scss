@@ -5,9 +5,15 @@
     box-shadow: none;
     padding: 1rem;
     grid-gap: 0.5rem;
+    transition-duration: .2s;
+    transition-delay: .2s;
     
     span {
         color:$accent;
+    }
+
+    .class-name{
+        text-transform: uppercase;
     }
 
     .index {
@@ -19,6 +25,11 @@
         background-color: $accent;
         color: #ffffff;
         text-align: center;
+      }
+
+      &:hover{
+        border: 1px solid $accent;
+        cursor: pointer;
       }
 }
 
