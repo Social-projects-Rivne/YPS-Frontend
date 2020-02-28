@@ -8,18 +8,18 @@ import { ParentService } from 'src/app/services/parents/parent.service';
   styleUrls: ['./children-info.component.scss']
 })
 export class ChildrenInfoComponent implements OnInit {
- 
-  constructor( private service: ParentService) { }
+  constructor( 
+    private service: ParentService
+  ) { }
   
   users: IPupil[];
   
-
-  getPupilDataOfParent = () => {
-    this.service.getPupilInfoOfParent()
+  getPupilsDataByParent = () => {
+    this.service.getPupilsInfoByParent()
       .subscribe(data => this.users = data)
   }
 
   ngOnInit(): void {
-    this.getPupilDataOfParent();
+    this.getPupilsDataByParent();
   }
 }

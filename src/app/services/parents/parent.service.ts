@@ -24,8 +24,8 @@ export class ParentService {
     return this.http.get<IParent>(this.url + "/GetParentProfileInfo", this.httpOptionsService.options)
   }
 
-  getPupilInfoOfParent = () :Observable<IPupil[]> => {
+  getPupilsInfoByParent = () :Observable<IPupil[]> => {
     this.httpOptionsService.loadHeaders();
-    return this.http.get<IPupil[]>(this.url + "/GetPupilInfoOfParent", this.httpOptionsService.options)
+    return this.http.get<IPupil[]>(this.url + "/GetPupilsInfoByParent", this.httpOptionsService.options)
   }
 }
