@@ -48,6 +48,8 @@ import { MatInputModule } from '@angular/material/input';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import { TeacherCabinetComponent } from './pages/teacher-cabinet/teacher-cabinet.component';
+import { TeacherInfoComponent } from './components/teacher-info/teacher-info.component';
 import { ParentCabinetComponent } from './pages/parent-cabinet/parent-cabinet.component';
 import { ParentProfileComponent } from './components/parent-profile/parent-profile.component';
 import { ClassesComponent } from './pages/classes/classes.component';
@@ -55,6 +57,10 @@ import { AddClassFormComponent } from './components/add-class-form/add-class-for
 import {TokenInterceptor} from './helpers/token.interceptor';
 import { ChildrenInfoComponent } from './components/children-info/children-info.component';
 import { PupilInfoCardComponent } from './components/pupil-info-card/pupil-info-card.component';
+import { ClassListComponent } from './components/class-list/class-list.component';
+import { ClassItemComponent } from './components/class-item/class-item.component';
+import { PupilCabinetComponent } from './pages/pupil-cabinet/pupil-cabinet.component';
+import { PupilInfoComponent } from './components/pupil-info/pupil-info.component';
 
 @NgModule({
   declarations: [
@@ -88,12 +94,18 @@ import { PupilInfoCardComponent } from './components/pupil-info-card/pupil-info-
     SchoolRequestCardComponent,
     HeaderComponent,
     PageNotFoundComponent,
+    TeacherCabinetComponent,
+    TeacherInfoComponent,
     ParentCabinetComponent,
     ParentProfileComponent,
     ClassesComponent,
     AddClassFormComponent,
     ChildrenInfoComponent,
-    PupilInfoCardComponent
+    PupilInfoCardComponent,
+    ClassListComponent,
+    ClassItemComponent,
+    PupilCabinetComponent,
+    PupilInfoComponent
   ],
   imports: [
     BrowserModule,

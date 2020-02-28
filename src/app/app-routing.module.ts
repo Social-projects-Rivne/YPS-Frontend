@@ -28,9 +28,13 @@ import { TeacherGuard } from './guards/teacher.guard';
 import { StudentGuard } from './guards/student.guard';
 import { ParentGuard } from './guards/parent.guard';
 import { HeadAssistentGuard } from './guards/head-assistent.guard';
+import { TeacherCabinetComponent } from './pages/teacher-cabinet/teacher-cabinet.component';
+import { TeacherInfoComponent } from './components/teacher-info/teacher-info.component';
 import { ParentCabinetComponent } from './pages/parent-cabinet/parent-cabinet.component';
 import { ParentProfileComponent } from './components/parent-profile/parent-profile.component';
 import { ChildrenInfoComponent } from './components/children-info/children-info.component';
+import { PupilCabinetComponent } from './pages/pupil-cabinet/pupil-cabinet.component';
+import { PupilInfoComponent } from './components/pupil-info/pupil-info.component';
 
 const cabinetRoutes: Routes = [
   { path: '', canActivateChild: [AuthGuard], component: MasterCabinetsComponent },
@@ -39,11 +43,15 @@ const cabinetRoutes: Routes = [
   { path: 'teachers', canActivateChild: [AuthGuard], component: TeachersComponent },
   { path: 'head-assistants', canActivateChild: [AuthGuard], component: HeadassistantsComponent },
   { path: 'masters', canActivateChild: [AuthGuard], component: MastersComponent },
-  { path: 'classes', canActivate: [AuthGuard], component: ClassesComponent}
+  { path: 'classes', canActivate: [AuthGuard], component: ClassesComponent }
 ];
 
 const adminRoutes: Routes = [
   { path: '', canActivateChild: [AuthGuard], component: AdminInfoComponent },
+  { path: 'schoolRequest', canActivateChild: [AuthGuard], component: SchoolRequestsComponent }
+];
+const teacherRoutes: Routes = [
+  { path: '', canActivateChild: [AuthGuard], component: TeacherInfoComponent },
   { path: 'schoolRequest', canActivateChild: [AuthGuard], component: SchoolRequestsComponent }
 ];
 
@@ -51,12 +59,15 @@ const parentRoutes: Routes = [
   { path: '', canActivateChild: [AuthGuard], component: ParentProfileComponent },
   { path: 'children', canActivateChild: [AuthGuard], component: ChildrenInfoComponent}
 ];
+const pupilRoutes: Routes = [
+  { path: '', canActivateChild: [AuthGuard], component: PupilInfoComponent }
+];
 
 const routes: Routes = [
   { path: '', component: MainComponent },
   {
     path: 'school-main',
-    canActivate: [AuthGuard, TeacherGuard, StudentGuard, ParentGuard, HeadAssistentGuard, MasterGuard],
+    canActivate: [AuthGuard],
     component: SchoolMainComponent
   },
   { path: 'login', canActivate: [LoginGuard], component: LoginComponent },
@@ -64,8 +75,25 @@ const routes: Routes = [
   { path: 'cabinet', component: CabinetComponent, canActivate: [AuthGuard, MasterGuard], children: cabinetRoutes },
   { path: 'register-school', canActivate: [LoginGuard], component: RegisterSchoolComponent },
   { path: 'register-headmaster', component: RegisterHeadmasterComponent },
-  { path: 'register-headmaster-response', component: RegisterHeadmasterResponseComponent},
-  { path: 'parent', component: ParentCabinetComponent, canActivate: [AuthGuard, ParentGuard], children: parentRoutes},
+  { path: 'register-headmaster-response', component: RegisterHeadmasterResponseComponent },
+  {
+    path: 'teacher', canActivateChild: [],
+    canActivate: [AuthGuard, TeacherGuard],
+    component: TeacherCabinetComponent,
+    children: teacherRoutes
+  },
+  {
+    path: 'parent',
+    component: ParentCabinetComponent,
+    canActivate: [AuthGuard, ParentGuard],
+    children: parentRoutes
+  },
+  {
+    path: 'pupil',
+    component: PupilCabinetComponent,
+    canActivate: [AuthGuard, StudentGuard],
+    children: pupilRoutes
+  },
   { path: '404', component: PageNotFoundComponent },
   { path: '**', redirectTo: '404' },
 ];
