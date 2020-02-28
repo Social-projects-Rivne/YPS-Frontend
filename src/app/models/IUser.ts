@@ -10,5 +10,5 @@ export interface IUser {
     className?: string;
     degree?: string;
     schoolName?: string;
-    workinfo?: string;
+    workInfo?: string;
 }

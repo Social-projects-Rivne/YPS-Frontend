@@ -24,9 +24,9 @@ export class LoginGuard implements CanActivate {
     if (this.authService.hasAdminRole()) {
       this.router.navigate(['/admin']);
     } else if (this.authService.hasMasterRole()) {
-      this.router.navigate(['/master']);
+      this.router.navigate(['/cabinet']);
     } else if (this.authService.hasHeadMasterRole()) {
-      this.router.navigate(['/head-master']);
+      this.router.navigate(['/cabinet']);
     } else if (this.authService.hasTeacherRole()) {
       this.router.navigate(['/teacher']);
     }else if (this.authService.hasStudentRole()) {

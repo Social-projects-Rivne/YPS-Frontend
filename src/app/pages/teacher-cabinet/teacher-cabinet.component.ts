@@ -38,14 +38,9 @@ export class TeacherCabinetComponent implements OnInit {
     }
   ];
 
-  public teacher: IUser = null;
-  constructor(private pageService: PageService, private userService: TeacherinfoService) { }
+  constructor(private pageService: PageService) { }
 
   ngOnInit(): void {
     this.pageService.set("YPS | Teacher");
-    this.userService.getTeacherByID()
-      .subscribe(response => {
-        this.teacher = response;
-      });
   }
 }

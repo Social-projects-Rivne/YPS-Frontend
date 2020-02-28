@@ -1,7 +1,6 @@
 import { ILink } from 'src/app/models/ILink';
 import { Component, OnInit } from '@angular/core';
 import { PageService } from 'src/app/services/page-title/page.service';
-import { UserService } from 'src/app/services/user/user.service';
 
 @Component({
   selector: 'yps-admin-panel',
@@ -26,10 +25,9 @@ export class AdminPanelComponent implements OnInit {
       icon: 'school'
     }
   ];
-  constructor(public userService: UserService, private pageService: PageService) { }
+  constructor(private pageService: PageService) { }
 
   ngOnInit() {
     this.pageService.set("YPS | Admin");
-    this.userService.getUser("/Admin");
   }
 }
