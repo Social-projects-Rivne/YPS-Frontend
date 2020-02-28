@@ -26,6 +26,7 @@ import { AdminGuard } from './guards/admin.guard';
 import { TeacherGuard } from './guards/teacher.guard';
 import { StudentGuard } from './guards/student.guard';
 import { ParentGuard } from './guards/parent.guard';
+import { HeadMasterGuard } from './guards/head-master.guard';
 import { HeadAssistentGuard } from './guards/head-assistent.guard';
 import { TeacherCabinetComponent } from './pages/teacher-cabinet/teacher-cabinet.component';
 import { ParentCabinetComponent } from './pages/parent-cabinet/parent-cabinet.component';
@@ -35,6 +36,7 @@ import { PupilCabinetComponent } from './pages/pupil-cabinet/pupil-cabinet.compo
 import { TeacherProfileComponent } from './pages/teacher-profile/teacher-profile.component';
 import { AdminProfileComponent } from './pages/admin-profile/admin-profile.component';
 import { PupilProfileComponent } from './pages/pupil-profile/pupil-profile.component';
+import { from } from 'rxjs';
 
 const cabinetRoutes: Routes = [
   { path: '', canActivateChild: [AuthGuard], component: MasterCabinetsComponent },
