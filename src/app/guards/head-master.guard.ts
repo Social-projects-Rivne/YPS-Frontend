@@ -6,16 +6,16 @@ import { AuthService } from '../services/auth/auth.service';
 @Injectable({
   providedIn: 'root'
 })
-export class MasterGuard implements CanActivate {
+export class HeadMasterGuard implements CanActivate {
   constructor(private authService: AuthService, private router: Router) { }
 
   canActivate(
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-    if (this.authService.hasMasterRole() === true) {
-      return true;
-    } 
-    this.router.navigate(['/']);
-    return false;
+      if (this.authService.hasHeadMasterRole() === true) {
+        return true;
+      } 
+      this.router.navigate(['/']);
+      return false;
   }
 }

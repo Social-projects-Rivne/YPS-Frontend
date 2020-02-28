@@ -44,15 +44,9 @@ export class PupilCabinetComponent implements OnInit {
     }
   ];
 
-  pupil: IPupil = null;
-  constructor(private pageService: PageService, private userService: PupilinfoService) { }
+  constructor(private pageService: PageService) { }
 
   ngOnInit(): void {
     this.pageService.set("YPS | Pupil");
-    this.userService.getPupilByID()
-      .subscribe(response => {
-        this.pupil = response;
-      });
   }
-
 }
