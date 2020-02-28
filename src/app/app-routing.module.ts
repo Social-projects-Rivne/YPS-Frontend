@@ -36,7 +36,6 @@ import { PupilCabinetComponent } from './pages/pupil-cabinet/pupil-cabinet.compo
 import { TeacherProfileComponent } from './pages/teacher-profile/teacher-profile.component';
 import { AdminProfileComponent } from './pages/admin-profile/admin-profile.component';
 import { PupilProfileComponent } from './pages/pupil-profile/pupil-profile.component';
-import { from } from 'rxjs';
 
 const cabinetRoutes: Routes = [
   { path: '', canActivateChild: [AuthGuard], component: MasterCabinetsComponent },
