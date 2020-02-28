@@ -1,8 +1,6 @@
 import { ILink } from 'src/app/models/ILink';
 import { Component, OnInit } from '@angular/core';
-import { UserAdminInfoService } from 'src/app/services/admin/admin.service';
 import { PageService } from 'src/app/services/page-title/page.service';
-import { IUser } from 'src/app/models/IUser';
 import { UserService } from 'src/app/services/user/user.service';
 
 @Component({
