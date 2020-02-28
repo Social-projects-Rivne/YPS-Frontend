@@ -1,7 +1,8 @@
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit} from '@angular/core';
 import { PageService } from 'src/app/services/page-title/page.service';
 import { ActivatedRoute, Router } from '@angular/router';
-import { HeadMasterService } from 'src/app/services/head-master/head-master.service';
+import { apiUrl } from 'src/constants/urls';
 
 @Component({
   selector: 'yps-register-headmaster',
@@ -10,22 +11,29 @@ import { HeadMasterService } from 'src/app/services/head-master/head-master.serv
 })
 export class RegisterHeadmasterComponent implements OnInit {
 
-  constructor(private pageService: PageService,private _router:Router,private _route:ActivatedRoute,private _masterService:HeadMasterService) { }
+  constructor(
+    private pageService: PageService,
+    private router: Router,
+    private route: ActivatedRoute,
+    private http: HttpClient
+  ) { }
 
-  guidLink:string;
+  showForm: boolean;
 
   ngOnInit() {
     this.pageService.set('YPS | Headmaster');
-    console.log(this._route.snapshot.paramMap.get('link'));
-    this._masterService.check(this._route.snapshot.paramMap.get('link')).subscribe(p=>{
-      var response=p;
-      if(response==false||response==null){
-        this._router.navigateByUrl("/404");
-      } 
-      else{
-        this.guidLink=this._route.snapshot.paramMap.get('link');
-      }
-    })
-
+    let link = this.route.snapshot.paramMap.get('link');
+    let url = apiUrl + "/Headmasters/action"
+    return this.http.get(apiUrl + "/Headmasters/" + link)
+      .subscribe(
+        (response: boolean) => {
+          console.log("ok");
+          this.showForm = response;
+        },
+        (error: any) => {
+          console.log("bad request for register");
+          this.router.navigate(["/404"]);          
+        }
+      );
   }
 }
