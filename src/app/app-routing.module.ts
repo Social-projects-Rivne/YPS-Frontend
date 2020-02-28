@@ -34,14 +34,27 @@ import { ParentCabinetComponent } from './pages/parent-cabinet/parent-cabinet.co
 import { ParentProfileComponent } from './components/parent-profile/parent-profile.component';
 import { PupilCabinetComponent } from './pages/pupil-cabinet/pupil-cabinet.component';
 import { PupilInfoComponent } from './components/pupil-info/pupil-info.component';
+import { HeadMasterCabinetComponent } from './pages/head-master-cabinet/head-master-cabinet.component';
+import { HeadMasterProfileComponent } from './pages/head-master-profile/head-master-profile.component';
+import { MasterProfileComponent } from './pages/master-profile/master-profile.component';
+import { MasterCabinetComponent } from './pages/master-cabinet/master-cabinet.component';
 
-const cabinetRoutes: Routes = [
+const headMasterRoutes: Routes = [
   { path: '', canActivateChild: [AuthGuard], component: MasterCabinetsComponent },
   { path: 'pupils', canActivateChild: [AuthGuard], component: PupilsComponent },
   { path: 'parents', canActivateChild: [AuthGuard], component: ParentsComponent },
   { path: 'teachers', canActivateChild: [AuthGuard], component: TeachersComponent },
   { path: 'head-assistants', canActivateChild: [AuthGuard], component: HeadassistantsComponent },
   { path: 'masters', canActivateChild: [AuthGuard], component: MastersComponent },
+  { path: 'classes', canActivate: [AuthGuard], component: ClassesComponent }
+];
+
+const masterRoutes: Routes = [
+  { path: '', canActivateChild: [AuthGuard], component: MasterCabinetsComponent },
+  { path: 'pupils', canActivateChild: [AuthGuard], component: PupilsComponent },
+  { path: 'parents', canActivateChild: [AuthGuard], component: ParentsComponent },
+  { path: 'teachers', canActivateChild: [AuthGuard], component: TeachersComponent },
+  { path: 'head-assistants', canActivateChild: [AuthGuard], component: HeadassistantsComponent },
   { path: 'classes', canActivate: [AuthGuard], component: ClassesComponent }
 ];
 
@@ -70,7 +83,8 @@ const routes: Routes = [
   },
   { path: 'login', canActivate: [LoginGuard], component: LoginComponent },
   { path: 'admin', component: AdminPanelComponent, canActivate: [AuthGuard, AdminGuard], children: adminRoutes },
-  { path: 'cabinet', component: CabinetComponent, canActivate: [AuthGuard, MasterGuard], children: cabinetRoutes },
+  { path: 'head-master', component: HeadMasterCabinetComponent, canActivate: [AuthGuard, MasterGuard], children: headMasterRoutes },
+  { path: 'master', component: MasterCabinetComponent, canActivate: [AuthGuard, MasterGuard], children: masterRoutes },
   { path: 'register-school', canActivate: [LoginGuard], component: RegisterSchoolComponent },
   { path: 'register-headmaster', component: RegisterHeadmasterComponent },
   { path: 'register-headmaster-response', component: RegisterHeadmasterResponseComponent },
@@ -117,4 +131,8 @@ export const RoutingComponents = [
   CabinetComponent,
   AdminPanelComponent,
   ParentCabinetComponent,
+  HeadMasterCabinetComponent,
+  HeadMasterProfileComponent,
+  MasterProfileComponent,
+  MasterCabinetComponent
 ];
