@@ -1,86 +1,82 @@
 @import 'src/vars.scss';
 
 :host {
-    display: grid;
-    grid-template-columns: auto 1fr;
-    grid-gap: 1rem;
-    padding: 1rem;
-    border: 1px solid $light;
-    position: relative;
-    
-    .photo-edit {
-        display: grid;
-        grid-gap: 1rem;
-        
-        .photo {
-            height: 13rem;
-            width: 9.5rem;     
-        }
+	display: grid;
+	grid-template-columns: auto 1fr;
+	grid-gap: 1rem;
+	padding: 1rem;
+	border: 1px solid $light;
+	position: relative;
+	align-self: start;
+	
+	.photo-edit {
+		display: grid;
+		grid-gap: 1rem;
+		align-self: start;
+		
+		.photo {
+			height: 13rem;
+			width: 9.5rem;     
+		}
+	}
 
-        .upload-photo {
-            transition: $transition;
-            padding: 0.5rem;
-            width: 100%;
-    
-            &:hover {
-              border-color: $accent;
-              background-color: #ffffff;
-              color: $accent;
-            }
-        }
-    }
+	.name-edit {
+		display: grid;
+		grid-gap: 1rem;
+		align-self: start;
 
-    .name-edit {
-        display: grid;
-        grid-gap: 1rem;
-        align-items: stretch;
+		.email, .phone-number, .date-of-birth {
+			display: grid;
+			align-content: center;
+			grid-gap: 0.5rem;
+			grid-template-columns: auto 1fr;
+			color: $gray;
+		}
+		.email-value, .phone-number-value, .day-of-birth-value {
+			font-size: 0.8rem;
+		}
+		.class-teacher {
+			color: $gray;
+		}
+		.class-name {
+			position: absolute;
+			top: 1rem;
+			right: 1rem;
+			padding: 0.5rem;
+			color: #ffffff;
+			background-color: $accent;
+			text-transform: capitalize;
+		}
+		.degree, .work-info {
+			border: 1px solid $light;
+			position: relative;
+			margin-top: 1rem;
 
-        .email, .number, .date {
-            display: grid;
-            align-items: center;
-            grid-template-columns: auto 1fr;
-            color: $gray;
-        }
-        .email-value, .phone-number-value, .birth-day {
-            font-size: 0.8rem;
-            padding-left: 0.2rem;
-        }
-        .class-teacher {
-            color: $gray;
-        }
-        .class-name {
-            position: absolute;
-            top: 1rem;
-            right: 1rem;
-            padding: 0.5rem;
-            color: #ffffff;
-            background-color: $accent;
-            text-transform: capitalize;
-        }
-        .degree, .work-info {
-          border: 1px solid $light;
-          height: 3rem;
-
-          .degree-title, .work-info-title {
-            position: relative;
-            top: -0.75rem;
-            left: 2rem;
-            padding: 0.3rem;
-            color: #ffffff;
-            background-color: $accent;
-            text-transform: capitalize;
-          }
-          .degree-value, .work-info-value {
-            position: relative;
-            top: 1rem;
-            // right: 3rem;
-          }
-        }
-    }
-    .icon{
-        color: $accent;
-        font-size: 1rem;
-        height: 1rem;
-        width: 1rem;
-    }
+			.degree-title, .work-info-title {
+				position: absolute;
+				top: 0;
+				left: 2rem;
+				padding: 0.25rem 0.5rem;
+				color: #ffffff;
+				background-color: $accent;
+				text-transform: capitalize;
+				transform: translateY(-50%);
+			}
+			.degree-value, .work-info-value {
+				display: block;
+				padding: 1.5rem;
+				color: $gray;
+			}
+		}
+	}
+	.icon {
+		color: $accent;
+		font-size: 1rem;
+		width: 1rem;
+		height: 1rem;
+		line-height: 100%;
+		text-align: center;
+		align-self: center;
+		margin-bottom: -2px;
+	}
 }

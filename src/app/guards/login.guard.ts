@@ -24,13 +24,19 @@ export class LoginGuard implements CanActivate {
     if (this.authService.hasAdminRole()) {
       this.router.navigate(['/admin']);
     } else if (this.authService.hasMasterRole()) {
-      this.router.navigate(['/cabinet']);
+      this.router.navigate(['/master']);
     } else if (this.authService.hasHeadMasterRole()) {
-      this.router.navigate(['/cabinet']);
+      this.router.navigate(['/head-master']);
     } else if (this.authService.hasTeacherRole()) {
       this.router.navigate(['/teacher']);
+    }else if (this.authService.hasStudentRole()) {
+      this.router.navigate(['/pupil']);
+    }else if (this.authService.hasParentRole()) {
+      this.router.navigate(['/parent']);
+    }else if (this.authService.hasHeadAssistantRole()) {
+      this.router.navigate(['/head-assistent']);
     }
-    //Add new redirect after adding new cabinet
+    
     return false;
   }
 }

@@ -33,6 +33,5 @@ export class AdminPanelComponent implements OnInit {
   ngOnInit() {
     this.pageService.set("YPS | Admin");
     this.userService.getUser("/Admin");
-
   }
 }
