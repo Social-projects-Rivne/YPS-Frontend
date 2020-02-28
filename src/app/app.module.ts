@@ -100,7 +100,7 @@ import { PupilInfoComponent } from './components/pupil-info/pupil-info.component
     ClassItemComponent,
     PupilCabinetComponent,
     PupilInfoComponent,
-    
+
   ],
   imports: [
     BrowserModule,

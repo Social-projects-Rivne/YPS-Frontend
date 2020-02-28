@@ -11,7 +11,6 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { LoginComponent } from './pages/login/login.component';
 import { SchoolMainComponent } from './pages/school-main/school-main.component';
-import { CabinetComponent } from './pages/cabinet/cabinet.component';
 import { RegisterSchoolComponent } from './pages/register-school/register-school.component';
 import { RegisterHeadmasterComponent } from './pages/register-headmaster/register-headmaster.component';
 import { RegisterHeadmasterResponseComponent } from './pages/register-headmaster-response/register-headmaster-response.component';
@@ -120,7 +119,6 @@ export const RoutingComponents = [
   MainComponent,
   LoginComponent,
   SchoolMainComponent,
-  CabinetComponent,
   RegisterSchoolComponent,
   TeachersComponent,
   PupilsComponent,
@@ -128,7 +126,6 @@ export const RoutingComponents = [
   HeadassistantsComponent,
   MastersComponent,
   MasterCabinetsComponent,
-  CabinetComponent,
   AdminPanelComponent,
   ParentCabinetComponent,
   HeadMasterCabinetComponent,
