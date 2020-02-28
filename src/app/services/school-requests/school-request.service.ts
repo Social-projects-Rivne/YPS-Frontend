@@ -1,4 +1,4 @@
-import { apiUrl } from './../../../constants/urls';
+import { apiUrl } from 'src/constants/urls';
 import { ISchoolRequestVM } from '../../components/School Requests/SchoolRequest/ISchoolRequestVM';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
@@ -13,19 +13,18 @@ export class SchoolRequestService {
   private url: string = apiUrl+"/SchoolRequestProccesing";
   constructor(private http:HttpClient,private httpOptions:HttpOptionsService) { }
 
-  get=():Observable<ISchoolRequestVM[]>=>{
+  get = (): Observable<ISchoolRequestVM[]> => {
     this.httpOptions.loadHeaders();
     return this.http.get<ISchoolRequestVM[]>(this.url,this.httpOptions.options);
   };
 
-  approve=(id:number):Observable<any>=>{  
+  approve = (id:number): Observable<any> => {
     this.httpOptions.loadHeaders();
     return this.http.post<any>(this.url,{id:id},this.httpOptions.options);
   };
-  
-  disapprove=(id:number):Observable<any>=>{
+
+  disapprove = (id:number): Observable<any> => {
     this.httpOptions.loadHeaders();
     return this.http.delete<any>(this.url+"?id="+id,this.httpOptions.options);
   };
 }
- 

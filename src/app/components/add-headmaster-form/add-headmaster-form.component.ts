@@ -1,4 +1,4 @@
-import { hostUrl } from './../../../constants/urls';
+import { apiUrl } from 'src/constants/urls';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { IFormField } from 'src/app/models/IFormField';
 import { Subscription } from 'rxjs';
@@ -9,7 +9,6 @@ import { requiredValidator } from 'src/utils/validators/required-validator';
 import { minLengthValidator } from 'src/utils/validators/min-length-validatot';
 import { HttpClient } from '@angular/common/http';
 import { Router, ActivatedRoute } from '@angular/router';
-import { RegisterHeadmasterComponent } from 'src/app/pages/register-headmaster/register-headmaster.component';
 
 @Component({
   selector: 'yps-add-headmaster-form',
@@ -30,7 +29,7 @@ export class AddHeadmasterFormComponent implements OnInit {
     }
   ];
   @ViewChild('formRef', { static: false }) userSubFormRef: { fields: IFormField[], userSubForm: FormGroup };
-  
+
   constructor(
     private formBuilder: FormBuilder,
     private http: HttpClient,
@@ -50,12 +49,12 @@ export class AddHeadmasterFormComponent implements OnInit {
   onSubmit = () => {
     const thisFormValidationResponse = validationHelper(this.form.controls, this.fields);
     const subFormValidationResponse = validationHelper(this.userSubFormRef.userSubForm.controls, this.userSubFormRef.fields);
-    
+
     this.fields = thisFormValidationResponse.fields;
     this.userSubFormRef.fields = subFormValidationResponse.fields;
-    
+
     if (thisFormValidationResponse.isValid && subFormValidationResponse.isValid) {
-      const url: string = hostUrl+"/api/HeadMasters";
+      const url: string = apiUrl + "/api/HeadMasters";
       let link = this.route.snapshot.paramMap.get('link');
       let requestData = { ...this.form.value, link }
       return this.http.post(url, requestData)
@@ -64,8 +63,9 @@ export class AddHeadmasterFormComponent implements OnInit {
             this.router.navigate(['/register-headmaster-response']);
           },
           (res: any) => {
-          console.log("headmaster response", res);
-        });
+            console.log("headmaster response", res);
+          }
+        );
     }
   }
 }
