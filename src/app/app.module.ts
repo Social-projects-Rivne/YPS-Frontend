@@ -59,6 +59,8 @@ import { PupilCabinetComponent } from './pages/pupil-cabinet/pupil-cabinet.compo
 import { ProfileCardComponent } from './components/profile-card/profile-card.component';
 import { PupilProfileComponent } from './pages/pupil-profile/pupil-profile.component';
 import { PupilEventCardComponent } from './components/pupil-event-card/pupil-event-card.component';
+import { HeadAssistentProfileComponent } from './pages/head-assistent-profile/head-assistent-profile.component';
+import { HeadAssistentCabinetComponent } from './pages/head-assistent-cabinet/head-assistent-cabinet.component';
 
 @NgModule({
   declarations: [

@@ -36,6 +36,8 @@ import { PupilCabinetComponent } from './pages/pupil-cabinet/pupil-cabinet.compo
 import { TeacherProfileComponent } from './pages/teacher-profile/teacher-profile.component';
 import { AdminProfileComponent } from './pages/admin-profile/admin-profile.component';
 import { PupilProfileComponent } from './pages/pupil-profile/pupil-profile.component';
+import { HeadAssistentCabinetComponent } from './pages/head-assistent-cabinet/head-assistent-cabinet.component';
+import { HeadAssistentProfileComponent } from './pages/head-assistent-profile/head-assistent-profile.component';
 
 const cabinetRoutes: Routes = [
   { path: '', canActivateChild: [AuthGuard], component: MasterCabinetsComponent },
@@ -54,7 +56,9 @@ const adminRoutes: Routes = [
 const teacherRoutes: Routes = [
   { path: '', canActivateChild: [AuthGuard], component: TeacherProfileComponent },
 ];
-
+const headAssistentRoutes: Routes = [
+  { path: '', canActivateChild: [AuthGuard], component: HeadAssistentProfileComponent },
+];
 const parentRoutes: Routes = [
   { path: '', canActivateChild: [AuthGuard], component: ParentProfileComponent }
 ];
@@ -81,8 +85,14 @@ const routes: Routes = [
   { path: 'register-school', canActivate: [LoginGuard], component: RegisterSchoolComponent },
   { path: 'register-headmaster/:link', component: RegisterHeadmasterComponent },
   { path: 'register-headmaster-response', component: RegisterHeadmasterResponseComponent },
+  { 
+    path: 'head-assistant',
+    canActivate: [AuthGuard, HeadAssistentGuard],
+    component: HeadAssistentCabinetComponent,
+    children: headAssistentRoutes
+  },
   {
-    path: 'teacher', canActivateChild: [],
+    path: 'teacher',
     canActivate: [AuthGuard, TeacherGuard],
     component: TeacherCabinetComponent,
     children: teacherRoutes
@@ -127,5 +137,7 @@ export const RoutingComponents = [
   TeacherProfileComponent,
   AdminProfileComponent,
   ParentProfileComponent,
-  PupilProfileComponent
+  PupilProfileComponent,
+  HeadAssistentProfileComponent,
+  HeadAssistentCabinetComponent,
 ];
