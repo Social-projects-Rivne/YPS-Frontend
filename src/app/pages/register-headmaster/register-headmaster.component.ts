@@ -27,12 +27,10 @@ export class RegisterHeadmasterComponent implements OnInit {
     return this.http.get(apiUrl + "/Headmasters/" + link)
       .subscribe(
         (response: boolean) => {
-          console.log("ok");
           this.showForm = response;
         },
         (error: any) => {
-          console.log("bad request for register");
-          this.router.navigate(["/404"]);          
+          this.router.navigate(["/404"]);
         }
       );
   }

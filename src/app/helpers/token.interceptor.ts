@@ -47,8 +47,7 @@ export class TokenInterceptor implements HttpInterceptor {
               case 401:
                 return this.handleHttpResponseError(request, next);
               case 400:
-                console.log("bad request");
-                return;
+                return throwError(this.handleError);
             }
           } else {
             return throwError(this.handleError);
