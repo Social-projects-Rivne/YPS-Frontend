@@ -9,8 +9,9 @@ import { apiUrl } from 'src/constants/urls';
 })
 export class UserService {
   public user: IUser = null;
- 
+
   constructor(private http: HttpClient, private httpOptionsService: HttpOptionsService ) { }
+
   getUser = (concreteUrl: string) => {
     this.httpOptionsService.loadHeaders();
     return this.http.get(apiUrl + concreteUrl, this.httpOptionsService.options)

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UserService } from 'src/app/services/user/user.service';
 
 @Component({
   selector: 'yps-master-profile',
@@ -7,7 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MasterProfileComponent implements OnInit {
 
-  constructor() { }
+  constructor(public userService: UserService) { }
 
-  ngOnInit(): void { }
+  ngOnInit(): void {
+    this.userService.getUser("/teachers/getmaster");
+  }
 }
