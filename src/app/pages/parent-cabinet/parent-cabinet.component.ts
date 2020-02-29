@@ -22,28 +22,8 @@ export class ParentCabinetComponent implements OnInit {
     }
   ];
 
-  user: IParent = {
-    id: null,
-    phoneNumber: '',
-    email: '',
-    imageUrl: '',
-    firstName: '',
-    surname: '',
-    middleName: '',
-    schoolName: '',
-    workinfo: '',
-    dateOfBirth: '',
-    children: []
-  };
-  
-  constructor(private service: ParentService) { }
-
-  getParentData = () => {
-    this.service.getParentProfileInfo()
-      .subscribe(data => this.user = data)
-  }
+  constructor() { }
 
   ngOnInit(): void {
-    this.getParentData();
   }
 }

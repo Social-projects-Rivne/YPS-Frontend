@@ -1,13 +1,14 @@
-export interface ITeacher {
+export interface IUser {
     id: number;
     firstName: string;
     surname: string;
     middleName: string;
-    className: string;
-    degree: string;
-    phoneNumber: string;
     email: string;
     dateOfBirth: string; 
-    imageUrl?: string;
+    phoneNumber: string;
+    imageUrl: string;
+    className?: string;
+    degree?: string;
     schoolName?: string;
+    workInfo?: string;
 }
