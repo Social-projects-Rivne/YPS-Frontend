@@ -1,6 +1,5 @@
 import { ClassesComponent } from './pages/classes/classes.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
-import { MasterCabinetsComponent } from './components/master-cabinets/master-cabinets.component';
 import { MastersComponent } from './pages/masters/masters.component';
 import { HeadassistantsComponent } from './pages/headassistants/headassistants.component';
 import { TeachersComponent } from './pages/teachers/teachers.component';
@@ -39,7 +38,7 @@ import { AdminProfileComponent } from './pages/admin-profile/admin-profile.compo
 import { PupilProfileComponent } from './pages/pupil-profile/pupil-profile.component';
 
 const headMasterRoutes: Routes = [
-  { path: '', canActivateChild: [AuthGuard], component: MasterCabinetsComponent },
+  { path: '', canActivateChild: [AuthGuard], component: HeadMasterProfileComponent },
   { path: 'pupils', canActivateChild: [AuthGuard], component: PupilsComponent },
   { path: 'parents', canActivateChild: [AuthGuard], component: ParentsComponent },
   { path: 'teachers', canActivateChild: [AuthGuard], component: TeachersComponent },
@@ -49,7 +48,7 @@ const headMasterRoutes: Routes = [
 ];
 
 const masterRoutes: Routes = [
-  { path: '', canActivateChild: [AuthGuard], component: MasterCabinetsComponent },
+  { path: '', canActivateChild: [AuthGuard], component: MasterProfileComponent },
   { path: 'pupils', canActivateChild: [AuthGuard], component: PupilsComponent },
   { path: 'parents', canActivateChild: [AuthGuard], component: ParentsComponent },
   { path: 'teachers', canActivateChild: [AuthGuard], component: TeachersComponent },
@@ -130,7 +129,6 @@ export const RoutingComponents = [
   ParentsComponent,
   HeadassistantsComponent,
   MastersComponent,
-  MasterCabinetsComponent,
   AdminPanelComponent,
   ParentCabinetComponent,
   HeadMasterCabinetComponent,
