@@ -12,11 +12,11 @@ export class ChildrenInfoComponent implements OnInit {
     private service: ParentService
   ) { }
   
-  users: IPupil[];
+  pupils: IPupil[];
   
   getPupilsDataByParent = () => {
     this.service.getPupilsInfoByParent()
-      .subscribe(data => this.users = data)
+      .subscribe(data => this.pupils = data)
   }
 
   ngOnInit(): void {

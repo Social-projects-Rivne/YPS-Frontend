@@ -13,7 +13,7 @@ export class PupilInfoCardComponent implements OnInit {
     private service: ParentService, private parent: ChildrenInfoComponent 
   ) { }
   
-  @Input() user:IPupil;
+  @Input() pupil: IPupil;
   @Input() index: number | string;
   
   ngOnInit(): void {

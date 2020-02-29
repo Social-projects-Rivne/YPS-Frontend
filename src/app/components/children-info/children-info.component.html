@@ -1,11 +1,10 @@
-<div class="container">
-    <yps-pupil-info-card   
-    *ngFor="let item of users; index as index" 
+<yps-pupil-info-card   
+    *ngFor="let pupil of pupils; index as index" 
     [index]="index" 
-    [user]="item"
+    [pupil]="pupil"
 >
 </yps-pupil-info-card>
-</div>
+
 
 
 
