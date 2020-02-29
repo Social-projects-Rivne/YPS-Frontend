@@ -4,6 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { apiUrl } from 'src/constants/urls';
 import { HttpOptionsService } from '../http-options/http-options.service';
+import { IUser } from 'src/app/models/IUser';
 @Injectable({
   providedIn: 'root'
 })
@@ -12,12 +13,12 @@ export class TeacherinfoService {
 
   constructor(private httpOptions: HttpOptionsService, private http: HttpClient) { }
 
-  getTeachers = (): Observable<ITeacher[]> => {
+  getTeachers = (): Observable<IUser[]> => {
     this.httpOptions.loadHeaders();
-    return this.http.get<ITeacher[]>(this.url + "/GetTeachersBySchoolId", this.httpOptions.options);
+    return this.http.get<IUser[]>(this.url + "/GetTeachersBySchoolId", this.httpOptions.options);
   }
-  getTeacherByID = (): Observable<ITeacher> => {
+  getTeacherByID = (): Observable<IUser> => {
     this.httpOptions.loadHeaders();
-    return this.http.get<ITeacher>(this.url + "/GetTeacherById", this.httpOptions.options);
+    return this.http.get<IUser>(this.url + "/GetTeacherById", this.httpOptions.options);
   }
 }

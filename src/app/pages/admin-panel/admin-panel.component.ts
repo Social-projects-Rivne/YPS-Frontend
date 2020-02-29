@@ -1,7 +1,5 @@
 import { ILink } from 'src/app/models/ILink';
 import { Component, OnInit } from '@angular/core';
-import { UserAdminInfoService } from 'src/app/services/admin/admin.service';
-import { IAdmin } from 'src/app/models/IAdmin';
 import { PageService } from 'src/app/services/page-title/page.service';
 
 @Component({
@@ -27,21 +25,9 @@ export class AdminPanelComponent implements OnInit {
       icon: 'school'
     }
   ];
-  user: IAdmin = {
-    id: 1,
-    firstName: null,
-    surname: "",
-    middleName: "",
-    phoneNumber: "",
-    email: "",
-    dateOfBirth: "",
-    imageUrl: ""
-  };
-  constructor(private userService: UserAdminInfoService, private pageService: PageService) { }
+  constructor(private pageService: PageService) { }
 
   ngOnInit() {
     this.pageService.set("YPS | Admin");
-    this.userService.getUser()
-    .subscribe(data => this.user = data);
   }
 }

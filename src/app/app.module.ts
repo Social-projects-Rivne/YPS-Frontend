@@ -27,7 +27,6 @@ import { AddTeacherFormComponent } from './components/add-teacher-form/add-teach
 import { AddParentFormComponent } from './components/add-parent-form/add-parent-form.component';
 import { RecaptchaModule } from 'angular-google-recaptcha';
 import { SchoolRegisterFormComponent } from './components/school-register-form/school-register-form.component';
-import { AdminInfoComponent } from './components/admin-info/admin-info.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
@@ -47,16 +46,17 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { TeacherCabinetComponent } from './pages/teacher-cabinet/teacher-cabinet.component';
-import { TeacherInfoComponent } from './components/teacher-info/teacher-info.component';
 import { ParentCabinetComponent } from './pages/parent-cabinet/parent-cabinet.component';
-import { ParentProfileComponent } from './components/parent-profile/parent-profile.component';
 import { ClassesComponent } from './pages/classes/classes.component';
 import { AddClassFormComponent } from './components/add-class-form/add-class-form.component';
 import {TokenInterceptor} from './helpers/token.interceptor';
 import { ClassListComponent } from './components/class-list/class-list.component';
 import { ClassItemComponent } from './components/class-item/class-item.component';
+import { PupilEventsComponent } from './components/pupil-events/pupil-events.component';
 import { PupilCabinetComponent } from './pages/pupil-cabinet/pupil-cabinet.component';
-import { PupilInfoComponent } from './components/pupil-info/pupil-info.component';
+import { ProfileCardComponent } from './components/profile-card/profile-card.component';
+import { PupilProfileComponent } from './pages/pupil-profile/pupil-profile.component';
+import { PupilEventCardComponent } from './components/pupil-event-card/pupil-event-card.component';
 
 @NgModule({
   declarations: [
@@ -84,23 +84,22 @@ import { PupilInfoComponent } from './components/pupil-info/pupil-info.component
     MastersComponent,
     SchoolRegisterFormComponent,
     RegisterHeadmasterResponseComponent,
-    AdminInfoComponent,
     SidebarComponent,
     SchoolRequestsComponent,
     SchoolRequestCardComponent,
     HeaderComponent,
     PageNotFoundComponent,
     TeacherCabinetComponent,
-    TeacherInfoComponent,
     ParentCabinetComponent,
-    ParentProfileComponent,
     ClassesComponent,
     AddClassFormComponent,
     ClassListComponent,
     ClassItemComponent,
+    PupilEventsComponent,
     PupilCabinetComponent,
-    PupilInfoComponent,
-
+    ProfileCardComponent,
+    PupilProfileComponent,
+    PupilEventCardComponent,
   ],
   imports: [
     BrowserModule,
