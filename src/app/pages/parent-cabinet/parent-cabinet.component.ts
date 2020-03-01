@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ILink } from 'src/app/models/ILink';
-import { IParent } from 'src/app/models/IParent';
-import { ParentService } from 'src/app/services/parents/parent.service';
 
 @Component({
   selector: 'yps-parent-cabinet',
