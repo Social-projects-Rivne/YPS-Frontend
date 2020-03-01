@@ -34,6 +34,7 @@ import { ParentCabinetComponent } from './pages/parent-cabinet/parent-cabinet.co
 import { ParentProfileComponent } from './components/parent-profile/parent-profile.component';
 import { PupilCabinetComponent } from './pages/pupil-cabinet/pupil-cabinet.component';
 import { PupilInfoComponent } from './components/pupil-info/pupil-info.component';
+import { UpcomingTestsComponent } from './pages/upcoming-tests/upcoming-tests.component';
 
 const cabinetRoutes: Routes = [
   { path: '', canActivateChild: [AuthGuard], component: MasterCabinetsComponent },
@@ -51,7 +52,7 @@ const adminRoutes: Routes = [
 ];
 const teacherRoutes: Routes = [
   { path: '', canActivateChild: [AuthGuard], component: TeacherInfoComponent },
-  { path: 'schoolRequest', canActivateChild: [AuthGuard], component: SchoolRequestsComponent }
+  { path: 'upcoming-tests', canActivateChild: [AuthGuard], component: UpcomingTestsComponent }
 ];
 
 const parentRoutes: Routes = [
@@ -117,4 +118,5 @@ export const RoutingComponents = [
   CabinetComponent,
   AdminPanelComponent,
   ParentCabinetComponent,
+  UpcomingTestsComponent
 ];

@@ -59,6 +59,8 @@ import { ClassListComponent } from './components/class-list/class-list.component
 import { ClassItemComponent } from './components/class-item/class-item.component';
 import { PupilCabinetComponent } from './pages/pupil-cabinet/pupil-cabinet.component';
 import { PupilInfoComponent } from './components/pupil-info/pupil-info.component';
+import { UpcomingTestItemComponent } from './components/upcoming-test-item/upcoming-test-item.component';
+import { UpcomingTestListComponent } from './components/upcoming-test-list/upcoming-test-list.component';
 
 @NgModule({
   declarations: [
@@ -101,7 +103,9 @@ import { PupilInfoComponent } from './components/pupil-info/pupil-info.component
     ClassListComponent,
     ClassItemComponent,
     PupilCabinetComponent,
-    PupilInfoComponent
+    PupilInfoComponent,
+    UpcomingTestItemComponent,
+    UpcomingTestListComponent,
   ],
   imports: [
     BrowserModule,
