@@ -4,7 +4,7 @@ import { UserService } from 'src/app/services/user/user.service';
 @Component({
   selector: 'yps-master-profile',
   templateUrl: './master-profile.component.html',
-  styleUrls: ['./master-profile.component.scss']
+  styleUrls: ['../../../scss/profile.scss']
 })
 export class MasterProfileComponent implements OnInit {
 
