@@ -6,7 +6,7 @@ import { ParentService } from 'src/app/services/parents/parent.service';
 @Component({
   selector: 'yps-parent-cabinet',
   templateUrl: './parent-cabinet.component.html',
-  styleUrls: ['./parent-cabinet.component.scss']
+  styleUrls: ['../../../scss/cabinet.scss']
 })
 export class ParentCabinetComponent implements OnInit {
   sideLinks: ILink[] = [

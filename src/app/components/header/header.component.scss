@@ -33,10 +33,12 @@
   .school-name {
     display: block;
     justify-self: start;
+    z-index: 1;
   }
 
   .user-name {
     text-transform: capitalize;
+    z-index: 1;
   }
 
   .btn.logout-btn {
@@ -44,6 +46,7 @@
     background: none;
     border-color: $gray;
     color: $black;
+    z-index: 1;
 
     &:hover {
       border-color: $red;

@@ -7,7 +7,7 @@ import { PupilinfoService } from 'src/app/services/pupils/pupilinfo.service';
 @Component({
   selector: 'yps-pupil-cabinet',
   templateUrl: './pupil-cabinet.component.html',
-  styleUrls: ['./pupil-cabinet.component.scss']
+  styleUrls: ['../../../scss/cabinet.scss']
 })
 export class PupilCabinetComponent implements OnInit {
 
