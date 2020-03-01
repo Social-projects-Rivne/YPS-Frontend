@@ -2,7 +2,7 @@
   *ngIf="userService.user != null"
   [schoolName]="userService.user.schoolName"
   [userName]="userService.user.firstName"
-  [cabinetUrl]="cabinetUrl"
+  [cabinetUrl]="userService.cabinetUrl"
 ></yps-header>
 
 <router-outlet></router-outlet>
