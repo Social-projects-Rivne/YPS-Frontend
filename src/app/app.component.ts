@@ -9,6 +9,7 @@ import { get } from 'js-cookie';
 })
 export class AppComponent implements OnInit {
   title = 'YPS-Frontend';
+  cabinetUrl: string;
 
   constructor(public userService: UserService) {}
 
@@ -45,6 +46,10 @@ export class AppComponent implements OnInit {
           console.log("somthing went wrong");
           break;
       }
+
+      if (typeof(role) != "undefined")
+        this.cabinetUrl = `/${role}`;
+
       this.userService.getUser(requestUrl);
     }
   }
