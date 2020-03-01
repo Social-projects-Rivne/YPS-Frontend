@@ -1,1 +1,3 @@
+<yps-header *ngIf="userService.user != null" [schoolName]="userService.user.schoolName" [userName]="userService.user.firstName"></yps-header>
+
 <router-outlet></router-outlet>

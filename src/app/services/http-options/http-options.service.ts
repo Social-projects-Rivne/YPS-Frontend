@@ -6,7 +6,7 @@ import { HttpHeaders } from '@angular/common/http';
   providedIn: 'root'
 })
 export class HttpOptionsService {
-  options: object = {};  
+  options: object = {};
 
   constructor() { }
 
