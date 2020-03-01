@@ -3,24 +3,24 @@ import { Component, OnInit } from '@angular/core';
 import { PageService } from 'src/app/services/page-title/page.service';
 
 @Component({
-  selector: 'yps-admin-panel',
-  templateUrl: './admin-panel.component.html',
-  styleUrls: ['./admin-panel.component.scss']
+  selector: 'yps-admin-cabinet',
+  templateUrl: './admin-cabinet.component.html',
+  styleUrls: ['../../../scss/cabinet.scss']
 })
-export class AdminPanelComponent implements OnInit {
+export class AdminCabinetComponent implements OnInit {
   sideLinks: ILink[] = [
     {
-      value: 'Profile',
+      value: 'profile',
       path: './',
       icon: 'account_circle'
     },
     {
-      value: 'School Request',
-      path: './schoolRequest',
+      value: 'school requests',
+      path: './school-requests',
       icon: 'announcement'
     },
     {
-      value: 'Schools',
+      value: 'schools',
       path: './schools',
       icon: 'school'
     }

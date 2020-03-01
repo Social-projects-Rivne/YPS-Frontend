@@ -13,7 +13,7 @@ import { SchoolMainComponent } from './pages/school-main/school-main.component';
 import { RegisterSchoolComponent } from './pages/register-school/register-school.component';
 import { RegisterHeadmasterComponent } from './pages/register-headmaster/register-headmaster.component';
 import { RegisterHeadmasterResponseComponent } from './pages/register-headmaster-response/register-headmaster-response.component';
-import { AdminPanelComponent } from './pages/admin-panel/admin-panel.component';
+import { AdminCabinetComponent } from './pages/admin-cabinet/admin-cabinet.component';
 import { SchoolRequestsComponent } from './components/School Requests/school-requests/school-requests.component';
 import { AuthGuard } from './guards/auth.guard';
 import { LoginGuard } from './guards/login.guard';
@@ -58,7 +58,7 @@ const masterRoutes: Routes = [
 
 const adminRoutes: Routes = [
   { path: '', canActivateChild: [AuthGuard], component: AdminProfileComponent },
-  { path: 'schoolRequest', canActivateChild: [AuthGuard], component: SchoolRequestsComponent }
+  { path: 'school-requests', canActivateChild: [AuthGuard], component: SchoolRequestsComponent }
 ];
 const teacherRoutes: Routes = [
   { path: '', canActivateChild: [AuthGuard], component: TeacherProfileComponent },
@@ -84,7 +84,7 @@ const routes: Routes = [
   { path: 'master', component: MasterCabinetComponent, canActivate: [AuthGuard, MasterGuard], children: masterRoutes },
   {
     path: 'admin',
-    component: AdminPanelComponent,
+    component: AdminCabinetComponent,
     canActivate: [AuthGuard, AdminGuard],
     children: adminRoutes
   },
@@ -129,7 +129,7 @@ export const RoutingComponents = [
   ParentsComponent,
   HeadassistantsComponent,
   MastersComponent,
-  AdminPanelComponent,
+  AdminCabinetComponent,
   ParentCabinetComponent,
   HeadMasterCabinetComponent,
   HeadMasterProfileComponent,
