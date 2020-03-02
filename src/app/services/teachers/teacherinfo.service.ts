@@ -1,3 +1,4 @@
+import { ITeacherToSelect } from './../../models/ITacherToSelect';
 import { ITeacher } from './../../models/ITeacher';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
@@ -20,5 +21,10 @@ export class TeacherinfoService {
   getTeacherByID = (): Observable<IUser> => {
     this.httpOptions.loadHeaders();
     return this.http.get<IUser>(this.url + "/GetTeacherById", this.httpOptions.options);
+  }
+
+  getTeachersToSelect = ():Observable<ITeacherToSelect[]>=>{
+    this.httpOptions.loadHeaders();
+    return this.http.get<ITeacherToSelect[]>(this.url + "/GetTeacherBySchoolShort", this.httpOptions.options);
   }
 }
