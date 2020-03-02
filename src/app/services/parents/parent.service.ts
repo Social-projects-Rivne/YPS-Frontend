@@ -4,7 +4,6 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { apiUrl } from 'src/constants/urls';
 import { HttpOptionsService } from '../http-options/http-options.service';
-import { IPupil } from 'src/app/models/IPupil';
 import { IUser } from 'src/app/models/IUser';
 
 @Injectable({

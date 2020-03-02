@@ -25,14 +25,13 @@ export class ChildrenInfoComponent implements OnInit {
     this.user = null;
   }
 
-  
   selectPupil = (id: number) => {
     this.http.get(apiUrl + "/Parents/GetPupilAsParent/" + id, this.httpOptionsService.options)
-      .subscribe(
-        (successRes: IUser[]) => {
-          console.log(this.user = successRes);
-        }
-      );
+    .subscribe(
+      (successRes: IUser[]) => {
+        console.log(this.user = successRes);
+      }
+    );
   }
 
   getPupilsDataByParent = () => {

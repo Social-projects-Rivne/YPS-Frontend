@@ -1,7 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { ParentService } from 'src/app/services/parents/parent.service';
 import { ChildrenInfoComponent } from '../children-info/children-info.component';
-import { IPupil } from 'src/app/models/IPupil';
 import { UserService } from 'src/app/services/user/user.service';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
