@@ -14,9 +14,7 @@ import { IUser } from 'src/app/models/IUser';
 })
 export class PupilInfoCardComponent implements OnInit {
   constructor(
-    private service: ParentService, private parent: ChildrenInfoComponent, 
-    public userService: UserService, private http: HttpClient,
-    private router: Router
+    public userService: UserService
   ) { }
   
   @Output() selected = new EventEmitter<any>();
