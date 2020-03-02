@@ -1,12 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { ILink } from 'src/app/models/ILink';
-import { IParent } from 'src/app/models/IParent';
-import { ParentService } from 'src/app/services/parents/parent.service';
+import { PageService } from 'src/app/services/page-title/page.service';
 
 @Component({
   selector: 'yps-parent-cabinet',
   templateUrl: './parent-cabinet.component.html',
-  styleUrls: ['./parent-cabinet.component.scss']
+  styleUrls: ['../../../scss/cabinet.scss']
 })
 export class ParentCabinetComponent implements OnInit {
   sideLinks: ILink[] = [
@@ -22,28 +21,9 @@ export class ParentCabinetComponent implements OnInit {
     }
   ];
 
-  user: IParent = {
-    id: null,
-    phoneNumber: '',
-    email: '',
-    imageUrl: '',
-    firstName: '',
-    surname: '',
-    middleName: '',
-    schoolName: '',
-    workinfo: '',
-    dateOfBirth: '',
-    children: []
-  };
-  
-  constructor(private service: ParentService) { }
-
-  getParentData = () => {
-    this.service.getParentProfileInfo()
-      .subscribe(data => this.user = data)
-  }
+  constructor(private pageService: PageService) { }
 
   ngOnInit(): void {
-    this.getParentData();
+    this.pageService.set("YPS | Parent");
   }
 }

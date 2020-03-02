@@ -8,7 +8,6 @@ import { RegisterSchoolComponent } from './pages/register-school/register-school
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
 import { AppRoutingModule, RoutingComponents } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { WelcomeComponent } from './components/welcome/welcome.component';
@@ -28,7 +27,6 @@ import { AddTeacherFormComponent } from './components/add-teacher-form/add-teach
 import { AddParentFormComponent } from './components/add-parent-form/add-parent-form.component';
 import { RecaptchaModule } from 'angular-google-recaptcha';
 import { SchoolRegisterFormComponent } from './components/school-register-form/school-register-form.component';
-import { AdminInfoComponent } from './components/admin-info/admin-info.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
@@ -36,7 +34,6 @@ import { SchoolRequestsComponent } from './components/School Requests/school-req
 import { SchoolRequestCardComponent } from './components/School Requests/school-request-card/school-request-card.component';
 import { HeaderComponent } from './components/header/header.component';
 import { RegisterHeadmasterResponseComponent } from './pages/register-headmaster-response/register-headmaster-response.component';
-
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -49,14 +46,22 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { TeacherCabinetComponent } from './pages/teacher-cabinet/teacher-cabinet.component';
-import { TeacherInfoComponent } from './components/teacher-info/teacher-info.component';
 import { ParentCabinetComponent } from './pages/parent-cabinet/parent-cabinet.component';
-import { ParentProfileComponent } from './components/parent-profile/parent-profile.component';
 import { ClassesComponent } from './pages/classes/classes.component';
 import { AddClassFormComponent } from './components/add-class-form/add-class-form.component';
 import {TokenInterceptor} from './helpers/token.interceptor';
+import { ChildrenInfoComponent } from './components/children-info/children-info.component';
+import { PupilInfoCardComponent } from './components/pupil-info-card/pupil-info-card.component';
 import { ClassListComponent } from './components/class-list/class-list.component';
 import { ClassItemComponent } from './components/class-item/class-item.component';
+import { PupilEventsComponent } from './components/pupil-events/pupil-events.component';
+import { PupilCabinetComponent } from './pages/pupil-cabinet/pupil-cabinet.component';
+import { UpcomingTestItemComponent } from './components/upcoming-test-item/upcoming-test-item.component';
+import { UpcomingTestListComponent } from './components/upcoming-test-list/upcoming-test-list.component';
+import { ProfileCardComponent } from './components/profile-card/profile-card.component';
+import { PupilProfileComponent } from './pages/pupil-profile/pupil-profile.component';
+import { PupilEventCardComponent } from './components/pupil-event-card/pupil-event-card.component';
+import { AddUpcomingTestFormComponent } from './components/add-upcoming-test-form/add-upcoming-test-form.component';
 
 @NgModule({
   declarations: [
@@ -84,20 +89,28 @@ import { ClassItemComponent } from './components/class-item/class-item.component
     MastersComponent,
     SchoolRegisterFormComponent,
     RegisterHeadmasterResponseComponent,
-    AdminInfoComponent,
     SidebarComponent,
     SchoolRequestsComponent,
     SchoolRequestCardComponent,
     HeaderComponent,
     PageNotFoundComponent,
     TeacherCabinetComponent,
-    TeacherInfoComponent,
     ParentCabinetComponent,
-    ParentProfileComponent,
     ClassesComponent,
     AddClassFormComponent,
+    ChildrenInfoComponent,
+    PupilInfoCardComponent,
     ClassListComponent,
-    ClassItemComponent
+    ClassItemComponent,
+    PupilEventsComponent,
+    PupilCabinetComponent,
+    UpcomingTestItemComponent,
+    UpcomingTestListComponent,
+    ProfileCardComponent,
+    PupilProfileComponent,
+    PupilEventCardComponent,
+    AddUpcomingTestFormComponent,
+    PupilEventCardComponent
   ],
   imports: [
     BrowserModule,

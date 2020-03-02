@@ -1,0 +1,21 @@
+<div class="container" *ngIf="user == null">
+    <yps-pupil-info-card   
+        *ngFor="let pupil of pupils; index as index" 
+        [index]="index" 
+        [pupil]="pupil"
+        (selected)="selectPupil($event)"    
+    >
+    </yps-pupil-info-card>
+</div>
+<button 
+    (click)="reset()" 
+    class="btn back-btn"  
+    *ngIf="user != null"
+>
+    Back
+</button>
+<yps-profile-card  
+    [user]="user"
+    *ngIf="user != null"
+>
+</yps-profile-card>

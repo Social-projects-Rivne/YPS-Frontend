@@ -1,5 +1,5 @@
 import { IPupil } from '../../models/IPupil';
-import {Component,OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { PupilinfoService } from '../../services/pupils/pupilinfo.service';
 
 @Component({

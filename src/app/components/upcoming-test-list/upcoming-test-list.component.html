@@ -1,0 +1,7 @@
+<yps-upcoming-test-item class="header-class" index="№" [upcomingTestItem]="headerUpcomingTest"></yps-upcoming-test-item>
+<yps-upcoming-test-item
+  *ngFor="let upcomingTest of upcomingTests; index as index"
+  [index]="index"
+  [upcomingTestItem]="upcomingTest"
+>
+</yps-upcoming-test-item>

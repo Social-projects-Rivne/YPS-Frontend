@@ -1,0 +1,35 @@
+@import 'src/vars.scss';
+
+:host {
+    display: grid;
+    border: 1px solid $light;
+    box-shadow: none;
+    padding: 1rem;
+    grid-gap: 0.5rem;
+    transition-duration: .2s;
+    transition-delay: .2s;
+    
+    span {
+        color:$accent;
+    }
+
+    .class-name{
+        text-transform: uppercase;
+    }
+
+    .index {
+        display: grid;
+        align-content: center;
+        font-weight: bold;
+        width: 2rem;
+        height: 2rem;
+        background-color: $accent;
+        color: #ffffff;
+        text-align: center;
+      }
+
+      &:hover{
+        border: 1px solid $accent;
+        cursor: pointer;
+      }
+} 

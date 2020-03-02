@@ -14,9 +14,7 @@ export class MasterGuard implements CanActivate {
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
     if (this.authService.hasMasterRole() === true) {
       return true;
-    } else if (this.authService.hasHeadMasterRole() === true) {
-      return true;
-    }
+    } 
     this.router.navigate(['/']);
     return false;
   }

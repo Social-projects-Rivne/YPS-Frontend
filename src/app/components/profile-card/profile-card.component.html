@@ -1,0 +1,29 @@
+<div *ngIf="user != null" class="photo-edit">
+    <img [src]="user.imageUrl" class="photo" />
+    <input type="file" style="display: none;" accept="image/*" #file>
+    <button class="btn upload-photo">Upload</button>
+</div>
+<div *ngIf="user != null" class="name-edit">
+    <h2 class="full-name">{{ user.surname }} {{ user.firstName }} {{ user.middleName }}</h2>
+    <p class="email">
+        <mat-icon class="icon mail">mail</mat-icon>
+        <span class="email-value">{{ user.email }}</span>
+    </p>
+    <p class="digit phone-number">
+        <mat-icon class="icon phone">phone</mat-icon>
+        <span class="digit phone-number-value">{{ user.phoneNumber }}</span>
+    </p>
+    <p class="date-of-birth">
+        <mat-icon class="icon cake">cake</mat-icon>
+        <span class="day-of-birth-value">{{ user.dateOfBirth }}</span>
+    </p>
+    <p *ngIf="user.className != null" class="class-name">{{ user.className }}</p>
+    <p *ngIf="user.degree != null" class="degree">
+        <span class="degree-title">degree</span>
+        <span class="degree-value">{{ user.degree }}</span>
+    </p>
+    <p *ngIf="user.workInfo != null" class="work-info">
+        <span class="work-info-title">work info</span>
+        <span class="work-info-value">{{ user.workInfo }}</span>
+    </p>
+</div>

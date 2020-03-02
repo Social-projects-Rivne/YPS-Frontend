@@ -8,6 +8,6 @@ export interface ITeacher {
     phoneNumber: string;
     email: string;
     dateOfBirth: string; 
-    imageUrl: string;
-    schoolName: string;
+    imageUrl?: string;
+    schoolName?: string;
 }
