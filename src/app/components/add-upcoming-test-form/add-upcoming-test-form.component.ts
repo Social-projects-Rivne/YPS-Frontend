@@ -50,7 +50,7 @@ export class AddUpcomingTestFormComponent implements OnInit {
     this.httpOptionsService.loadHeaders();
 
     this.form = this.formBuilder.group({
-      "topic": [null, requiredValidator("type is required")],
+      "topic": [null, requiredValidator("topic is required")],
       "testType": [null , requiredValidator("test type is required")],
       "disciplineId": [null , requiredValidator("discipline is required")],
       "classId": [null , requiredValidator("class is required")],
