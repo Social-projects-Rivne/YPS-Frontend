@@ -61,6 +61,7 @@ import { UpcomingTestListComponent } from './components/upcoming-test-list/upcom
 import { ProfileCardComponent } from './components/profile-card/profile-card.component';
 import { PupilProfileComponent } from './pages/pupil-profile/pupil-profile.component';
 import { PupilEventCardComponent } from './components/pupil-event-card/pupil-event-card.component';
+import { AddUpcomingTestFormComponent } from './components/add-upcoming-test-form/add-upcoming-test-form.component';
 
 @NgModule({
   declarations: [
@@ -106,6 +107,7 @@ import { PupilEventCardComponent } from './components/pupil-event-card/pupil-eve
     ProfileCardComponent,
     PupilProfileComponent,
     PupilEventCardComponent,
+    AddUpcomingTestFormComponent,
   ],
   imports: [
     BrowserModule,

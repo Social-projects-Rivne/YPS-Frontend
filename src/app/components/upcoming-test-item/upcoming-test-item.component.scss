@@ -1,0 +1,43 @@
+@import "src/vars";
+
+:host {
+  display: grid;
+  grid-template-columns: calc(3.5rem + 2px) 5rem 7rem 7rem 1fr 11rem;
+
+  .item-el {
+    text-align: center;
+    line-height: 3.5rem;
+    padding: 0 .5rem;
+    border: {
+      top: 1px solid $light;
+      bottom: 1px solid $light;
+    };
+
+    &:last-child {
+      border-right: 1px solid $light;
+    }
+  }
+
+  .index {
+    display: grid;
+    align-content: center;
+    font-weight: bold;
+    width: calc(3.5rem + 2px);
+    height: calc(3.5rem + 2px);
+    background-color: $accent;
+    color: #ffffff;
+    text-align: center;
+  }
+
+  .character {
+    text-transform: capitalize;
+  }
+
+  .teacher-name {
+    text-align: left;
+  }
+
+  .upper-case{
+    text-transform: uppercase;
+  }
+}
