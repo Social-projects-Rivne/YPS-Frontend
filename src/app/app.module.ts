@@ -62,6 +62,9 @@ import { ProfileCardComponent } from './components/profile-card/profile-card.com
 import { PupilProfileComponent } from './pages/pupil-profile/pupil-profile.component';
 import { PupilEventCardComponent } from './components/pupil-event-card/pupil-event-card.component';
 import { AddUpcomingTestFormComponent } from './components/add-upcoming-test-form/add-upcoming-test-form.component';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core'
+import { from } from 'rxjs';
 
 @NgModule({
   declarations: [
@@ -134,7 +137,9 @@ import { AddUpcomingTestFormComponent } from './components/add-upcoming-test-for
     MatCardModule,
     MatProgressSpinnerModule,
     MatInputModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    MatDatepickerModule,
+    MatNativeDateModule
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,
