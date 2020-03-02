@@ -6,14 +6,16 @@
 	- If you don't have back-end part you must clone this repo to your local machine using https://github.com/Social-projects-Rivne/YPS-Backend
   
 ## Setup
-	> Install npm packages
-	
-	```shell
-	npm install
-	```
-	
-	> Run project 
-	
-	```shell
-	ng serve
-	```
+> Install npm packages
+
+```shell
+$ brew update
+$ brew install fvcproductions
+```
+
+> now install npm and bower packages
+
+```shell
+$ npm install
+$ bower install
+```
