@@ -15,7 +15,7 @@ export class HeadAssistantCabinetComponent implements OnInit {
       icon: 'account_circle'
     },
     {
-      value: 'Journal',
+      value: 'Journals',
       path: './journal',
       icon: 'assignment'
     },
