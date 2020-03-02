@@ -2,11 +2,12 @@
 
 :host {
   display: grid;
-  grid-template-columns: calc(3.5rem + 2px) 5rem 6rem 1fr 9rem;
+  grid-template-columns: calc(3rem + 2px) 5rem 6rem 1fr 9rem;
 
   .item-el {
+    font-size: 0.85rem;
     text-align: center;
-    line-height: 3.5rem;
+    line-height: 3rem;
     padding: 0 .5rem;
     border: {
       top: 1px solid $light;
@@ -22,8 +23,8 @@
     display: grid;
     align-content: center;
     font-weight: bold;
-    width: calc(3.5rem + 2px);
-    height: calc(3.5rem + 2px);
+    width: calc(3rem + 2px);
+    height: calc(3rem + 2px);
     background-color: $accent;
     color: #ffffff;
     text-align: center;

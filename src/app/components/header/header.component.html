@@ -1,12 +1,14 @@
-<h4 
-  class="school-name hovered-el" 
+<h4
+  class="school-name hovered-el"
   routerLink="/school-main"
 >{{ schoolName }}</h4>
-<img 
-  src="assets/images/yps-icon-dark.png" 
-  alt="yps icon" 
-  class="yps-icon"
-  routerLink="/"
->
+<div class="logo-container">
+  <img
+    src="assets/images/yps-icon-dark.png"
+    alt="yps icon"
+    class="yps-icon"
+    routerLink="/"
+  >
+</div>
 <h4 class="user-name hovered-el" [routerLink]="cabinetUrl">{{ userName }}</h4>
 <button class="btn logout-btn" (click)="logout()">logout</button>

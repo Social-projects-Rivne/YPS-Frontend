@@ -1,15 +1,13 @@
-import { Component, OnInit, Input, Output } from '@angular/core';
-import { ILink } from 'src/app/models/ILink';
+import { Component, OnInit } from '@angular/core';
 import { PageService } from 'src/app/services/page-title/page.service';
-import { TeacherinfoService } from 'src/app/services/teachers/teacherinfo.service';
-import { IUser } from 'src/app/models/IUser';
+import { ILink } from 'src/app/models/ILink';
 
 @Component({
-  selector: 'yps-teacher-cabinet',
-  templateUrl: './teacher-cabinet.component.html',
+  selector: 'yps-head-assisant-cabinet',
+  templateUrl: './head-assistant-cabinet.component.html',
   styleUrls: ['../../../scss/cabinet.scss']
 })
-export class TeacherCabinetComponent implements OnInit {
+export class HeadAssistantCabinetComponent implements OnInit {
   sideLinks: ILink[] = [
     {
       value: 'Profile',
@@ -17,7 +15,7 @@ export class TeacherCabinetComponent implements OnInit {
       icon: 'account_circle'
     },
     {
-      value: 'Journal',
+      value: 'Journals',
       path: './journal',
       icon: 'assignment'
     },
@@ -35,17 +33,12 @@ export class TeacherCabinetComponent implements OnInit {
       value: 'Materials',
       path: './materials',
       icon: 'menu_book'
-    },
-    {
-      value: 'Upcoming Tests',
-      path: './upcoming-tests',
-      icon: 'library_add_check'
     }
   ];
 
   constructor(private pageService: PageService) { }
 
   ngOnInit(): void {
-    this.pageService.set("YPS | Teacher");
+    this.pageService.set("YPS | Head-Assistent");
   }
 }
