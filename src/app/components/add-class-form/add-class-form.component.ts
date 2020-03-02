@@ -76,7 +76,7 @@ export class AddClassFormComponent implements OnInit {
     this.getTeachersToSelectData();
     this.httpOptionsService.loadHeaders();
 
-    this.form=this.formBuilder.group({
+    this.form = this.formBuilder.group({
         "character":[null, [requiredValidator("character is required"), maxLengthValidator(1,"character must be 1 symbol"), patternValidator(/[A-Za-zÀ-ÿ]/,"must be single character")]],
         "number":[null, [requiredValidator("number is required"), maxValueValidator(12, "max value is 12")]],
         "classTeacherId": [null, [requiredValidator("teacher is required")]]

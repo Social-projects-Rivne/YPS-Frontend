@@ -9,8 +9,7 @@
 (ngSubmit)="onSubmit()"
 *ngIf="formIsOpen">
     <h1 class="title">add class</h1>
-    <yps-form-field *ngFor="let field of fields" [field]="field"
-    [formControlName]="field.name">
+    <yps-form-field *ngFor="let field of fields" [field]="field" [formControlName]="field.name">
     </yps-form-field>
     <mat-form-field>
         <mat-label>Select a class teacher</mat-label>
