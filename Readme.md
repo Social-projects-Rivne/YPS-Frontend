@@ -8,12 +8,12 @@
 ## Setup
 	> Install npm packages
 	
-	```
+	```shell
 	npm install
 	```
 	
 	> Run project 
 	
-	```
+	```shell
 	ng serve
 	```
