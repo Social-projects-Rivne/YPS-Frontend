@@ -24,6 +24,6 @@ export class TeacherinfoService {
 
   getTeachersToSelect=():Observable<ITeacherToSelect[]>=>{
     this.httpOptions.loadHeaders();
-    return this.http.get<ITeacherToSelect[]>(this.url + "/GetTeachersBySchoolIdShort", this.httpOptions.options);
+    return this.http.get<ITeacherToSelect[]>(this.url + "/GetTeacherBySchoolShort", this.httpOptions.options);
   }
 }

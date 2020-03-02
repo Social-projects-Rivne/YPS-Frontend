@@ -9,7 +9,7 @@ import { TeacherinfoService } from 'src/app/services/teachers/teacherinfo.servic
 })
 export class TeachersComponent implements OnInit {
 
-  constructor( 
+  constructor(
     private userService: TeacherinfoService
   ) {}
 
@@ -31,7 +31,7 @@ export class TeachersComponent implements OnInit {
     this.userService.getTeachers()
       .subscribe(data => this.teachersData = data)
   }
-  
+
   ngOnInit() {
     this.getTeachersData();
   }
