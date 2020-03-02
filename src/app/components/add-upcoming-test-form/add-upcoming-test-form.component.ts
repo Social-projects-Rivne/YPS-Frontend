@@ -15,7 +15,6 @@ import { IDisciplineToSelect } from 'src/app/models/IDisciplineToSelect';
   templateUrl: './add-upcoming-test-form.component.html',
   styleUrls: ['./add-upcoming-test-form.component.scss', '../../../scss/adding-forms.scss']
 })
-
 export class AddUpcomingTestFormComponent implements OnInit {
 
   form: FormGroup;
@@ -76,7 +75,6 @@ export class AddUpcomingTestFormComponent implements OnInit {
   toggleForm = () => this.formIsOpen = !this.formIsOpen;
 
   onSubmit = () => {
-
     const { fields, isValid } = validationHelper(this.form.controls, this.fields);
 
     this.fields = fields;
