@@ -7,10 +7,13 @@
   
 ## Setup
 	> Install npm packages
+	
 	```
 	npm install
 	```
+	
 	> Run project 
+	
 	```
 	ng serve
 	```
