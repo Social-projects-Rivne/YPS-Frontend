@@ -8,14 +8,12 @@
 ## Setup
 > Install npm packages
 
-```shell
-$ brew update
-$ brew install fvcproductions
 ```
-
-> now install npm and bower packages
-
-```shell
-$ npm install
-$ bower install
+npm install
+```
+	
+> Run project 
+	
+```
+ng serve
 ```
