@@ -1,8 +1,7 @@
 import { Component, OnInit, Input, Output } from '@angular/core';
 import { ILink } from 'src/app/models/ILink';
 import { PageService } from 'src/app/services/page-title/page.service';
-import { IPupil } from 'src/app/models/IPupil';
-import { PupilinfoService } from 'src/app/services/pupils/pupilinfo.service';
+
 
 @Component({
   selector: 'yps-pupil-cabinet',

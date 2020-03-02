@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ILink } from 'src/app/models/ILink';
-import { IParent } from 'src/app/models/IParent';
-import { ParentService } from 'src/app/services/parents/parent.service';
+import { PageService } from 'src/app/services/page-title/page.service';
 
 @Component({
   selector: 'yps-parent-cabinet',
@@ -22,8 +21,9 @@ export class ParentCabinetComponent implements OnInit {
     }
   ];
 
-  constructor() { }
+  constructor(private pageService: PageService) { }
 
   ngOnInit(): void {
+    this.pageService.set("YPS | Parent");
   }
 }
