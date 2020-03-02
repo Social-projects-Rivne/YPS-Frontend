@@ -26,6 +26,7 @@ import { HeadMasterGuard } from './guards/head-master.guard';
 import { HeadAssistentGuard } from './guards/head-assistent.guard';
 import { TeacherCabinetComponent } from './pages/teacher-cabinet/teacher-cabinet.component';
 import { ParentCabinetComponent } from './pages/parent-cabinet/parent-cabinet.component';
+import { ChildrenInfoComponent } from './components/children-info/children-info.component';
 import { ParentProfileComponent } from './pages/parent-profile/parent-profile.component';
 import { PupilEventsComponent } from './components/pupil-events/pupil-events.component';
 import { PupilCabinetComponent } from './pages/pupil-cabinet/pupil-cabinet.component';
@@ -69,7 +70,8 @@ const headAssistantRoutes: Routes = [
   { path: '', canActivateChild: [AuthGuard], component: HeadAssistantProfileComponent },
 ];
 const parentRoutes: Routes = [
-  { path: '', canActivateChild: [AuthGuard], component: ParentProfileComponent }
+  { path: '', canActivateChild: [AuthGuard], component: ParentProfileComponent },
+  { path: 'children', canActivateChild: [AuthGuard], component: ChildrenInfoComponent}
 ];
 const pupilRoutes: Routes = [
   { path: '', canActivateChild: [AuthGuard], component: PupilProfileComponent },
@@ -119,6 +121,7 @@ const routes: Routes = [
     canActivate: [AuthGuard, StudentGuard],
     children: pupilRoutes
   },
+
   { path: '404', component: PageNotFoundComponent },
   { path: '**', redirectTo: '404' },
 ];
@@ -141,6 +144,7 @@ export const RoutingComponents = [
   MastersComponent,
   AdminCabinetComponent,
   ParentCabinetComponent,
+  ChildrenInfoComponent,
   HeadMasterCabinetComponent,
   HeadMasterProfileComponent,
   MasterProfileComponent,

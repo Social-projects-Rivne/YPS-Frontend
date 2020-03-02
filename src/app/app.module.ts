@@ -50,6 +50,8 @@ import { ParentCabinetComponent } from './pages/parent-cabinet/parent-cabinet.co
 import { ClassesComponent } from './pages/classes/classes.component';
 import { AddClassFormComponent } from './components/add-class-form/add-class-form.component';
 import {TokenInterceptor} from './helpers/token.interceptor';
+import { ChildrenInfoComponent } from './components/children-info/children-info.component';
+import { PupilInfoCardComponent } from './components/pupil-info-card/pupil-info-card.component';
 import { ClassListComponent } from './components/class-list/class-list.component';
 import { ClassItemComponent } from './components/class-item/class-item.component';
 import { PupilEventsComponent } from './components/pupil-events/pupil-events.component';
@@ -93,13 +95,15 @@ import { PupilEventCardComponent } from './components/pupil-event-card/pupil-eve
     ParentCabinetComponent,
     ClassesComponent,
     AddClassFormComponent,
+    ChildrenInfoComponent,
+    PupilInfoCardComponent,
     ClassListComponent,
     ClassItemComponent,
     PupilEventsComponent,
     PupilCabinetComponent,
     ProfileCardComponent,
     PupilProfileComponent,
-    PupilEventCardComponent,
+    PupilEventCardComponent
   ],
   imports: [
     BrowserModule,
