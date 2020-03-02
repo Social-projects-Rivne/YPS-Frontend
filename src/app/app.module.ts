@@ -56,9 +56,12 @@ import { ClassListComponent } from './components/class-list/class-list.component
 import { ClassItemComponent } from './components/class-item/class-item.component';
 import { PupilEventsComponent } from './components/pupil-events/pupil-events.component';
 import { PupilCabinetComponent } from './pages/pupil-cabinet/pupil-cabinet.component';
+import { UpcomingTestItemComponent } from './components/upcoming-test-item/upcoming-test-item.component';
+import { UpcomingTestListComponent } from './components/upcoming-test-list/upcoming-test-list.component';
 import { ProfileCardComponent } from './components/profile-card/profile-card.component';
 import { PupilProfileComponent } from './pages/pupil-profile/pupil-profile.component';
 import { PupilEventCardComponent } from './components/pupil-event-card/pupil-event-card.component';
+import { AddUpcomingTestFormComponent } from './components/add-upcoming-test-form/add-upcoming-test-form.component';
 
 @NgModule({
   declarations: [
@@ -101,8 +104,12 @@ import { PupilEventCardComponent } from './components/pupil-event-card/pupil-eve
     ClassItemComponent,
     PupilEventsComponent,
     PupilCabinetComponent,
+    UpcomingTestItemComponent,
+    UpcomingTestListComponent,
     ProfileCardComponent,
     PupilProfileComponent,
+    PupilEventCardComponent,
+    AddUpcomingTestFormComponent,
     PupilEventCardComponent
   ],
   imports: [

@@ -9,7 +9,7 @@ import { EventService } from '../../services/events/event.service'
 })
 export class SchoolEventFormComponent implements OnInit {
   public events: IEvent[] = [];
-  
+
   constructor(private _eventService: EventService) { }
 
   ngOnInit() {

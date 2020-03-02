@@ -30,6 +30,7 @@ import { ChildrenInfoComponent } from './components/children-info/children-info.
 import { ParentProfileComponent } from './pages/parent-profile/parent-profile.component';
 import { PupilEventsComponent } from './components/pupil-events/pupil-events.component';
 import { PupilCabinetComponent } from './pages/pupil-cabinet/pupil-cabinet.component';
+import { UpcomingTestsComponent } from './pages/upcoming-tests/upcoming-tests.component';
 import { HeadMasterCabinetComponent } from './pages/head-master-cabinet/head-master-cabinet.component';
 import { HeadMasterProfileComponent } from './pages/head-master-profile/head-master-profile.component';
 import { MasterProfileComponent } from './pages/master-profile/master-profile.component';
@@ -65,6 +66,7 @@ const adminRoutes: Routes = [
 ];
 const teacherRoutes: Routes = [
   { path: '', canActivateChild: [AuthGuard], component: TeacherProfileComponent },
+  { path: 'upcoming-tests', canActivateChild: [AuthGuard], component: UpcomingTestsComponent },
 ];
 const headAssistantRoutes: Routes = [
   { path: '', canActivateChild: [AuthGuard], component: HeadAssistantProfileComponent },
@@ -97,7 +99,7 @@ const routes: Routes = [
   { path: 'register-school', canActivate: [LoginGuard], component: RegisterSchoolComponent },
   { path: 'register-headmaster/:link', component: RegisterHeadmasterComponent },
   { path: 'register-headmaster-response', component: RegisterHeadmasterResponseComponent },
-  { 
+  {
     path: 'head-assistant',
     canActivate: [AuthGuard, HeadAssistentGuard],
     component: HeadAssistantCabinetComponent,
@@ -144,6 +146,7 @@ export const RoutingComponents = [
   MastersComponent,
   AdminCabinetComponent,
   ParentCabinetComponent,
+  UpcomingTestsComponent,
   ChildrenInfoComponent,
   HeadMasterCabinetComponent,
   HeadMasterProfileComponent,

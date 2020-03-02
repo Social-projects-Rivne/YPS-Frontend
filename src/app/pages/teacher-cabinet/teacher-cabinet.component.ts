@@ -35,6 +35,11 @@ export class TeacherCabinetComponent implements OnInit {
       value: 'Materials',
       path: './materials',
       icon: 'menu_book'
+    },
+    {
+      value: 'Upcoming Tests',
+      path: './upcoming-tests',
+      icon: 'library_add_check'
     }
   ];
 

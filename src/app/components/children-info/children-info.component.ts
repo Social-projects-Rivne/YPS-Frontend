@@ -11,7 +11,7 @@ import { apiUrl } from 'src/constants/urls';
   styleUrls: ['./children-info.component.scss']
 })
 export class ChildrenInfoComponent implements OnInit {
-  constructor( 
+  constructor(
     private service: ParentService,
     private http: HttpClient,
     private httpOptionsService: HttpOptionsService
@@ -40,7 +40,7 @@ export class ChildrenInfoComponent implements OnInit {
       (successRes: IUser[]) => {
         console.log(this.pupils = successRes);
       }
-    );     
+    );
   }
 
   ngOnInit(): void {
