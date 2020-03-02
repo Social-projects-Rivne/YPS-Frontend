@@ -6,6 +6,7 @@ import { HttpClient } from "@angular/common/http";
 import { Observable, Subject, BehaviorSubject } from "rxjs";
 import { map } from "rxjs/operators";
 import { IToken } from "src/app/models/IToken";
+import { UserService } from '../user/user.service';
 
 @Injectable({
   providedIn: "root"
@@ -15,7 +16,7 @@ export class AuthService {
   redirectUrl: string;
   role: string;
   token: IToken;
-  constructor(private http: HttpClient, private router: Router) {}
+  constructor(private http: HttpClient, private router: Router, private userService: UserService) {}
   getNewRefreshToken(): Observable<IToken> {
     let refreshToken = get("refreshToken");
     let token = get("token");
@@ -32,14 +33,12 @@ export class AuthService {
   logout(): void {
     this.role = null;
     this.redirectUrl = null;
-    let token = get("token");
-    let role = get("role");
-    if (!!token) {
-      remove("token");
-    }
-    if (!!role) {
-      remove("role");
-    }
+
+    remove("token");
+    remove("refreshToken");
+    remove("role");
+
+    this.userService.user = null;
     this.router.navigate(["/"]);
   }
 

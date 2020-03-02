@@ -1,12 +1,6 @@
 :host {
   display: grid;
-  grid-template-columns: auto auto 1fr;
-  grid-template-rows: auto 1fr;
   grid-gap: 1rem;
   justify-content: center;
-  grid-template-columns: repeat(1, 4fr);
-
-    .school-main-header {
-      grid-column: 1 / -1;
-    }
+  padding: 1rem;
 }

@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CabinetComponent } from './cabinet.component';
+import { MasterProfileComponent } from './master-profile.component';
 
-describe('CabinetComponent', () => {
-  let component: CabinetComponent;
-  let fixture: ComponentFixture<CabinetComponent>;
+describe('MasterProfileComponent', () => {
+  let component: MasterProfileComponent;
+  let fixture: ComponentFixture<MasterProfileComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CabinetComponent ]
+      declarations: [ MasterProfileComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(CabinetComponent);
+    fixture = TestBed.createComponent(MasterProfileComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
