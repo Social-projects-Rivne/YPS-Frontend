@@ -2,7 +2,17 @@
 
 :host {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr));
-    grid-gap: 2rem;
-    padding-right: 1rem;
+    grid-gap: 1rem;
+
+    .container {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr));
+        grid-gap: 1rem;
+        padding-right: 1rem;
+    }
+
+    .back-btn {
+        justify-self: start;
+    }
 }
+

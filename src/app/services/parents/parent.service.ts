@@ -5,6 +5,7 @@ import { Observable } from 'rxjs';
 import { apiUrl } from 'src/constants/urls';
 import { HttpOptionsService } from '../http-options/http-options.service';
 import { IPupil } from 'src/app/models/IPupil';
+import { IUser } from 'src/app/models/IUser';
 
 @Injectable({
   providedIn: 'root'
@@ -24,8 +25,8 @@ export class ParentService {
     return this.http.get<IParent>(this.url + "/GetParentProfileInfo", this.httpOptionsService.options)
   }
 
-  getPupilsInfoByParent = () :Observable<IPupil[]> => {
+  getPupilsInfoByParent = () :Observable<IUser[]> => {
     this.httpOptionsService.loadHeaders();
-    return this.http.get<IPupil[]>(this.url + "/GetPupilsInfoByParent", this.httpOptionsService.options)
+    return this.http.get<IUser[]>(this.url + "/GetPupilsInfoByParent", this.httpOptionsService.options)
   }
 }

@@ -62,6 +62,7 @@ import { ProfileCardComponent } from './components/profile-card/profile-card.com
 import { PupilProfileComponent } from './pages/pupil-profile/pupil-profile.component';
 import { PupilEventCardComponent } from './components/pupil-event-card/pupil-event-card.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -105,7 +106,7 @@ import { PupilEventCardComponent } from './components/pupil-event-card/pupil-eve
     PupilCabinetComponent,
     ProfileCardComponent,
     PupilProfileComponent,
-    PupilEventCardComponent,
+    PupilEventCardComponent
   ],
   imports: [
     BrowserModule,

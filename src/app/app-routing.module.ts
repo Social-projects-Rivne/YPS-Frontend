@@ -38,6 +38,7 @@ import { TeacherProfileComponent } from './pages/teacher-profile/teacher-profile
 import { AdminProfileComponent } from './pages/admin-profile/admin-profile.component';
 import { PupilProfileComponent } from './pages/pupil-profile/pupil-profile.component';
 
+
 const cabinetRoutes: Routes = [
   { path: '', canActivateChild: [AuthGuard], component: MasterCabinetsComponent },
   { path: 'pupils', canActivateChild: [AuthGuard], component: PupilsComponent },
@@ -101,8 +102,11 @@ const routes: Routes = [
     canActivate: [AuthGuard, StudentGuard],
     children: pupilRoutes
   },
+
   { path: '404', component: PageNotFoundComponent },
   { path: '**', redirectTo: '404' },
+
+
 ];
 
 @NgModule({

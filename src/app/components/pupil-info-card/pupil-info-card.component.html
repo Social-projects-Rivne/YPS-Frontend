@@ -1,4 +1,8 @@
-<span class="index">{{index}}</span>
-      <h2>{{pupil.firstName}} {{pupil.surname}} {{pupil.middleName}}</h2>
-<span class="class-name">{{pupil.className}}</span>
-
+<div 
+  class="see-pupil" 
+  (click)="select()"
+>
+  <span class="index">{{index}}</span>
+  <h2>{{pupil.firstName}} {{pupil.surname}} {{pupil.middleName}}</h2>
+  <span class="class-name">{{pupil.className}}</span>
+</div>
