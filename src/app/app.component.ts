@@ -30,7 +30,7 @@ export class AppComponent implements OnInit {
           requestUrl = "/teachers/getmaster";
           break;
         case "head-assistant":
-          requestUrl = "/teachers/getheadassistant";
+          requestUrl = "/teachers/getheadassistantbyid";
           break;
         case "teacher":
           requestUrl = "/teachers/getteacherbyid";

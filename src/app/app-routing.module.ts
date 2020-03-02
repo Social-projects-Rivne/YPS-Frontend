@@ -36,6 +36,8 @@ import { MasterCabinetComponent } from './pages/master-cabinet/master-cabinet.co
 import { TeacherProfileComponent } from './pages/teacher-profile/teacher-profile.component';
 import { AdminProfileComponent } from './pages/admin-profile/admin-profile.component';
 import { PupilProfileComponent } from './pages/pupil-profile/pupil-profile.component';
+import { HeadAssistantCabinetComponent } from './pages/head-assistant-cabinet/head-assistant-cabinet.component';
+import { HeadAssistantProfileComponent } from './pages/head-assistant-profile/head-assistant-profile.component';
 
 const headMasterRoutes: Routes = [
   { path: '', canActivateChild: [AuthGuard], component: HeadMasterProfileComponent },
@@ -63,7 +65,9 @@ const adminRoutes: Routes = [
 const teacherRoutes: Routes = [
   { path: '', canActivateChild: [AuthGuard], component: TeacherProfileComponent },
 ];
-
+const headAssistantRoutes: Routes = [
+  { path: '', canActivateChild: [AuthGuard], component: HeadAssistantProfileComponent },
+];
 const parentRoutes: Routes = [
   { path: '', canActivateChild: [AuthGuard], component: ParentProfileComponent }
 ];
@@ -91,8 +95,14 @@ const routes: Routes = [
   { path: 'register-school', canActivate: [LoginGuard], component: RegisterSchoolComponent },
   { path: 'register-headmaster/:link', component: RegisterHeadmasterComponent },
   { path: 'register-headmaster-response', component: RegisterHeadmasterResponseComponent },
+  { 
+    path: 'head-assistant',
+    canActivate: [AuthGuard, HeadAssistentGuard],
+    component: HeadAssistantCabinetComponent,
+    children: headAssistantRoutes
+  },
   {
-    path: 'teacher', canActivateChild: [],
+    path: 'teacher',
     canActivate: [AuthGuard, TeacherGuard],
     component: TeacherCabinetComponent,
     children: teacherRoutes
@@ -138,5 +148,7 @@ export const RoutingComponents = [
   TeacherProfileComponent,
   AdminProfileComponent,
   ParentProfileComponent,
-  PupilProfileComponent
+  PupilProfileComponent,
+  HeadAssistantProfileComponent,
+  HeadAssistantCabinetComponent
 ];
