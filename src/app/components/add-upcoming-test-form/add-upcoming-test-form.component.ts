@@ -50,11 +50,11 @@ export class AddUpcomingTestFormComponent implements OnInit {
     this.httpOptionsService.loadHeaders();
 
     this.form = this.formBuilder.group({
-      "topic": [null],
-      "testType": [null],
-      "disciplineId": [null],
-      "classId": [null],
-      "scheduledDate": [null]
+      "topic": [null, requiredValidator("character is required")],
+      "testType": [null , requiredValidator("character is required")],
+      "disciplineId": [null , requiredValidator("character is required")],
+      "classId": [null , requiredValidator("character is required")],
+      "scheduledDate": [null, requiredValidator("character is required")]
     });
 
     this.http.get(`${apiUrl}/Discipline/GetDisciplinesByTeacher`, this.httpOptionsService.options)
