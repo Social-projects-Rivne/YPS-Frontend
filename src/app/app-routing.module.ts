@@ -36,8 +36,8 @@ import { PupilCabinetComponent } from './pages/pupil-cabinet/pupil-cabinet.compo
 import { TeacherProfileComponent } from './pages/teacher-profile/teacher-profile.component';
 import { AdminProfileComponent } from './pages/admin-profile/admin-profile.component';
 import { PupilProfileComponent } from './pages/pupil-profile/pupil-profile.component';
-import { HeadAssistentCabinetComponent } from './pages/head-assistent-cabinet/head-assistent-cabinet.component';
-import { HeadAssistentProfileComponent } from './pages/head-assistent-profile/head-assistent-profile.component';
+import { HeadAssistantCabinetComponent } from './pages/head-assistant-cabinet/head-assistant-cabinet.component';
+import { HeadAssistantProfileComponent } from './pages/head-assistant-profile/head-assistant-profile.component';
 
 const cabinetRoutes: Routes = [
   { path: '', canActivateChild: [AuthGuard], component: MasterCabinetsComponent },
@@ -56,8 +56,8 @@ const adminRoutes: Routes = [
 const teacherRoutes: Routes = [
   { path: '', canActivateChild: [AuthGuard], component: TeacherProfileComponent },
 ];
-const headAssistentRoutes: Routes = [
-  { path: '', canActivateChild: [AuthGuard], component: HeadAssistentProfileComponent },
+const headAssistantRoutes: Routes = [
+  { path: '', canActivateChild: [AuthGuard], component: HeadAssistantProfileComponent },
 ];
 const parentRoutes: Routes = [
   { path: '', canActivateChild: [AuthGuard], component: ParentProfileComponent }
@@ -88,8 +88,8 @@ const routes: Routes = [
   { 
     path: 'head-assistant',
     canActivate: [AuthGuard, HeadAssistentGuard],
-    component: HeadAssistentCabinetComponent,
-    children: headAssistentRoutes
+    component: HeadAssistantCabinetComponent,
+    children: headAssistantRoutes
   },
   {
     path: 'teacher',
@@ -138,6 +138,6 @@ export const RoutingComponents = [
   AdminProfileComponent,
   ParentProfileComponent,
   PupilProfileComponent,
-  HeadAssistentProfileComponent,
-  HeadAssistentCabinetComponent,
+  HeadAssistantProfileComponent,
+  HeadAssistantCabinetComponent
 ];

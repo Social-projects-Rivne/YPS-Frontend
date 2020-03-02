@@ -3,11 +3,11 @@ import { PageService } from 'src/app/services/page-title/page.service';
 import { ILink } from 'src/app/models/ILink';
 
 @Component({
-  selector: 'yps-head-assistent-cabinet',
-  templateUrl: './head-assistent-cabinet.component.html',
-  styleUrls: ['./head-assistent-cabinet.component.scss']
+  selector: 'yps-head-assisant-cabinet',
+  templateUrl: './head-assistant-cabinet.component.html',
+  styleUrls: ['../../../scss/cabinet.scss']
 })
-export class HeadAssistentCabinetComponent implements OnInit {
+export class HeadAssistantCabinetComponent implements OnInit {
   sideLinks: ILink[] = [
     {
       value: 'Profile',
