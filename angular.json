@@ -129,6 +129,6 @@
   },
   "defaultProject": "YPS-Frontend",
   "cli": {
-    "analytics": false
+    "analytics": "3e6bba26-e5a3-4606-8a06-74518c544ec0"
   }
 }
