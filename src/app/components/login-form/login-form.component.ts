@@ -67,12 +67,12 @@ export class LoginFormComponent implements OnInit {
       "remember": [null]
     });
   }
-  
+
   onSubmit() {
     const { fields, isValid } = validationHelper(this.form.controls, this.fields);
 
     this.fields = fields;
-    
+
     if (isValid) {
       if (this.showCaptcha == true && this.iterations > 3 && this.iterations % 2 == 0) {
         this.form.removeControl("myRecaptcha");
@@ -83,10 +83,10 @@ export class LoginFormComponent implements OnInit {
           set("token", successRes.token);
           set("role", successRes.role);
           set("refreshToken", successRes.refreshToken);
-          
+
           const { role } = successRes;
 
-          this.router.navigate([`/${role == "master" || role == "head-master" ? "cabinet" : role}`]);
+          this.router.navigate([`/${role}`]);
         },
         (errorRes: any) => {
           if (this.iterations == 3 && this.showCaptcha == false) {

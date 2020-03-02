@@ -2,30 +2,43 @@
 
 :host {
   display: grid;
-  grid-template-columns: auto 1fr auto auto;
+  grid-template-columns: 1fr auto auto;
   grid-gap: 2rem;
   align-items: center;
+  position: relative;
   padding: 0.75rem 2rem;
   border-bottom: 1px solid $light;
 
-  .yps-icon {
-    display: block;
-    width: 3rem;
-    justify-self: center;
-    cursor: pointer;
+  .logo-container {
+    display: grid;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
 
-    &:hover {
-      opacity: 0.9;
+    .yps-icon {
+      display: block;
+      width: 3rem;
+      justify-self: center;
+      align-self: center;
+      cursor: pointer;
+
+      &:hover {
+        opacity: 0.9;
+      }
     }
   }
 
   .school-name {
     display: block;
     justify-self: start;
+    z-index: 1;
   }
 
   .user-name {
     text-transform: capitalize;
+    z-index: 1;
   }
 
   .btn.logout-btn {
@@ -33,6 +46,7 @@
     background: none;
     border-color: $gray;
     color: $black;
+    z-index: 1;
 
     &:hover {
       border-color: $red;
@@ -55,9 +69,8 @@
 
 @media (max-width: 500px) {
   :host {
-    grid-template-columns: 1fr auto auto;
-
-    .yps-icon {
+    .logo-container {
+      position: relative;
       grid-column: 1 / -1;
       grid-row: 1 / 2;
     }

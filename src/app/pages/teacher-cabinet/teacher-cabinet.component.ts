@@ -7,7 +7,7 @@ import { IUser } from 'src/app/models/IUser';
 @Component({
   selector: 'yps-teacher-cabinet',
   templateUrl: './teacher-cabinet.component.html',
-  styleUrls: ['./teacher-cabinet.component.scss']
+  styleUrls: ['../../../scss/cabinet.scss']
 })
 export class TeacherCabinetComponent implements OnInit {
   sideLinks: ILink[] = [

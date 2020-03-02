@@ -8,7 +8,6 @@ import { RegisterSchoolComponent } from './pages/register-school/register-school
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
 import { AppRoutingModule, RoutingComponents } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { WelcomeComponent } from './components/welcome/welcome.component';
@@ -35,7 +34,6 @@ import { SchoolRequestsComponent } from './components/School Requests/school-req
 import { SchoolRequestCardComponent } from './components/School Requests/school-request-card/school-request-card.component';
 import { HeaderComponent } from './components/header/header.component';
 import { RegisterHeadmasterResponseComponent } from './pages/register-headmaster-response/register-headmaster-response.component';
-
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
