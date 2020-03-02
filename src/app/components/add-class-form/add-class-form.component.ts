@@ -42,7 +42,7 @@ export class AddClassFormComponent implements OnInit {
   ];
 
   
-  constructor(private formBuilder: FormBuilder, private http: HttpClient, private teacherService: TeacherinfoService,private httpOptionsService: HttpOptionsService) { }
+  constructor(private formBuilder: FormBuilder, private http: HttpClient, private teacherService: TeacherinfoService, private httpOptionsService: HttpOptionsService) { }
 
   toggleForm = () => this.formIsOpen = !this.formIsOpen;
 
