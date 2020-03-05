@@ -1,0 +1,25 @@
+@import 'src/vars.scss';
+
+.example-card {
+  display: grid;
+  min-width: 7rem;
+  max-width: auto;
+  box-shadow: none;
+  border: 1px solid $light;
+  border-radius: 0%;
+}
+
+.example-header-image {
+  background-image: url(/assets/images/default-user-image.jpg);
+  background-size: cover;
+}
+
+.date{
+  display: grid;
+  font-size: 0.7rem;
+  justify-content: end;
+}
+
+.title{
+  color: $accent;
+}

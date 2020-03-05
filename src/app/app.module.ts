@@ -65,6 +65,8 @@ import { AddUpcomingTestFormComponent } from './components/add-upcoming-test-for
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core'
 import { from } from 'rxjs';
+import { UpcomingTestCardComponent } from './components/upcoming-test-card/upcoming-test-card.component';
+import { UpcomingTestCardListComponent } from './components/upcoming-test-card-list/upcoming-test-card-list.component';
 
 @NgModule({
   declarations: [
@@ -113,7 +115,9 @@ import { from } from 'rxjs';
     PupilProfileComponent,
     PupilEventCardComponent,
     AddUpcomingTestFormComponent,
-    PupilEventCardComponent
+    PupilEventCardComponent,
+    UpcomingTestCardComponent,
+    UpcomingTestCardListComponent
   ],
   imports: [
     BrowserModule,
