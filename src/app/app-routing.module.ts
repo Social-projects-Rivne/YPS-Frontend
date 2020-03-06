@@ -40,6 +40,7 @@ import { AdminProfileComponent } from './pages/admin-profile/admin-profile.compo
 import { PupilProfileComponent } from './pages/pupil-profile/pupil-profile.component';
 import { HeadAssistantCabinetComponent } from './pages/head-assistant-cabinet/head-assistant-cabinet.component';
 import { HeadAssistantProfileComponent } from './pages/head-assistant-profile/head-assistant-profile.component';
+import { ScheduleComponent } from './pages/schedule/schedule.component';
 
 const headMasterRoutes: Routes = [
   { path: '', canActivateChild: [AuthGuard], component: HeadMasterProfileComponent },
@@ -157,5 +158,6 @@ export const RoutingComponents = [
   ParentProfileComponent,
   PupilProfileComponent,
   HeadAssistantProfileComponent,
-  HeadAssistantCabinetComponent
+  HeadAssistantCabinetComponent,
+  ScheduleComponent
 ];

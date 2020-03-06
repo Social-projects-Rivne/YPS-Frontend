@@ -49,7 +49,7 @@ import { TeacherCabinetComponent } from './pages/teacher-cabinet/teacher-cabinet
 import { ParentCabinetComponent } from './pages/parent-cabinet/parent-cabinet.component';
 import { ClassesComponent } from './pages/classes/classes.component';
 import { AddClassFormComponent } from './components/add-class-form/add-class-form.component';
-import {TokenInterceptor} from './helpers/token.interceptor';
+import { TokenInterceptor } from './helpers/token.interceptor';
 import { ChildrenInfoComponent } from './components/children-info/children-info.component';
 import { PupilInfoCardComponent } from './components/pupil-info-card/pupil-info-card.component';
 import { ClassListComponent } from './components/class-list/class-list.component';
@@ -65,6 +65,9 @@ import { AddUpcomingTestFormComponent } from './components/add-upcoming-test-for
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core'
 import { from } from 'rxjs';
+import { ScheduleCardComponent } from './components/schedule-card/schedule-card.component';
+import { ScheduleWeekCardComponent } from './components/schedule-week-card/schedule-week-card.component';
+import { ScheduleItemComponent } from './components/schedule-item/schedule-item.component';
 
 @NgModule({
   declarations: [
@@ -113,7 +116,10 @@ import { from } from 'rxjs';
     PupilProfileComponent,
     PupilEventCardComponent,
     AddUpcomingTestFormComponent,
-    PupilEventCardComponent
+    PupilEventCardComponent,
+    ScheduleCardComponent,
+    ScheduleWeekCardComponent,
+    ScheduleItemComponent
   ],
   imports: [
     BrowserModule,
