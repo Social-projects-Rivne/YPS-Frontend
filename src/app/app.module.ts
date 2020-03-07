@@ -69,6 +69,7 @@ import { ScheduleWeekCardComponent } from './components/schedule-week-card/sched
 import { ScheduleItemComponent } from './components/schedule-item/schedule-item.component';
 import { UpcomingTestCardComponent } from './components/upcoming-test-card/upcoming-test-card.component';
 import { UpcomingTestCardListComponent } from './components/upcoming-test-card-list/upcoming-test-card-list.component';
+import { ScheduleDayCardComponent } from './components/schedule-day-card/schedule-day-card.component';
 
 @NgModule({
   declarations: [
@@ -122,7 +123,8 @@ import { UpcomingTestCardListComponent } from './components/upcoming-test-card-l
     ScheduleWeekCardComponent,
     ScheduleItemComponent,
     UpcomingTestCardComponent,
-    UpcomingTestCardListComponent
+    UpcomingTestCardListComponent,
+    ScheduleDayCardComponent
   ],
   imports: [
     BrowserModule,
