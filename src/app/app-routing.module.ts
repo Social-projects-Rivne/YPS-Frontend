@@ -68,6 +68,7 @@ const adminRoutes: Routes = [
 const teacherRoutes: Routes = [
   { path: '', canActivateChild: [AuthGuard], component: TeacherProfileComponent },
   { path: 'upcoming-tests', canActivateChild: [AuthGuard], component: UpcomingTestsComponent },
+  { path: 'schedule', canActivateChild: [AuthGuard], component: ScheduleComponent }
 ];
 const headAssistantRoutes: Routes = [
   { path: '', canActivateChild: [AuthGuard], component: HeadAssistantProfileComponent },
@@ -78,7 +79,8 @@ const parentRoutes: Routes = [
 ];
 const pupilRoutes: Routes = [
   { path: '', canActivateChild: [AuthGuard], component: PupilProfileComponent },
-  { path: 'events', component: PupilEventsComponent }
+  { path: 'events', component: PupilEventsComponent },
+  { path: 'schedule', canActivateChild: [AuthGuard], component: ScheduleComponent }
 ];
 
 const routes: Routes = [
