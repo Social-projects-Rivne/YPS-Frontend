@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { IScheduleItem } from 'src/app/models/IScheduleItem';
 
 @Component({
   selector: 'yps-schedule-item',
@@ -6,10 +7,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./schedule-item.component.scss']
 })
 export class ScheduleItemComponent implements OnInit {
+  item: IScheduleItem = {
+    id: 1,
+    lessonNumber: 1,
+    auditorium: "aud. 4",
+    discipline: "algebra",
+    lessonTimeGap: "8:00 - 8:45 AM"
+  };
 
   constructor() { }
 
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void { }
 }

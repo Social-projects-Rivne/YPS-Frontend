@@ -1,0 +1,70 @@
+@import "src/vars";
+
+:host {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-column-gap: 2rem;
+  padding: .75rem;
+
+  .lesson-number {
+    display: grid;
+    grid-row: 1 / 3;
+    width: 2.5rem;
+    height: 2.5rem;
+    align-items: center;
+    justify-items: center;
+    position: relative;
+
+    &-value {
+      font-weight: bold;
+      color: #ffffff;
+      z-index: 1;
+    }
+
+    &::before, &::after {
+      content: "";
+      display: block;
+      position: absolute;
+    }
+
+    &::before {
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background-color: $accent;
+      transform: rotate(45deg);
+    }
+
+    &::after {
+      width: 2px;
+      height: 2rem;
+      background-color: $light;
+      bottom: -8px;
+      left: 50%;
+      transform: translate(-50%, 100%);
+      z-index: -1;
+    }
+  }
+
+  .disc-aud {
+    &-value {
+      &::first-letter {
+        text-transform: capitalize;
+      }
+    }
+  }
+
+  .time-gap {
+    color: $gray;
+    font-size: .9rem;
+  }
+
+  &:last-child {
+    .lesson-number {
+      &::after {
+        display: none;
+      }
+    }
+  }
+}
