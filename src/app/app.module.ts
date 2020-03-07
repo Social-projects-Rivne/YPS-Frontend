@@ -64,10 +64,11 @@ import { PupilEventCardComponent } from './components/pupil-event-card/pupil-eve
 import { AddUpcomingTestFormComponent } from './components/add-upcoming-test-form/add-upcoming-test-form.component';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core'
-import { from } from 'rxjs';
 import { ScheduleCardComponent } from './components/schedule-card/schedule-card.component';
 import { ScheduleWeekCardComponent } from './components/schedule-week-card/schedule-week-card.component';
 import { ScheduleItemComponent } from './components/schedule-item/schedule-item.component';
+import { UpcomingTestCardComponent } from './components/upcoming-test-card/upcoming-test-card.component';
+import { UpcomingTestCardListComponent } from './components/upcoming-test-card-list/upcoming-test-card-list.component';
 
 @NgModule({
   declarations: [
@@ -119,7 +120,9 @@ import { ScheduleItemComponent } from './components/schedule-item/schedule-item.
     PupilEventCardComponent,
     ScheduleCardComponent,
     ScheduleWeekCardComponent,
-    ScheduleItemComponent
+    ScheduleItemComponent,
+    UpcomingTestCardComponent,
+    UpcomingTestCardListComponent
   ],
   imports: [
     BrowserModule,
