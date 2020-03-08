@@ -11,18 +11,14 @@ import { SchoolRequestService } from 'src/app/services/school-requests/school-re
 })
 export class SchoolRequestsComponent implements OnInit {
 
-  Requests:ISchoolRequestVM[];
 
-  constructor(private requestClient:SchoolRequestService) { }
+
+  constructor(public schoolRequestService:SchoolRequestService) { }
   ngOnInit() {
-    this.requestClient.get().subscribe(p=>{
-      this.Requests=p;
-    });
+    this.schoolRequestService.get();
   }
   update(){
-    this.requestClient.get().subscribe(p=>{
-      this.Requests=p;
-    })
+    this.schoolRequestService.get();
   }
 
 

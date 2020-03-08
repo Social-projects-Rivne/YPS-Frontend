@@ -1,6 +1,5 @@
-.container{
-display:flex;
-justify-content: center;
-align-items: center;
-flex-wrap:wrap;
+:host {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
+  grid-gap: 1rem;
 }

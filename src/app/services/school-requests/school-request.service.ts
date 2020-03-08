@@ -12,19 +12,22 @@ export class SchoolRequestService {
 
   private url: string = apiUrl+"/SchoolRequests";
   constructor(private http:HttpClient,private httpOptions:HttpOptionsService) { }
+  requests:ISchoolRequestVM[];
 
-  get = (): Observable<ISchoolRequestVM[]> => {
+  get = () => {
     this.httpOptions.loadHeaders();
-    return this.http.get<ISchoolRequestVM[]>(this.url,this.httpOptions.options);
+    return this.http.get(this.url,this.httpOptions.options).subscribe( (res: ISchoolRequestVM[]) => {
+      this.requests=res;
+    } );
   };
 
-  approve = (id:number): Observable<any> => {
+  approve = (id:number) => {
     this.httpOptions.loadHeaders();
-    return this.http.post<any>(this.url+"/Approve",{id:id},this.httpOptions.options);
+    return this.http.post(this.url+"/Approve",{id:id},this.httpOptions.options).subscribe((res) => {this.get()});
   };
 
-  disapprove = (id:number): Observable<any> => {
+  disapprove = (id:number) => {
     this.httpOptions.loadHeaders();
-    return this.http.delete<any>(this.url+"?id="+id,this.httpOptions.options);
+    return this.http.delete(this.url+"?id="+id,this.httpOptions.options).subscribe((res) => {this.get()});
   };
 }

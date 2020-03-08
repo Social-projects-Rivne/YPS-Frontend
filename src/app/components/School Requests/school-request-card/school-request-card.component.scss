@@ -1,38 +1,52 @@
 @import 'src/vars.scss';
-.card{
-  border: 1px solid $light;
-  position: static;
-  border: 1px solid black;
-  margin: 0.5rem;
-  width: 25rem;
-  height: 25rem;
-  padding: 1rem;
+:host {
   display: grid;
-  align-content: space-around;
-  grid-gap: 0.2rem;
-  grid-template-columns: auto;
-}
+  grid-gap: 0.75rem;
+  padding: 1rem;
+  border: 1px solid $light;
 
-.decline{
-  background-color: red;
-    &:hover{
-    background-color: white;
-    color:black;
-    }
-}
-button {
-  background-color:$accent;
-  color:white;
-    &:hover{
-      background-color: white;
-      color:black;
-    }
-}
+  .short-name {
+    color: $gray;
+    font-size: 0.85rem;
+  }
 
-.buttonRow{
-  display: flex;
-  justify-content: center;
-}
-span{
-  color:$accent;
+  .value-wrap {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-content: center;
+    grid-gap: 0.5rem;
+
+    .icon {
+      color: $accent;
+      font-size: 1rem;
+      width: 1rem;
+      height: 1rem;
+      line-height: 100%;
+      text-align: center;
+      align-self: center;
+      margin-bottom: -2px;
+    }
+
+    .value {
+      font-size: 0.85rem;
+    }
+  }
+
+
+
+  .button-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 1rem;
+
+    .decline {
+      background-color: $red;
+      border-color: $red;
+
+      &:hover {
+        background: none;
+        color: $red;
+      }
+    }
+  }
 }
