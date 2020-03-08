@@ -2,16 +2,15 @@ import { apiUrl } from 'src/constants/urls';
 import { ISchoolRequestVM } from '../../components/School Requests/SchoolRequest/ISchoolRequestVM';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable, from } from 'rxjs';
 import { HttpOptionsService } from '../http-options/http-options.service';
 
 @Injectable({
   providedIn: 'root'
 })
-export class SchoolRequestService {
+export class SchoolRequestsService {
 
-  private url: string = apiUrl+"/SchoolRequests";
-  constructor(private http:HttpClient,private httpOptions:HttpOptionsService) { }
+  private url: string = apiUrl + "/SchoolRequests";
+  constructor(private http:HttpClient, private httpOptions:HttpOptionsService) { }
   requests:ISchoolRequestVM[];
 
   get = () => {
