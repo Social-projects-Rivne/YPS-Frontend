@@ -1,12 +1,22 @@
-<mat-card class="card">
-    <mat-card-title><span>Name</span>:{{Request.name}}</mat-card-title>
-    <mat-card-content><span>Mail</span>:{{Request.email}}</mat-card-content>
-      <mat-card-content><span>Short Name</span>:{{Request.shortName}}</mat-card-content>
-      <mat-card-content><span>Phone Number</span>:{{Request.phoneNumb}}</mat-card-content>
-      <mat-card-content><span>Locality</span>:{{Request.locality}}</mat-card-content>
-      <mat-card-content><span>Address</span>:{{Request.address}}</mat-card-content>
-      <mat-card-content><div class="buttonRow">
-        <button (click)="approve()">Approve</button>
-        <button (click)="disapprove()">Disapprove</button>
-      </div></mat-card-content>    
-</mat-card>
+<h4>{{Request.name}}</h4>
+<span class="short-name">{{ Request.shortName }}</span>
+<p class="email value-wrap">
+  <mat-icon class="icon">mail</mat-icon>
+  <span class="email-value value">{{Request.email}}</span>
+</p>
+<p class="phone-numb value-wrap">
+  <mat-icon class="icon">phone</mat-icon>
+  <span class="phone-numb-value value">{{Request.phoneNumb}}</span>
+</p>
+<p class="locality value-wrap">
+  <mat-icon class="icon">location_city</mat-icon>
+  <span class="locality-name value">{{Request.locality}}</span>
+</p>
+<p class="address value-wrap">
+  <mat-icon class="icon">place</mat-icon>
+  <span class="address-value value">{{Request.address}}</span>
+</p>
+<div class="button-row">
+  <button class="btn" (click)="approve()">approve</button>
+  <button class="decline btn" (click)="decline()">decline</button>
+</div>
