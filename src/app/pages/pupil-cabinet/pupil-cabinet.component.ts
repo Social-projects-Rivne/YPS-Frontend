@@ -27,7 +27,7 @@ export class PupilCabinetComponent implements OnInit {
     },
     {
       value: 'Schedule',
-      path: './schedules',
+      path: './schedule',
       icon: 'event'
     },
     {
