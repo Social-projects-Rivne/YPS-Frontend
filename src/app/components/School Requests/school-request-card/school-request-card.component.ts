@@ -13,7 +13,7 @@ import { inject } from '@angular/core/testing';
 export class SchoolRequestCardComponent implements OnInit {
 
   @Input() Request:ISchoolRequestVM;
-  constructor(private client:SchoolRequestsService) {  }
+  constructor(private client: SchoolRequestsService) {  }
 
   ngOnInit() {
   }

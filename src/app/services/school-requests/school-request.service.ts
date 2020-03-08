@@ -22,7 +22,7 @@ export class SchoolRequestsService {
 
   approve = (id:number) => {
     this.httpOptions.loadHeaders();
-    return this.http.post(this.url+"/Approve",{id:id},this.httpOptions.options).subscribe((res) => {this.get()});
+    return this.http.post(this.url+"/Approve", { id: id }, this.httpOptions.options).subscribe((res) => {this.get()});
   };
 
   disapprove = (id: number) => {
