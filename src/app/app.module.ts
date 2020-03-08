@@ -65,7 +65,6 @@ import { AddUpcomingTestFormComponent } from './components/add-upcoming-test-for
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core'
 import { ScheduleCardComponent } from './components/schedule-card/schedule-card.component';
-import { ScheduleWeekCardComponent } from './components/schedule-week-card/schedule-week-card.component';
 import { ScheduleItemComponent } from './components/schedule-item/schedule-item.component';
 import { UpcomingTestCardComponent } from './components/upcoming-test-card/upcoming-test-card.component';
 import { UpcomingTestCardListComponent } from './components/upcoming-test-card-list/upcoming-test-card-list.component';
@@ -120,7 +119,6 @@ import { ScheduleDayCardComponent } from './components/schedule-day-card/schedul
     AddUpcomingTestFormComponent,
     PupilEventCardComponent,
     ScheduleCardComponent,
-    ScheduleWeekCardComponent,
     ScheduleItemComponent,
     UpcomingTestCardComponent,
     UpcomingTestCardListComponent,

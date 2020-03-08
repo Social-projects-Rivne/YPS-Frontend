@@ -1,1 +1,10 @@
-<p>schedule-day-card works!</p>
+<h3 class="day-name">{{ day.dayName }}</h3>
+<span class="date digit">{{ day.date }}</span>
+<span *ngIf="day.items.length == 0" class="no-items">non-school day</span>
+<div class="items-wrap">
+  <yps-schedule-item
+    *ngFor="let item of day.items"
+    [item]="item"
+  >
+  </yps-schedule-item>
+</div>

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { IScheduleItem } from 'src/app/models/IScheduleItem';
 
 @Component({
@@ -7,13 +7,7 @@ import { IScheduleItem } from 'src/app/models/IScheduleItem';
   styleUrls: ['./schedule-item.component.scss']
 })
 export class ScheduleItemComponent implements OnInit {
-  item: IScheduleItem = {
-    id: 1,
-    lessonNumber: 1,
-    auditorium: "aud. 4",
-    discipline: "algebra",
-    lessonTimeGap: "8:00 - 8:45 AM"
-  };
+  @Input() item: IScheduleItem;
 
   constructor() { }
 

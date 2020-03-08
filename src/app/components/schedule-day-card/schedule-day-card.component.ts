@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { IScheduleDay } from 'src/app/models/IScheduleDay';
 
 @Component({
   selector: 'yps-schedule-day-card',
@@ -6,10 +7,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./schedule-day-card.component.scss']
 })
 export class ScheduleDayCardComponent implements OnInit {
+  @Input() day: IScheduleDay;
 
   constructor() { }
 
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }

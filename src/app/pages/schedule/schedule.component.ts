@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { IScheduleDay } from 'src/app/models/IScheduleDay';
+import { HttpClient } from '@angular/common/http';
+import { apiUrl } from 'src/constants/urls';
+import { get } from 'js-cookie';
+import { days } from 'src/constants/schedule-test-data';
 
 @Component({
   selector: 'yps-schedule',
@@ -6,10 +11,22 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./schedule.component.scss']
 })
 export class ScheduleComponent implements OnInit {
+  days: IScheduleDay[];
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
-  }
+    this.days = days;
 
+    // ! Vital code
+    // const role = get("role");
+    // if (typeof(role) != "undefined") {
+    //   this.http.get(`${apiUrl}/lessons/getschedulefor/${role}`)
+    //     .subscribe(
+    //       (response: IScheduleDay[]) => {
+    //         this.days = response;
+    //       }
+    //     );
+    // }
+  }
 }
