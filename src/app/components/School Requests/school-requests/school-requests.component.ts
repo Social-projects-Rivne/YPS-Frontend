@@ -8,9 +8,7 @@ import { SchoolRequestsService } from 'src/app/services/school-requests/school-r
 })
 export class SchoolRequestsComponent implements OnInit {
 
-
-
-  constructor(public schoolRequestService:SchoolRequestsService) { }
+  constructor(public schoolRequestService: SchoolRequestsService) { }
   ngOnInit() {
     this.schoolRequestService.get();
   }

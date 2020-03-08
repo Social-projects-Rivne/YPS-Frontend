@@ -11,12 +11,12 @@ export class SchoolRequestsService {
 
   private url: string = apiUrl + "/SchoolRequests";
   constructor(private http:HttpClient, private httpOptions:HttpOptionsService) { }
-  requests:ISchoolRequestVM[];
+  requests: ISchoolRequestVM[];
 
   get = () => {
     this.httpOptions.loadHeaders();
     return this.http.get(this.url,this.httpOptions.options).subscribe( (res: ISchoolRequestVM[]) => {
-      this.requests=res;
+      this.requests = res;
     } );
   };
 
@@ -25,8 +25,8 @@ export class SchoolRequestsService {
     return this.http.post(this.url+"/Approve",{id:id},this.httpOptions.options).subscribe((res) => {this.get()});
   };
 
-  disapprove = (id:number) => {
+  disapprove = (id: number) => {
     this.httpOptions.loadHeaders();
-    return this.http.delete(this.url+"?id="+id,this.httpOptions.options).subscribe((res) => {this.get()});
+    return this.http.delete(this.url+"?id="+id, this.httpOptions.options).subscribe( (res) => { this.get() });
   };
 }
