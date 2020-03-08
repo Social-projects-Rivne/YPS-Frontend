@@ -10,7 +10,7 @@ import { HttpOptionsService } from '../http-options/http-options.service';
 })
 export class SchoolRequestService {
 
-  private url: string = apiUrl+"/SchoolRequestProccesing";
+  private url: string = apiUrl+"/SchoolRequests";
   constructor(private http:HttpClient,private httpOptions:HttpOptionsService) { }
 
   get = (): Observable<ISchoolRequestVM[]> => {
@@ -20,7 +20,7 @@ export class SchoolRequestService {
 
   approve = (id:number): Observable<any> => {
     this.httpOptions.loadHeaders();
-    return this.http.post<any>(this.url,{id:id},this.httpOptions.options);
+    return this.http.post<any>(this.url+"/Approve",{id:id},this.httpOptions.options);
   };
 
   disapprove = (id:number): Observable<any> => {
