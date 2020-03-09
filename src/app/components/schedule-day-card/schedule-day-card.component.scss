@@ -1,0 +1,24 @@
+@import "src/vars";
+
+:host {
+  display: grid;
+  align-self: start;
+  grid-gap: 0.25rem;
+  padding: 1rem;
+
+  .day-name {
+    text-transform: capitalize;
+    color: $accent;
+  }
+
+  .date {
+    text-transform: capitalize;
+    color: $gray;
+  }
+
+  .no-items {
+    &::first-letter {
+      text-transform: capitalize;
+    }
+  }
+}
