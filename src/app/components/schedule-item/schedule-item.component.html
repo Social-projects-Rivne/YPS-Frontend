@@ -1,1 +1,13 @@
-<p>schedule-item works!</p>
+<div class="lesson-number">
+  <span class="lesson-number-value digit">
+    {{ item.lessonNumber }}
+  </span>
+</div>
+<div class="discipline">
+  <h4 class="discipline-value">
+    {{ item.discipline }}, {{ "aud. " + item.auditoriumNumber }}
+  </h4>
+</div>
+<span class="time-gap">
+  {{ item.lessonTimeGap }}
+</span>
