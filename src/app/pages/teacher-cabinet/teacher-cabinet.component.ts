@@ -33,7 +33,7 @@ export class TeacherCabinetComponent implements OnInit {
     },
     {
       value: 'Lessons',
-      path: './schedule',
+      path: './lessons',
       icon: 'event_note'
     },
     {
