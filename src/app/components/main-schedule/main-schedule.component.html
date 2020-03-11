@@ -1,0 +1,9 @@
+<mat-form-field>
+    <mat-label>Class</mat-label>
+    <mat-select onselect="ClassSelect()" [value]="selectedClass">
+      <mat-option *ngFor="let class of classes" >
+        {{class.name}}
+      </mat-option>
+    </mat-select>
+</mat-form-field>
+<yps-schedule-card [days]="days"></yps-schedule-card>
