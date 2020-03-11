@@ -3,11 +3,12 @@
     {{ item.lessonNumber }}
   </span>
 </div>
-<div class="discipline">
-  <h4 class="discipline-value">
-    {{ item.discipline }}, {{ "aud. " + item.auditoriumNumber }}
-  </h4>
-</div>
+<h4 class="discipline">
+  {{ item.discipline }}
+</h4>
+<span class="auditorium">
+  {{ "aud. " + item.auditoriumNumber }}
+</span>
 <span class="time-gap">
   {{ item.lessonTimeGap }}
 </span>
