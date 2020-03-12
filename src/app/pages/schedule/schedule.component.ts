@@ -16,17 +16,15 @@ export class ScheduleComponent implements OnInit {
   constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
-    this.days = days;
+    const role = get("role");
 
-    // ! Vital code
-    // const role = get("role");
-    // if (typeof(role) != "undefined") {
-    //   this.http.get(`${apiUrl}/lessons/getschedulefor/${role}`)
-    //     .subscribe(
-    //       (response: IScheduleDay[]) => {
-    //         this.days = response;
-    //       }
-    //     );
-    // }
+    if (typeof(role) != "undefined") {
+      this.http.get(`${apiUrl}/schedule/getfor${role}`)
+        .subscribe(
+          (response: IScheduleDay[]) => {
+            this.days = response;
+          }
+        );
+    }
   }
 }

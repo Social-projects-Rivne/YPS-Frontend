@@ -2,7 +2,6 @@ import { IScheduleDay } from 'src/app/models/IScheduleDay';
 
 export const days: IScheduleDay[] = [
   {
-    id: 1,
     dayName: 'monday',
     date: "march 9",
     items: [
@@ -33,7 +32,6 @@ export const days: IScheduleDay[] = [
     ]
   },
   {
-    id: 2,
     dayName: 'tuesday',
     date: "march 10",
     items: [
@@ -56,7 +54,6 @@ export const days: IScheduleDay[] = [
     ]
   },
   {
-    id: 3,
     dayName: 'wednesday',
     date: "march 11",
     items: [
@@ -95,7 +92,6 @@ export const days: IScheduleDay[] = [
     ]
   },
   {
-    id: 1,
     dayName: 'thursday',
     date: "march 12",
     items: [
@@ -126,7 +122,6 @@ export const days: IScheduleDay[] = [
     ]
   },
   {
-    id: 5,
     dayName: 'friday',
     date: "march 13",
     items: [
@@ -149,13 +144,11 @@ export const days: IScheduleDay[] = [
     ]
   },
   {
-    id: 6,
     dayName: 'saturday',
     date: "march 14",
     items: []
   },
   {
-    id: 7,
     dayName: 'sunday',
     date: "march 15",
     items: []
