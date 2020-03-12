@@ -15,10 +15,4 @@
     text-transform: capitalize;
     color: $gray;
   }
-
-  .no-items {
-    &::first-letter {
-      text-transform: capitalize;
-    }
-  }
 }
