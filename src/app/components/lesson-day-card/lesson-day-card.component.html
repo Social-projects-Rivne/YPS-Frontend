@@ -1,6 +1,5 @@
 <h3 class="day-name">{{ day.dayName }}</h3>
 <span class="date digit">{{ day.date }}</span>
-<span *ngIf="day.lessons.length == 0" class="no-items">non-school day or hasn't lessons</span>
 <div class="items-wrap">
   <yps-lesson-item
     *ngFor="let item of day.lessons"
