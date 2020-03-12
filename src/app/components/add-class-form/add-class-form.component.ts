@@ -47,7 +47,7 @@ export class AddClassFormComponent implements OnInit {
   toggleForm = () => this.formIsOpen = !this.formIsOpen;
 
   getTeachersToSelectData = () => {
-    this.teacherService.getTeachersToSelect().subscribe(data => this.teachers = data)
+    this.teacherService.getClassTeachersToSelect().subscribe(data => this.teachers = data)
   }
 
   onSubmit = () => {

@@ -67,6 +67,8 @@ import { MatNativeDateModule } from '@angular/material/core'
 import { from } from 'rxjs';
 import { UpcomingTestCardComponent } from './components/upcoming-test-card/upcoming-test-card.component';
 import { UpcomingTestCardListComponent } from './components/upcoming-test-card-list/upcoming-test-card-list.component';
+import { AddScheduleFormComponent } from './components/add-schedule-form/add-schedule-form.component';
+import { HeadAssistantScheduleComponent } from './page/head-assistant-schedule/head-assistant-schedule.component';
 
 @NgModule({
   declarations: [
@@ -117,7 +119,9 @@ import { UpcomingTestCardListComponent } from './components/upcoming-test-card-l
     AddUpcomingTestFormComponent,
     PupilEventCardComponent,
     UpcomingTestCardComponent,
-    UpcomingTestCardListComponent
+    UpcomingTestCardListComponent,
+    AddScheduleFormComponent,
+    HeadAssistantScheduleComponent
   ],
   imports: [
     BrowserModule,
