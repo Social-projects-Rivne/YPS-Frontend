@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { ILessonItem } from 'src/app/models/ILessonItem';
 import { HttpOptionsService } from 'src/app/services/http-options/http-options.service';
 import { HttpClient } from '@angular/common/http';
 import { apiUrl } from 'src/constants/urls';
+import { ILessonDay } from 'src/app/models/ILessonDay';
 
 @Component({
   selector: 'yps-lessons',
@@ -10,7 +10,7 @@ import { apiUrl } from 'src/constants/urls';
   styleUrls: ['./lessons.component.scss']
 })
 export class LessonsComponent implements OnInit {
-  lessons: ILessonItem[];
+  days: ILessonDay[];
   constructor(private httpOtionsService: HttpOptionsService, private http: HttpClient) { }
 
   ngOnInit(): void {
@@ -20,11 +20,10 @@ export class LessonsComponent implements OnInit {
   getLessons = () => {
     this.httpOtionsService.loadHeaders();
 
-    return this.http.get(apiUrl + "/Lessons/GetTeachersBySchoolId", this.httpOtionsService.options)
+    return this.http.get(apiUrl + "/Lessons/GetLessonsByTeacherId", this.httpOtionsService.options)
       .subscribe(
-        (response: ILessonItem[]) => {
-          this.lessons = response;
-          console.log(response);
+        (response: ILessonDay[]) => {
+          this.days = response;
         }
       );
   }

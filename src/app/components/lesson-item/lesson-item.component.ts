@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
+import { ILessonItem } from 'src/app/models/ILessonItem';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'yps-lesson-item',
@@ -6,10 +8,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./lesson-item.component.scss']
 })
 export class LessonItemComponent implements OnInit {
+  @Input() item: ILessonItem;
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
   }
 
+  onClick() {
+    this.router.navigate(['/teacher/journalcolumn', {id: this.item.id, classId: this.item.classId, teacherId: this.item.teacherId}])
+  }
 }
