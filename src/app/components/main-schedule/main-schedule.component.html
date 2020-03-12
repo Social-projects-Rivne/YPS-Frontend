@@ -1,9 +1,7 @@
-<mat-form-field>
-    <mat-label>Class</mat-label>
-    <mat-select onselect="ClassSelect()" [value]="selectedClass">
-      <mat-option *ngFor="let class of classes" >
-        {{class.name}}
-      </mat-option>
-    </mat-select>
-</mat-form-field>
-<yps-schedule-card [days]="days"></yps-schedule-card>
+<div class="class-number-card" *ngFor="let number of classNumber" (click)=(ClassNumberSelect(number))>
+<h2>{{number}}</h2>
+</div>
+<div class="schedule-display">
+  <yps-schedule-card [days]="days"></yps-schedule-card>
+</div>
+

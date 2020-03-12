@@ -1,6 +1,7 @@
 :host {
   display: grid;
   grid-gap: 1rem;
-  justify-content: center;
+  max-width: 1400px;
+  margin: 0 auto;
   padding: 1rem;
 }

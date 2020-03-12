@@ -12,22 +12,32 @@ import { HttpOptionsService } from 'src/app/services/http-options/http-options.s
 })
 export class MainScheduleComponent implements OnInit {
   days: IScheduleDay[]
-  classes: IClassToSelect
-  selectedClass: IClassToSelect
+  classes: IClassToSelect[]
+  classNumber = [1,2,3,4,5,6,7,8,9,10,11,12]
 
-  constructor(private client:HttpClient, private httpOptions:HttpOptionsService) { }
+  constructor(
+    private client:HttpClient,
+    private httpOptions:HttpOptionsService,) { }
 
   ngOnInit(): void {
-    let url = apiUrl + "/Classes/GetBySchool";
-    this.httpOptions.loadHeaders();
-    this.client.get(url,this.httpOptions.options).subscribe( (res: IClassToSelect) =>
-     {
-       this.classes = res;
-       console.log(res);
-      });
   }
 
-  ClassSelect(){
-    console.log(this.selectedClass)
+  selectClass(classId: number) {
+    let url = apiUrl + "/Schedule/GetScheduleByClass"
+    this.client.get(url + "/" + classId).subscribe(
+      (res: IScheduleDay[]) => {
+        this.days=res
+       } );
+  }
+
+  ClassNumberSelect(number: number){
+    let url = apiUrl + "/Classes/GetClassesByNumber";
+    this.httpOptions.loadHeaders();
+     this.client.get(url + "/" + number, this.httpOptions.options).subscribe( (res: IClassToSelect[]) =>
+      {
+        console.log(res);
+        this.classes = res;
+      });
   }
 }
+

@@ -1,0 +1,30 @@
+@import 'src/vars.scss';
+
+:host{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
+  grid-gap: 0.75rem;
+  grid-gap: 1rem;
+
+  .class-number-card{
+    display: grid;
+    padding: 1rem;
+    width: 5rem;
+    color: $accent;
+    text-align: center;
+    border: 1px solid $light;
+
+    &:hover{
+      cursor: pointer;
+      box-shadow: black 5px;
+      color: black;
+    }
+  }
+
+  .schedule-display{
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    flex-wrap: wrap;
+  }
+}
