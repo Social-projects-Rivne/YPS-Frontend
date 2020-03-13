@@ -54,7 +54,6 @@ import { ChildrenInfoComponent } from './components/children-info/children-info.
 import { PupilInfoCardComponent } from './components/pupil-info-card/pupil-info-card.component';
 import { ClassListComponent } from './components/class-list/class-list.component';
 import { ClassItemComponent } from './components/class-item/class-item.component';
-import { PupilEventsComponent } from './components/pupil-events/pupil-events.component';
 import { PupilCabinetComponent } from './pages/pupil-cabinet/pupil-cabinet.component';
 import { UpcomingTestItemComponent } from './components/upcoming-test-item/upcoming-test-item.component';
 import { UpcomingTestListComponent } from './components/upcoming-test-list/upcoming-test-list.component';
@@ -109,7 +108,6 @@ import { ScheduleDayCardComponent } from './components/schedule-day-card/schedul
     PupilInfoCardComponent,
     ClassListComponent,
     ClassItemComponent,
-    PupilEventsComponent,
     PupilCabinetComponent,
     UpcomingTestItemComponent,
     UpcomingTestListComponent,
