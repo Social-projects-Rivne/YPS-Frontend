@@ -20,9 +20,9 @@ class="form"
           <mat-option *ngFor="let discipline of disciplines" [value]="discipline.id">{{ discipline.name}}</mat-option>
         </mat-select>
     </mat-form-field>
-    <mat-form-field *ngIf ="form.controls.disciplines.value != null && !!form.controls.teachers">
+    <mat-form-field *ngIf ="form.controls.disciplines.value != null && !!form.controls.teacherId">
         <mat-label>Select a teacher</mat-label>
-        <mat-select formControlName="teachers" disableRipple>
+        <mat-select formControlName="teacherId" disableRipple>
           <mat-option *ngFor="let teacher of teachers" [value]="teacher.id">{{teacher.fullName}}</mat-option>
         </mat-select>
     </mat-form-field>
@@ -40,10 +40,10 @@ class="form"
     </mat-form-field>
     <mat-form-field 
     *ngIf ="form.controls.scheduledDate.value != null &&
-    form.controls.numbersOfLessons.value != null && !!form.controls.auditoriums"
+    form.controls.numbersOfLessons.value != null && !!form.controls.auditoriumId"
     >
         <mat-label>Select an auditorium</mat-label>
-        <mat-select formControlName="auditoriums" disableRipple>
+        <mat-select formControlName="auditoriumId" disableRipple>
           <mat-option *ngFor="let aud of auditoriums" [value]="aud.id">{{ aud.auditorium}}</mat-option>
         </mat-select>
     </mat-form-field>
