@@ -1,7 +1,18 @@
-<div class="class-number-card" *ngFor="let number of classNumber" (click)=(ClassNumberSelect(number))>
-<h2>{{number}}</h2>
+<div class="container" *ngIf="!mode then numbers;else classTemplate">
 </div>
+<ng-template #numbers>
+  <div class="class-number-card" *ngFor="let number of classNumber" (click)=(ClassNumberSelect(number))>
+    <h2>{{number}}</h2>
+  </div>
+</ng-template>
+<ng-template #classTemplate>
+  <div *ngIf="!days">
+    <div  class="class-number-card"  *ngFor="let class of classes" (click)=(ClassSelect(class))>
+      {{class.name}}
+    </div>
+  </div>
+</ng-template>
+
 <div class="schedule-display">
   <yps-schedule-card [days]="days"></yps-schedule-card>
 </div>
-

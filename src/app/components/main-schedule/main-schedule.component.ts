@@ -14,6 +14,8 @@ export class MainScheduleComponent implements OnInit {
   days: IScheduleDay[]
   classes: IClassToSelect[]
   classNumber = [1,2,3,4,5,6,7,8,9,10,11,12]
+  mode = false;
+  selectedClass: string;
 
   constructor(
     private client:HttpClient,
@@ -22,22 +24,23 @@ export class MainScheduleComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  selectClass(classId: number) {
-    let url = apiUrl + "/Schedule/GetScheduleByClass"
-    this.client.get(url + "/" + classId).subscribe(
-      (res: IScheduleDay[]) => {
-        this.days=res
-       } );
-  }
-
   ClassNumberSelect(number: number){
     let url = apiUrl + "/Classes/GetClassesByNumber";
     this.httpOptions.loadHeaders();
      this.client.get(url + "/" + number, this.httpOptions.options).subscribe( (res: IClassToSelect[]) =>
       {
-        console.log(res);
+        this.mode = true;
         this.classes = res;
+        this.selectedClass=number.toString();
       });
+  }
+  ClassSelect(selectedClass: IClassToSelect){
+    let url = apiUrl + "/Schedule/GetScheduleByClass";
+    this.httpOptions.loadHeaders();
+    this.client.get(url + "/" + selectedClass.id, this.httpOptions.options).subscribe( (res: IScheduleDay[]) => {
+      this.days = res;
+      this.selectedClass = selectedClass.name;
+    })
   }
 }
 
