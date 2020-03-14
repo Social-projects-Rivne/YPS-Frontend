@@ -1,5 +1,14 @@
-:host
-{
+@import "src/vars";
+
+:host {
   display: grid;
   grid-gap: 1rem;
+
+  .no-items {
+    color: $gray;
+
+    &::first-letter {
+      text-transform: capitalize;
+    }
+  }
 }
