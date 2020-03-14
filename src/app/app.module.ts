@@ -49,7 +49,7 @@ import { TeacherCabinetComponent } from './pages/teacher-cabinet/teacher-cabinet
 import { ParentCabinetComponent } from './pages/parent-cabinet/parent-cabinet.component';
 import { ClassesComponent } from './pages/classes/classes.component';
 import { AddClassFormComponent } from './components/add-class-form/add-class-form.component';
-import {TokenInterceptor} from './helpers/token.interceptor';
+import { TokenInterceptor } from './helpers/token.interceptor';
 import { ChildrenInfoComponent } from './components/children-info/children-info.component';
 import { PupilInfoCardComponent } from './components/pupil-info-card/pupil-info-card.component';
 import { ClassListComponent } from './components/class-list/class-list.component';
@@ -64,7 +64,8 @@ import { PupilEventCardComponent } from './components/pupil-event-card/pupil-eve
 import { AddUpcomingTestFormComponent } from './components/add-upcoming-test-form/add-upcoming-test-form.component';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core'
-import { from } from 'rxjs';
+import { ScheduleCardComponent } from './components/schedule-card/schedule-card.component';
+import { ScheduleItemComponent } from './components/schedule-item/schedule-item.component';
 import { UpcomingTestCardComponent } from './components/upcoming-test-card/upcoming-test-card.component';
 import { UpcomingTestCardListComponent } from './components/upcoming-test-card-list/upcoming-test-card-list.component';
 import { AddScheduleFormComponent } from './components/add-schedule-form/add-schedule-form.component';
@@ -118,6 +119,8 @@ import { HeadAssistantScheduleComponent } from './page/head-assistant-schedule/h
     PupilEventCardComponent,
     AddUpcomingTestFormComponent,
     PupilEventCardComponent,
+    ScheduleCardComponent,
+    ScheduleItemComponent,
     UpcomingTestCardComponent,
     UpcomingTestCardListComponent,
     AddScheduleFormComponent,

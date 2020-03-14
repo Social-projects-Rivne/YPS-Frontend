@@ -9,6 +9,7 @@ import { IClassToSelect } from 'src/app/models/IClassToSelect';
 import { get } from 'js-cookie';
 import { HttpOptionsService } from 'src/app/services/http-options/http-options.service';
 import { IDisciplineToSelect } from 'src/app/models/IDisciplineToSelect';
+import { UpcomingTestsService } from 'src/app/services/upcoming-tests/upcoming-tests.service';
 
 @Component({
   selector: 'yps-add-upcoming-test-form',
@@ -43,7 +44,8 @@ export class AddUpcomingTestFormComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private http: HttpClient,
-    private httpOptionsService: HttpOptionsService
+    private httpOptionsService: HttpOptionsService,
+    private upcomingTestsService: UpcomingTestsService
   ) { }
 
   ngOnInit(): void {
@@ -57,7 +59,7 @@ export class AddUpcomingTestFormComponent implements OnInit {
       "scheduledDate": [null, requiredValidator("scheduled date is required")]
     });
 
-    this.http.get(`${apiUrl}/Discipline/GetDisciplinesByTeacher`, this.httpOptionsService.options)
+    this.http.get(`${apiUrl}/Disciplines/GetDisciplinesByTeacher`, this.httpOptionsService.options)
       .subscribe(
         (successRes: IDisciplineToSelect[]) => {
           this.disciplines = successRes;
@@ -83,6 +85,7 @@ export class AddUpcomingTestFormComponent implements OnInit {
       return this.http.post(apiUrl + "/upcomingtests", this.form.value, this.httpOptionsService.options)
         .subscribe(
           (successRes: any) => {
+            this.upcomingTestsService.getByTeacher();
             this.toggleForm();
             console.log('add test response', successRes);
           }

@@ -1,4 +1,2 @@
-<div class="container">
-    <yps-school-request-card   *ngFor="let item of Requests" [Request]="item"></yps-school-request-card>
-</div>
+<yps-school-request-card   *ngFor="let item of schoolRequestService.requests" [Request]="item"></yps-school-request-card>
 

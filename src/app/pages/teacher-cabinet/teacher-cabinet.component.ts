@@ -28,8 +28,13 @@ export class TeacherCabinetComponent implements OnInit {
     },
     {
       value: 'Schedule',
-      path: './schedules',
+      path: './schedule',
       icon: 'event'
+    },
+    {
+      value: 'Lessons',
+      path: './lessons',
+      icon: 'event_note'
     },
     {
       value: 'Materials',

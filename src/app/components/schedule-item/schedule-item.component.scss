@@ -1,0 +1,73 @@
+@import "src/vars";
+
+:host {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-column-gap: 1rem;
+  padding: .5rem;
+
+  .lesson-number {
+    display: grid;
+    grid-row: 1 / 4;
+    width: 2rem;
+    height: 2rem;
+    align-items: center;
+    justify-items: center;
+    position: relative;
+
+    &-value {
+      font-weight: bold;
+      font-size: .75rem;
+      color: #ffffff;
+      z-index: 1;
+    }
+
+    &::before, &::after {
+      content: "";
+      display: block;
+      position: absolute;
+    }
+
+    &::before {
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background-color: $accent;
+      transform: rotate(45deg);
+    }
+
+    &::after {
+      width: 2px;
+      height: 3rem;
+      background-color: $light;
+      bottom: .5rem;
+      left: 50%;
+      transform: translate(-50%, 100%);
+      z-index: -1;
+    }
+  }
+
+  .discipline, .auditorium {
+    &::first-letter {
+      text-transform: capitalize;
+    }
+  }
+
+  .auditorium {
+    font-size: .8rem;
+  }
+
+  .time-gap {
+    color: $gray;
+    font-size: .75rem;
+  }
+
+  &:last-child {
+    .lesson-number {
+      &::after {
+        display: none;
+      }
+    }
+  }
+}
