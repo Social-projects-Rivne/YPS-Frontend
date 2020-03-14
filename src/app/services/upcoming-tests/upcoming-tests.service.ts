@@ -9,12 +9,33 @@ import { IUpcomingTest } from '../../models/IUpcomingTest';
   providedIn: 'root'
 })
 export class UpcomingTestsService {
-  constructor(private http: HttpClient, private HttpOptions: HttpOptionsService) { }
+  testsByTeacher: IUpcomingTest[] = [];
+  testsByPupil: IUpcomingTest[] = [];
 
-  private url: string = apiUrl + "/UpcomingTests";
+  constructor(
+    private http: HttpClient,
+    private httpOptionsService: HttpOptionsService
+  ) { }
 
-  getByTeacher() : Observable<IUpcomingTest[]>{
-    this.HttpOptions.loadHeaders();
-    return this.http.get<IUpcomingTest[]>(this.url + "/GetByTeacher", this.HttpOptions.options);
+  getByTeacher = () => {
+    this.httpOptionsService.loadHeaders();
+    return this.http
+      .get(`${apiUrl}/upcomingtests/getbyteacher`, this.httpOptionsService.options)
+      .subscribe(
+        (response: IUpcomingTest[]) => {
+          this.testsByTeacher = response;
+        }
+      );
+  }
+
+  getByPupil = () => {
+    this.httpOptionsService.loadHeaders();
+    return this.http
+      .get(`${apiUrl}/upcomingtests/getbypupil`, this.httpOptionsService.options)
+      .subscribe(
+        (response: IUpcomingTest[]) => {
+          this.testsByPupil = response;
+        }
+      );
   }
 }

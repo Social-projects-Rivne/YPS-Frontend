@@ -1,6 +1,9 @@
-<h2>Upcoming Tests:</h2>
+<h3>Upcoming Tests</h3>
+<span class="no-items" *ngIf="upcomingTestsService.testsByPupil.length == 0">
+  you don't have any upcoming events yet.
+</span>
 <yps-upcoming-test-card
-  *ngFor="let upcomingTest of upcomingTests"
+  *ngFor="let upcomingTest of upcomingTestsService.testsByPupil"
   [upcomingTestItem]="upcomingTest"
 >
 </yps-upcoming-test-card>

@@ -13,23 +13,9 @@ import { UpcomingTestsService } from '../../services/upcoming-tests/upcoming-tes
 export class UpcomingTestCardListComponent implements OnInit {
   upcomingTests: IUpcomingTest [] = [];
 
-  constructor(
-    private _upcomingTestService: UpcomingTestsService,
-    private http: HttpClient,
-    private httpOptionsService: HttpOptionsService
-  ) { }
+  constructor(public upcomingTestsService: UpcomingTestsService) { }
 
   ngOnInit(): void {
-    this.httpOptionsService.loadHeaders();
-    this.GetUpcomingTest();
-  }
-
-  GetUpcomingTest = () =>{
-    this.http.get(apiUrl + "/upcomingtests/getbypupil", this.httpOptionsService.options)
-      .subscribe(
-        (successRes: IUpcomingTest[]) => {
-          this.upcomingTests = successRes;
-        }
-      );
+    this.upcomingTestsService.getByPupil();
   }
 }
