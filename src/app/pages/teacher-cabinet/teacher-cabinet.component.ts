@@ -32,6 +32,11 @@ export class TeacherCabinetComponent implements OnInit {
       icon: 'event'
     },
     {
+      value: 'Lessons',
+      path: './lessons',
+      icon: 'event_note'
+    },
+    {
       value: 'Materials',
       path: './materials',
       icon: 'menu_book'
