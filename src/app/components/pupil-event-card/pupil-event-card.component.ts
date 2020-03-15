@@ -8,7 +8,7 @@ import { IEvent } from 'src/app/models/IEvent';
   styleUrls: ['./pupil-event-card.component.scss']
 })
 export class PupilEventCardComponent implements OnInit {
-    events: IEvent[];
+    events: IEvent[] = [];
 
   constructor( private eventService: EventService) { }
 
