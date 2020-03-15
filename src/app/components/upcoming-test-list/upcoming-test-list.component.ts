@@ -11,9 +11,6 @@ import { UpcomingTestsService } from '../../services/upcoming-tests/upcoming-tes
   styleUrls: ['./upcoming-test-list.component.scss']
 })
 export class UpcomingTestListComponent implements OnInit {
-
-  upcomingTests: IUpcomingTest [] = [];
-
   headerUpcomingTest: IUpcomingTest = {
     class: "class",
     discipline: "discipline",
@@ -22,22 +19,9 @@ export class UpcomingTestListComponent implements OnInit {
     scheduledDate: "scheduled date"
   }
 
-  constructor(
-    private _upcomingTestService: UpcomingTestsService,
-    private http: HttpClient,
-    private httpOptionsService: HttpOptionsService) { }
+  constructor(public upcomingTestsService: UpcomingTestsService) { }
 
   ngOnInit(): void {
-    this.httpOptionsService.loadHeaders();
-    this.GetUpcomingTest();
-  }
-
-  GetUpcomingTest = () =>{
-    this.http.get(apiUrl + "/upcomingtests/getbyteacher", this.httpOptionsService.options)
-      .subscribe(
-        (successRes: IUpcomingTest[]) => {
-          this.upcomingTests = successRes;
-        }
-      );
+    this.upcomingTestsService.getByTeacher();
   }
 }

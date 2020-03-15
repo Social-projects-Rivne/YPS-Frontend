@@ -70,6 +70,10 @@ import { UpcomingTestCardComponent } from './components/upcoming-test-card/upcom
 import { UpcomingTestCardListComponent } from './components/upcoming-test-card-list/upcoming-test-card-list.component';
 import { ScheduleDayCardComponent } from './components/schedule-day-card/schedule-day-card.component';
 import { MainScheduleComponent } from './components/main-schedule/main-schedule.component';
+import { LessonCardComponent } from './components/lesson-card/lesson-card.component';
+import { LessonDayCardComponent } from './components/lesson-day-card/lesson-day-card.component';
+import { LessonItemComponent } from './components/lesson-item/lesson-item.component';
+
 
 @NgModule({
   declarations: [
@@ -124,7 +128,10 @@ import { MainScheduleComponent } from './components/main-schedule/main-schedule.
     UpcomingTestCardComponent,
     UpcomingTestCardListComponent,
     ScheduleDayCardComponent,
-    MainScheduleComponent
+    MainScheduleComponent,
+    LessonCardComponent,
+    LessonDayCardComponent,
+    LessonItemComponent,
   ],
   imports: [
     BrowserModule,
