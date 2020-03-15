@@ -68,8 +68,11 @@ import { ScheduleCardComponent } from './components/schedule-card/schedule-card.
 import { ScheduleItemComponent } from './components/schedule-item/schedule-item.component';
 import { UpcomingTestCardComponent } from './components/upcoming-test-card/upcoming-test-card.component';
 import { UpcomingTestCardListComponent } from './components/upcoming-test-card-list/upcoming-test-card-list.component';
+import { ScheduleDayCardComponent } from './components/schedule-day-card/schedule-day-card.component';
+import { LessonCardComponent } from './components/lesson-card/lesson-card.component';
+import { LessonDayCardComponent } from './components/lesson-day-card/lesson-day-card.component';
+import { LessonItemComponent } from './components/lesson-item/lesson-item.component';
 import { AddScheduleFormComponent } from './components/add-schedule-form/add-schedule-form.component';
-import { HeadAssistantScheduleComponent } from './page/head-assistant-schedule/head-assistant-schedule.component';
 
 @NgModule({
   declarations: [
@@ -123,8 +126,11 @@ import { HeadAssistantScheduleComponent } from './page/head-assistant-schedule/h
     ScheduleItemComponent,
     UpcomingTestCardComponent,
     UpcomingTestCardListComponent,
-    AddScheduleFormComponent,
-    HeadAssistantScheduleComponent
+    ScheduleDayCardComponent,
+    LessonCardComponent,
+    LessonDayCardComponent,
+    LessonItemComponent,
+    AddScheduleFormComponent
   ],
   imports: [
     BrowserModule,
