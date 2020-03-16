@@ -167,5 +167,8 @@ export const RoutingComponents = [
   PupilProfileComponent,
   HeadAssistantProfileComponent,
   HeadAssistantCabinetComponent,
-  HeadAssistantScheduleComponent
+  HeadAssistantScheduleComponent,
+  ScheduleComponent,
+  LessonsComponent,
+  JournalColumnComponent
 ];
