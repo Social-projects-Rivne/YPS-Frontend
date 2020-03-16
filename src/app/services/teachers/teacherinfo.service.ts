@@ -27,7 +27,4 @@ export class TeacherinfoService {
     this.httpOptions.loadHeaders();
     return this.http.get<ITeacherToSelect[]>(this.url + "/GetTeachersBySchoolShort", this.httpOptions.options);
   }
-
-  
-  
 }
