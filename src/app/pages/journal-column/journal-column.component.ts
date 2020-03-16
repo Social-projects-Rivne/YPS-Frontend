@@ -27,20 +27,14 @@ export class JournalColumnComponent implements OnInit {
   getPupils = () => {
     this.httpOtionsService.loadHeaders();
     this.classId =this.route.snapshot.paramMap.get('classId');
-    // let id = parseInt(classId);
     return this.http.get(apiUrl + `/Pupils/GetByClass/${this.classId}`, this.httpOtionsService.options)
       .subscribe(
         (response: IShortInfoPupil[]) => {
           this.pupils = response;
-          console.log(this.classId);
         }
       );
   }
   onClick() {
-    this.id = this.route.snapshot.paramMap.get('id');
-    this.classId = this.route.snapshot.paramMap.get('classId');
-    this.teacherId = this.route.snapshot.paramMap.get('teacherId');
-
-    console.log(this.id + " - ID les " + this.classId + " - ID class " + this.teacherId + " - ID teacher");
+    console.log(this.classId + " - ID class ");
   }
 }
