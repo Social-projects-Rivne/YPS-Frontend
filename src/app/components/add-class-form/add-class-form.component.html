@@ -1,4 +1,4 @@
-<button 
+<button
   class="add-btn btn primary"
   (click)="toggleForm()"
 >
@@ -17,5 +17,11 @@
           <mat-option *ngFor="let teacher of teachers" [value]="teacher.id">{{ teacher.fullName}}</mat-option>
         </mat-select>
     </mat-form-field>
+    <mat-form-field  *ngIf="showPupils">
+            <mat-label>Select a pupils to class</mat-label>
+            <mat-select formControlName="selectedPupils" multiple>
+              <mat-option *ngFor="let pupils of listOfPupils" [value]="pupils.id">{{pupils.fullName}}</mat-option>
+            </mat-select>
+          </mat-form-field>
     <button type="submit" class="btn primary">submit</button>
 </form>

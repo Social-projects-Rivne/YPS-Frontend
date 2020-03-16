@@ -1,4 +1,3 @@
-import { minLengthValidator } from './../../../utils/validators/min-length-validatot';
 import { patternValidator } from 'src/utils/validators/pattern-validator';
 import { maxLengthValidator } from './../../../utils/validators/max-length-validator';
 import { TeacherinfoService } from 'src/app/services/teachers/teacherinfo.service';
@@ -12,7 +11,8 @@ import { validationHelper } from 'src/utils/helpers/validation-helper';
 import { apiUrl } from 'src/constants/urls';
 import { HttpClient } from '@angular/common/http';
 import { HttpOptionsService } from 'src/app/services/http-options/http-options.service';
-import { minValueValidator } from 'src/utils/validators/min-value-validator';
+import { PupilinfoService } from 'src/app/services/pupils/pupilinfo.service'
+import { IPupilToSelect } from 'src/app/models/IPupilToSelect';
 
 @Component({
   selector: 'yps-add-class-form',
@@ -23,7 +23,9 @@ export class AddClassFormComponent implements OnInit {
   form:FormGroup;
   formIsOpen: boolean = false;
   teachers: ITeacherToSelect[];
-  
+  listOfPupils: IPupilToSelect[];
+  showPupils: boolean = false;
+
   fields: IFormField[] = [
     {
       id: "number-field",
@@ -43,20 +45,23 @@ export class AddClassFormComponent implements OnInit {
     }
   ];
 
-  
-  constructor(private formBuilder: FormBuilder, private http: HttpClient, private teacherService: TeacherinfoService, private httpOptionsService: HttpOptionsService) { }
+
+  constructor(private formBuilder: FormBuilder, private http: HttpClient, private pupilService: PupilinfoService , private teacherService: TeacherinfoService, private httpOptionsService: HttpOptionsService) { }
 
   toggleForm = () => this.formIsOpen = !this.formIsOpen;
 
   getTeachersToSelectData = () => {
     this.teacherService.getTeachersToSelect().subscribe(data => this.teachers = data)
   }
+  getPupilsToSelectData = (numb: number) => {
+    this.pupilService.getPupilsToSelect(numb).subscribe(data => this.listOfPupils = data)
+  }
+
 
   onSubmit = () => {
     const { fields, isValid } = validationHelper(this.form.controls, this.fields);
-
     this.fields = fields;
-    console.info(`Login form is ${isValid ? 'valid' : 'invalid'}`);
+    console.info(`Created class form is ${isValid ? 'valid' : 'invalid'}`);
 
     if(isValid){
       console.log("value", this.form.value);
@@ -64,6 +69,7 @@ export class AddClassFormComponent implements OnInit {
         ...this.form.value,
         number: parseInt(this.form.value.number, 10)
       }
+      console.log(request);
       return this.http.post(apiUrl + "/Classes", request, this.httpOptionsService.options)
         .subscribe(
           (successRes: any) => {
@@ -74,14 +80,30 @@ export class AddClassFormComponent implements OnInit {
     }
   }
 
-  ngOnInit(): void {
-    this.getTeachersToSelectData();
-    this.httpOptionsService.loadHeaders();
 
+  ngOnInit() {
+
+    this.getTeachersToSelectData();
+
+    this.httpOptionsService.loadHeaders();
     this.form = this.formBuilder.group({
         "character":[null, [requiredValidator("character is required"), maxLengthValidator(1,"character must be 1 symbol"), patternValidator(/[A-Za-zÀ-ÿ]/,"must be single character")]],
-        "number":[null, [requiredValidator("number is required"), maxValueValidator(12, "max value is 12"), minValueValidator(1, "min value is 1")]],
-        "classTeacherId": [null, [requiredValidator("teacher is required")]]
-      }) 
+        "number":[null, [requiredValidator("number is required"), maxValueValidator(12, "max value is 12")]],
+        "classTeacherId": [null, [requiredValidator("teacher is required")]],
+        "selectedPupils": [null]
+      });
+      this.onChanges();
+  }
+  onChanges(): void {
+   this.form.get('number').valueChanges.subscribe(val => {
+      if(val != ""){
+        this.showPupils = true;
+        console.log(typeof(val));
+        this.getPupilsToSelectData(val);
+      }
+      else{
+        this.showPupils = false;
+      }
+    });
   }
 }
