@@ -1,3 +1,4 @@
+import { minLengthValidator } from './../../../utils/validators/min-length-validatot';
 import { patternValidator } from 'src/utils/validators/pattern-validator';
 import { maxLengthValidator } from './../../../utils/validators/max-length-validator';
 import { TeacherinfoService } from 'src/app/services/teachers/teacherinfo.service';
@@ -11,6 +12,7 @@ import { validationHelper } from 'src/utils/helpers/validation-helper';
 import { apiUrl } from 'src/constants/urls';
 import { HttpClient } from '@angular/common/http';
 import { HttpOptionsService } from 'src/app/services/http-options/http-options.service';
+import { minValueValidator } from 'src/utils/validators/min-value-validator';
 
 @Component({
   selector: 'yps-add-class-form',
@@ -78,7 +80,7 @@ export class AddClassFormComponent implements OnInit {
 
     this.form = this.formBuilder.group({
         "character":[null, [requiredValidator("character is required"), maxLengthValidator(1,"character must be 1 symbol"), patternValidator(/[A-Za-zÀ-ÿ]/,"must be single character")]],
-        "number":[null, [requiredValidator("number is required"), maxValueValidator(12, "max value is 12")]],
+        "number":[null, [requiredValidator("number is required"), maxValueValidator(12, "max value is 12"), minValueValidator(1, "min value is 1")]],
         "classTeacherId": [null, [requiredValidator("teacher is required")]]
       }) 
   }
