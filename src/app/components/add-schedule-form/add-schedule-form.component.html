@@ -2,7 +2,7 @@
   {{formIsOpen ? "close" : "add lesson" }}
 </button>
 <form class="form" [formGroup]="form" (ngSubmit)="onSubmit()" *ngIf="formIsOpen">
-  
+
   <h1 class="title">add lesson</h1>
 
   <mat-form-field>
@@ -40,12 +40,7 @@
     </mat-select>
   </mat-form-field>
 
-  <yps-form-field 
-  *ngFor="let field of fields" 
-  [field]="field" 
-  [formControlName]="field.name"
-  
-  >
+  <yps-form-field *ngFor="let field of fields" [field]="field" [formControlName]="field.name">
   </yps-form-field>
 
   <mat-form-field *ngIf="form.controls.lessonDate.value != null &&
