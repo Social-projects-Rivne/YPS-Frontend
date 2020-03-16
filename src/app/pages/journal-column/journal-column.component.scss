@@ -1,0 +1,21 @@
+:host {
+  display: grid;
+  // grid-row-gap: 1rem;
+  grid-gap: 1rem;
+  padding-right: 1rem;
+}
+
+.topic {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-rows: 7rem;
+  align-items: center;
+
+  .topic-value {
+    width: 50rem;
+    height: 5rem;
+  }
+  .topic-save {
+      
+  }
+}

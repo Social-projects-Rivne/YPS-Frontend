@@ -4,6 +4,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { HttpOptionsService } from '../http-options/http-options.service';
+import { IShortInfoPupil } from 'src/app/models/IShortInfoPupil';
 
 @Injectable({
   providedIn: 'root'

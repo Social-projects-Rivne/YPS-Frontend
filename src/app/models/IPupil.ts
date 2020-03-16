@@ -10,3 +10,4 @@ export interface IPupil {
     imageUrl: string;
     schoolName: string;
 }
+

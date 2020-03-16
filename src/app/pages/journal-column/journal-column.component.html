@@ -1,2 +1,10 @@
-<p>journal-column works!</p>
-<button (click)="onClick()" class="btn">fsfd</button>
+<div class="topic">
+    <mat-form-field class="topic-value">
+        <mat-label>Topic of the Lesson</mat-label>
+        <textarea matInput></textarea>
+    </mat-form-field>
+    <button (click)="onClick()" class="btn topic-save">save topic</button>
+</div>
+<div *ngFor="let item of pupils">
+    <span > {{item.fullName}} </span>
+</div>
