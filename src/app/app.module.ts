@@ -72,6 +72,7 @@ import { ScheduleDayCardComponent } from './components/schedule-day-card/schedul
 import { LessonCardComponent } from './components/lesson-card/lesson-card.component';
 import { LessonDayCardComponent } from './components/lesson-day-card/lesson-day-card.component';
 import { LessonItemComponent } from './components/lesson-item/lesson-item.component';
+import { JournalColumnItemComponent } from './components/journal-column-item/journal-column-item.component';
 
 @NgModule({
   declarations: [
@@ -129,6 +130,7 @@ import { LessonItemComponent } from './components/lesson-item/lesson-item.compon
     LessonCardComponent,
     LessonDayCardComponent,
     LessonItemComponent,
+    JournalColumnItemComponent,
   ],
   imports: [
     BrowserModule,

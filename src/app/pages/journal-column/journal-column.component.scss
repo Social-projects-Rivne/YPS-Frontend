@@ -1,21 +1,26 @@
 :host {
   display: grid;
-  // grid-row-gap: 1rem;
   grid-gap: 1rem;
   padding-right: 1rem;
 }
 
 .topic {
   display: grid;
-  grid-template-columns: 1fr auto;
+  grid-template-columns: 2fr 1fr;
   grid-template-rows: 7rem;
   align-items: center;
+  grid-column-gap: 1rem;
 
   .topic-value {
     width: 50rem;
     height: 5rem;
   }
   .topic-save {
-      
+      align-self: center;
+      width: 7rem;
   }
+  
+}
+.finish {
+  padding-left: 43rem;
 }

@@ -5,6 +5,13 @@
     </mat-form-field>
     <button (click)="onClick()" class="btn topic-save">save topic</button>
 </div>
-<div *ngFor="let item of pupils">
-    <span > {{item.fullName}} </span>
+<yps-journal-column-item class="header-class" index="№" [pupilShortInfo]="headerJournalColumn"></yps-journal-column-item>
+<yps-journal-column-item
+  *ngFor="let pupil of pupils; index as index"
+  [index]="index"
+  [pupilShortInfo]="pupil"
+>
+</yps-journal-column-item>
+<div class="finish">
+    <button (click)="onClick()" class="btn finish-btn">finish lesson</button>
 </div>

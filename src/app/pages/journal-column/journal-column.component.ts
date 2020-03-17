@@ -15,6 +15,10 @@ export class JournalColumnComponent implements OnInit {
   classId: string;
   teacherId: string;
 
+  headerJournalColumn: IShortInfoPupil = {
+    fullName: "Pupil",
+    id:null
+  }
   pupils: IShortInfoPupil[];
 
   constructor(private route: ActivatedRoute, private httpOtionsService: HttpOptionsService, private http: HttpClient) { }
