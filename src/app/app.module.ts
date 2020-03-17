@@ -68,6 +68,7 @@ import { ScheduleItemComponent } from './components/schedule-item/schedule-item.
 import { UpcomingTestCardComponent } from './components/upcoming-test-card/upcoming-test-card.component';
 import { UpcomingTestCardListComponent } from './components/upcoming-test-card-list/upcoming-test-card-list.component';
 import { ScheduleDayCardComponent } from './components/schedule-day-card/schedule-day-card.component';
+import { MainScheduleComponent } from './components/main-schedule/main-schedule.component';
 import { LessonCardComponent } from './components/lesson-card/lesson-card.component';
 import { LessonDayCardComponent } from './components/lesson-day-card/lesson-day-card.component';
 import { LessonItemComponent } from './components/lesson-item/lesson-item.component';
@@ -125,6 +126,7 @@ import { AddScheduleFormComponent } from './components/add-schedule-form/add-sch
     UpcomingTestCardComponent,
     UpcomingTestCardListComponent,
     ScheduleDayCardComponent,
+    MainScheduleComponent,
     LessonCardComponent,
     LessonDayCardComponent,
     LessonItemComponent,
