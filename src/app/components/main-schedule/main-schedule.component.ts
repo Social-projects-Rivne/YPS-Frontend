@@ -32,8 +32,8 @@ export class MainScheduleComponent implements OnInit {
       .subscribe(
       (res: IClassToSelect[]) =>
         {
-         this.mode = true;
-        this.classes = res;
+          this.mode = true;
+          this.classes = res;
         }
       );
   }
@@ -46,7 +46,8 @@ export class MainScheduleComponent implements OnInit {
       .subscribe(
         (res: IScheduleDay[]) => {
           this.days = res;
-    })
+        }
+    );
   }
 
   Reset = () => {
