@@ -1,39 +1,42 @@
 @import 'src/vars.scss';
 
-:host{
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
-  grid-gap: 0.75rem;
-
-  .class-number-card{
+:host {
+  .container {
     display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(9rem, 1fr));
+    grid-gap: 0.75rem;
+  }
+
+  .class-number-card {
     padding: 1rem;
-    width: 5rem;
+    height: 6rem;
+    line-height: 4rem;
     color: $accent;
     text-align: center;
     border: 1px solid $light;
 
-    &:hover{
+    &:hover {
       cursor: pointer;
       box-shadow: black 5px;
       color: black;
     }
   }
-  .selected{
-    width: 3rem;
-    align-self: flex-start;
-    color: $accent;
-    text-align: center;
-    justify-self: center;
-    border: 1px solid $light;
 
-    &:hover{
-      cursor: pointer;
-      box-shadow: black 5px;
-      color: black;
-    }
+  .header{
+  margin: 1rem auto;
+  text-align: center;
+  align-self: center;
   }
-  .schedule-display{
+
+  .selected {
+    width: 4rem;
+    color: $accent;
+    align-self: center;
+    margin: 1rem auto;
+
+  }
+
+  .schedule-display {
     display: flex;
     flex-direction: column;
     justify-items: center;

@@ -4,6 +4,7 @@ import { IClassToSelect } from 'src/app/models/IClassToSelect';
 import { IScheduleDay } from 'src/app/models/IScheduleDay';
 import { Component, OnInit } from '@angular/core';
 import { HttpOptionsService } from 'src/app/services/http-options/http-options.service';
+import { stringify } from '@angular/compiler/src/util';
 
 @Component({
   selector: 'yps-main-schedule',
@@ -24,23 +25,36 @@ export class MainScheduleComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  ClassNumberSelect(number: number){
+  GetClassesByNumber = (number: number) => {
     let url = apiUrl + "/Classes/GetClassesByNumber";
     this.httpOptions.loadHeaders();
      this.client.get(url + "/" + number, this.httpOptions.options).subscribe( (res: IClassToSelect[]) =>
       {
         this.mode = true;
         this.classes = res;
-        this.selectedClass=number.toString();
+        this.selectedClass = number.toString();
       });
   }
-  ClassSelect(selectedClass: IClassToSelect){
+
+  ClassSelect = (selectedClass: IClassToSelect) => {
     let url = apiUrl + "/Schedule/GetScheduleByClass";
     this.httpOptions.loadHeaders();
     this.client.get(url + "/" + selectedClass.id, this.httpOptions.options).subscribe( (res: IScheduleDay[]) => {
       this.days = res;
       this.selectedClass = selectedClass.name;
     })
+  }
+
+  Reset = () => {
+    if(this.mode&&this.days!=null){
+        this.days=null;
+        this.selectedClass=this.selectedClass.split('-')[0];
+    }
+    else{
+      this.classes=null;
+      this.selectedClass="";
+      this.mode=false;
+    }
   }
 }
 
