@@ -11,14 +11,14 @@ import { HttpOptionsService } from 'src/app/services/http-options/http-options.s
   styleUrls: ['./main-schedule.component.scss']
 })
 export class MainScheduleComponent implements OnInit {
-  days: IScheduleDay[]
-  classes: IClassToSelect[]
-  classNumber = [1,2,3,4,5,6,7,8,9,10,11,12]
-  mode = false
+  days: IScheduleDay[];
+  classes: IClassToSelect[];
+  classNumber = [1,2,3,4,5,6,7,8,9,10,11,12];
+  mode = false;
 
   constructor(
     private client: HttpClient,
-    private httpOptions: HttpOptionsService,) { }
+    private httpOptions: HttpOptionsService) { }
 
   ngOnInit(): void {
   }
@@ -42,10 +42,10 @@ export class MainScheduleComponent implements OnInit {
   }
 
   Reset = () => {
-    if(this.mode&&this.days!=null){
+    if(this.mode && this.days != null) {
       this.days = null;
     }
-    else{
+    else {
       this.classes = null;
       this.mode = false;
     }
