@@ -1,3 +1,4 @@
+import { HeadAssistantScheduleComponent } from './pages/head-assistant-schedule/head-assistant-schedule.component';
 import { ClassesComponent } from './pages/classes/classes.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { MastersComponent } from './pages/masters/masters.component';
@@ -75,6 +76,7 @@ const teacherRoutes: Routes = [
 ];
 const headAssistantRoutes: Routes = [
   { path: '', canActivateChild: [AuthGuard], component: HeadAssistantProfileComponent },
+  { path: 'schedule', canActivateChild: [AuthGuard], component: HeadAssistantScheduleComponent}
 ];
 const parentRoutes: Routes = [
   { path: '', canActivateChild: [AuthGuard], component: ParentProfileComponent },
@@ -163,6 +165,7 @@ export const RoutingComponents = [
   PupilProfileComponent,
   HeadAssistantProfileComponent,
   HeadAssistantCabinetComponent,
+  HeadAssistantScheduleComponent,
   ScheduleComponent,
   LessonsComponent,
   JournalColumnComponent
