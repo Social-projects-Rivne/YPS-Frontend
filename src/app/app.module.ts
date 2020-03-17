@@ -54,7 +54,6 @@ import { ChildrenInfoComponent } from './components/children-info/children-info.
 import { PupilInfoCardComponent } from './components/pupil-info-card/pupil-info-card.component';
 import { ClassListComponent } from './components/class-list/class-list.component';
 import { ClassItemComponent } from './components/class-item/class-item.component';
-import { PupilEventsComponent } from './components/pupil-events/pupil-events.component';
 import { PupilCabinetComponent } from './pages/pupil-cabinet/pupil-cabinet.component';
 import { UpcomingTestItemComponent } from './components/upcoming-test-item/upcoming-test-item.component';
 import { UpcomingTestListComponent } from './components/upcoming-test-list/upcoming-test-list.component';
@@ -74,7 +73,6 @@ import { LessonCardComponent } from './components/lesson-card/lesson-card.compon
 import { LessonDayCardComponent } from './components/lesson-day-card/lesson-day-card.component';
 import { LessonItemComponent } from './components/lesson-item/lesson-item.component';
 import { AddScheduleFormComponent } from './components/add-schedule-form/add-schedule-form.component';
-import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
 
 
 @NgModule({
@@ -116,7 +114,6 @@ import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
     PupilInfoCardComponent,
     ClassListComponent,
     ClassItemComponent,
-    PupilEventsComponent,
     PupilCabinetComponent,
     UpcomingTestItemComponent,
     UpcomingTestListComponent,
@@ -161,7 +158,6 @@ import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
     MatCheckboxModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    NgMultiSelectDropDownModule.forRoot()
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,
