@@ -74,7 +74,6 @@ import { LessonDayCardComponent } from './components/lesson-day-card/lesson-day-
 import { LessonItemComponent } from './components/lesson-item/lesson-item.component';
 import { AddScheduleFormComponent } from './components/add-schedule-form/add-schedule-form.component';
 
-
 @NgModule({
   declarations: [
     AppComponent,
