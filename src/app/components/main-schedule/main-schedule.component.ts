@@ -13,13 +13,13 @@ import { HttpOptionsService } from 'src/app/services/http-options/http-options.s
 export class MainScheduleComponent implements OnInit {
   days: IScheduleDay[];
   classes: IClassToSelect[];
-  classNumber = [1,2,3,4,5,6,7,8,9,10,11,12];
+  classNumber = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
   mode = false;
 
   constructor(
     private client: HttpClient,
     private httpOptions: HttpOptionsService
-    ) { }
+  ) { }
 
   ngOnInit(): void {
   }
@@ -27,11 +27,10 @@ export class MainScheduleComponent implements OnInit {
   GetClassesByNumber = (number: number) => {
     let url = apiUrl + "/Classes/GetClassesByNumber";
     this.httpOptions.loadHeaders();
-     this.client
+    this.client
       .get(url + "/" + number, this.httpOptions.options)
       .subscribe(
-      (res: IClassToSelect[]) =>
-        {
+        (res: IClassToSelect[]) => {
           this.mode = true;
           this.classes = res;
         }
@@ -47,11 +46,11 @@ export class MainScheduleComponent implements OnInit {
         (res: IScheduleDay[]) => {
           this.days = res;
         }
-    );
+      );
   }
 
   Reset = () => {
-    if(this.mode && this.days != null) {
+    if (this.mode && this.days != null) {
       this.days = null;
     }
     else {
