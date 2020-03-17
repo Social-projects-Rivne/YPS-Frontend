@@ -1,21 +1,21 @@
-<button 
-  class="add-btn btn primary"
-  (click)="toggleForm()"
->
+<button class="add-btn btn primary" (click)="toggleForm()">
   {{ formIsOpen ? "close" : "add class" }}
 </button>
-<form class="form"
-[formGroup]="form"
-(ngSubmit)="onSubmit()"
-*ngIf="formIsOpen">
-    <h1 class="title">add class</h1>
-    <yps-form-field *ngFor="let field of fields" [field]="field" [formControlName]="field.name">
-    </yps-form-field>
-    <mat-form-field>
-        <mat-label>Select a class teacher</mat-label>
-        <mat-select formControlName="classTeacherId" disableRipple>
-          <mat-option *ngFor="let teacher of teachers" [value]="teacher.id">{{ teacher.fullName}}</mat-option>
-        </mat-select>
-    </mat-form-field>
-    <button type="submit" class="btn primary">submit</button>
+<form class="form" [formGroup]="form" (ngSubmit)="onSubmit()" *ngIf="formIsOpen">
+  <h1 class="title">add class</h1>
+  <yps-form-field *ngFor="let field of fields" [field]="field" [formControlName]="field.name">
+  </yps-form-field>
+  <mat-form-field>
+    <mat-label>Select a class teacher</mat-label>
+    <mat-select formControlName="classTeacherId" disableRipple>
+      <mat-option *ngFor="let teacher of teachers" [value]="teacher.id">{{ teacher.fullName}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field *ngIf="showPupils">
+    <mat-label>Select a pupils to class</mat-label>
+    <mat-select formControlName="selectedPupils" multiple>
+      <mat-option *ngFor="let pupils of listOfPupils" [value]="pupils.id">{{pupils.fullName}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <button type="submit" class="btn primary">submit</button>
 </form>
