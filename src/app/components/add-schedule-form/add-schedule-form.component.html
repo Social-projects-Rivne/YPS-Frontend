@@ -1,0 +1,54 @@
+<button class="add-btn btn primary" (click)="toggleForm()">
+  {{formIsOpen ? "close" : "add lesson" }}
+</button>
+<form class="form" [formGroup]="form" (ngSubmit)="onSubmit()" *ngIf="formIsOpen">
+
+  <h1 class="title">add lesson</h1>
+
+  <mat-form-field>
+    <mat-label>Select a class</mat-label>
+    <mat-select formControlName="classId" disableRipple>
+      <mat-option *ngFor="let class of classes" [value]="class.id">{{ class.name}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Select a discipline</mat-label>
+    <mat-select formControlName="disciplineId" disableRipple>
+      <mat-option *ngFor="let discipline of disciplines" [value]="discipline.id">{{ discipline.name}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field *ngIf="form.controls.disciplineId.value != null && !!form.controls.teacherId">
+    <mat-label>Select a teacher</mat-label>
+    <mat-select formControlName="teacherId" disableRipple>
+      <mat-option *ngFor="let teacher of teachers" [value]="teacher.id">{{teacher.fullName}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Choose a date</mat-label>
+    <input formControlName="lessonDate" matInput [matDatepicker]="picker">
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Select a number of a lesson</mat-label>
+    <mat-select formControlName="lessonNumber" disableRipple>
+      <mat-option *ngFor="let number of numbersOfLessons" [value]="number">{{number}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <yps-form-field *ngFor="let field of fields" [field]="field" [formControlName]="field.name">
+  </yps-form-field>
+
+  <mat-form-field *ngIf="form.controls.lessonDate.value != null &&
+    form.controls.lessonNumber.value != null && !!form.controls.auditoriumId">
+    <mat-label>Select an auditorium</mat-label>
+    <mat-select formControlName="auditoriumId" disableRipple>
+      <mat-option *ngFor="let aud of auditoriums" [value]="aud.id">{{ aud.auditorium}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <button type="submit" class="btn primary">submit</button>
+</form>

@@ -73,6 +73,8 @@ import { LessonCardComponent } from './components/lesson-card/lesson-card.compon
 import { LessonDayCardComponent } from './components/lesson-day-card/lesson-day-card.component';
 import { LessonItemComponent } from './components/lesson-item/lesson-item.component';
 import { JournalColumnItemComponent } from './components/journal-column-item/journal-column-item.component';
+import { AddScheduleFormComponent } from './components/add-schedule-form/add-schedule-form.component';
+import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
 
 @NgModule({
   declarations: [
@@ -131,6 +133,7 @@ import { JournalColumnItemComponent } from './components/journal-column-item/jou
     LessonDayCardComponent,
     LessonItemComponent,
     JournalColumnItemComponent,
+    AddScheduleFormComponent
   ],
   imports: [
     BrowserModule,
@@ -156,7 +159,8 @@ import { JournalColumnItemComponent } from './components/journal-column-item/jou
     MatInputModule,
     MatCheckboxModule,
     MatDatepickerModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    NgMultiSelectDropDownModule.forRoot()
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,
