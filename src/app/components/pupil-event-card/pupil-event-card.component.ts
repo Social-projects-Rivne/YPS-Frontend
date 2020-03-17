@@ -10,7 +10,7 @@ import { IEvent } from 'src/app/models/IEvent';
 export class PupilEventCardComponent implements OnInit {
   events: IEvent[] = [];
 
-  constructor( private eventService: EventService) { }
+  constructor(private eventService: EventService) { }
 
   ngOnInit(): void {
     this.eventService.getUpcomingEventsByPupil()
