@@ -24,7 +24,7 @@ export class PupilinfoService {
   }
   getPupilsToSelect = (numb: number): Observable<IPupilToSelect[]> => {
     this.httpOptions.loadHeaders();
-    return this.http.get<IPupilToSelect[]>(this.url + "/GetPupilsBySchoolShort" +"?numbOfClass=" + numb , this.httpOptions.options);
+    return this.http.get<IPupilToSelect[]>(this.url + "/GetPupilsBySchoolShort" + "?numbOfClass=" + numb, this.httpOptions.options);
   }
 }
 
