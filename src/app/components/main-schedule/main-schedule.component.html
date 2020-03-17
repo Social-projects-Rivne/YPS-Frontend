@@ -1,22 +1,18 @@
 <h3 class="header">School Schedule</h3>
-<div class="selected" *ngIf="selectedClass" (click)="Reset()">
+<div class="selected" *ngIf="classes" (click)="Reset()">
   <button class="btn">Back</button>
 </div>
-
 <div *ngIf="!mode then numbers;else classTemplate">
 
 </div>
-
 <ng-template #numbers>
   <div class="container">
     <h2 class="class-number-card" *ngFor="let number of classNumber" (click)=(GetClassesByNumber(number))>{{number}}</h2>
   </div>
 </ng-template>
-
 <ng-template #classTemplate>
   <div class="container" *ngIf="!days">
-    <h2 class="class-number-card" *ngFor="let class of classes" (click)=(ClassSelect(class))>{{class.name}}</h2>
+    <h2 class="class-number-card" *ngFor="let class of classes" (click)=(GetScheduleByClass(class.id))>{{class.name}}</h2>
   </div>
 </ng-template>
-
 <yps-schedule-card [days]="days"></yps-schedule-card>
