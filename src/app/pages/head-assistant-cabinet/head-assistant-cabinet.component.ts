@@ -26,7 +26,7 @@ export class HeadAssistantCabinetComponent implements OnInit {
     },
     {
       value: 'Schedule',
-      path: './schedules',
+      path: './schedule',
       icon: 'event'
     },
     {
@@ -39,6 +39,6 @@ export class HeadAssistantCabinetComponent implements OnInit {
   constructor(private pageService: PageService) { }
 
   ngOnInit(): void {
-    this.pageService.set("YPS | Head-Assistent");
+    this.pageService.set("YPS | Head-Assistant");
   }
 }
