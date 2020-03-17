@@ -16,11 +16,6 @@ export class PupilCabinetComponent implements OnInit {
       icon: 'account_circle'
     },
     {
-      value: 'Tests',
-      path: './tests',
-      icon: 'view_list'
-    },
-    {
       value: 'Schedule',
       path: './schedule',
       icon: 'event'

@@ -72,7 +72,6 @@ import { LessonCardComponent } from './components/lesson-card/lesson-card.compon
 import { LessonDayCardComponent } from './components/lesson-day-card/lesson-day-card.component';
 import { LessonItemComponent } from './components/lesson-item/lesson-item.component';
 import { AddScheduleFormComponent } from './components/add-schedule-form/add-schedule-form.component';
-import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
 
 @NgModule({
   declarations: [
@@ -156,7 +155,6 @@ import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
     MatCheckboxModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    NgMultiSelectDropDownModule.forRoot()
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,

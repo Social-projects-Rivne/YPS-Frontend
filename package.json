@@ -28,7 +28,6 @@
     "@ngtools/webpack": "^9.0.2",
     "angular-google-recaptcha": "^1.0.3",
     "js-cookie": "^2.2.1",
-    "ng-multiselect-dropdown": "^0.2.10",
     "rxjs": "~6.5.4",
     "tslib": "^1.10.0",
     "zone.js": "~0.10.2"
