@@ -18,7 +18,8 @@ export class MainScheduleComponent implements OnInit {
 
   constructor(
     private client: HttpClient,
-    private httpOptions: HttpOptionsService) { }
+    private httpOptions: HttpOptionsService
+    ) { }
 
   ngOnInit(): void {
   }
@@ -28,11 +29,13 @@ export class MainScheduleComponent implements OnInit {
     this.httpOptions.loadHeaders();
      this.client
       .get(url + "/" + number, this.httpOptions.options)
-      .subscribe((res: IClassToSelect[]) =>
-      {
-        this.mode = true;
+      .subscribe(
+      (res: IClassToSelect[]) =>
+        {
+         this.mode = true;
         this.classes = res;
-      });
+        }
+      );
   }
 
   GetScheduleByClass = (id: number) => {
@@ -40,8 +43,9 @@ export class MainScheduleComponent implements OnInit {
     this.httpOptions.loadHeaders();
     this.client
       .get(url + "/" + id, this.httpOptions.options)
-      .subscribe((res: IScheduleDay[]) => {
-      this.days = res;
+      .subscribe(
+        (res: IScheduleDay[]) => {
+          this.days = res;
     })
   }
 
