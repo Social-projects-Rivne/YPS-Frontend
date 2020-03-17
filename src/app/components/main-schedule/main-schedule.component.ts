@@ -26,7 +26,9 @@ export class MainScheduleComponent implements OnInit {
   GetClassesByNumber = (number: number) => {
     let url = apiUrl + "/Classes/GetClassesByNumber";
     this.httpOptions.loadHeaders();
-     this.client.get(url + "/" + number, this.httpOptions.options).subscribe((res: IClassToSelect[]) =>
+     this.client
+      .get(url + "/" + number, this.httpOptions.options)
+      .subscribe((res: IClassToSelect[]) =>
       {
         this.mode = true;
         this.classes = res;
@@ -36,7 +38,9 @@ export class MainScheduleComponent implements OnInit {
   GetScheduleByClass = (id: number) => {
     let url = apiUrl + "/Schedule/GetScheduleByClass";
     this.httpOptions.loadHeaders();
-    this.client.get(url + "/" + id, this.httpOptions.options).subscribe((res: IScheduleDay[]) => {
+    this.client
+      .get(url + "/" + id, this.httpOptions.options)
+      .subscribe((res: IScheduleDay[]) => {
       this.days = res;
     })
   }
