@@ -1,5 +1,17 @@
-<span class="index digit item-el">{{ index }}</span>
-<span class="number digit item-el">{{ classItem.number }}</span>
-<span class="character item-el">{{ classItem.character }}</span>
-<span class="teacher-name item-el">{{ classItem.teacherFullName }}</span>
-<span class="children-count digit item-el">{{ classItem.childrenCount }}</span>
+<div class="index">
+  <span class="index-value digit">
+    {{ index }}
+  </span>
+</div>
+<h3 class="class">{{ classItem.number + " - " + classItem.character }}</h3>
+<p class="class-teacher">
+  <span class="class-teacher-title">class teacher, </span>
+  <span class="class-teacher-value">{{ classItem.teacherFullName }}</span>
+</p>
+<p class="children-count digit">
+  the class has
+  <span class="digit children-count-value">
+    {{ classItem.childrenCount }}
+  </span>
+  {{ classItem.childrenCount == 1 ? "pupil" : "pupils" }}
+</p>
