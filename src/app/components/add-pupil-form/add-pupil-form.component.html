@@ -1,4 +1,4 @@
-<button 
+<button
   class="add-btn btn primary"
   (click)="toggleForm()"
 >
@@ -19,11 +19,5 @@
     [formControlName]="field.name"
   >
   </yps-form-field>
-  <mat-form-field>
-    <mat-label>Select a class</mat-label>
-    <mat-select formControlName="classId" disableRipple>
-      <mat-option *ngFor="let class of classes" [value]="class.id">{{ class.name }}</mat-option>
-    </mat-select>
-  </mat-form-field>
   <button type="submit" class="btn primary">submit</button>
 </form>

@@ -17,7 +17,6 @@ import { HttpOptionsService } from 'src/app/services/http-options/http-options.s
 export class AddPupilFormComponent implements OnInit {
   form: FormGroup;
   fields: IFormField[] = [];
-  classes: IClassToSelect[];
   formIsOpen: boolean = false;
 
   @ViewChild('formRef') userSubFormRef: { fields: IFormField[], userSubForm: FormGroup };
@@ -35,21 +34,14 @@ export class AddPupilFormComponent implements OnInit {
       "user": [null],
       "classId": [null]
     });
-
-    this.http.get(`${apiUrl}/classes/getbyschool`, this.httpOptionsService.options)
-      .subscribe(
-        (successRes: IClassToSelect[]) => {
-          this.classes = successRes;
-        }
-      );
   }
 
   toggleForm = () => this.formIsOpen = !this.formIsOpen;
-  
+
   onSubmit = () => {
     const thisFormValidationResponse = validationHelper(this.form.controls, this.fields);
     const subFormValidationResponse = validationHelper(this.userSubFormRef.userSubForm.controls, this.userSubFormRef.fields);
-    
+
     this.fields = thisFormValidationResponse.fields;
     this.userSubFormRef.fields = subFormValidationResponse.fields;
 
