@@ -31,8 +31,7 @@ export class AddPupilFormComponent implements OnInit {
     this.httpOptionsService.loadHeaders();
 
     this.form = this.formBuilder.group({
-      "user": [null],
-      "classId": [null]
+      "user": [null]
     });
   }
 
