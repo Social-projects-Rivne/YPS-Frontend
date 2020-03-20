@@ -13,6 +13,7 @@ import { HttpClient } from "@angular/common/http";
 import { HttpOptionsService } from "src/app/services/http-options/http-options.service";
 import { PupilsService } from "src/app/services/pupils/pupils.service";
 import { IPupilToSelect } from "src/app/models/IPupilToSelect";
+import { ClassesService } from 'src/app/services/classes/classes.service'
 
 @Component({
   selector: "yps-add-class-form",
@@ -53,7 +54,8 @@ export class AddClassFormComponent implements OnInit {
     private http: HttpClient,
     private pupilsService: PupilsService,
     private teacherService: TeacherinfoService,
-    private httpOptionsService: HttpOptionsService
+    private httpOptionsService: HttpOptionsService,
+    private classesService: ClassesService
   ) {}
 
   toggleForm = () => (this.formIsOpen = !this.formIsOpen);
@@ -83,12 +85,12 @@ export class AddClassFormComponent implements OnInit {
         ...this.form.value,
         number: parseInt(this.form.value.number, 10)
       };
-      console.log(request);
       return this.http
         .post(apiUrl + "/Classes", request, this.httpOptionsService.options)
         .subscribe((successRes: any) => {
           this.toggleForm();
           console.log("add classes response", successRes);
+          this.classesService.getClassesBySchool();
         });
     }
   };
