@@ -38,7 +38,7 @@ export class AddParentFormComponent implements OnInit {
     private httpOptionsService: HttpOptionsService,
     private http: HttpClient,
     private service: ParentsService
-  ) { }
+  ) {}
 
   ngOnInit() {
     this.httpOptionsService.loadHeaders();
