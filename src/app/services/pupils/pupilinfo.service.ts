@@ -5,7 +5,6 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { HttpOptionsService } from '../http-options/http-options.service';
 import { IPupilToSelect } from 'src/app/models/IPupilToSelect';
 import { apiUrl } from 'src/constants/urls';
-import { IUser } from 'src/app/models/IUser';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -23,7 +22,7 @@ export class PupilinfoService {
   getPupils = () => {
     this.httpOptionsService.loadHeaders();
     return this.http
-      .get(`${apiUrl}/GetBySchool`, this.httpOptionsService.options)
+      .get(`${apiUrl}/Pupils/GetBySchool`, this.httpOptionsService.options)
       .subscribe(
         (response: IPupil[]) => {
           this.Pupils = response;
