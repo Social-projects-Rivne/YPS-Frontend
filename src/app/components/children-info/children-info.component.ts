@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { ParentService } from 'src/app/services/parents/parent.service';
+import { ParentsService } from 'src/app/services/parents/parents.service';
 import { IUser } from 'src/app/models/IUser';
 import { HttpOptionsService } from 'src/app/services/http-options/http-options.service';
 import { apiUrl } from 'src/constants/urls';
@@ -12,7 +12,7 @@ import { apiUrl } from 'src/constants/urls';
 })
 export class ChildrenInfoComponent implements OnInit {
   constructor(
-    private service: ParentService,
+    private service: ParentsService,
     private http: HttpClient,
     private httpOptionsService: HttpOptionsService
   ) { }

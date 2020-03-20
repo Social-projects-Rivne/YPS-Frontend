@@ -5,26 +5,31 @@ import { Observable } from 'rxjs';
 import { apiUrl } from 'src/constants/urls';
 import { HttpOptionsService } from '../http-options/http-options.service';
 import { IUser } from 'src/app/models/IUser';
+import { FormGroup } from '@angular/forms';
 
 @Injectable({
   providedIn: 'root'
 })
-export class ParentService {
+export class ParentsService {
 
   private url: string = apiUrl + "/Parents";
-  
-  constructor(private http:HttpClient, private httpOptionsService: HttpOptionsService) { }
 
-  getParentsInfo = () : Observable<IParent[]> =>{
-    return this.http.get<IParent[]>(this.url, this.httpOptionsService.options);
+  public ParentInfo: IParent[];
+
+  constructor(private http: HttpClient, private httpOptionsService: HttpOptionsService) { }
+
+  getParentsInfo = () => {
+    return this.http.get(this.url, this.httpOptionsService.options).subscribe((res: IParent[]) => {
+      this.ParentInfo = res;
+    });
   }
 
-  getParentProfileInfo = () :Observable<IParent> => {
+  getParentProfileInfo = (): Observable<IParent> => {
     this.httpOptionsService.loadHeaders();
     return this.http.get<IParent>(this.url + "/GetParentProfileInfo", this.httpOptionsService.options)
   }
 
-  getPupilsInfoByParent = () :Observable<IUser[]> => {
+  getPupilsInfoByParent = (): Observable<IUser[]> => {
     this.httpOptionsService.loadHeaders();
     return this.http.get<IUser[]>(this.url + "/GetPupilsInfoByParent", this.httpOptionsService.options)
   }
