@@ -141,7 +141,7 @@ import { MAT_MOMENT_DATE_ADAPTER_OPTIONS, MatMomentDateModule } from '@angular/m
     HttpClientModule,
     BrowserAnimationsModule,
     RecaptchaModule.forRoot({
-      siteKey: '6LefHtYUAAAAABkKaKlf2kwUSmQleDf0HAZiUQse',
+      siteKey: "6LefHtYUAAAAABkKaKlf2kwUSmQleDf0HAZiUQse"
     }),
     CommonModule,
     RouterModule,
@@ -160,18 +160,19 @@ import { MAT_MOMENT_DATE_ADAPTER_OPTIONS, MatMomentDateModule } from '@angular/m
     MatNativeDateModule,
     MatMomentDateModule
   ],
-  providers: [{
-        provide: HTTP_INTERCEPTORS,
-        useClass: TokenInterceptor,
-        multi: true
-      },
-        {
-          provide: MAT_MOMENT_DATE_ADAPTER_OPTIONS,
-          useValue: {
-            useUtc: true
-          }
-        }
-    ],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenInterceptor,
+      multi: true
+    },
+    {
+      provide: MAT_MOMENT_DATE_ADAPTER_OPTIONS,
+      useValue: {
+        useUtc: true
+      }
+    }
+  ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}
