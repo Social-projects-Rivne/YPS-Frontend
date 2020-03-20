@@ -1,18 +1,25 @@
 <span class="index digit item-el">{{ index }}</span>
 <span class="pupil-name digit item-el"> {{pupilShortInfo.fullName}} </span>
-<mat-select class="select-mark" [(ngModel)]="classwork" name="classwork">
-  <mat-option *ngFor="let mark of marks" [value]="mark">
-    {{mark}}
-  </mat-option>
-</mat-select>
-<mat-select class="select-mark"  [(ngModel)]="homework" name="homework">
-  <mat-option *ngFor="let mark of marks" [value]="mark">
-    {{mark}}
-  </mat-option>
-</mat-select>
-<mat-select class="select-mark"  [(ngModel)]="test" name="test">
-  <mat-option *ngFor="let mark of marks" [value]="mark">
-    {{mark}}
-  </mat-option>
-</mat-select>
-<button (click)="onSelected()"></button>
+<form [formGroup]="form">
+  <mat-form-field class="">
+    <mat-select formControlName="classwork" class="select-mark" >
+      <mat-option *ngFor="let mark of marks" [value]="mark">
+        {{mark}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-select class="select-mark">
+      <mat-option *ngFor="let mark of marks" [value]="mark">
+        {{mark}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-select class="select-mark" >
+      <mat-option *ngFor="let mark of marks" [value]="mark">
+        {{mark}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+</form>

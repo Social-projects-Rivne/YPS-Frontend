@@ -2,7 +2,7 @@
 <div class="topic">
     <mat-form-field class="topic-value">
         <mat-label>Topic of the Lesson</mat-label>
-        <input matInput value="">
+        <input matInput [(ngModel)]="topic">
     </mat-form-field>
 </div>
 <div class="header">
@@ -16,7 +16,7 @@
   *ngFor="let pupil of pupils; index as index"
   [index]="index"
   [pupilShortInfo]="pupil"
-  (lessonMarks)="addItem($event)"
+  (lessonMarks)="addMarks($event)"
 >
 </yps-journal-column-item>
 <div class="finish">

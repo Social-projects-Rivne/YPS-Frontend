@@ -4,6 +4,7 @@ import { IShortInfoPupil } from 'src/app/models/IShortInfoPupil';
 import { HttpOptionsService } from 'src/app/services/http-options/http-options.service';
 import { HttpClient } from '@angular/common/http';
 import { apiUrl } from 'src/constants/urls';
+import { IPupilLessonMarks } from 'src/app/models/IPupilLessonMarks';
 
 @Component({
   selector: 'yps-journal-column',
@@ -14,10 +15,11 @@ export class JournalColumnComponent implements OnInit {
   id: string;
   classId: string;
   teacherId: string;
+  topic: string = null;
 
-  lessonMarks = [''];
+  lessonMarks: IPupilLessonMarks[] = [];
 
-  addItem(newItem: string) {
+  addMarks(newItem: IPupilLessonMarks) {
     this.lessonMarks.push(newItem);
   }
   pupils: IShortInfoPupil[];
@@ -39,5 +41,6 @@ export class JournalColumnComponent implements OnInit {
   }
   onClick() {
     console.log(this.lessonMarks);
+    console.log(this.topic);
   }
 }
