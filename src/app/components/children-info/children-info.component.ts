@@ -12,7 +12,7 @@ import { apiUrl } from 'src/constants/urls';
 })
 export class ChildrenInfoComponent implements OnInit {
   constructor(
-    private parentsService: ParentsService,
+    private service: ParentsService,
     private http: HttpClient,
     private httpOptionsService: HttpOptionsService
   ) { }
@@ -35,7 +35,7 @@ export class ChildrenInfoComponent implements OnInit {
   }
 
   getPupilsDataByParent = () => {
-    this.parentsService.getPupilsInfoByParent()
+    this.service.getPupilsByParent()
     .subscribe(
       (successRes: IUser[]) => {
         console.log(this.pupils = successRes);

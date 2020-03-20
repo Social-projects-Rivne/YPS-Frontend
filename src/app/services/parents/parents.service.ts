@@ -27,12 +27,12 @@ export class ParentsService {
       );
   }
 
-  getParentProfileInfo = (): Observable<IParent> => {
+  getParentProfile = (): Observable<IParent> => {
     this.httpOptionsService.loadHeaders();
     return this.http.get<IParent>(this.url + "/GetParentProfileInfo", this.httpOptionsService.options)
   }
 
-  getPupilsInfoByParent = (): Observable<IUser[]> => {
+  getPupilsByParent = (): Observable<IUser[]> => {
     this.httpOptionsService.loadHeaders();
     return this.http.get<IUser[]>(this.url + "/GetPupilsInfoByParent", this.httpOptionsService.options)
   }

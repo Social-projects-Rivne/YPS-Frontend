@@ -5,6 +5,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { HttpOptionsService } from '../http-options/http-options.service';
 import { IPupilToSelect } from 'src/app/models/IPupilToSelect';
+import { IUser } from 'src/app/models/IUser';
 
 @Injectable({
   providedIn: 'root'
@@ -25,6 +26,10 @@ export class PupilinfoService {
   getPupilsToSelect = (numb: number): Observable<IPupilToSelect[]> => {
     this.httpOptions.loadHeaders();
     return this.http.get<IPupilToSelect[]>(this.url + "/GetPupilsBySchoolShort" + "?numbOfClass=" + numb, this.httpOptions.options);
+  }
+  getPupilsByParent = (): Observable<IUser[]> => {
+    this.httpOptions.loadHeaders();
+    return this.http.get<IUser[]>(this.url + "/GetPupilsInfoByParent", this.httpOptions.options)
   }
 }
 
