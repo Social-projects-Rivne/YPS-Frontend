@@ -8,8 +8,9 @@ import { IEvent } from 'src/app/models/IEvent';
   styleUrls: ['./pupil-event-card.component.scss']
 })
 export class PupilEventCardComponent implements OnInit {
-  public events: IEvent[] = [];
-  constructor( private eventService: EventService) { }
+  events: IEvent[] = [];
+
+  constructor(private eventService: EventService) { }
 
   ngOnInit(): void {
     this.eventService.getUpcomingEventsByPupil()

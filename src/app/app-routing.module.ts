@@ -29,7 +29,6 @@ import { TeacherCabinetComponent } from './pages/teacher-cabinet/teacher-cabinet
 import { ParentCabinetComponent } from './pages/parent-cabinet/parent-cabinet.component';
 import { ChildrenInfoComponent } from './components/children-info/children-info.component';
 import { ParentProfileComponent } from './pages/parent-profile/parent-profile.component';
-import { PupilEventsComponent } from './components/pupil-events/pupil-events.component';
 import { PupilCabinetComponent } from './pages/pupil-cabinet/pupil-cabinet.component';
 import { UpcomingTestsComponent } from './pages/upcoming-tests/upcoming-tests.component';
 import { HeadMasterCabinetComponent } from './pages/head-master-cabinet/head-master-cabinet.component';
@@ -85,7 +84,6 @@ const parentRoutes: Routes = [
 ];
 const pupilRoutes: Routes = [
   { path: '', canActivateChild: [AuthGuard], component: PupilProfileComponent },
-  { path: 'events', component: PupilEventsComponent },
   { path: 'schedule', canActivateChild: [AuthGuard], component: ScheduleComponent }
 ];
 

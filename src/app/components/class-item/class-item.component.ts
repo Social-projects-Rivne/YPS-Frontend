@@ -7,9 +7,8 @@ import { IClass } from 'src/app/models/IClass';
   styleUrls: ['./class-item.component.scss']
 })
 export class ClassItemComponent implements OnInit {
-
-  @Input() classItem: IClass; 
-  @Input() index: number | string;
+  @Input() classItem: IClass;
+  @Input() index: number;
 
   constructor() { }
 

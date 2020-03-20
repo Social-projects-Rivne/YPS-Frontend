@@ -2,39 +2,68 @@
 
 :host {
   display: grid;
-  grid-template-columns: calc(3rem + 2px) 5rem 6rem 1fr 9rem;
-
-  .item-el {
-    font-size: 0.85rem;
-    text-align: center;
-    line-height: 3rem;
-    padding: 0 .5rem;
-    border: {
-      top: 1px solid $light;
-      bottom: 1px solid $light;
-    };
-
-    &:last-child {
-      border-right: 1px solid $light;
-    }
-  }
+  grid-template-columns: auto 1fr;
+  grid-column-gap: 1.5rem;
+  padding: 1rem;
+  border: 1px solid $light;
 
   .index {
     display: grid;
+    position: relative;
     align-content: center;
-    font-weight: bold;
-    width: calc(3rem + 2px);
-    height: calc(3rem + 2px);
-    background-color: $accent;
-    color: #ffffff;
     text-align: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    grid-row: 1 / 4;
+
+    &-value {
+      z-index: 1;
+      color: #ffffff;
+      font-weight: bold;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      transform: rotate(45deg);
+      background-color: $accent;
+    }
   }
 
-  .character {
+  .class {
     text-transform: capitalize;
   }
 
-  .teacher-name {
-    text-align: left;
+  .class-teacher {
+    &-title {
+      font-size: .8rem;
+      text-transform: capitalize;
+      font-weight: 600;
+      color: $gray;
+    }
+
+    &-value {
+      font-size: .9rem;
+    }
+  }
+
+  .children-count {
+    color: $gray;
+    font-size: .8rem;
+    justify-self: end;
+    padding-top: 1rem;
+
+    &-value {
+      font-weight: 600;
+      color: $accent;
+    }
+
+    &::first-letter {
+      text-transform: capitalize;
+    }
   }
 }
