@@ -61,7 +61,7 @@ import { ProfileCardComponent } from './components/profile-card/profile-card.com
 import { PupilProfileComponent } from './pages/pupil-profile/pupil-profile.component';
 import { PupilEventCardComponent } from './components/pupil-event-card/pupil-event-card.component';
 import { AddUpcomingTestFormComponent } from './components/add-upcoming-test-form/add-upcoming-test-form.component';
-import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatDatepickerModule  } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core'
 import { ScheduleCardComponent } from './components/schedule-card/schedule-card.component';
 import { ScheduleItemComponent } from './components/schedule-item/schedule-item.component';
@@ -73,6 +73,7 @@ import { LessonCardComponent } from './components/lesson-card/lesson-card.compon
 import { LessonDayCardComponent } from './components/lesson-day-card/lesson-day-card.component';
 import { LessonItemComponent } from './components/lesson-item/lesson-item.component';
 import { AddScheduleFormComponent } from './components/add-schedule-form/add-schedule-form.component';
+import { MAT_MOMENT_DATE_ADAPTER_OPTIONS, MatMomentDateModule } from '@angular/material-moment-adapter';
 
 @NgModule({
   declarations: [
@@ -157,11 +158,19 @@ import { AddScheduleFormComponent } from './components/add-schedule-form/add-sch
     MatCheckboxModule,
     MatDatepickerModule,
     MatNativeDateModule,
+    MatMomentDateModule
   ],
   providers: [{
-    provide: HTTP_INTERCEPTORS,
-     useClass: TokenInterceptor,
-      multi: true}
+        provide: HTTP_INTERCEPTORS,
+        useClass: TokenInterceptor,
+        multi: true
+      },
+        {
+          provide: MAT_MOMENT_DATE_ADAPTER_OPTIONS,
+          useValue: {
+            useUtc: true
+          }
+        }
     ],
   bootstrap: [AppComponent]
 })
