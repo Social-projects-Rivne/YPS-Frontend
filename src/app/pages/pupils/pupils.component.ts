@@ -1,6 +1,6 @@
 import { IPupil } from '../../models/IPupil';
 import { Component, OnInit } from '@angular/core';
-import { PupilinfoService } from '../../services/pupils/pupilinfo.service';
+import { PupilsService } from '../../services/pupils/pupils.service';
 
 @Component({
   selector: 'yps-pupils',
@@ -10,7 +10,7 @@ import { PupilinfoService } from '../../services/pupils/pupilinfo.service';
 
 export class PupilsComponent implements OnInit {
 
-  constructor(private pupilService : PupilinfoService) {}
+  constructor(public pupilsService: PupilsService) {}
 
   pupilsData: IPupil[];
   isLoading: boolean = true;
@@ -26,12 +26,7 @@ export class PupilsComponent implements OnInit {
     { def: "dateOfBirth", label: "Date of birth" },
   ];
 
-  getPupilsData = () => {
-    this.pupilService.getPupils()
-      .subscribe(data => {this.pupilsData = data;  this.isLoading = false;})
-  }
-
   ngOnInit() {
-    this.getPupilsData();
+    this.pupilsService.getPupils();
   }
 }
