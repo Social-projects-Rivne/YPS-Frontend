@@ -47,7 +47,6 @@ export class AddTeacherFormComponent implements OnInit {
   onSubmit = () => {
     const thisFormValidationResponse = validationHelper(this.form.controls, this.fields);
     const subFormValidationResponse = validationHelper(this.userSubFormRef.userSubForm.controls, this.userSubFormRef.fields);
-    console.log(this.form.value);
     this.fields = thisFormValidationResponse.fields;
     this.userSubFormRef.fields = subFormValidationResponse.fields;
 
