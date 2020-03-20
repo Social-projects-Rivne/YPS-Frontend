@@ -3,6 +3,7 @@
 :host {
   display: grid;
   grid-template-columns: calc(2.5rem + 2px) 1fr 3.5rem 3.5rem 3.5rem 0.75fr;
+  align-content: center;
   row-gap: 0.5rem; 
 
   .item-el {
@@ -31,7 +32,9 @@
   }
 
   .pupil-name {
+    align-self: center;
     text-align: left;
+    padding: 0.25rem; 
   }
   .select-mark {
     border: 1px solid $light;
