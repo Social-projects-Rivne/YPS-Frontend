@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { IShortInfoPupil } from 'src/app/models/IShortInfoPupil';
 
 @Component({
@@ -8,8 +8,16 @@ import { IShortInfoPupil } from 'src/app/models/IShortInfoPupil';
 })
 export class JournalColumnItemComponent implements OnInit {
   @Input() pupilShortInfo: IShortInfoPupil;
-  @Input() index: number | string;
-  marks: string[] = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "H"]
+  @Input() index: number;
+  @Output() lessonMarks = new EventEmitter<string>();
+
+  marks: string[] = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "Absent"];
+
+  
+  classwork: string;
+  homework: string;
+  test: string;
+
 
   constructor() { }
 
@@ -18,4 +26,11 @@ export class JournalColumnItemComponent implements OnInit {
       this.index = this.index + 1;
     }
   }
+
+  onSelected() {
+    console.log(`Value ${this.classwork} `);
+    this.lessonMarks.emit(this.classwork);
+    this.pupilShortInfo.id;
+  }
+
 }

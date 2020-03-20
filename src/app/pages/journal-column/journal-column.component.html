@@ -1,21 +1,22 @@
+<a routerLink="/teacher/lessons" class="back-link">back<span class="arrow-back">‹</span></a>
 <div class="topic">
     <mat-form-field class="topic-value">
         <mat-label>Topic of the Lesson</mat-label>
-        <textarea matInput></textarea>
+        <input matInput value="">
     </mat-form-field>
-    <button (click)="onClick()" class="btn topic-save">save topic</button>
 </div>
 <div class="header">
     <span class="index">№</span>
-    <span class="select-mark">Full name</span>
-    <span class="select-mark">CW</span>
-    <span class="select-mark">HW</span>
+    <span class="full-name">Full name</span>
+    <span class="select-mark">Classwork</span>
+    <span class="select-mark">Homework</span>
     <span class="select-mark">Test</span>
 </div>
 <yps-journal-column-item
   *ngFor="let pupil of pupils; index as index"
   [index]="index"
   [pupilShortInfo]="pupil"
+  (lessonMarks)="addItem($event)"
 >
 </yps-journal-column-item>
 <div class="finish">

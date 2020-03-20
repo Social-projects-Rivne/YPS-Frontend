@@ -15,9 +15,10 @@ export class JournalColumnComponent implements OnInit {
   classId: string;
   teacherId: string;
 
-  headerJournalColumn: IShortInfoPupil = {
-    fullName: "Pupil",
-    id: null
+  lessonMarks = [''];
+
+  addItem(newItem: string) {
+    this.lessonMarks.push(newItem);
   }
   pupils: IShortInfoPupil[];
 
@@ -37,6 +38,6 @@ export class JournalColumnComponent implements OnInit {
       );
   }
   onClick() {
-    console.log(this.classId + " - ID class ");
+    console.log(this.lessonMarks);
   }
 }

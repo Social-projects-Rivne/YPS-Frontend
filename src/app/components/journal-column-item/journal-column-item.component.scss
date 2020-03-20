@@ -2,21 +2,23 @@
 
 :host {
   display: grid;
-  grid-template-columns: calc(2.5rem + 2px) 1fr 3.5rem 3.5rem 3.5rem 0.75fr;
+  grid-template-columns: calc(3rem + 2px) 1fr 8rem 8rem 8rem 0.25fr;
   align-content: center;
   row-gap: 0.5rem; 
+  grid-column-gap: 1rem;
+
+  .mat-select {
+    height: 100%;
+  }
 
   .item-el {
+    align-self: center;
     text-align: center;
     line-height: 2rem;
-    padding: 0 .5rem;
-    border: {
-    top: 1px solid $light;
-    bottom: 1px solid $light;
-    };
-
+    padding: .5rem;
+    border: 1px solid $light;
     &:last-child {
-    border-right: 1px solid $light;
+     border-right: 1px solid $light;
     }
   }
 
@@ -24,8 +26,7 @@
     display: grid;
     align-content: center;
     font-weight: bold;
-    width: calc(2.5rem + 2px);
-    height: calc(2.5rem + 2px);
+   
     background-color: $accent;
     color: #ffffff;
     text-align: center;
@@ -34,10 +35,11 @@
   .pupil-name {
     align-self: center;
     text-align: left;
-    padding: 0.25rem; 
   }
   .select-mark {
+    text-align: center;
+    align-self: center;
     border: 1px solid $light;
-    padding: 0.5rem; 
+    padding: 0.8rem; 
   }
 }
