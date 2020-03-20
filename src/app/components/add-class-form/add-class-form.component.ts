@@ -11,7 +11,7 @@ import { validationHelper } from "src/utils/helpers/validation-helper";
 import { apiUrl } from "src/constants/urls";
 import { HttpClient } from "@angular/common/http";
 import { HttpOptionsService } from "src/app/services/http-options/http-options.service";
-import { PupilinfoService } from "src/app/services/pupils/pupilinfo.service";
+import { PupilsService } from "src/app/services/pupils/pupils.service";
 import { IPupilToSelect } from "src/app/models/IPupilToSelect";
 import { ClassesService } from 'src/app/services/classes/classes.service'
 
@@ -53,7 +53,7 @@ export class AddClassFormComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private http: HttpClient,
-    private pupilService: PupilinfoService,
+    private pupilsService: PupilsService,
     private teacherService: TeacherinfoService,
     private httpOptionsService: HttpOptionsService,
     private classesService: ClassesService
@@ -67,7 +67,7 @@ export class AddClassFormComponent implements OnInit {
       .subscribe(data => (this.teachers = data));
   };
   getPupilsToSelectData = (numb: number) => {
-    this.pupilService
+    this.pupilsService
       .getPupilsToSelect(numb)
       .subscribe(data => (this.listOfPupils = data));
   };
