@@ -11,10 +11,8 @@ import { IUser } from 'src/app/models/IUser';
 export class TeachersComponent implements OnInit {
 
   constructor(
-    private userService: TeacherinfoService
+    public teacherService: TeacherinfoService,
   ) {}
-
-  teachersData: IUser[];
 
   columns = [
     { def: "id", label: "Id" },
@@ -29,8 +27,7 @@ export class TeachersComponent implements OnInit {
   ];
 
   getTeachersData = () => {
-    this.userService.getTeachers()
-      .subscribe(data => this.teachersData = data)
+    this.teacherService.getTeachers();
   }
 
   ngOnInit() {

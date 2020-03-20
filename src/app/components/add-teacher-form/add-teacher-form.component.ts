@@ -1,3 +1,4 @@
+import { TeacherinfoService } from 'src/app/services/teachers/teacherinfo.service';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { FormBuilder, FormGroup } from '@angular/forms';
@@ -30,7 +31,8 @@ export class AddTeacherFormComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private http: HttpClient,
-    private httpOptionsService: HttpOptionsService
+    private httpOptionsService: HttpOptionsService,
+    private teacherService : TeacherinfoService
   ) {}
 
   ngOnInit() {
@@ -55,6 +57,7 @@ export class AddTeacherFormComponent implements OnInit {
       return this.http.post(apiUrl + "/teachers", this.form.value, this.httpOptionsService.options)
       .subscribe(
         (successRes: any) => {
+          this.teacherService.getTeachers();
           this.toggleForm();
           console.log('add teacher response', successRes);
         }

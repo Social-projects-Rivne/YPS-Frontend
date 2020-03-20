@@ -11,20 +11,31 @@ import { IUser } from 'src/app/models/IUser';
 })
 export class TeacherinfoService {
   private url: string = apiUrl + "/Teachers";
+  Teachers: ITeacher[] = [];
 
-  constructor(private httpOptions: HttpOptionsService, private http: HttpClient) { }
+  constructor(
+    private httpOptionsService: HttpOptionsService,
+    private http: HttpClient
+  ) { }
 
-  getTeachers = (): Observable<IUser[]> => {
-    this.httpOptions.loadHeaders();
-    return this.http.get<IUser[]>(this.url + "/GetTeachersBySchoolId", this.httpOptions.options);
+  getTeachers = () => {
+    this.httpOptionsService.loadHeaders();
+    return this.http
+      .get(`${this.url}/GetTeachersBySchoolId`, this.httpOptionsService.options)
+      .subscribe(
+        (response: ITeacher[]) => {
+          this.Teachers = response;
+        }
+      );
   }
+
   getTeacherByID = (): Observable<IUser> => {
-    this.httpOptions.loadHeaders();
-    return this.http.get<IUser>(this.url + "/GetTeacherById", this.httpOptions.options);
+    this.httpOptionsService.loadHeaders();
+    return this.http.get<IUser>(this.url + "/GetTeacherById", this.httpOptionsService.options);
   }
 
-  getTeachersToSelect = (): Observable<ITeacherToSelect[]>=>{
-    this.httpOptions.loadHeaders();
-    return this.http.get<ITeacherToSelect[]>(this.url + "/GetTeachersBySchoolShort", this.httpOptions.options);
+  getTeachersToSelect = (): Observable<ITeacherToSelect[]> => {
+    this.httpOptionsService.loadHeaders();
+    return this.http.get<ITeacherToSelect[]>(this.url + "/GetTeachersBySchoolShort", this.httpOptionsService.options);
   }
 }
