@@ -26,12 +26,7 @@ export class PupilsComponent implements OnInit {
     { def: "dateOfBirth", label: "Date of birth" },
   ];
 
-  getPupilsData = () => {
-    this.pupilService.getPupils()
-      .subscribe(data => {this.pupilsData = data;  this.isLoading = false;})
-  }
-
   ngOnInit() {
-    this.getPupilsData();
+    this.pupilService.getPupils();
   }
 }

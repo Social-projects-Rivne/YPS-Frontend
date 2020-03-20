@@ -5,9 +5,9 @@ import { validationHelper } from 'src/utils/helpers/validation-helper';
 import { requiredValidator } from 'src/utils/validators/required-validator';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { apiUrl } from 'src/constants/urls';
-import { IClassToSelect } from 'src/app/models/IClassToSelect';
 import { get } from 'js-cookie';
 import { HttpOptionsService } from 'src/app/services/http-options/http-options.service';
+import { PupilinfoService } from 'src/app/services/pupils/pupilinfo.service';
 
 @Component({
   selector: 'yps-add-pupil-form',
@@ -24,7 +24,8 @@ export class AddPupilFormComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private http: HttpClient,
-    private httpOptionsService: HttpOptionsService
+    private httpOptionsService: HttpOptionsService,
+    private pupilService : PupilinfoService
   ) {}
 
   ngOnInit() {
@@ -48,6 +49,7 @@ export class AddPupilFormComponent implements OnInit {
       return this.http.post(apiUrl + "/pupils", this.form.value, this.httpOptionsService.options)
         .subscribe(
           (successRes: any) => {
+            this.pupilService.getPupils();
             this.toggleForm();
             console.log('add pupil response', successRes);
           }
