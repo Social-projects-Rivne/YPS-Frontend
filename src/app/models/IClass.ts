@@ -1,7 +1,7 @@
 export interface IClass {
   id?: number;
   character: string;
-  number: number | string;
+  number: number;
   teacherFullName: string;
-  childrenCount: number | string;
+  childrenCount: number;
 }

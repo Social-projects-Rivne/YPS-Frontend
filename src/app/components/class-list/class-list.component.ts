@@ -10,13 +10,6 @@ import { IClass } from 'src/app/models/IClass';
   styleUrls: ['./class-list.component.scss']
 })
 export class ClassListComponent implements OnInit {
-  headerClass: IClass = {
-    number: "number",
-    character: "character",
-    teacherFullName: "teacher name",
-    childrenCount: "children count"
-  }
-  
   classes: IClass[];
 
   constructor(
