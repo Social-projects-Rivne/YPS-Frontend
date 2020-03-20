@@ -1,11 +1,11 @@
-import { ParentService } from '../../services/parents/parent.service';
+import { ParentsService } from '../../services/parents/parents.service';
 import { IParent } from './../../models/IParent';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'yps-parents',
   templateUrl: './parents.component.html',
-  styleUrls: ['./parents.component.scss','../../../scss/cabinet-sub-pages.scss']
+  styleUrls: ['./parents.component.scss', '../../../scss/cabinet-sub-pages.scss']
 })
 export class ParentsComponent implements OnInit {
 
@@ -17,17 +17,13 @@ export class ParentsComponent implements OnInit {
     { def: "phoneNumber", label: "Phone" },
     { def: "email", label: "Email" },
     { def: "workInfo", label: "Work Info" },
-    { def: "children", label: "Children"}
+    { def: "children", label: "Children" }
   ];
 
-  constructor(private service:ParentService) {}
-  
-  
-  parentsData : IParent[] ;
+  constructor(public parentsService: ParentsService) { }
+
   ngOnInit() {
-    this.service.getParentsInfo().subscribe(p=>{
-      this.parentsData=p
-    });
+    this.parentsService.getParents();
   }
 
 }
