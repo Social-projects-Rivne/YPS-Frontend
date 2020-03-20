@@ -25,7 +25,7 @@ export class AddPupilFormComponent implements OnInit {
     private formBuilder: FormBuilder,
     private http: HttpClient,
     private httpOptionsService: HttpOptionsService,
-    private pupilService : PupilsService
+    private pupilsService : PupilsService
   ) {}
 
   ngOnInit() {
@@ -50,7 +50,7 @@ export class AddPupilFormComponent implements OnInit {
         .subscribe(
           (successRes: any) => {
             this.toggleForm();
-            this.pupilService.getPupils();
+            this.pupilsService.getPupils();
             console.log('add pupil response', successRes);
           }
         );
