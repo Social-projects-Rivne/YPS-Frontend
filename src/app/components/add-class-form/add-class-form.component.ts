@@ -15,7 +15,6 @@ import { PupilsService } from "src/app/services/pupils/pupils.service";
 import { IPupilToSelect } from "src/app/models/IPupilToSelect";
 import { ClassesService } from 'src/app/services/classes/classes.service'
 
-
 @Component({
   selector: "yps-add-class-form",
   templateUrl: "./add-class-form.component.html",
