@@ -54,7 +54,6 @@ import { ChildrenInfoComponent } from './components/children-info/children-info.
 import { PupilInfoCardComponent } from './components/pupil-info-card/pupil-info-card.component';
 import { ClassListComponent } from './components/class-list/class-list.component';
 import { ClassItemComponent } from './components/class-item/class-item.component';
-import { PupilEventsComponent } from './components/pupil-events/pupil-events.component';
 import { PupilCabinetComponent } from './pages/pupil-cabinet/pupil-cabinet.component';
 import { UpcomingTestItemComponent } from './components/upcoming-test-item/upcoming-test-item.component';
 import { UpcomingTestListComponent } from './components/upcoming-test-list/upcoming-test-list.component';
@@ -69,6 +68,7 @@ import { ScheduleItemComponent } from './components/schedule-item/schedule-item.
 import { UpcomingTestCardComponent } from './components/upcoming-test-card/upcoming-test-card.component';
 import { UpcomingTestCardListComponent } from './components/upcoming-test-card-list/upcoming-test-card-list.component';
 import { ScheduleDayCardComponent } from './components/schedule-day-card/schedule-day-card.component';
+import { MainScheduleComponent } from './components/main-schedule/main-schedule.component';
 import { LessonCardComponent } from './components/lesson-card/lesson-card.component';
 import { LessonDayCardComponent } from './components/lesson-day-card/lesson-day-card.component';
 import { LessonItemComponent } from './components/lesson-item/lesson-item.component';
@@ -114,7 +114,6 @@ import { AddScheduleFormComponent } from './components/add-schedule-form/add-sch
     PupilInfoCardComponent,
     ClassListComponent,
     ClassItemComponent,
-    PupilEventsComponent,
     PupilCabinetComponent,
     UpcomingTestItemComponent,
     UpcomingTestListComponent,
@@ -128,6 +127,7 @@ import { AddScheduleFormComponent } from './components/add-schedule-form/add-sch
     UpcomingTestCardComponent,
     UpcomingTestCardListComponent,
     ScheduleDayCardComponent,
+    MainScheduleComponent,
     LessonCardComponent,
     LessonDayCardComponent,
     LessonItemComponent,

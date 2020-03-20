@@ -1,4 +1,7 @@
-<h2>Upcoming Events:</h2>
+<h3>Upcoming Events</h3>
+<span class="no-items" *ngIf="events.length == 0">
+  you don't have any upcoming events yet.
+</span>
 <div *ngFor="let event of events">
   <mat-card class="example-card">
     <mat-card-header>

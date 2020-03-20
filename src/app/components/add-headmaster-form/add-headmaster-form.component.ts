@@ -54,7 +54,7 @@ export class AddHeadmasterFormComponent implements OnInit {
     this.userSubFormRef.fields = subFormValidationResponse.fields;
 
     if (thisFormValidationResponse.isValid && subFormValidationResponse.isValid) {
-      const url: string = apiUrl + "/api/HeadMasters";
+      const url: string = apiUrl + "/HeadMasters";
       let link = this.route.snapshot.paramMap.get('link');
       let requestData = { ...this.form.value, link }
       return this.http.post(url, requestData)

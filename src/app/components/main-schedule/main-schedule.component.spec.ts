@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PupilEventsComponent } from './pupil-events.component';
+import { MainScheduleComponent } from './main-schedule.component';
 
-describe('PupilEventsComponent', () => {
-  let component: PupilEventsComponent;
-  let fixture: ComponentFixture<PupilEventsComponent>;
+describe('MainScheduleComponent', () => {
+  let component: MainScheduleComponent;
+  let fixture: ComponentFixture<MainScheduleComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PupilEventsComponent ]
+      declarations: [ MainScheduleComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(PupilEventsComponent);
+    fixture = TestBed.createComponent(MainScheduleComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

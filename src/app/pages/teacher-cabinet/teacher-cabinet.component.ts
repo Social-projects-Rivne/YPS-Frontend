@@ -22,11 +22,6 @@ export class TeacherCabinetComponent implements OnInit {
       icon: 'assignment'
     },
     {
-      value: 'Events',
-      path: './events',
-      icon: 'view_list'
-    },
-    {
       value: 'Schedule',
       path: './schedule',
       icon: 'event'
@@ -40,6 +35,11 @@ export class TeacherCabinetComponent implements OnInit {
       value: 'Materials',
       path: './materials',
       icon: 'menu_book'
+    },
+    {
+      value: 'Upcoming Events',
+      path: './upcoming-events',
+      icon: 'view_list'
     },
     {
       value: 'Upcoming Tests',
