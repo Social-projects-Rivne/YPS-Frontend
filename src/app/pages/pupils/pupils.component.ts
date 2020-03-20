@@ -10,7 +10,7 @@ import { PupilsService } from '../../services/pupils/pupils.service';
 
 export class PupilsComponent implements OnInit {
 
-  constructor(public pupilService : PupilsService) {}
+  constructor(public pupilsService : PupilsService) {}
 
   pupilsData: IPupil[];
   isLoading: boolean = true;
@@ -27,6 +27,6 @@ export class PupilsComponent implements OnInit {
   ];
 
   ngOnInit() {
-    this.pupilService.getPupils();
+    this.pupilsService.getPupils();
   }
 }
