@@ -51,7 +51,7 @@ export class AddClassFormComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private http: HttpClient,
-    private pupilService: PupilsService,
+    private pupilsService: PupilsService,
     private teacherService: TeacherinfoService,
     private httpOptionsService: HttpOptionsService
   ) {}
@@ -64,7 +64,7 @@ export class AddClassFormComponent implements OnInit {
       .subscribe(data => (this.teachers = data));
   };
   getPupilsToSelectData = (numb: number) => {
-    this.pupilService
+    this.pupilsService
       .getPupilsToSelect(numb)
       .subscribe(data => (this.listOfPupils = data));
   };

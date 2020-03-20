@@ -17,7 +17,7 @@ export class PupilsService {
   constructor(
     private http: HttpClient, 
     private httpOptionsService: HttpOptionsService
-    ) { }
+  ) { }
 
   getPupils = () => {
     this.httpOptionsService.loadHeaders();
@@ -34,6 +34,7 @@ export class PupilsService {
     this.httpOptionsService.loadHeaders();
     return this.http.get<IPupil>(this.url + "/GetPupilById", this.httpOptionsService.options);
   }
+  
   getPupilsToSelect = (numb: number): Observable<IPupilToSelect[]> => {
     this.httpOptionsService.loadHeaders();
     return this.http.get<IPupilToSelect[]>(this.url + "/GetPupilsBySchoolShort" + "?numbOfClass=" + numb, this.httpOptionsService.options);
