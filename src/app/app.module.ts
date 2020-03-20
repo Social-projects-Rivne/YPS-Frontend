@@ -61,7 +61,7 @@ import { ProfileCardComponent } from './components/profile-card/profile-card.com
 import { PupilProfileComponent } from './pages/pupil-profile/pupil-profile.component';
 import { PupilEventCardComponent } from './components/pupil-event-card/pupil-event-card.component';
 import { AddUpcomingTestFormComponent } from './components/add-upcoming-test-form/add-upcoming-test-form.component';
-import { MatDatepickerModule  } from '@angular/material/datepicker';
+import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core'
 import { ScheduleCardComponent } from './components/schedule-card/schedule-card.component';
 import { ScheduleItemComponent } from './components/schedule-item/schedule-item.component';
