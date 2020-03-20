@@ -5,8 +5,6 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { HttpOptionsService } from '../http-options/http-options.service';
 import { IPupilToSelect } from 'src/app/models/IPupilToSelect';
-import { IUser } from 'src/app/models/IUser';
-
 @Injectable({
   providedIn: 'root'
 })
