@@ -1,6 +1,6 @@
 import { IPupil } from '../../models/IPupil';
 import { Component, OnInit } from '@angular/core';
-import { PupilinfoService } from '../../services/pupils/pupilinfo.service';
+import { PupilsService } from '../../services/pupils/pupils.service';
 
 @Component({
   selector: 'yps-pupils',
@@ -10,7 +10,7 @@ import { PupilinfoService } from '../../services/pupils/pupilinfo.service';
 
 export class PupilsComponent implements OnInit {
 
-  constructor(private pupilService : PupilinfoService) {}
+  constructor(public pupilService : PupilsService) {}
 
   pupilsData: IPupil[];
   isLoading: boolean = true;

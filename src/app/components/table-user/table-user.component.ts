@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { PupilsService } from 'src/app/services/pupils/pupils.service';
 
 @Component({
   selector: 'yps-table-user',
@@ -6,6 +7,8 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./table-user.component.scss']
 })
 export class TableUserComponent implements OnInit {
+
+  constructor(private pupilService : PupilsService) {}
 
   @Input() data: any[];
   

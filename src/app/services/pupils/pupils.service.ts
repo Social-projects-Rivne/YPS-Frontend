@@ -10,8 +10,8 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class PupilinfoService {
-  Pupils: IPupil[] = [];
+export class PupilsService {
+  pupils: IPupil[] = [];
   private url: string = "https://localhost:5001/api/Pupils";
 
   constructor(
@@ -25,7 +25,7 @@ export class PupilinfoService {
       .get(`${apiUrl}/Pupils/GetBySchool`, this.httpOptionsService.options)
       .subscribe(
         (response: IPupil[]) => {
-          this.Pupils = response;
+          this.pupils = response;
         }
      );
   }

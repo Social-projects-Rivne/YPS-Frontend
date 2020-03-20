@@ -11,7 +11,7 @@ import { validationHelper } from "src/utils/helpers/validation-helper";
 import { apiUrl } from "src/constants/urls";
 import { HttpClient } from "@angular/common/http";
 import { HttpOptionsService } from "src/app/services/http-options/http-options.service";
-import { PupilinfoService } from "src/app/services/pupils/pupilinfo.service";
+import { PupilsService } from "src/app/services/pupils/pupils.service";
 import { IPupilToSelect } from "src/app/models/IPupilToSelect";
 
 @Component({
@@ -51,7 +51,7 @@ export class AddClassFormComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private http: HttpClient,
-    private pupilService: PupilinfoService,
+    private pupilService: PupilsService,
     private teacherService: TeacherinfoService,
     private httpOptionsService: HttpOptionsService
   ) {}
