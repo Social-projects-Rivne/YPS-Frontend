@@ -1,6 +1,5 @@
 import { patternValidator } from "src/utils/validators/pattern-validator";
 import { maxLengthValidator } from "./../../../utils/validators/max-length-validator";
-import { TeacherinfoService } from "src/app/services/teachers/teacherinfo.service";
 import { ITeacherToSelect } from "./../../models/ITacherToSelect";
 import { maxValueValidator } from "./../../../utils/validators/max-value-validator";
 import { FormGroup, FormBuilder, FormControl } from "@angular/forms";
@@ -13,6 +12,7 @@ import { HttpClient } from "@angular/common/http";
 import { HttpOptionsService } from "src/app/services/http-options/http-options.service";
 import { PupilinfoService } from "src/app/services/pupils/pupilinfo.service";
 import { IPupilToSelect } from "src/app/models/IPupilToSelect";
+import { TeachersService } from 'src/app/services/teachers/teachers.service';
 
 @Component({
   selector: "yps-add-class-form",
@@ -52,7 +52,7 @@ export class AddClassFormComponent implements OnInit {
     private formBuilder: FormBuilder,
     private http: HttpClient,
     private pupilService: PupilinfoService,
-    private teacherService: TeacherinfoService,
+    private teacherService: TeachersService,
     private httpOptionsService: HttpOptionsService
   ) {}
 

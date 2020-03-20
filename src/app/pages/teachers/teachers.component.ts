@@ -1,7 +1,5 @@
-import { ITeacher } from './../../models/ITeacher';
 import { Component, OnInit } from '@angular/core';
-import { TeacherinfoService } from 'src/app/services/teachers/teacherinfo.service';
-import { IUser } from 'src/app/models/IUser';
+import { TeachersService } from 'src/app/services/teachers/teachers.service';
 
 @Component({
   selector: 'yps-teachers',
@@ -11,7 +9,7 @@ import { IUser } from 'src/app/models/IUser';
 export class TeachersComponent implements OnInit {
 
   constructor(
-    public teacherService: TeacherinfoService,
+    public teacherService: TeachersService,
   ) {}
 
   columns = [

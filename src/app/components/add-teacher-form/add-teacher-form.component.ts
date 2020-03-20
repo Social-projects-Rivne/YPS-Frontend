@@ -1,4 +1,3 @@
-import { TeacherinfoService } from 'src/app/services/teachers/teacherinfo.service';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { FormBuilder, FormGroup } from '@angular/forms';
@@ -7,6 +6,7 @@ import { apiUrl } from 'src/constants/urls';
 import { validationHelper } from 'src/utils/helpers/validation-helper';
 import { requiredValidator } from 'src/utils/validators/required-validator';
 import { HttpOptionsService } from 'src/app/services/http-options/http-options.service';
+import { TeachersService } from 'src/app/services/teachers/teachers.service';
 
 @Component({
   selector: 'yps-add-teacher-form',
@@ -32,7 +32,7 @@ export class AddTeacherFormComponent implements OnInit {
     private formBuilder: FormBuilder,
     private http: HttpClient,
     private httpOptionsService: HttpOptionsService,
-    private teacherService : TeacherinfoService
+    private teacherService : TeachersService
   ) {}
 
   ngOnInit() {
