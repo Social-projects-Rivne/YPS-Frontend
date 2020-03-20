@@ -25,7 +25,7 @@ export class AddPupilFormComponent implements OnInit {
     private formBuilder: FormBuilder,
     private http: HttpClient,
     private httpOptionsService: HttpOptionsService,
-    public pupilsService : PupilsService
+    private pupilsService : PupilsService
   ) {}
 
   ngOnInit() {
