@@ -22,7 +22,6 @@ export class ParentsComponent implements OnInit {
 
   constructor(public parentsService: ParentsService) { }
 
-  parentsData: IParent[];
   ngOnInit() {
     this.parentsService.getParentsInfo();
   }

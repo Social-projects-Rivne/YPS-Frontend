@@ -14,7 +14,7 @@ export class ParentsService {
 
   private url: string = apiUrl + "/Parents";
 
-  public Parents: IParent[];
+  public parents: IParent[];
 
   constructor(private http: HttpClient, private httpOptionsService: HttpOptionsService) { }
 
@@ -22,7 +22,7 @@ export class ParentsService {
     return this.http.get(this.url, this.httpOptionsService.options)
       .subscribe(
         (res: IParent[]) => {
-          this.Parents = res;
+          this.parents = res;
         }
       );
   }
