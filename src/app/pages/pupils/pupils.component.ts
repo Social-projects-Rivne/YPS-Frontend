@@ -10,7 +10,7 @@ import { PupilsService } from '../../services/pupils/pupils.service';
 
 export class PupilsComponent implements OnInit {
 
-  constructor(public pupilsService: PupilsService) {}
+  constructor(private pupilsService: PupilsService) {}
 
   pupilsData: IPupil[];
   isLoading: boolean = true;

@@ -1,5 +1,4 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { PupilsService } from 'src/app/services/pupils/pupils.service';
 
 @Component({
   selector: 'yps-table-user',
