@@ -8,8 +8,6 @@ import { PupilsService } from 'src/app/services/pupils/pupils.service';
 })
 export class TableUserComponent implements OnInit {
 
-  constructor(private pupilService : PupilsService) {}
-
   @Input() data: any[];
   
   @Input() columns: any;
