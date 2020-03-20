@@ -23,7 +23,7 @@ export class PupilinfoService {
   getPupils = () => {
     this.httpOptionsService.loadHeaders();
     return this.http
-      .get(this.url + "/GetBySchool", this.httpOptionsService.options)
+      .get(`${apiUrl}/GetBySchool`, this.httpOptionsService.options)
       .subscribe(
         (response: IPupil[]) => {
           this.Pupils = response;
