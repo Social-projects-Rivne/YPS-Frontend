@@ -13,7 +13,7 @@ import { ParentsService } from 'src/app/services/parents/parents.service';
 @Component({
   selector: 'yps-add-parent-form',
   templateUrl: './add-parent-form.component.html',
-  styleUrls: ['./add-parent-form.component.scss','../../../scss/adding-forms.scss']
+  styleUrls: ['./add-parent-form.component.scss', '../../../scss/adding-forms.scss']
 })
 export class AddParentFormComponent implements OnInit {
   form: FormGroup;
@@ -38,7 +38,7 @@ export class AddParentFormComponent implements OnInit {
     private httpOptionsService: HttpOptionsService,
     private http: HttpClient,
     private service: ParentsService
-  ) {}
+  ) { }
 
   ngOnInit() {
     this.httpOptionsService.loadHeaders();
@@ -51,10 +51,10 @@ export class AddParentFormComponent implements OnInit {
 
     this.form.controls.classId.valueChanges.subscribe(value => {
       this.http.get(`${apiUrl}/pupils/getbyclass/${value}`, this.httpOptionsService.options)
-      .subscribe((successRes: IPupilToSelect[]) => {
-        this.pupils = successRes;
-        this.form.addControl("pupilId", new FormControl(null));
-      });
+        .subscribe((successRes: IPupilToSelect[]) => {
+          this.pupils = successRes;
+          this.form.addControl("pupilId", new FormControl(null));
+        });
     });
 
     this.http.get(`${apiUrl}/classes/getbyschool`, this.httpOptionsService.options)
