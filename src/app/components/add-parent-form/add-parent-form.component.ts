@@ -79,7 +79,7 @@ export class AddParentFormComponent implements OnInit {
           (successRes: any) => {
             this.toggleForm();
             console.log('add pupil response', successRes);
-            this.parentsService.getParentsInfo();
+            this.parentsService.getParents();
           }
         );
     }

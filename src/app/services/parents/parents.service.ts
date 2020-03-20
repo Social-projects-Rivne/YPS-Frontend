@@ -18,7 +18,7 @@ export class ParentsService {
 
   constructor(private http: HttpClient, private httpOptionsService: HttpOptionsService) { }
 
-  getParentsInfo = () => {
+  getParents = () => {
     return this.http.get(this.url, this.httpOptionsService.options)
       .subscribe(
         (res: IParent[]) => {

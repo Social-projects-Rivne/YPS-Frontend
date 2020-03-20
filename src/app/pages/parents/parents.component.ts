@@ -23,7 +23,7 @@ export class ParentsComponent implements OnInit {
   constructor(public parentsService: ParentsService) { }
 
   ngOnInit() {
-    this.parentsService.getParentsInfo();
+    this.parentsService.getParents();
   }
 
 }
