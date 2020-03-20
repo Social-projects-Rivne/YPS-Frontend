@@ -14,7 +14,6 @@ export class ClassesService {
   classes: IClass[] = [];
   private url: string = apiUrl + "/classes";
 
-  public parents: IClass[];
   constructor(
     private http: HttpClient,
     private HttpOptions: HttpOptionsService
