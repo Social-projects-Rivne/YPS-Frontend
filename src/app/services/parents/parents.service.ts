@@ -14,14 +14,17 @@ export class ParentsService {
 
   private url: string = apiUrl + "/Parents";
 
-  public ParentInfo: IParent[];
+  public ParentsInfo: IParent[];
 
   constructor(private http: HttpClient, private httpOptionsService: HttpOptionsService) { }
 
   getParentsInfo = () => {
-    return this.http.get(this.url, this.httpOptionsService.options).subscribe((res: IParent[]) => {
-      this.ParentInfo = res;
-    });
+    return this.http.get(this.url, this.httpOptionsService.options)
+      .subscribe(
+        (res: IParent[]) => {
+          this.ParentsInfo = res;
+        }
+      );
   }
 
   getParentProfileInfo = (): Observable<IParent> => {

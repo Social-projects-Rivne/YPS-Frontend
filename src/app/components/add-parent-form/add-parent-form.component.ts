@@ -37,7 +37,7 @@ export class AddParentFormComponent implements OnInit {
     private formBuilder: FormBuilder,
     private httpOptionsService: HttpOptionsService,
     private http: HttpClient,
-    private service: ParentsService
+    private parentsService: ParentsService
   ) {}
 
   ngOnInit() {
@@ -78,7 +78,7 @@ export class AddParentFormComponent implements OnInit {
           (successRes: any) => {
             this.toggleForm();
             console.log('add pupil response', successRes);
-            this.service.getParentsInfo();
+            this.parentsService.getParentsInfo();
           }
         );
     }

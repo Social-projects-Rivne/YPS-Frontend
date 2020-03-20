@@ -20,12 +20,11 @@ export class ParentsComponent implements OnInit {
     { def: "children", label: "Children" }
   ];
 
-  constructor(public service: ParentsService) { }
-
+  constructor(public parentsService: ParentsService) { }
 
   parentsData: IParent[];
   ngOnInit() {
-    this.service.getParentsInfo();
+    this.parentsService.getParentsInfo();
   }
 
 }
