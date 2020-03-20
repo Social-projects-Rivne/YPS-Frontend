@@ -17,20 +17,18 @@ export class JournalColumnComponent implements OnInit {
 
   headerJournalColumn: IShortInfoPupil = {
     fullName: "Pupil",
-    id:null
+    id: null
   }
   pupils: IShortInfoPupil[];
 
   constructor(private route: ActivatedRoute, private httpOtionsService: HttpOptionsService, private http: HttpClient) { }
 
   ngOnInit(): void {
-    this.classId = this.route.snapshot.paramMap.get('classId');
-
     this.getPupils();
   }
   getPupils = () => {
     this.httpOtionsService.loadHeaders();
-    this.classId =this.route.snapshot.paramMap.get('classId');
+    this.classId = this.route.snapshot.paramMap.get('classId');
     return this.http.get(apiUrl + `/Pupils/GetByClass/${this.classId}`, this.httpOtionsService.options)
       .subscribe(
         (response: IShortInfoPupil[]) => {
