@@ -9,7 +9,7 @@ import { TeachersService } from 'src/app/services/teachers/teachers.service';
 export class TeachersComponent implements OnInit {
 
   constructor(
-    public teacherService: TeachersService,
+    public teachersService: TeachersService,
   ) {}
 
   columns = [
@@ -23,12 +23,8 @@ export class TeachersComponent implements OnInit {
     { def: "dateOfBirth", label: "Date of birth"},
     { def:"degree", label:"Degree"}
   ];
-
-  getTeachersData = () => {
-    this.teacherService.getTeachers();
-  }
-
+  
   ngOnInit() {
-    this.getTeachersData();
+    this.teachersService.getTeachers();
   }
 }
