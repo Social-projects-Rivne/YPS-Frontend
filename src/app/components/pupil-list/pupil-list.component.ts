@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PupilsService } from 'src/app/services/pupils/pupils.service';
 
 @Component({
   selector: 'yps-pupil-list',
@@ -6,10 +7,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./pupil-list.component.scss']
 })
 export class PupilListComponent implements OnInit {
-
-  constructor() { }
+  constructor(public pupilsService: PupilsService) {}
 
   ngOnInit(): void {
+    this.pupilsService.getPupils();
   }
-
 }
