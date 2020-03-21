@@ -51,7 +51,7 @@ export class AddClassFormComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private http: HttpClient,
-    private teacherService: TeachersService,
+    private teachersService: TeachersService,
     private pupilsService: PupilsService,
     private httpOptionsService: HttpOptionsService
   ) {}
@@ -59,7 +59,7 @@ export class AddClassFormComponent implements OnInit {
   toggleForm = () => (this.formIsOpen = !this.formIsOpen);
 
   getTeachersToSelectData = () => {
-    this.teacherService
+    this.teachersService
       .getTeachersToSelect()
       .subscribe(data => (this.teachers = data));
   };

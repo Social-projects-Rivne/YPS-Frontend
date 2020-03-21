@@ -32,7 +32,7 @@ export class AddTeacherFormComponent implements OnInit {
     private formBuilder: FormBuilder,
     private http: HttpClient,
     private httpOptionsService: HttpOptionsService,
-    private teacherService : TeachersService
+    private teachersService : TeachersService
   ) {}
 
   ngOnInit() {
@@ -57,7 +57,7 @@ export class AddTeacherFormComponent implements OnInit {
       return this.http.post(apiUrl + "/teachers", this.form.value, this.httpOptionsService.options)
       .subscribe(
         (successRes: any) => {
-          this.teacherService.getTeachers();
+          this.teachersService.getTeachers();
           this.toggleForm();
           console.log('add teacher response', successRes);
         }
