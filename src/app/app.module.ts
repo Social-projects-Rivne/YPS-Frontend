@@ -73,6 +73,7 @@ import { LessonCardComponent } from './components/lesson-card/lesson-card.compon
 import { LessonDayCardComponent } from './components/lesson-day-card/lesson-day-card.component';
 import { LessonItemComponent } from './components/lesson-item/lesson-item.component';
 import { AddScheduleFormComponent } from './components/add-schedule-form/add-schedule-form.component';
+import { MAT_MOMENT_DATE_ADAPTER_OPTIONS, MatMomentDateModule } from '@angular/material-moment-adapter';
 
 @NgModule({
   declarations: [
@@ -140,7 +141,7 @@ import { AddScheduleFormComponent } from './components/add-schedule-form/add-sch
     HttpClientModule,
     BrowserAnimationsModule,
     RecaptchaModule.forRoot({
-      siteKey: '6LefHtYUAAAAABkKaKlf2kwUSmQleDf0HAZiUQse',
+      siteKey: "6LefHtYUAAAAABkKaKlf2kwUSmQleDf0HAZiUQse"
     }),
     CommonModule,
     RouterModule,
@@ -157,12 +158,21 @@ import { AddScheduleFormComponent } from './components/add-schedule-form/add-sch
     MatCheckboxModule,
     MatDatepickerModule,
     MatNativeDateModule,
+    MatMomentDateModule
   ],
-  providers: [{
-    provide: HTTP_INTERCEPTORS,
-     useClass: TokenInterceptor,
-      multi: true}
-    ],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenInterceptor,
+      multi: true
+    },
+    {
+      provide: MAT_MOMENT_DATE_ADAPTER_OPTIONS,
+      useValue: {
+        useUtc: true
+      }
+    }
+  ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

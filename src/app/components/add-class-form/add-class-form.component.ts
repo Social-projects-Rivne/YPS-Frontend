@@ -13,6 +13,7 @@ import { HttpOptionsService } from "src/app/services/http-options/http-options.s
 import { PupilsService } from "src/app/services/pupils/pupils.service";
 import { IPupilToSelect } from "src/app/models/IPupilToSelect";
 import { TeachersService } from 'src/app/services/teachers/teachers.service';
+import { ClassesService } from 'src/app/services/classes/classes.service'
 
 @Component({
   selector: "yps-add-class-form",
@@ -53,7 +54,8 @@ export class AddClassFormComponent implements OnInit {
     private http: HttpClient,
     private teachersService: TeachersService,
     private pupilsService: PupilsService,
-    private httpOptionsService: HttpOptionsService
+    private httpOptionsService: HttpOptionsService,
+    private classesService: ClassesService
   ) {}
 
   toggleForm = () => (this.formIsOpen = !this.formIsOpen);
@@ -83,12 +85,12 @@ export class AddClassFormComponent implements OnInit {
         ...this.form.value,
         number: parseInt(this.form.value.number, 10)
       };
-      console.log(request);
       return this.http
         .post(apiUrl + "/Classes", request, this.httpOptionsService.options)
         .subscribe((successRes: any) => {
           this.toggleForm();
           console.log("add classes response", successRes);
+          this.classesService.getClassesBySchool();
         });
     }
   };
@@ -114,10 +116,12 @@ export class AddClassFormComponent implements OnInit {
       classTeacherId: [null, [requiredValidator("teacher is required")]],
       selectedPupils: [null]
     });
+
     this.onChanges();
   }
+
   onChanges(): void {
-    this.form.get("number").valueChanges.subscribe(val => {
+    this.form.controls.number.valueChanges.subscribe(val => {
       if (val != "") {
         this.showPupils = true;
         console.log(typeof val);
