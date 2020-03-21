@@ -1,11 +1,11 @@
-<div class="index">
-  <span class="index-value digit">
+<div class="index pupil-index">
+  <span class="index-value pupil-index-value digit">
     {{ index + 1 }}
   </span>
 </div>
-<h3 class="full-name">
+<h4 class="full-name">
   {{ pupil.surname + " " + pupil.firstName + " " + pupil.middleName | lowercase }}
-</h3>
+</h4>
 <p class="email">
   <mat-icon class="icon mail">mail</mat-icon>
   <span class="email-value">{{ pupil.email }}</span>

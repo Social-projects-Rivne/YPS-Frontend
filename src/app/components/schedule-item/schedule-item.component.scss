@@ -7,39 +7,18 @@
   padding: .5rem;
 
   .lesson-number {
-    display: grid;
     grid-row: 1 / 4;
-    width: 2rem;
-    height: 2rem;
-    align-items: center;
-    justify-items: center;
-    position: relative;
 
     &-value {
-      font-weight: bold;
-      font-size: .75rem;
       color: #ffffff;
       z-index: 1;
     }
 
-    &::before, &::after {
-      content: "";
-      display: block;
-      position: absolute;
-    }
-
-    &::before {
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      background-color: $accent;
-      transform: rotate(45deg);
-    }
-
     &::after {
+      content: "";
+      position: absolute;
       width: 2px;
-      height: 3rem;
+      height: 4.5rem;
       background-color: $light;
       bottom: .5rem;
       left: 50%;
