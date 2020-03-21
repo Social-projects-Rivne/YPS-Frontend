@@ -25,7 +25,7 @@ export class AddTeacherFormComponent implements OnInit {
     }
   ];
   formIsOpen: boolean = false;
-  @ViewChild('formRef') userSubFormRef: { fields: IFormField[], userSubForm: FormGroup }; 
+  @ViewChild('formRef') userSubFormRef: { fields: IFormField[], userSubForm: FormGroup };
 
   constructor(
     private formBuilder: FormBuilder,
@@ -35,7 +35,7 @@ export class AddTeacherFormComponent implements OnInit {
 
   ngOnInit() {
     this.httpOptionsService.loadHeaders();
-    
+
     this.form = this.formBuilder.group({
       "user": [null],
       "degree": [null, requiredValidator("degree is required")]
@@ -43,11 +43,10 @@ export class AddTeacherFormComponent implements OnInit {
   }
 
   toggleForm = () => this.formIsOpen = !this.formIsOpen;
-  
+
   onSubmit = () => {
     const thisFormValidationResponse = validationHelper(this.form.controls, this.fields);
     const subFormValidationResponse = validationHelper(this.userSubFormRef.userSubForm.controls, this.userSubFormRef.fields);
-    
     this.fields = thisFormValidationResponse.fields;
     this.userSubFormRef.fields = subFormValidationResponse.fields;
 
@@ -58,7 +57,7 @@ export class AddTeacherFormComponent implements OnInit {
           this.toggleForm();
           console.log('add teacher response', successRes);
         }
-      ); 
+      );
     }
   }
 }

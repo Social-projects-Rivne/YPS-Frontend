@@ -116,10 +116,12 @@ export class AddClassFormComponent implements OnInit {
       classTeacherId: [null, [requiredValidator("teacher is required")]],
       selectedPupils: [null]
     });
+
     this.onChanges();
   }
+
   onChanges(): void {
-    this.form.get("number").valueChanges.subscribe(val => {
+    this.form.controls.number.valueChanges.subscribe(val => {
       if (val != "") {
         this.showPupils = true;
         console.log(typeof val);
