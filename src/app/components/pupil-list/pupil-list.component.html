@@ -1,1 +1,6 @@
-<yps-pupil-item></yps-pupil-item>
+<yps-pupil-item
+  *ngFor="let pupil of pupilsService.pupils; index as index"
+  [pupil]="pupil"
+  [index]="index"
+>
+</yps-pupil-item>
