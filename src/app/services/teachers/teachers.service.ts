@@ -11,7 +11,7 @@ import { ITeacherToSelect } from 'src/app/models/ITacherToSelect';
 })
 export class TeachersService {
   private url: string = apiUrl + "/Teachers";
-  Teachers: ITeacher[] = [];
+  teachers: ITeacher[] = [];
 
   constructor(
     private httpOptionsService: HttpOptionsService,
@@ -24,7 +24,7 @@ export class TeachersService {
       .get(`${this.url}/GetTeachersBySchoolId`, this.httpOptionsService.options)
       .subscribe(
         (response: ITeacher[]) => {
-          this.Teachers = response;
+          this.teachers = response;
         }
       );
   }
