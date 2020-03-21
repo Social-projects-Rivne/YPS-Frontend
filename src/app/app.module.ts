@@ -74,6 +74,8 @@ import { LessonDayCardComponent } from './components/lesson-day-card/lesson-day-
 import { LessonItemComponent } from './components/lesson-item/lesson-item.component';
 import { AddScheduleFormComponent } from './components/add-schedule-form/add-schedule-form.component';
 import { MAT_MOMENT_DATE_ADAPTER_OPTIONS, MatMomentDateModule } from '@angular/material-moment-adapter';
+import { PupilItemComponent } from './components/pupil-item/pupil-item.component';
+import { PupilListComponent } from './components/pupil-list/pupil-list.component';
 
 @NgModule({
   declarations: [
@@ -131,7 +133,9 @@ import { MAT_MOMENT_DATE_ADAPTER_OPTIONS, MatMomentDateModule } from '@angular/m
     LessonCardComponent,
     LessonDayCardComponent,
     LessonItemComponent,
-    AddScheduleFormComponent
+    AddScheduleFormComponent,
+    PupilItemComponent,
+    PupilListComponent
   ],
   imports: [
     BrowserModule,
