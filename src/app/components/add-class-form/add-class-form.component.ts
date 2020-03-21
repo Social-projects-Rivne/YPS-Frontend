@@ -1,6 +1,5 @@
 import { patternValidator } from "src/utils/validators/pattern-validator";
 import { maxLengthValidator } from "./../../../utils/validators/max-length-validator";
-import { TeacherinfoService } from "src/app/services/teachers/teacherinfo.service";
 import { ITeacherToSelect } from "./../../models/ITacherToSelect";
 import { maxValueValidator } from "./../../../utils/validators/max-value-validator";
 import { FormGroup, FormBuilder, FormControl } from "@angular/forms";
@@ -13,6 +12,7 @@ import { HttpClient } from "@angular/common/http";
 import { HttpOptionsService } from "src/app/services/http-options/http-options.service";
 import { PupilsService } from "src/app/services/pupils/pupils.service";
 import { IPupilToSelect } from "src/app/models/IPupilToSelect";
+import { TeachersService } from 'src/app/services/teachers/teachers.service';
 import { ClassesService } from 'src/app/services/classes/classes.service'
 
 @Component({
@@ -52,8 +52,8 @@ export class AddClassFormComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private http: HttpClient,
+    private teachersService: TeachersService,
     private pupilsService: PupilsService,
-    private teacherService: TeacherinfoService,
     private httpOptionsService: HttpOptionsService,
     private classesService: ClassesService
   ) {}
@@ -61,7 +61,7 @@ export class AddClassFormComponent implements OnInit {
   toggleForm = () => (this.formIsOpen = !this.formIsOpen);
 
   getTeachersToSelectData = () => {
-    this.teacherService
+    this.teachersService
       .getTeachersToSelect()
       .subscribe(data => (this.teachers = data));
   };
