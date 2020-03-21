@@ -1,1 +1,31 @@
-<p>{{ pupil | json }}</p>
+<div class="index">
+  <span class="index-value digit">
+    {{ index + 1 }}
+  </span>
+</div>
+<h3 class="full-name">
+  {{ pupil.surname + " " + pupil.firstName + " " + pupil.middleName | lowercase }}
+</h3>
+<p class="email">
+  <mat-icon class="icon mail">mail</mat-icon>
+  <span class="email-value">{{ pupil.email }}</span>
+</p>
+<p class="phone-number">
+  <mat-icon class="icon phone">phone</mat-icon>
+  <span class="phone-number-value">{{ pupil.phoneNumber }}</span>
+</p>
+<p *ngIf="pupil.dateOfBirth" class="birthday digit">
+  birthday at
+  <span class="digit birthday-value">
+    {{ pupil.dateOfBirth }}
+  </span>
+</p>
+<p *ngIf="pupil.className" class="class digit">
+  pupil of the class
+  <span class="digit class-value">
+    {{ pupil.className }}
+  </span>
+</p>
+<span *ngIf="!pupil.className" class="no-class">
+  pupil has no class
+</span>

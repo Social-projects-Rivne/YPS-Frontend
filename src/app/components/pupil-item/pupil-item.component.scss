@@ -1,0 +1,81 @@
+@import "src/vars";
+
+:host {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-column-gap: 1.5rem;
+  grid-row-gap: .5rem;
+  padding: 1rem;
+  border: 1px solid $light;
+
+  .index {
+    display: grid;
+    position: relative;
+    align-content: center;
+    text-align: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    grid-row: 1 / 6;
+
+    &-value {
+      z-index: 1;
+      color: #ffffff;
+      font-weight: bold;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      transform: rotate(45deg);
+      background-color: $accent;
+    }
+  }
+
+  .full-name {
+    text-transform: capitalize;
+  }
+
+  .birthday {
+    margin-top: 1rem;
+  }
+  .class, .birthday, .no-class {
+    color: $gray;
+    justify-self: end;
+    font-size: .8rem;
+
+    &::first-letter {
+      text-transform: capitalize;
+    }
+
+    &-value {
+      color: $accent;
+      text-transform: lowercase;
+    }
+  }
+
+  .email, .phone-number {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-gap: .5rem;
+
+    &-value {
+      color: $gray;
+      font-size: .85rem;
+    }
+  }
+
+  .icon {
+		color: $accent;
+		font-size: 1.1rem;
+		width: 1rem;
+		height: 1rem;
+		line-height: 100%;
+		text-align: center;
+		align-self: center;
+		margin-bottom: -2px;
+	}
+}
