@@ -74,6 +74,8 @@ import { LessonDayCardComponent } from './components/lesson-day-card/lesson-day-
 import { LessonItemComponent } from './components/lesson-item/lesson-item.component';
 import { AddScheduleFormComponent } from './components/add-schedule-form/add-schedule-form.component';
 import { MAT_MOMENT_DATE_ADAPTER_OPTIONS, MatMomentDateModule } from '@angular/material-moment-adapter';
+import { AddUpcomingEventFormComponent } from './components/add-upcoming-event-form/add-upcoming-event-form.component';
+import { HeadAssistantUpcomingEventsComponent } from './pages/head-assistant-upcoming-events/head-assistant-upcoming-events.component';
 
 @NgModule({
   declarations: [
@@ -131,7 +133,9 @@ import { MAT_MOMENT_DATE_ADAPTER_OPTIONS, MatMomentDateModule } from '@angular/m
     LessonCardComponent,
     LessonDayCardComponent,
     LessonItemComponent,
-    AddScheduleFormComponent
+    AddScheduleFormComponent,
+    AddUpcomingEventFormComponent,
+    HeadAssistantUpcomingEventsComponent
   ],
   imports: [
     BrowserModule,

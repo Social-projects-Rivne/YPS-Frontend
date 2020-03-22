@@ -20,8 +20,8 @@ export class HeadAssistantCabinetComponent implements OnInit {
       icon: 'assignment'
     },
     {
-      value: 'Events',
-      path: './events',
+      value: 'Upcoming Events',
+      path: './upcoming-events',
       icon: 'view_list'
     },
     {

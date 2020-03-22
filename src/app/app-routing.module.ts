@@ -43,6 +43,7 @@ import { HeadAssistantProfileComponent } from './pages/head-assistant-profile/he
 import { ScheduleComponent } from './pages/schedule/schedule.component';
 import { LessonsComponent } from './pages/lessons/lessons.component';
 import { JournalColumnComponent } from './pages/journal-column/journal-column.component';
+import { HeadAssistantUpcomingEventsComponent } from './pages/head-assistant-upcoming-events/head-assistant-upcoming-events.component';
 
 const headMasterRoutes: Routes = [
   { path: '', canActivateChild: [AuthGuard], component: HeadMasterProfileComponent },
@@ -76,6 +77,7 @@ const teacherRoutes: Routes = [
 ];
 const headAssistantRoutes: Routes = [
   { path: '', canActivateChild: [AuthGuard], component: HeadAssistantProfileComponent },
+  { path: 'upcoming-events', canActivateChild: [AuthGuard], component: HeadAssistantUpcomingEventsComponent},
   { path: 'schedule', canActivateChild: [AuthGuard], component: HeadAssistantScheduleComponent}
 ];
 const parentRoutes: Routes = [
@@ -157,6 +159,7 @@ export const RoutingComponents = [
   ChildrenInfoComponent,
   HeadMasterCabinetComponent,
   HeadMasterProfileComponent,
+  HeadAssistantUpcomingEventsComponent,
   MasterProfileComponent,
   MasterCabinetComponent,
   TeacherProfileComponent,
