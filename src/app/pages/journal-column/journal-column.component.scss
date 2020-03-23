@@ -26,11 +26,11 @@
   }
 }
 
-.topic {
-  .topic-value {
-    width: 87%;
-  }
+.topic-value {
+  width: 88%;
+  padding: 0rem 1rem 2rem 1rem ;
 }
+
 .header {
   display: grid;
   grid-template-columns: calc(3rem + 2px) 1fr 8rem 8rem 8rem 0.25fr;

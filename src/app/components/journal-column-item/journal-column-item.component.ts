@@ -11,43 +11,67 @@ import { FormGroup, FormBuilder } from '@angular/forms';
 export class JournalColumnItemComponent implements OnInit {
   @Input() pupilShortInfo: IShortInfoPupil;
   @Input() index: number;
-  @Output() lessonMarks = new EventEmitter<IPupilLessonMarks>();
+  classworkTypeId: number = 1;
+  homeworkTypeId: number = 2;
+  testTypeId: number = 3;
+
+  @Output() lessonMarks = new EventEmitter<IPupilLessonMarks[]>();
   form: FormGroup;
 
   marks: string[] = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "Absent"];
 
-  pupilLessonMarks: IPupilLessonMarks = {
+  pupilLessonMarks: IPupilLessonMarks[]=[{
     pupilId: undefined,
-    classwork: undefined,
-    homework: undefined,
-    test: undefined
-  };
+    value: undefined,
+    type: undefined
+  }];
 
-  id = 0;
-  classwork = "";
-  homework = "";
-  test = "";
-
-
+  
   constructor(private formBuilder: FormBuilder) { }
 
   ngOnInit(): void {
     if (typeof (this.index) == "number") {
       this.index = this.index + 1;
     }
-    this.id = this.pupilShortInfo.id;
-     this.form = this.formBuilder.group({
-      "classwork": [null]
+    this.form = this.formBuilder.group({
+      "classwork": [null],
+      "homework":[null],
+      "test": [null]
     });
-    this.form.controls.classwork.valueChanges.subscribe(classwork =>{
-      console.log(`Value ${classwork} `);
-      console.log(`Value ${this.pupilShortInfo.id} `);
-      this.pupilLessonMarks.pupilId = this.id;
-      this.pupilLessonMarks.classwork = classwork;
-      this.pupilLessonMarks.homework = this.homework;
-      this.pupilLessonMarks.test = this.test;
-
-      this.lessonMarks.emit(this.pupilLessonMarks);
+    this.pupilLessonMarks.pop();
+    this.form.controls.classwork.valueChanges.subscribe(value =>{
+      let mark: IPupilLessonMarks = {
+        pupilId: undefined,
+        value: undefined,
+        type: undefined
+      }
+      mark.pupilId = this.pupilShortInfo.id;
+      mark.value = value;
+      mark.type = this.classworkTypeId;
+      this.pupilLessonMarks.push(mark);
     });
+    this.form.controls.homework.valueChanges.subscribe(value =>{
+      let mark: IPupilLessonMarks = {
+        pupilId: undefined,
+        value: undefined,
+        type: undefined
+      }
+      mark.pupilId = this.pupilShortInfo.id;
+      mark.value = value;
+      mark.type = this.homeworkTypeId;
+      this.pupilLessonMarks.push(mark);
+    });
+    this.form.controls.test.valueChanges.subscribe(value =>{
+      let mark: IPupilLessonMarks = {
+        pupilId: undefined,
+        value: undefined,
+        type: undefined
+      }
+      mark.pupilId = this.pupilShortInfo.id;
+      mark.value = value;
+      mark.type = this.testTypeId;
+      this.pupilLessonMarks.push(mark);
+    });
+    this.lessonMarks.emit(this.pupilLessonMarks);
   }
 }

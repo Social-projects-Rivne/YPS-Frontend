@@ -5,6 +5,10 @@ import { HttpOptionsService } from 'src/app/services/http-options/http-options.s
 import { HttpClient } from '@angular/common/http';
 import { apiUrl } from 'src/constants/urls';
 import { IPupilLessonMarks } from 'src/app/models/IPupilLessonMarks';
+import { FormGroup, FormBuilder } from '@angular/forms';
+import { IFormField } from 'src/app/models/IFormField';
+import { requiredValidator } from 'src/utils/validators/required-validator';
+import { validationHelper } from 'src/utils/helpers/validation-helper';
 
 @Component({
   selector: 'yps-journal-column',
@@ -12,26 +16,47 @@ import { IPupilLessonMarks } from 'src/app/models/IPupilLessonMarks';
   styleUrls: ['./journal-column.component.scss']
 })
 export class JournalColumnComponent implements OnInit {
-  id: string;
-  classId: string;
-  teacherId: string;
+  lessonId: number;
+  classId: number;
   topic: string = null;
+
+  pupils: IShortInfoPupil[];
 
   lessonMarks: IPupilLessonMarks[] = [];
 
-  addMarks(newItem: IPupilLessonMarks) {
-    this.lessonMarks.push(newItem);
-  }
-  pupils: IShortInfoPupil[];
-
-  constructor(private route: ActivatedRoute, private httpOtionsService: HttpOptionsService, private http: HttpClient) { }
-
+  form: FormGroup;
+  fields: IFormField[] = [
+    {
+      id: "work-info-field",
+      type: "text",
+      label: "topic of the lesson",
+      placeholder: "enter topic of lesson",
+      name: "topic",
+      errorMsg: null
+    }];
+  
+  constructor(private formBuilder: FormBuilder, private route: ActivatedRoute, private httpOtionsService: HttpOptionsService, private http: HttpClient) { }
+  
   ngOnInit(): void {
+    this.form = this.formBuilder.group({
+      "topic": [null, requiredValidator("topic is required")],
+    });
+
+    this.getLessonIdClassId();
     this.getPupils();
   }
+
+  addMarks(newItem: IPupilLessonMarks) {
+    if(newItem!=null)
+      this.lessonMarks.push(newItem);
+  }
+  getLessonIdClassId = () => {
+    this.lessonId = parseInt(this.route.snapshot.paramMap.get('id'));
+    this.classId = parseInt(this.route.snapshot.paramMap.get('classId'));
+  }
+
   getPupils = () => {
     this.httpOtionsService.loadHeaders();
-    this.classId = this.route.snapshot.paramMap.get('classId');
     return this.http.get(apiUrl + `/Pupils/GetByClass/${this.classId}`, this.httpOtionsService.options)
       .subscribe(
         (response: IShortInfoPupil[]) => {
@@ -39,8 +64,17 @@ export class JournalColumnComponent implements OnInit {
         }
       );
   }
-  onClick() {
-    console.log(this.lessonMarks);
-    console.log(this.topic);
+  onSubmit() {
+    const thisFormValidationResponse = validationHelper(this.form.controls, this.fields);
+
+    this.httpOtionsService.loadHeaders();
+
+    this.fields = thisFormValidationResponse.fields;
+    if (thisFormValidationResponse.isValid) {
+      // this.topic = this.form.value;
+      
+      // this.http.post("", topic: this.form.value, lessonMarks: this.lessonMarks, lessonid: this.lessonid, this.httpOtionsService.options);
+      console.log({topic: this.form.value, lessonMarks: this.lessonMarks, lessonid: this.lessonId, classId: this.classId});
+    }
   }
 }

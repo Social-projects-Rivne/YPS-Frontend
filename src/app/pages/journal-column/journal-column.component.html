@@ -1,24 +1,21 @@
 <a routerLink="/teacher/lessons" class="back-link">back<span class="arrow-back">‹</span></a>
-<div class="topic">
-    <mat-form-field class="topic-value">
-        <mat-label>Topic of the Lesson</mat-label>
-        <input matInput [(ngModel)]="topic">
-    </mat-form-field>
-</div>
-<div class="header">
+<form class="form" [formGroup]="form" (ngSubmit)="onSubmit()">
+  <div class="topic-value">
+    <yps-form-field  *ngFor="let field of fields"
+    [field]="field"
+    [formControlName]="field.name"></yps-form-field>
+  </div>
+  <div class="header">
     <span class="index">№</span>
     <span class="full-name">Full name</span>
     <span class="select-mark">Classwork</span>
     <span class="select-mark">Homework</span>
     <span class="select-mark">Test</span>
-</div>
-<yps-journal-column-item
-  *ngFor="let pupil of pupils; index as index"
-  [index]="index"
-  [pupilShortInfo]="pupil"
-  (lessonMarks)="addMarks($event)"
->
-</yps-journal-column-item>
-<div class="finish">
-    <button (click)="onClick()" class="btn finish-btn">finish lesson</button>
-</div>
+  </div>
+  <yps-journal-column-item *ngFor="let pupil of pupils; index as index" [index]="index" [pupilShortInfo]="pupil"
+    (lessonMarks)="addMarks($event)">
+  </yps-journal-column-item>
+  <div class="finish">
+    <button type="submit" class="btn primary">finish lesson</button>
+  </div>
+</form>
