@@ -1,15 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'yps-classes',
   templateUrl: './classes.component.html',
-  styleUrls: ['./classes.component.scss','../../../scss/cabinet-sub-pages.scss']
+  styleUrls: ['../../../scss/cabinet-sub-pages.scss']
 })
-export class ClassesComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
-}
+export class ClassesComponent { }

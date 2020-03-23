@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { IClass } from 'src/app/models/IClass';
 
 @Component({
@@ -6,15 +6,7 @@ import { IClass } from 'src/app/models/IClass';
   templateUrl: './class-item.component.html',
   styleUrls: ['./class-item.component.scss']
 })
-export class ClassItemComponent implements OnInit {
+export class ClassItemComponent {
   @Input() classItem: IClass;
   @Input() index: number;
-
-  constructor() { }
-
-  ngOnInit(): void {
-    if (typeof(this.index) == "number") {
-      this.index = this.index + 1;
-    }
-  }
 }
