@@ -34,9 +34,9 @@ export class JournalColumnComponent implements OnInit {
       name: "topic",
       errorMsg: null
     }];
-  
+
   constructor(private formBuilder: FormBuilder, private route: ActivatedRoute, private httpOtionsService: HttpOptionsService, private http: HttpClient) { }
-  
+
   ngOnInit(): void {
     this.form = this.formBuilder.group({
       "topic": [null, requiredValidator("topic is required")],
@@ -47,7 +47,7 @@ export class JournalColumnComponent implements OnInit {
   }
 
   addMarks(newItem: IPupilLessonMarks) {
-    if(newItem!=null)
+    if (newItem != null)
       this.lessonMarks.push(newItem);
   }
   getLessonIdClassId = () => {
@@ -71,10 +71,13 @@ export class JournalColumnComponent implements OnInit {
 
     this.fields = thisFormValidationResponse.fields;
     if (thisFormValidationResponse.isValid) {
-      // this.topic = this.form.value;
-      
-      // this.http.post("", topic: this.form.value, lessonMarks: this.lessonMarks, lessonid: this.lessonid, this.httpOtionsService.options);
-      console.log({topic: this.form.value, lessonMarks: this.lessonMarks, lessonid: this.lessonId, classId: this.classId});
+      this.topic = this.form.value;
+      console.log({ topic: this.form.value, lessonId: this.lessonId, classId: this.classId, lessonMarks: this.lessonMarks });
+
+      this.http.post(apiUrl + "/JournalColumn", { topic: this.form.value, lessonId: this.lessonId, classId: this.classId, lessonMarks: this.lessonMarks }, this.httpOtionsService.options)
+      .subscribe((successRes: string) =>{
+        console.log("add classes response", successRes);
+      });
     }
   }
 }
