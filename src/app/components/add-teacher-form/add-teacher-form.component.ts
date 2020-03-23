@@ -6,6 +6,7 @@ import { apiUrl } from 'src/constants/urls';
 import { validationHelper } from 'src/utils/helpers/validation-helper';
 import { requiredValidator } from 'src/utils/validators/required-validator';
 import { HttpOptionsService } from 'src/app/services/http-options/http-options.service';
+import { TeachersService } from 'src/app/services/teachers/teachers.service';
 
 @Component({
   selector: 'yps-add-teacher-form',
@@ -25,17 +26,18 @@ export class AddTeacherFormComponent implements OnInit {
     }
   ];
   formIsOpen: boolean = false;
-  @ViewChild('formRef') userSubFormRef: { fields: IFormField[], userSubForm: FormGroup }; 
+  @ViewChild('formRef') userSubFormRef: { fields: IFormField[], userSubForm: FormGroup };
 
   constructor(
     private formBuilder: FormBuilder,
     private http: HttpClient,
-    private httpOptionsService: HttpOptionsService
+    private httpOptionsService: HttpOptionsService,
+    private teachersService : TeachersService
   ) {}
 
   ngOnInit() {
     this.httpOptionsService.loadHeaders();
-    
+
     this.form = this.formBuilder.group({
       "user": [null],
       "degree": [null, requiredValidator("degree is required")]
@@ -43,11 +45,10 @@ export class AddTeacherFormComponent implements OnInit {
   }
 
   toggleForm = () => this.formIsOpen = !this.formIsOpen;
-  
+
   onSubmit = () => {
     const thisFormValidationResponse = validationHelper(this.form.controls, this.fields);
     const subFormValidationResponse = validationHelper(this.userSubFormRef.userSubForm.controls, this.userSubFormRef.fields);
-    
     this.fields = thisFormValidationResponse.fields;
     this.userSubFormRef.fields = subFormValidationResponse.fields;
 
@@ -55,10 +56,11 @@ export class AddTeacherFormComponent implements OnInit {
       return this.http.post(apiUrl + "/teachers", this.form.value, this.httpOptionsService.options)
       .subscribe(
         (successRes: any) => {
+          this.teachersService.getTeachers();
           this.toggleForm();
           console.log('add teacher response', successRes);
         }
-      ); 
+      );
     }
   }
 }

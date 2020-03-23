@@ -1,6 +1,5 @@
 import { patternValidator } from "src/utils/validators/pattern-validator";
 import { maxLengthValidator } from "./../../../utils/validators/max-length-validator";
-import { TeacherinfoService } from "src/app/services/teachers/teacherinfo.service";
 import { ITeacherToSelect } from "./../../models/ITacherToSelect";
 import { maxValueValidator } from "./../../../utils/validators/max-value-validator";
 import { FormGroup, FormBuilder, FormControl } from "@angular/forms";
@@ -11,8 +10,10 @@ import { validationHelper } from "src/utils/helpers/validation-helper";
 import { apiUrl } from "src/constants/urls";
 import { HttpClient } from "@angular/common/http";
 import { HttpOptionsService } from "src/app/services/http-options/http-options.service";
-import { PupilinfoService } from "src/app/services/pupils/pupilinfo.service";
+import { PupilsService } from "src/app/services/pupils/pupils.service";
 import { IPupilToSelect } from "src/app/models/IPupilToSelect";
+import { TeachersService } from 'src/app/services/teachers/teachers.service';
+import { ClassesService } from 'src/app/services/classes/classes.service'
 
 @Component({
   selector: "yps-add-class-form",
@@ -51,20 +52,21 @@ export class AddClassFormComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private http: HttpClient,
-    private pupilService: PupilinfoService,
-    private teacherService: TeacherinfoService,
-    private httpOptionsService: HttpOptionsService
+    private teachersService: TeachersService,
+    private pupilsService: PupilsService,
+    private httpOptionsService: HttpOptionsService,
+    private classesService: ClassesService
   ) {}
 
   toggleForm = () => (this.formIsOpen = !this.formIsOpen);
 
   getTeachersToSelectData = () => {
-    this.teacherService
+    this.teachersService
       .getTeachersToSelect()
       .subscribe(data => (this.teachers = data));
   };
   getPupilsToSelectData = (numb: number) => {
-    this.pupilService
+    this.pupilsService
       .getPupilsToSelect(numb)
       .subscribe(data => (this.listOfPupils = data));
   };
@@ -83,12 +85,12 @@ export class AddClassFormComponent implements OnInit {
         ...this.form.value,
         number: parseInt(this.form.value.number, 10)
       };
-      console.log(request);
       return this.http
         .post(apiUrl + "/Classes", request, this.httpOptionsService.options)
         .subscribe((successRes: any) => {
           this.toggleForm();
           console.log("add classes response", successRes);
+          this.classesService.getClassesBySchool();
         });
     }
   };
@@ -114,10 +116,12 @@ export class AddClassFormComponent implements OnInit {
       classTeacherId: [null, [requiredValidator("teacher is required")]],
       selectedPupils: [null]
     });
+
     this.onChanges();
   }
+
   onChanges(): void {
-    this.form.get("number").valueChanges.subscribe(val => {
+    this.form.controls.number.valueChanges.subscribe(val => {
       if (val != "") {
         this.showPupils = true;
         console.log(typeof val);

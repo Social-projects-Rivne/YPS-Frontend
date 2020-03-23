@@ -24,6 +24,7 @@ import { patternValidator } from 'src/utils/validators/pattern-validator';
   ]
 })
 export class UserSubFormComponent implements OnInit, OnDestroy, ControlValueAccessor {
+  startDate = new Date(1990, 0, 1);
   userSubForm: FormGroup;
   subscriptions: Subscription[] = [];
   fields: IFormField[] = [
@@ -67,7 +68,7 @@ export class UserSubFormComponent implements OnInit, OnDestroy, ControlValueAcce
       name: "email",
       errorMsg: null
     }
-  ] 
+  ]
 
   constructor(private formBuilder: FormBuilder) { }
 
@@ -91,6 +92,7 @@ export class UserSubFormComponent implements OnInit, OnDestroy, ControlValueAcce
           "invalid email, should be similar to example@email.com."
         )
       ]],
+      "dateOfBirthday": [null, requiredValidator("date of birthday is required.")],
     });
 
     this.subscriptions.push(
@@ -118,6 +120,6 @@ export class UserSubFormComponent implements OnInit, OnDestroy, ControlValueAcce
     console.log('onChange');
   };
   onTouched: any = () => {};
-  
+
   validate(_: FormControl) {}
 }

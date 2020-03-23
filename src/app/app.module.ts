@@ -74,6 +74,9 @@ import { LessonDayCardComponent } from './components/lesson-day-card/lesson-day-
 import { LessonItemComponent } from './components/lesson-item/lesson-item.component';
 import { JournalColumnItemComponent } from './components/journal-column-item/journal-column-item.component';
 import { AddScheduleFormComponent } from './components/add-schedule-form/add-schedule-form.component';
+import { MAT_MOMENT_DATE_ADAPTER_OPTIONS, MatMomentDateModule } from '@angular/material-moment-adapter';
+import { PupilItemComponent } from './components/pupil-item/pupil-item.component';
+import { PupilListComponent } from './components/pupil-list/pupil-list.component';
 
 @NgModule({
   declarations: [
@@ -132,7 +135,9 @@ import { AddScheduleFormComponent } from './components/add-schedule-form/add-sch
     LessonDayCardComponent,
     LessonItemComponent,
     JournalColumnItemComponent,
-    AddScheduleFormComponent
+    AddScheduleFormComponent,
+    PupilItemComponent,
+    PupilListComponent
   ],
   imports: [
     BrowserModule,
@@ -142,7 +147,7 @@ import { AddScheduleFormComponent } from './components/add-schedule-form/add-sch
     HttpClientModule,
     BrowserAnimationsModule,
     RecaptchaModule.forRoot({
-      siteKey: '6LefHtYUAAAAABkKaKlf2kwUSmQleDf0HAZiUQse',
+      siteKey: "6LefHtYUAAAAABkKaKlf2kwUSmQleDf0HAZiUQse"
     }),
     CommonModule,
     RouterModule,
@@ -159,12 +164,21 @@ import { AddScheduleFormComponent } from './components/add-schedule-form/add-sch
     MatCheckboxModule,
     MatDatepickerModule,
     MatNativeDateModule,
+    MatMomentDateModule
   ],
-  providers: [{
-    provide: HTTP_INTERCEPTORS,
-     useClass: TokenInterceptor,
-      multi: true}
-    ],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenInterceptor,
+      multi: true
+    },
+    {
+      provide: MAT_MOMENT_DATE_ADAPTER_OPTIONS,
+      useValue: {
+        useUtc: true
+      }
+    }
+  ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

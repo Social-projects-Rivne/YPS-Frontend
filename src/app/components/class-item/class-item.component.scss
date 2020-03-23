@@ -2,39 +2,45 @@
 
 :host {
   display: grid;
-  grid-template-columns: calc(3rem + 2px) 5rem 6rem 1fr 9rem;
+  grid-template-columns: auto 1fr;
+  grid-column-gap: 1.5rem;
+  padding: 1rem;
+  border: 1px solid $light;
 
-  .item-el {
-    font-size: 0.85rem;
-    text-align: center;
-    line-height: 3rem;
-    padding: 0 .5rem;
-    border: {
-      top: 1px solid $light;
-      bottom: 1px solid $light;
-    };
-
-    &:last-child {
-      border-right: 1px solid $light;
-    }
+  .class-index {
+    grid-row: 1 / 4;
   }
 
-  .index {
-    display: grid;
-    align-content: center;
-    font-weight: bold;
-    width: calc(3rem + 2px);
-    height: calc(3rem + 2px);
-    background-color: $accent;
-    color: #ffffff;
-    text-align: center;
-  }
-
-  .character {
+  .class {
     text-transform: capitalize;
   }
 
-  .teacher-name {
-    text-align: left;
+  .class-teacher {
+    &-title {
+      font-size: .8rem;
+      text-transform: capitalize;
+      font-weight: 600;
+      color: $gray;
+    }
+
+    &-value {
+      font-size: .8rem;
+    }
+  }
+
+  .children-count {
+    color: $gray;
+    font-size: .8rem;
+    justify-self: end;
+    padding-top: 1rem;
+
+    &-value {
+      font-weight: 600;
+      color: $accent;
+    }
+
+    &::first-letter {
+      text-transform: capitalize;
+    }
   }
 }
