@@ -26,7 +26,7 @@ a {
   text-decoration: none;
   color: currentColor;
   outline: none;
-  
+
   &:hover {
     opacity: 0.8;
   }
@@ -71,6 +71,44 @@ input {
     color: $accent;
     background: #fff;
   }
+}
+
+.index {
+  display: grid;
+  position: relative;
+  align-content: center;
+  text-align: center;
+  width: 2rem;
+  height: 2rem;
+
+  &-value {
+    z-index: 1;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 0.75rem;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transform: rotate(45deg);
+    background-color: $accent;
+  }
+}
+
+.icon {
+  color: $accent;
+  font-size: 1rem;
+  width: 1rem;
+  height: 1rem;
+  line-height: 100%;
+  text-align: center;
+  align-self: center;
+  margin-bottom: -2px;
 }
 
 @media (max-width: 1400px) {

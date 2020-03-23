@@ -7,31 +7,8 @@
   padding: 1rem;
   border: 1px solid $light;
 
-  .index {
-    display: grid;
-    position: relative;
-    align-content: center;
-    text-align: center;
-    width: 2.5rem;
-    height: 2.5rem;
+  .class-index {
     grid-row: 1 / 4;
-
-    &-value {
-      z-index: 1;
-      color: #ffffff;
-      font-weight: bold;
-    }
-
-    &::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      transform: rotate(45deg);
-      background-color: $accent;
-    }
   }
 
   .class {
@@ -47,7 +24,7 @@
     }
 
     &-value {
-      font-size: .9rem;
+      font-size: .8rem;
     }
   }
 

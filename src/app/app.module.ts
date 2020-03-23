@@ -76,6 +76,8 @@ import { AddScheduleFormComponent } from './components/add-schedule-form/add-sch
 import { MAT_MOMENT_DATE_ADAPTER_OPTIONS, MatMomentDateModule } from '@angular/material-moment-adapter';
 import { AddUpcomingEventFormComponent } from './components/add-upcoming-event-form/add-upcoming-event-form.component';
 import { HeadAssistantUpcomingEventsComponent } from './pages/head-assistant-upcoming-events/head-assistant-upcoming-events.component';
+import { PupilItemComponent } from './components/pupil-item/pupil-item.component';
+import { PupilListComponent } from './components/pupil-list/pupil-list.component';
 
 @NgModule({
   declarations: [
@@ -135,7 +137,9 @@ import { HeadAssistantUpcomingEventsComponent } from './pages/head-assistant-upc
     LessonItemComponent,
     AddScheduleFormComponent,
     AddUpcomingEventFormComponent,
-    HeadAssistantUpcomingEventsComponent
+    HeadAssistantUpcomingEventsComponent,
+    PupilItemComponent,
+    PupilListComponent
   ],
   imports: [
     BrowserModule,
