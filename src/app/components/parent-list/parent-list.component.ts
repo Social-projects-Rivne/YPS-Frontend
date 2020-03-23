@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ParentsService } from 'src/app/services/parents/parents.service';
 
 @Component({
   selector: 'yps-parent-list',
@@ -6,10 +7,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./parent-list.component.scss']
 })
 export class ParentListComponent implements OnInit {
+  constructor(public parentsService: ParentsService) { }
 
-  constructor() { }
-
-  ngOnInit(): void {
+  ngOnInit() {
+    this.parentsService.getParents();
   }
-
 }
