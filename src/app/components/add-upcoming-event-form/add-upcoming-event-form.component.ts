@@ -7,6 +7,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { apiUrl } from 'src/constants/urls';
 import { get } from 'js-cookie';
 import { HttpOptionsService } from 'src/app/services/http-options/http-options.service';
+import { IClassToSelect } from 'src/app/models/IClassToSelect';
 
 @Component({
   selector: 'yps-add-upcoming-event-form',
@@ -33,6 +34,7 @@ export class AddUpcomingEventFormComponent implements OnInit {
       errorMsg: null
     },
   ];
+  classes: IClassToSelect[];
   formIsOpen: boolean = false;
 
   constructor(
@@ -47,8 +49,16 @@ export class AddUpcomingEventFormComponent implements OnInit {
     this.form = this.formBuilder.group({
       "title": [null, requiredValidator("title is required")],
       "content": [null , requiredValidator("content is required")],
+      "classId": [null],
       "scheduledDate": [null, requiredValidator("scheduled date is required")]
     });
+
+    this.http.get(`${apiUrl}/classes/getbyschool`, this.httpOptionsService.options)
+      .subscribe(
+        (successRes: IClassToSelect[]) => {
+          this.classes = successRes;
+        }
+      );
   }
 
   toggleForm = () => this.formIsOpen = !this.formIsOpen;
