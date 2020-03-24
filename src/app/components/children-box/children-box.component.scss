@@ -1,0 +1,53 @@
+@import "src/vars";
+
+:host {
+  position: relative;
+
+  .show-children-btn {
+    padding: .25rem 0;
+    border: none;
+    background-color: #fff;
+    color: $accent;
+    font-size: .7rem;
+
+    &:hover {
+      color: darken($accent, 10%);
+    }
+  }
+  .children {
+    display: grid;
+    position: absolute;
+    top: 1.5rem;
+    left: 0;
+    background-color: #fff;
+    grid-gap: .5rem;
+    z-index: 1;
+    box-shadow: 0 0 8px 4px rgba($black, .1);
+
+    .child {
+      font-size: .75rem;
+      font-weight: 600;
+
+      &-class-title {
+        text-transform: capitalize;
+        color: $gray;
+      }
+
+      &-class {
+        color: $accent;
+      }
+
+      &-full-name {
+        grid-column: 1 / -1;
+        max-width: 8rem;
+      }
+    }
+  }
+
+  .children, .child {
+    padding: .5rem;
+    border: 1px solid $light;
+    font-size: .75rem;
+    font-weight: 600;
+  }
+}

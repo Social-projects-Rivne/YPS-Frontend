@@ -4,7 +4,7 @@ import { IPupil } from 'src/app/models/IPupil';
 @Component({
   selector: 'yps-pupil-item',
   templateUrl: './pupil-item.component.html',
-  styleUrls: ['./pupil-item.component.scss']
+  styleUrls: ['../../../scss/card.scss']
 })
 export class PupilItemComponent {
   @Input() pupil: IPupil;
