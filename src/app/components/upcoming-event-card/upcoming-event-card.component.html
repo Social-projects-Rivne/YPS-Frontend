@@ -1,0 +1,17 @@
+<h3 class="header">Upcoming Events</h3>
+<span class="no-items" *ngIf="events.length == 0">
+  you don't have any upcoming events yet.
+</span>
+<div *ngFor="let event of events">
+  <div class="example-card">
+    <div>
+      <h3 class="title">{{ event.title }} on {{event.scheduledDate}}</h3>
+      <p>{{ event.content }}</p>
+    </div>
+    <div class="teacher-info">
+      <h4>{{ event.teacherFullName }}</h4>
+      <div class="teacher-degree">{{ event.degree }}</div>
+      <div class="date">{{ event.timeOfCreating }}</div>
+    </div>
+  </div>
+</div>

@@ -2,7 +2,7 @@
 
 :host {
   display: grid;
-  grid-gap: 1rem;
+  grid-gap: 0.3rem;
 
   .no-items {
     color: $gray;
@@ -14,16 +14,24 @@
 
   .example-card {
     display: grid;
-    min-width: 7rem;
+    min-width: 5rem;
     max-width: auto;
     box-shadow: none;
     border: 1px solid $light;
+    padding: 0.5rem;
     border-radius: 0%;
   }
 
-  .example-header-image {
-    background-image: url(/assets/images/default-user-image.jpg);
-    background-size: cover;
+  .teacher-degree{
+    font-size: 0.8rem;
+  }
+
+  .teacher-info{
+    //justify-self: end;
+  }
+
+  .header{
+    justify-self: center;
   }
 
   .date{
