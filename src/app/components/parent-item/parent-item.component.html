@@ -1,3 +1,6 @@
+<div class="image-wrap">
+  <img [src]="parent.imageUrl" alt="" class="image">
+</div>
 <div class="index parent-index">
   <span class="index-value parent-index-value digit">
     {{ index + 1 }}
@@ -18,20 +21,10 @@
 <div class="work-info">
   {{ parent.workInfo }}
 </div>
-<p class="children-title">children</p>
-<div class="children">
-  <div class="child" *ngFor="let child of parent.children">
-    <span class="child-full-name">
-      {{ child.fullName }},
-    </span>
-    <span class="child-class-title">
-      class
-    </span>
-    <span class="child-class">
-      {{ child.class }}
-    </span>
-  </div>
-</div>
+<yps-children-box
+  [children]="parent.children"
+>
+</yps-children-box>
 <p *ngIf="parent.dateOfBirth" class="birthday digit">
   birthday at
   <span class="digit birthday-value">

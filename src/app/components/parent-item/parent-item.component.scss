@@ -1,18 +1,6 @@
 @import "src/vars";
 
 :host {
-  display: grid;
-  grid-template-columns: auto 1fr;
-  grid-column-gap: 1.5rem;
-  grid-row-gap: .5rem;
-  padding: 1rem;
-  border: 1px solid $light;
-  align-content: start;
-
-  .parent-index {
-    grid-row: 1 / 9;
-  }
-
   .full-name {
     text-transform: capitalize;
   }
@@ -47,34 +35,17 @@
     }
   }
 
-  .work-info-title, .children-title {
+  .work-info-title {
     color: $gray;
     text-transform: capitalize;
     font-weight: 600;
-    font-size: 0.75rem;
+    font-size: .75rem;
   }
 
-  .children {
-    display: grid;
-
-    .child {
-      font-size: 0.75rem;
-      font-weight: 600;
-
-      &-class-title {
-        color: $gray;
-      }
-
-      &-class {
-        color: $accent;
-      }
-    }
-  }
-
-  .children, .work-info {
+  .work-info {
     padding: .5rem;
     border: 1px solid $light;
-    font-size: 0.75rem;
+    font-size: .75rem;
     font-weight: 600;
   }
 }
