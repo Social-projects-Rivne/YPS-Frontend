@@ -19,6 +19,7 @@
   .birthday {
     margin-top: 1rem;
   }
+
   .class, .birthday, .no-class {
     color: $gray;
     justify-self: end;
@@ -40,6 +41,8 @@
     grid-gap: .25rem;
 
     &-value {
+      min-width: 100%;
+      word-wrap: break-word;
       color: $gray;
       font-size: .8rem;
     }

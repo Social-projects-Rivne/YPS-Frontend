@@ -1,1 +1,6 @@
-<p>parent-list works!</p>
+<yps-parent-item
+  *ngFor="let parent of parentsService.parents; index as index"
+  [parent]="parent"
+  [index]="index"
+>
+</yps-parent-item>

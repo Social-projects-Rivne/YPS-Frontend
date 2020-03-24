@@ -1,1 +1,40 @@
-<p>parent-item works!</p>
+<div class="index parent-index">
+  <span class="index-value parent-index-value digit">
+    {{ index + 1 }}
+  </span>
+</div>
+<h4 class="full-name">
+  {{ parent.surname + " " + parent.firstName + " " + parent.middleName | lowercase }}
+</h4>
+<p class="email">
+  <mat-icon class="icon mail">mail</mat-icon>
+  <span class="email-value">{{ parent.email }}</span>
+</p>
+<p class="phone-number">
+  <mat-icon class="icon phone">phone</mat-icon>
+  <span class="phone-number-value">{{ parent.phoneNumber }}</span>
+</p>
+<p class="work-info-title">infornation about work</p>
+<div class="work-info">
+  {{ parent.workInfo }}
+</div>
+<p class="children-title">children</p>
+<div class="children">
+  <div class="child" *ngFor="let child of parent.children">
+    <span class="child-full-name">
+      {{ child.fullName }},
+    </span>
+    <span class="child-class-title">
+      class
+    </span>
+    <span class="child-class">
+      {{ child.class }}
+    </span>
+  </div>
+</div>
+<p *ngIf="parent.dateOfBirth" class="birthday digit">
+  birthday at
+  <span class="digit birthday-value">
+    {{ parent.dateOfBirth }}
+  </span>
+</p>
