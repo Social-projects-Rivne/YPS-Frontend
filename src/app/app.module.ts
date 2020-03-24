@@ -75,6 +75,8 @@ import { LessonItemComponent } from './components/lesson-item/lesson-item.compon
 import { JournalColumnItemComponent } from './components/journal-column-item/journal-column-item.component';
 import { AddScheduleFormComponent } from './components/add-schedule-form/add-schedule-form.component';
 import { MAT_MOMENT_DATE_ADAPTER_OPTIONS, MatMomentDateModule } from '@angular/material-moment-adapter';
+import { AddUpcomingEventFormComponent } from './components/add-upcoming-event-form/add-upcoming-event-form.component';
+import { HeadAssistantUpcomingEventsComponent } from './pages/head-assistant-upcoming-events/head-assistant-upcoming-events.component';
 import { PupilItemComponent } from './components/pupil-item/pupil-item.component';
 import { PupilListComponent } from './components/pupil-list/pupil-list.component';
 
@@ -136,6 +138,8 @@ import { PupilListComponent } from './components/pupil-list/pupil-list.component
     LessonItemComponent,
     JournalColumnItemComponent,
     AddScheduleFormComponent,
+    AddUpcomingEventFormComponent,
+    HeadAssistantUpcomingEventsComponent,
     PupilItemComponent,
     PupilListComponent
   ],
