@@ -72,11 +72,12 @@ export class JournalColumnComponent implements OnInit {
     this.fields = thisFormValidationResponse.fields;
     if (thisFormValidationResponse.isValid) {
       this.topic = this.form.value;
-      console.log({ topic: this.form.value, lessonId: this.lessonId, classId: this.classId, lessonMarks: this.lessonMarks });
+      const { topic } = this.form.value;
+      console.log({ topic: topic, lessonId: this.lessonId, classId: this.classId, lessonMarks: this.lessonMarks });
 
-      this.http.post(apiUrl + "/JournalColumn", { topic: this.form.value, lessonId: this.lessonId, classId: this.classId, lessonMarks: this.lessonMarks }, this.httpOtionsService.options)
-      .subscribe((successRes: string) =>{
-        console.log("add classes response", successRes);
+      this.http.post(apiUrl + "/JournalColumn", { topic: topic, lessonId: this.lessonId, classId: this.classId, lessonMarks: this.lessonMarks }, this.httpOtionsService.options)
+      .subscribe((successRes: any) => {
+        console.log('add journal column with id ', successRes);
       });
     }
   }
