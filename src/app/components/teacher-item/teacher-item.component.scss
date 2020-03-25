@@ -1,0 +1,21 @@
+@import "src/vars";
+
+:host {
+  .degree-title {
+    color: $gray;
+    text-transform: capitalize;
+    font-weight: 600;
+    font-size: .75rem;
+  }
+
+  .degree {
+    padding: .5rem;
+    border: 1px solid $light;
+    font-size: .75rem;
+    font-weight: 600;
+
+    &::first-letter {
+      text-transform: capitalize;
+    }
+  }
+}

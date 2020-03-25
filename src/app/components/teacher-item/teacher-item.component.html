@@ -1,1 +1,29 @@
-<p>teacher-item works!</p>
+<div class="image-wrap">
+  <img [src]="teacher.imageUrl" class="image">
+</div>
+<div class="index parent-index">
+  <span class="index-value parent-index-value digit">
+    {{ index + 1 }}
+  </span>
+</div>
+<h4 class="full-name">
+  {{ teacher.surname + " " + teacher.firstName + " " + teacher.middleName | lowercase }}
+</h4>
+<p class="email">
+  <mat-icon class="icon mail">mail</mat-icon>
+  <span class="email-value">{{ teacher.email }}</span>
+</p>
+<p class="phone-number">
+  <mat-icon class="icon phone">phone</mat-icon>
+  <span class="phone-number-value">{{ teacher.phoneNumber }}</span>
+</p>
+<p class="degree-title">infornation about degree</p>
+<div class="degree">
+  {{ teacher.degree }}
+</div>
+<p *ngIf="teacher.dateOfBirth" class="birthday digit">
+  birthday at
+  <span class="digit birthday-value">
+    {{ teacher.dateOfBirth }}
+  </span>
+</p>
