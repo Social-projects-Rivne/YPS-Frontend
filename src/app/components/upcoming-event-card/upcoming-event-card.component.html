@@ -3,15 +3,15 @@
   you don't have any upcoming events yet.
 </span>
 <div *ngFor="let event of events">
-  <div class="example-card">
-    <div>
-      <h3 class="title">{{ event.title }} on {{event.scheduledDate}}</h3>
-      <p>{{ event.content }}</p>
-    </div>
+  <div class="upcoming-event-card">
+    <h3 class="title">{{ event.title }} on {{event.scheduledDate}}</h3>
+    <p class="content">{{ event.content }}</p>
     <div class="teacher-info">
-      <h4>{{ event.teacherFullName }}</h4>
-      <div class="teacher-degree">{{ event.degree }}</div>
-      <div class="date">{{ event.timeOfCreating }}</div>
+      <div class="teacher-image-wrap">
+        <img class="teacher-image" src="{{event.teacherImageUrl}}">
+      </div>
+      <p class="teacher-fullname">{{ event.teacherFullName }}</p>
     </div>
+    <p class="date">{{ event.timeOfCreating }}</p>
   </div>
 </div>

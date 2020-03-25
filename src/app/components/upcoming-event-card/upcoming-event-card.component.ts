@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { IEvent } from 'src/app/models/IEvent';
 import { EventService } from 'src/app/services/events/event.service';
 import { UserService } from 'src/app/services/user/user.service';
@@ -9,12 +9,10 @@ import { UserService } from 'src/app/services/user/user.service';
   styleUrls: ['./upcoming-event-card.component.scss']
 })
 export class UpcomingEventCardComponent implements OnInit {
-  events: IEvent[] = [];
+  @Input() events: IEvent[] = [];
 
   constructor(private eventService: EventService) { }
 
   ngOnInit(): void {
-    this.eventService.getUpcomingEventsByPupil()
-      .subscribe(data => this.events = data);
   }
 }

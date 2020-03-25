@@ -75,6 +75,7 @@ import { MAT_MOMENT_DATE_ADAPTER_OPTIONS, MatMomentDateModule } from '@angular/m
 import { PupilItemComponent } from './components/pupil-item/pupil-item.component';
 import { PupilListComponent } from './components/pupil-list/pupil-list.component';
 import { UpcomingEventCardComponent } from './components/upcoming-event-card/upcoming-event-card.component';
+import { UpcomingEventsCardListComponent } from './components/upcoming-events-card-list/upcoming-events-card-list.component';
 
 @NgModule({
   declarations: [
@@ -132,7 +133,8 @@ import { UpcomingEventCardComponent } from './components/upcoming-event-card/upc
     AddScheduleFormComponent,
     PupilItemComponent,
     PupilListComponent,
-    UpcomingEventCardComponent
+    UpcomingEventCardComponent,
+    UpcomingEventsCardListComponent
   ],
   imports: [
     BrowserModule,
