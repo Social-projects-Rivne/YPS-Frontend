@@ -8,7 +8,7 @@
     font-size: .75rem;
   }
 
-  .degree {
+  .degree, .no-degree {
     padding: .5rem;
     border: 1px solid $light;
     font-size: .75rem;
@@ -17,5 +17,9 @@
     &::first-letter {
       text-transform: capitalize;
     }
+  }
+
+  .no-degree {
+    color: $gray;
   }
 }

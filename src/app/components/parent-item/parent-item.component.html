@@ -18,12 +18,10 @@
   <span class="phone-number-value">{{ parent.phoneNumber }}</span>
 </p>
 <p class="work-info-title">infornation about work</p>
-<div class="work-info">
+<p class="work-info">
   {{ parent.workInfo }}
-</div>
-<yps-children-box
-  [children]="parent.children"
->
+</p>
+<yps-children-box [children]="parent.children">
 </yps-children-box>
 <p *ngIf="parent.dateOfBirth" class="birthday digit">
   birthday at

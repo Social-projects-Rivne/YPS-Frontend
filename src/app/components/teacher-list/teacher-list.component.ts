@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TeachersService } from 'src/app/services/teachers/teachers.service';
 
 @Component({
   selector: 'yps-teacher-list',
@@ -6,10 +7,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./teacher-list.component.scss']
 })
 export class TeacherListComponent implements OnInit {
+  constructor(public teachersService: TeachersService) {}
 
-  constructor() { }
-
-  ngOnInit(): void {
+  ngOnInit() {
+    this.teachersService.getTeachers();
   }
-
 }

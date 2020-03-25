@@ -18,9 +18,10 @@
   <span class="phone-number-value">{{ teacher.phoneNumber }}</span>
 </p>
 <p class="degree-title">infornation about degree</p>
-<div class="degree">
+<p class="degree" *ngIf="teacher.degree">
   {{ teacher.degree }}
-</div>
+</p>
+<p class="no-degree" *ngIf="!teacher.degree">teacher has no degree</p>
 <p *ngIf="teacher.dateOfBirth" class="birthday digit">
   birthday at
   <span class="digit birthday-value">
