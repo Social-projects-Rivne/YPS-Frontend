@@ -1,17 +1,7 @@
 @import "src/vars";
 
 :host {
-  display: grid;
-  grid-template-columns: auto 1fr;
-  grid-column-gap: 1.5rem;
-  padding: 1rem;
-  border: 1px solid $light;
-
-  .class-index {
-    grid-row: 1 / 4;
-  }
-
-  .class {
+  .class-name {
     text-transform: capitalize;
   }
 
