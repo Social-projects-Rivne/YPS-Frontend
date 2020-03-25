@@ -79,6 +79,8 @@ import { PupilListComponent } from './components/pupil-list/pupil-list.component
 import { ParentItemComponent } from './components/parent-item/parent-item.component';
 import { ParentListComponent } from './components/parent-list/parent-list.component';
 import { ChildrenBoxComponent } from './components/children-box/children-box.component';
+import { TeacherItemComponent } from './components/teacher-item/teacher-item.component';
+import { TeacherListComponent } from './components/teacher-list/teacher-list.component';
 
 @NgModule({
   declarations: [
@@ -141,7 +143,9 @@ import { ChildrenBoxComponent } from './components/children-box/children-box.com
     PupilListComponent,
     ParentItemComponent,
     ParentListComponent,
-    ChildrenBoxComponent
+    ChildrenBoxComponent,
+    TeacherItemComponent,
+    TeacherListComponent
   ],
   imports: [
     BrowserModule,
