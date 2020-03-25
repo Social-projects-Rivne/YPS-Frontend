@@ -1,7 +1,5 @@
-import { ITeacher } from './../../models/ITeacher';
 import { Component, OnInit } from '@angular/core';
-import { TeacherinfoService } from 'src/app/services/teachers/teacherinfo.service';
-import { IUser } from 'src/app/models/IUser';
+import { TeachersService } from 'src/app/services/teachers/teachers.service';
 
 @Component({
   selector: 'yps-teachers',
@@ -11,10 +9,8 @@ import { IUser } from 'src/app/models/IUser';
 export class TeachersComponent implements OnInit {
 
   constructor(
-    private userService: TeacherinfoService
+    public teachersService: TeachersService,
   ) {}
-
-  teachersData: IUser[];
 
   columns = [
     { def: "id", label: "Id" },
@@ -27,13 +23,8 @@ export class TeachersComponent implements OnInit {
     { def: "dateOfBirth", label: "Date of birth"},
     { def:"degree", label:"Degree"}
   ];
-
-  getTeachersData = () => {
-    this.userService.getTeachers()
-      .subscribe(data => this.teachersData = data)
-  }
-
+  
   ngOnInit() {
-    this.getTeachersData();
+    this.teachersService.getTeachers();
   }
 }

@@ -6,6 +6,7 @@ import { apiUrl } from 'src/constants/urls';
 import { validationHelper } from 'src/utils/helpers/validation-helper';
 import { requiredValidator } from 'src/utils/validators/required-validator';
 import { HttpOptionsService } from 'src/app/services/http-options/http-options.service';
+import { TeachersService } from 'src/app/services/teachers/teachers.service';
 
 @Component({
   selector: 'yps-add-teacher-form',
@@ -30,7 +31,8 @@ export class AddTeacherFormComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private http: HttpClient,
-    private httpOptionsService: HttpOptionsService
+    private httpOptionsService: HttpOptionsService,
+    private teachersService : TeachersService
   ) {}
 
   ngOnInit() {
@@ -54,6 +56,7 @@ export class AddTeacherFormComponent implements OnInit {
       return this.http.post(apiUrl + "/teachers", this.form.value, this.httpOptionsService.options)
       .subscribe(
         (successRes: any) => {
+          this.teachersService.getTeachers();
           this.toggleForm();
           console.log('add teacher response', successRes);
         }
