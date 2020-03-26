@@ -79,6 +79,9 @@ import { AddUpcomingEventFormComponent } from './components/add-upcoming-event-f
 import { HeadAssistantUpcomingEventsComponent } from './pages/head-assistant-upcoming-events/head-assistant-upcoming-events.component';
 import { PupilItemComponent } from './components/pupil-item/pupil-item.component';
 import { PupilListComponent } from './components/pupil-list/pupil-list.component';
+import { ParentItemComponent } from './components/parent-item/parent-item.component';
+import { ParentListComponent } from './components/parent-list/parent-list.component';
+import { ChildrenBoxComponent } from './components/children-box/children-box.component';
 
 @NgModule({
   declarations: [
@@ -141,7 +144,10 @@ import { PupilListComponent } from './components/pupil-list/pupil-list.component
     AddUpcomingEventFormComponent,
     HeadAssistantUpcomingEventsComponent,
     PupilItemComponent,
-    PupilListComponent
+    PupilListComponent,
+    ParentItemComponent,
+    ParentListComponent,
+    ChildrenBoxComponent
   ],
   imports: [
     BrowserModule,
