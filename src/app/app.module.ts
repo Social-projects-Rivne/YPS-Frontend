@@ -72,10 +72,17 @@ import { LessonDayCardComponent } from './components/lesson-day-card/lesson-day-
 import { LessonItemComponent } from './components/lesson-item/lesson-item.component';
 import { AddScheduleFormComponent } from './components/add-schedule-form/add-schedule-form.component';
 import { MAT_MOMENT_DATE_ADAPTER_OPTIONS, MatMomentDateModule } from '@angular/material-moment-adapter';
+import { AddUpcomingEventFormComponent } from './components/add-upcoming-event-form/add-upcoming-event-form.component';
+import { HeadAssistantUpcomingEventsComponent } from './pages/head-assistant-upcoming-events/head-assistant-upcoming-events.component';
 import { PupilItemComponent } from './components/pupil-item/pupil-item.component';
 import { PupilListComponent } from './components/pupil-list/pupil-list.component';
 import { UpcomingEventCardComponent } from './components/upcoming-event-card/upcoming-event-card.component';
 import { UpcomingEventsCardListComponent } from './components/upcoming-events-card-list/upcoming-events-card-list.component';
+import { ParentItemComponent } from './components/parent-item/parent-item.component';
+import { ParentListComponent } from './components/parent-list/parent-list.component';
+import { ChildrenBoxComponent } from './components/children-box/children-box.component';
+import { TeacherItemComponent } from './components/teacher-item/teacher-item.component';
+import { TeacherListComponent } from './components/teacher-list/teacher-list.component';
 
 @NgModule({
   declarations: [
@@ -131,10 +138,17 @@ import { UpcomingEventsCardListComponent } from './components/upcoming-events-ca
     LessonDayCardComponent,
     LessonItemComponent,
     AddScheduleFormComponent,
+    AddUpcomingEventFormComponent,
+    HeadAssistantUpcomingEventsComponent,
     PupilItemComponent,
     PupilListComponent,
     UpcomingEventCardComponent,
-    UpcomingEventsCardListComponent
+    UpcomingEventsCardListComponent,
+    ParentItemComponent,
+    ParentListComponent,
+    ChildrenBoxComponent,
+    TeacherItemComponent,
+    TeacherListComponent
   ],
   imports: [
     BrowserModule,

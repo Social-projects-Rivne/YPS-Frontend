@@ -1,0 +1,90 @@
+@import "src/vars";
+
+:host {
+  display: grid;
+  position: relative;
+  grid-column-gap: 1rem;
+  grid-row-gap: .5rem;
+  padding: 1rem;
+  border: 1px solid $light;
+  align-content: start;
+
+  .image-wrap {
+    display: flex;
+    justify-content: center;
+
+    .image {
+      border-radius: 50%;
+      width: 6rem;
+      height: 6rem;
+      object-fit: cover;
+      vertical-align: middle;
+    }
+  }
+
+  .full-name {
+    text-transform: capitalize;
+  }
+
+  .birthday {
+    margin-top: 1rem;
+  }
+
+  .class, .birthday, .no-class {
+    color: $gray;
+    justify-self: end;
+    font-size: .75rem;
+
+    &::first-letter {
+      text-transform: capitalize;
+    }
+
+    &-value {
+      color: $accent;
+      text-transform: lowercase;
+    }
+  }
+
+  .email, .phone-number {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-gap: .25rem;
+
+    &-value {
+      display: block;
+      color: $gray;
+      font-size: .8rem;
+      min-width: 100%;
+      word-wrap: break-word;
+    }
+  }
+
+  .index {
+    display: grid;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    align-content: center;
+    text-align: center;
+    width: 1.5rem;
+    height: 1.5rem;
+
+    &-value {
+      z-index: 1;
+      color: #ffffff;
+      font-weight: bold;
+      font-size: .7rem;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      transform: rotate(45deg);
+      background-color: $accent;
+    }
+  }
+}

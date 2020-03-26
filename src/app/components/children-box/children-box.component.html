@@ -1,0 +1,17 @@
+<button class="show-children-btn btn" (click)="toggleShow()">
+  {{ show ? "hide children" : "show children" }}
+</button>
+<div class="children" *ngIf="show">
+  <div class="child" *ngFor="let child of children">
+    <span class="child-class-title">
+      class,
+    </span>
+    <span class="child-class">
+      {{ child.class }}
+    </span>
+    <br>
+    <span class="child-full-name">
+      {{ child.fullName }}
+    </span>
+  </div>
+</div>
