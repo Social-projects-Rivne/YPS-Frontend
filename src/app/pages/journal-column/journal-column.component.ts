@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { IShortInfoPupil } from 'src/app/models/IShortInfoPupil';
 import { HttpOptionsService } from 'src/app/services/http-options/http-options.service';
 import { HttpClient } from '@angular/common/http';
@@ -35,7 +35,12 @@ export class JournalColumnComponent implements OnInit {
       errorMsg: null
     }];
 
-  constructor(private formBuilder: FormBuilder, private route: ActivatedRoute, private httpOtionsService: HttpOptionsService, private http: HttpClient) { }
+  constructor(private formBuilder: FormBuilder, 
+    private route: ActivatedRoute, 
+    private httpOtionsService: HttpOptionsService, 
+    private http: HttpClient,
+    public router: Router
+    ) { }
 
   ngOnInit(): void {
     this.form = this.formBuilder.group({
@@ -78,6 +83,7 @@ export class JournalColumnComponent implements OnInit {
       this.http.post(apiUrl + "/JournalColumn", { topic: topic, lessonId: this.lessonId, classId: this.classId, lessonMarks: this.lessonMarks }, this.httpOtionsService.options)
       .subscribe((successRes: any) => {
         console.log('add journal column with id ', successRes);
+        this.router.navigate([`/teacher/lessons`]);
       });
     }
   }
