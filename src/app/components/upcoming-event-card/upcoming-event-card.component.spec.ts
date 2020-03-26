@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PupilEventCardComponent } from './pupil-event-card.component';
+import { UpcomingEventCardComponent } from './upcoming-event-card.component';
 
-describe('PupilEventCardComponent', () => {
-  let component: PupilEventCardComponent;
-  let fixture: ComponentFixture<PupilEventCardComponent>;
+describe('UpcomingEventCardComponent', () => {
+  let component: UpcomingEventCardComponent;
+  let fixture: ComponentFixture<UpcomingEventCardComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PupilEventCardComponent ]
+      declarations: [ UpcomingEventCardComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(PupilEventCardComponent);
+    fixture = TestBed.createComponent(UpcomingEventCardComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
