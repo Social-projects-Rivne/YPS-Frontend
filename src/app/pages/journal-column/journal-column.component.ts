@@ -19,11 +19,8 @@ export class JournalColumnComponent implements OnInit {
   lessonId: number;
   classId: number;
   topic: string = null;
-
   pupils: IShortInfoPupil[];
-
   lessonMarks: IPupilLessonMarks[] = [];
-
   form: FormGroup;
   fields: IFormField[] = [
     {
