@@ -14,9 +14,9 @@ export class JournalColumnItemComponent implements OnInit {
   classworkTypeId: number = 1;
   homeworkTypeId: number = 2;
   testTypeId: number = 3;
+  form: FormGroup;
 
   @Output() lessonMarks = new EventEmitter<IPupilLessonMarks[]>();
-  form: FormGroup;
 
   marks: string[] = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "Absent"];
 
@@ -26,7 +26,6 @@ export class JournalColumnItemComponent implements OnInit {
     type: undefined
   }];
 
-  
   constructor(private formBuilder: FormBuilder) { }
 
   ngOnInit(): void {

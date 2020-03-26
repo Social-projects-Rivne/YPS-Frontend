@@ -5,7 +5,7 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'yps-lesson-item',
   templateUrl: './lesson-item.component.html',
-  styleUrls: ['./lesson-item.component.scss'],
+  styleUrls: ['./lesson-item.component.scss']
 })
 export class LessonItemComponent implements OnInit {
   @Input() item: ILessonItem;
