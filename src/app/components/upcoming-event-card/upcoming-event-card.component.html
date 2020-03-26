@@ -1,11 +1,9 @@
-<div class="upcoming-event-card">
-  <h3 class="title">{{ event.title }} on {{event.scheduledDate}}</h3>
-  <p class="content">{{ event.content }}</p>
-  <div class="teacher-info">
-    <div class="teacher-image-wrap">
-      <img class="teacher-image" src="{{event.teacherImageUrl}}">
-    </div>
-    <p class="teacher-fullname">{{ event.teacherFullName }}</p>
+<h4 class="title">{{ event.title }} on {{event.scheduledDate}}</h4>
+<p class="content">{{ event.content }}</p>
+<div class="teacher-info">
+  <div class="teacher-image-wrap">
+    <img class="teacher-image" src="{{event.teacherImageUrl}}">
   </div>
-  <p class="date">{{ event.timeOfCreating }}</p>
+  <p class="teacher-fullname">{{ event.teacherFullName }}</p>
 </div>
+<p class="date">{{ event.timeOfCreating }}</p>

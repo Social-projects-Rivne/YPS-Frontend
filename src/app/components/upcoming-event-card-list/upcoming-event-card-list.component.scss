@@ -1,4 +1,14 @@
-:host{
-    display: grid;
-    grid-gap: 1rem;
+@import 'src/vars.scss';
+
+:host {
+  display: grid;
+  grid-gap: 1rem;
+
+  .no-items {
+    color: $gray;
+
+    &::first-letter {
+      text-transform: capitalize;
+    }
+  }
 }
