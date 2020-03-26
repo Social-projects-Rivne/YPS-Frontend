@@ -9,7 +9,6 @@ import { IEvent } from 'src/app/models/IEvent';
   styleUrls: ['../../../scss/profile.scss']
 })
 export class PupilProfileComponent implements OnInit {
-
   url="/GetUpcomingEventsByPupil";
 
   constructor(public userService: UserService) { }
