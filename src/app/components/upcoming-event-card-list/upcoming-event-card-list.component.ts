@@ -15,10 +15,10 @@ export class UpcomingEventCardListComponent implements OnInit {
 
   ngOnInit(): void {
     this.eventService.getUpcomingEvents(this.url)
-      .subscribe((res: IEvent[]) => {
-        this.events = res;
-      }
+      .subscribe(
+        (res: IEvent[]) => {
+          this.events = res;
+        }
       );
   }
-
 }

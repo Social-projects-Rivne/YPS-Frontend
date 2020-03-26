@@ -9,5 +9,5 @@ import { UserService } from 'src/app/services/user/user.service';
   styleUrls: ['./upcoming-event-card.component.scss']
 })
 export class UpcomingEventCardComponent {
-  @Input() events: IEvent[];
+  @Input() event: IEvent;
 }
