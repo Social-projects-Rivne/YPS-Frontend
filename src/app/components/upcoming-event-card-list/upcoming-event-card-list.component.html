@@ -1,0 +1,7 @@
+<h3 class="header">Upcoming Events</h3>
+<span class="no-items" *ngIf="events.length == 0">
+  you don't have any upcoming events yet.
+</span>
+<div *ngFor="let event of events">
+  <yps-upcoming-event-card [event]="event"></yps-upcoming-event-card>
+</div>

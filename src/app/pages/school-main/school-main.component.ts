@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { EventService } from 'src/app/services/events/event.service';
+import { IEvent } from 'src/app/models/IEvent';
 
 @Component({
   selector: 'yps-school-main',
@@ -6,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./school-main.component.scss']
 })
 export class SchoolMainComponent implements OnInit {
+  url = "/GetUpcomingEventsBySchool";
 
   constructor() { }
 
