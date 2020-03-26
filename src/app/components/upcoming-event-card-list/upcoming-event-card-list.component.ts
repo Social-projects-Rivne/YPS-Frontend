@@ -3,14 +3,14 @@ import { EventService } from 'src/app/services/events/event.service';
 import { IEvent } from 'src/app/models/IEvent';
 
 @Component({
-  selector: 'yps-upcoming-events-card-list',
-  templateUrl: './upcoming-events-card-list.component.html',
-  styleUrls: ['./upcoming-events-card-list.component.scss']
+  selector: 'yps-upcoming-event-card-list',
+  templateUrl: './upcoming-event-card-list.component.html',
+  styleUrls: ['./upcoming-event-card-list.component.scss']
 })
-export class UpcomingEventsCardListComponent implements OnInit {
-
+export class UpcomingEventCardListComponent implements OnInit {
   @Input() url: string;
-  events: IEvent[]
+  events: IEvent[];
+
   constructor(private eventService: EventService) { }
 
   ngOnInit(): void {

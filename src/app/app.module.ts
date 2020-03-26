@@ -77,7 +77,7 @@ import { HeadAssistantUpcomingEventsComponent } from './pages/head-assistant-upc
 import { PupilItemComponent } from './components/pupil-item/pupil-item.component';
 import { PupilListComponent } from './components/pupil-list/pupil-list.component';
 import { UpcomingEventCardComponent } from './components/upcoming-event-card/upcoming-event-card.component';
-import { UpcomingEventsCardListComponent } from './components/upcoming-events-card-list/upcoming-events-card-list.component';
+import { UpcomingEventCardListComponent } from './components/upcoming-event-card-list/upcoming-event-card-list.component';
 import { ParentItemComponent } from './components/parent-item/parent-item.component';
 import { ParentListComponent } from './components/parent-list/parent-list.component';
 import { ChildrenBoxComponent } from './components/children-box/children-box.component';
@@ -143,7 +143,7 @@ import { TeacherListComponent } from './components/teacher-list/teacher-list.com
     PupilItemComponent,
     PupilListComponent,
     UpcomingEventCardComponent,
-    UpcomingEventsCardListComponent,
+    UpcomingEventCardListComponent,
     ParentItemComponent,
     ParentListComponent,
     ChildrenBoxComponent,

@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { IEvent } from 'src/app/models/IEvent';
 import { EventService } from 'src/app/services/events/event.service';
 import { UserService } from 'src/app/services/user/user.service';
@@ -8,11 +8,6 @@ import { UserService } from 'src/app/services/user/user.service';
   templateUrl: './upcoming-event-card.component.html',
   styleUrls: ['./upcoming-event-card.component.scss']
 })
-export class UpcomingEventCardComponent implements OnInit {
-  @Input() events: IEvent[] = [];
-
-  constructor(private eventService: EventService) { }
-
-  ngOnInit(): void {
-  }
+export class UpcomingEventCardComponent {
+  @Input() events: IEvent[];
 }
