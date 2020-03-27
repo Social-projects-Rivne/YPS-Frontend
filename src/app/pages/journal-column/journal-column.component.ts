@@ -31,12 +31,13 @@ export class JournalColumnComponent implements OnInit {
       errorMsg: null
     }];
 
-  constructor(private formBuilder: FormBuilder, 
+  constructor(
+    private formBuilder: FormBuilder, 
     private route: ActivatedRoute, 
     private httpOtionsService: HttpOptionsService, 
     private http: HttpClient,
     public router: Router
-    ) { }
+  ) { }
 
   ngOnInit(): void {
     this.form = this.formBuilder.group({
