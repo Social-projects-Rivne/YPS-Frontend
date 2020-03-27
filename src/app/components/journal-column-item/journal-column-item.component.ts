@@ -42,10 +42,9 @@ export class JournalColumnItemComponent implements OnInit {
         }
         this.pupilLessonMarks.push(mark);
       });
-      
+
       this.addMarks();
     });
-
   }
 
   addMarks = () => {
