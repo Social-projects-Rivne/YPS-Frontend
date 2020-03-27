@@ -83,6 +83,7 @@ import { ParentListComponent } from './components/parent-list/parent-list.compon
 import { ChildrenBoxComponent } from './components/children-box/children-box.component';
 import { TeacherItemComponent } from './components/teacher-item/teacher-item.component';
 import { TeacherListComponent } from './components/teacher-list/teacher-list.component';
+import { SchoolInfoCardComponent } from './components/school-info-card/school-info-card.component';
 
 @NgModule({
   declarations: [
@@ -149,7 +150,8 @@ import { TeacherListComponent } from './components/teacher-list/teacher-list.com
     ParentListComponent,
     ChildrenBoxComponent,
     TeacherItemComponent,
-    TeacherListComponent
+    TeacherListComponent,
+    SchoolInfoCardComponent
   ],
   imports: [
     BrowserModule,
