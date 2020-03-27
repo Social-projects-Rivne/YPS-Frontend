@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { IShortInfoPupil } from 'src/app/models/IShortInfoPupil';
-import { IPupilLessonMarks } from 'src/app/models/IPupilLessonMarks';
+import { IPupilLessonMark } from 'src/app/models/IPupilLessonMark';
 import { FormGroup, FormBuilder } from '@angular/forms';
 
 @Component({
@@ -11,20 +11,12 @@ import { FormGroup, FormBuilder } from '@angular/forms';
 export class JournalColumnItemComponent implements OnInit {
   @Input() pupilShortInfo: IShortInfoPupil;
   @Input() index: number;
-  classworkTypeId: number = 1;
-  homeworkTypeId: number = 2;
-  testTypeId: number = 3;
   form: FormGroup;
-
-  @Output() lessonMarks = new EventEmitter<IPupilLessonMarks[]>();
+  @Output() selectedMarks = new EventEmitter<IPupilLessonMark[]>();
 
   marks: string[] = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "Absent"];
 
-  pupilLessonMarks: IPupilLessonMarks[] = [{
-    pupilId: undefined,
-    value: undefined,
-    type: undefined
-  }];
+  pupilLessonMarks: IPupilLessonMark[] = [];
 
   constructor(private formBuilder: FormBuilder) { }
 
@@ -39,35 +31,24 @@ export class JournalColumnItemComponent implements OnInit {
       "test": [null]
     });
 
-    this.pupilLessonMarks.pop();
+    this.form.valueChanges.subscribe(value =>{
+      let valueKeys = Object.keys(value);
 
-    this.form.controls.classwork.valueChanges.subscribe(value =>{
-      let mark: IPupilLessonMarks = {
-        pupilId: this.pupilShortInfo.id,
-        value,
-        type: this.classworkTypeId
-      }
-      this.pupilLessonMarks.push(mark);
+      valueKeys.forEach(key => {
+        let mark: IPupilLessonMark = {
+          pupilId: this.pupilShortInfo.id,
+          value: value[key],
+          typeId: key == "classwork" ? 1 : key == "homework" ? 2 : 3
+        }
+        this.pupilLessonMarks.push(mark);
+      });
+      
+      this.addMarks();
     });
 
-    this.form.controls.homework.valueChanges.subscribe(value =>{
-      let mark: IPupilLessonMarks = {
-        pupilId: this.pupilShortInfo.id,
-        value,
-        type: this.homeworkTypeId
-      }
-      this.pupilLessonMarks.push(mark);
-    });
+  }
 
-    this.form.controls.test.valueChanges.subscribe(value =>{
-      let mark: IPupilLessonMarks = {
-        pupilId: this.pupilShortInfo.id,
-        value,
-        type: this.testTypeId
-      }
-      this.pupilLessonMarks.push(mark);
-    });
-
-    this.lessonMarks.emit(this.pupilLessonMarks);
+  addMarks = () => {
+    this.selectedMarks.emit(this.pupilLessonMarks);
   }
 }

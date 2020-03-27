@@ -4,7 +4,7 @@ import { IShortInfoPupil } from 'src/app/models/IShortInfoPupil';
 import { HttpOptionsService } from 'src/app/services/http-options/http-options.service';
 import { HttpClient } from '@angular/common/http';
 import { apiUrl } from 'src/constants/urls';
-import { IPupilLessonMarks } from 'src/app/models/IPupilLessonMarks';
+import { IPupilLessonMark } from 'src/app/models/IPupilLessonMark';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { IFormField } from 'src/app/models/IFormField';
 import { requiredValidator } from 'src/utils/validators/required-validator';
@@ -19,7 +19,7 @@ export class JournalColumnComponent implements OnInit {
   lessonId: number;
   classId: number;
   pupils: IShortInfoPupil[];
-  lessonMarks: IPupilLessonMarks[] = [];
+  lessonMarks: IPupilLessonMark[] = [];
   form: FormGroup;
   fields: IFormField[] = [
     {
@@ -47,10 +47,21 @@ export class JournalColumnComponent implements OnInit {
     this.getPupils();
   }
 
-  addMarks(newItem: IPupilLessonMarks) {
-    if (newItem != null)
-      this.lessonMarks.push(newItem);
+  addMarks = (pupilLessonMarks: IPupilLessonMark[]) => {
+    if(pupilLessonMarks.length != 0) {
+      pupilLessonMarks = pupilLessonMarks.filter(x => x.value != null);
+      pupilLessonMarks.forEach(mark => {
+        this.lessonMarks = this.lessonMarks.filter(x => {
+          if(x.pupilId == mark.pupilId && x.typeId == mark.typeId)
+            return false;
+          
+          return true;
+        });
+        this.lessonMarks.push(mark);
+      });
+    }
   }
+
   getLessonIdClassId = () => {
     this.lessonId = parseInt(this.route.snapshot.paramMap.get('id'));
     this.classId = parseInt(this.route.snapshot.paramMap.get('classId'));
@@ -73,7 +84,6 @@ export class JournalColumnComponent implements OnInit {
     this.fields = thisFormValidationResponse.fields;
     if (thisFormValidationResponse.isValid) {
       const { topic } = this.form.value;
-      console.log({ topic: topic, lessonId: this.lessonId, classId: this.classId, lessonMarks: this.lessonMarks });
 
       this.http.post(apiUrl + "/JournalColumn", { topic: topic, lessonId: this.lessonId, classId: this.classId, lessonMarks: this.lessonMarks }, this.httpOtionsService.options)
       .subscribe((successRes: any) => {
