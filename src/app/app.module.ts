@@ -15,7 +15,6 @@ import { FormFieldComponent } from './components/form-field/form-field.component
 import { LoginFormComponent } from './components/login-form/login-form.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { QuotesBoxComponent } from './components/quotes-box/quotes-box.component';
-import { SchoolEventFormComponent } from './components/school-event-form/school-event-form.component';
 import { MainToolsSectionComponent } from './components/main-tools-section/main-tools-section.component';
 import { MainContentSectionComponent } from './components/main-content-section/main-content-section.component';
 import { UserSubFormComponent } from './components/user-sub-form/user-sub-form.component';
@@ -59,7 +58,6 @@ import { UpcomingTestItemComponent } from './components/upcoming-test-item/upcom
 import { UpcomingTestListComponent } from './components/upcoming-test-list/upcoming-test-list.component';
 import { ProfileCardComponent } from './components/profile-card/profile-card.component';
 import { PupilProfileComponent } from './pages/pupil-profile/pupil-profile.component';
-import { PupilEventCardComponent } from './components/pupil-event-card/pupil-event-card.component';
 import { AddUpcomingTestFormComponent } from './components/add-upcoming-test-form/add-upcoming-test-form.component';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core'
@@ -78,6 +76,8 @@ import { AddUpcomingEventFormComponent } from './components/add-upcoming-event-f
 import { HeadAssistantUpcomingEventsComponent } from './pages/head-assistant-upcoming-events/head-assistant-upcoming-events.component';
 import { PupilItemComponent } from './components/pupil-item/pupil-item.component';
 import { PupilListComponent } from './components/pupil-list/pupil-list.component';
+import { UpcomingEventCardComponent } from './components/upcoming-event-card/upcoming-event-card.component';
+import { UpcomingEventCardListComponent } from './components/upcoming-event-card-list/upcoming-event-card-list.component';
 import { ParentItemComponent } from './components/parent-item/parent-item.component';
 import { ParentListComponent } from './components/parent-list/parent-list.component';
 import { ChildrenBoxComponent } from './components/children-box/children-box.component';
@@ -93,7 +93,6 @@ import { SchoolInfoCardComponent } from './components/school-info-card/school-in
     FormFieldComponent,
     LoginFormComponent,
     QuotesBoxComponent,
-    SchoolEventFormComponent,
     MainToolsSectionComponent,
     MainContentSectionComponent,
     UserSubFormComponent,
@@ -129,9 +128,7 @@ import { SchoolInfoCardComponent } from './components/school-info-card/school-in
     UpcomingTestListComponent,
     ProfileCardComponent,
     PupilProfileComponent,
-    PupilEventCardComponent,
     AddUpcomingTestFormComponent,
-    PupilEventCardComponent,
     ScheduleCardComponent,
     ScheduleItemComponent,
     UpcomingTestCardComponent,
@@ -146,6 +143,8 @@ import { SchoolInfoCardComponent } from './components/school-info-card/school-in
     HeadAssistantUpcomingEventsComponent,
     PupilItemComponent,
     PupilListComponent,
+    UpcomingEventCardComponent,
+    UpcomingEventCardListComponent,
     ParentItemComponent,
     ParentListComponent,
     ChildrenBoxComponent,

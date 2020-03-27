@@ -12,12 +12,8 @@ export class EventService {
   private url: string = apiUrl + "/UpcomingEvents";
   constructor(private http: HttpClient, private HttpOptions: HttpOptionsService) { }
 
-  getUpcomingEventsBySchool() : Observable<IEvent[]>{
+  getUpcomingEvents(url: string) : Observable<IEvent[]>{
     this.HttpOptions.loadHeaders();
-    return this.http.get<IEvent[]>(this.url + "/GetUpcomingEventsBySchool",this.HttpOptions.options);
-  }
-  getUpcomingEventsByPupil() : Observable<IEvent[]>{
-    this.HttpOptions.loadHeaders();
-    return this.http.get<IEvent[]>(this.url + "/GetUpcomingEventsByPupil",this.HttpOptions.options);
+    return this.http.get<IEvent[]>(this.url + url,this.HttpOptions.options);
   }
 }
