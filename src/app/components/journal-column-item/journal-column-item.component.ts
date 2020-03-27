@@ -20,7 +20,7 @@ export class JournalColumnItemComponent implements OnInit {
 
   marks: string[] = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "Absent"];
 
-  pupilLessonMarks: IPupilLessonMarks[]=[{
+  pupilLessonMarks: IPupilLessonMarks[] = [{
     pupilId: undefined,
     value: undefined,
     type: undefined
@@ -32,45 +32,42 @@ export class JournalColumnItemComponent implements OnInit {
     if (typeof (this.index) == "number") {
       this.index = this.index + 1;
     }
+
     this.form = this.formBuilder.group({
       "classwork": [null],
-      "homework":[null],
+      "homework": [null],
       "test": [null]
     });
+
     this.pupilLessonMarks.pop();
+
     this.form.controls.classwork.valueChanges.subscribe(value =>{
       let mark: IPupilLessonMarks = {
-        pupilId: undefined,
-        value: undefined,
-        type: undefined
+        pupilId: this.pupilShortInfo.id,
+        value,
+        type: this.classworkTypeId
       }
-      mark.pupilId = this.pupilShortInfo.id;
-      mark.value = value;
-      mark.type = this.classworkTypeId;
       this.pupilLessonMarks.push(mark);
     });
+
     this.form.controls.homework.valueChanges.subscribe(value =>{
       let mark: IPupilLessonMarks = {
-        pupilId: undefined,
-        value: undefined,
-        type: undefined
+        pupilId: this.pupilShortInfo.id,
+        value,
+        type: this.homeworkTypeId
       }
-      mark.pupilId = this.pupilShortInfo.id;
-      mark.value = value;
-      mark.type = this.homeworkTypeId;
       this.pupilLessonMarks.push(mark);
     });
+
     this.form.controls.test.valueChanges.subscribe(value =>{
       let mark: IPupilLessonMarks = {
-        pupilId: undefined,
-        value: undefined,
-        type: undefined
+        pupilId: this.pupilShortInfo.id,
+        value,
+        type: this.testTypeId
       }
-      mark.pupilId = this.pupilShortInfo.id;
-      mark.value = value;
-      mark.type = this.testTypeId;
       this.pupilLessonMarks.push(mark);
     });
+
     this.lessonMarks.emit(this.pupilLessonMarks);
   }
 }

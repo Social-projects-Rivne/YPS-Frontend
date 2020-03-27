@@ -18,7 +18,6 @@ import { validationHelper } from 'src/utils/helpers/validation-helper';
 export class JournalColumnComponent implements OnInit {
   lessonId: number;
   classId: number;
-  topic: string = null;
   pupils: IShortInfoPupil[];
   lessonMarks: IPupilLessonMarks[] = [];
   form: FormGroup;
@@ -73,7 +72,6 @@ export class JournalColumnComponent implements OnInit {
 
     this.fields = thisFormValidationResponse.fields;
     if (thisFormValidationResponse.isValid) {
-      this.topic = this.form.value;
       const { topic } = this.form.value;
       console.log({ topic: topic, lessonId: this.lessonId, classId: this.classId, lessonMarks: this.lessonMarks });
 
