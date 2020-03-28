@@ -1,2 +1,21 @@
-<p>journal-column works!</p>
-<button (click)="onClick()" class="btn">fsfd</button>
+<a routerLink="/teacher/lessons" class="back-link">back<span class="arrow-back">‹</span></a>
+<form class="form" [formGroup]="form" (ngSubmit)="onSubmit()">
+  <div class="topic-value">
+    <yps-form-field  *ngFor="let field of fields"
+    [field]="field"
+    [formControlName]="field.name"></yps-form-field>
+  </div>
+  <div class="header">
+    <span class="indexs">№</span>
+    <span class="full-name">Full name</span>
+    <span class="select-mark">Classwork</span>
+    <span class="select-mark">Homework</span>
+    <span class="select-mark">Test</span>
+  </div>
+  <yps-journal-column-item *ngFor="let pupil of pupils; index as index" [index]="index" [pupilShortInfo]="pupil"
+    (selectedMarks)="addMarks($event)">
+  </yps-journal-column-item>
+  <div class="finish">
+    <button type="submit" class="btn primary">finish lesson</button>
+  </div>
+</form>
