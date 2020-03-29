@@ -13,20 +13,20 @@ import { IJournalColumn } from 'src/app/models/IJournalColumn';
   styleUrls: ['./pupil-journal.component.scss']
 })
 export class PupilJournalComponent implements OnInit {
-  journalColumns: IJournalColumn[]; 
+  journalColumns: IJournalColumn[];
   disciplines: IDisciplineToSelect[];
   form: FormGroup;
 
   constructor(
     private http: HttpClient,
-    private httpOptionsService: HttpOptionsService, 
+    private httpOptionsService: HttpOptionsService,
     private formBuilder: FormBuilder
-    ) { }
+  ) { }
 
-    ngOnInit(): void {
-       this.form = this.formBuilder.group({
-         "disciplineId": [null, requiredValidator("disciplines is required")]
-       })
+  ngOnInit(): void {
+    this.form = this.formBuilder.group({
+      "disciplineId": [null, requiredValidator("disciplines is required")]
+    })
 
     this.http.get(`${apiUrl}/Disciplines/GetAllDisciplines`, this.httpOptionsService.options)
       .subscribe(
@@ -35,13 +35,14 @@ export class PupilJournalComponent implements OnInit {
           console.log(this.disciplines);
         }
       );
-    
+
     this.form.controls.disciplineId.valueChanges.subscribe(value => {
-       this.http.get(`${apiUrl}/Marks/${value}`, this.httpOptionsService.options)
-       .subscribe((succesRes: IJournalColumn[]) => {
+      this.http.get(`${apiUrl}/Marks/${value}`, this.httpOptionsService.options)
+      .subscribe(
+        (succesRes: IJournalColumn[]) => {
           this.journalColumns = succesRes;
           console.log(this.journalColumns);
-       })
+        })
     })
   }
 }
