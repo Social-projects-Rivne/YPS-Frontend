@@ -1,4 +1,7 @@
-<yps-school-info-card [school]="school"></yps-school-info-card>
+<yps-school-info-card
+  *ngIf="!!school"
+  [school]="school"
+></yps-school-info-card>
 <yps-upcoming-event-card-list [url]="url"></yps-upcoming-event-card-list>
 <yps-main-schedule></yps-main-schedule>
 <router-outlet></router-outlet>

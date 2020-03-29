@@ -1,25 +1,16 @@
-<h4 class="name">{{ school.name }}</h4>
-<span class="short-name">{{ school.shortName }}</span>
-<div class="statistics">
-  <p class="statistics-title">school has</p>
-  <p class="statistics-item">
-    <span class="value">{{ school.pupils }}</span>
-    <span class="text">pupils</span>
-  </p>
-  <p class="statistics-item">
-    <span class="value">{{ school.parents }}</span>
-    <span class="text">parents</span>
-  </p>
-  <p class="statistics-item">
-    <span class="value">{{ school.teachers }}</span>
-    <span class="text">teachers</span>
-  </p>
-  <p class="statistics-item">
-    <span class="value">{{ school.auditoriums }}</span>
-    <span class="text">auditoriums</span>
-  </p>
-  <p class="statistics-item">
-    <span class="value">{{ school.disciplines }}</span>
-    <span class="text">disciplines</span>
-  </p>
+<h2 class="name">{{ school.name }}</h2>
+<h4 class="short-name">{{ school.shortName }}</h4>
+<p class="statistic-title">school statistic</p>
+<div class="statistic">
+  there are
+  <span class="value digit">{{ school.pupils }}</span>
+  pupils study,
+  <span class="value digit">{{ school.parents }}</span>
+  parents track the statistic of their children,
+  <span class="value digit">{{ school.teachers }}</span>
+  teachers teach,
+  <span class="value digit">{{ school.auditoriums }}</span>
+  auditoriums available for use, and
+  <span class="value digit">{{ school.disciplines }}</span>
+  disciplines are taught in the school.
 </div>

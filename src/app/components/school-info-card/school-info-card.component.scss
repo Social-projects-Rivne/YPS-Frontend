@@ -1,31 +1,30 @@
 @import "src/vars";
 
 :host {
-  padding: 1rem;
-  border: 1px solid $light;
-
   .name {
     color: $accent;
+    text-align: center;
   }
 
-  .short-name {
-    font-size: 0.8rem;
-    color: $gray
+  .statistic-title {
+    text-transform: capitalize;
+    font-size: .8rem;
+    color: $gray;
+    font-weight: 600;
+    margin-top: .5rem;
   }
 
-  .statistics {
-    display: grid;
-    grid-template-columns: repeat(5, auto);
-    grid-gap: .5rem;
-    justify-content: start;
+  .statistic {
+    color: $gray;
+    font-size: .9rem;
 
-    &-title {
-      grid-column: 1 / -1;
+    &::first-letter {
       text-transform: capitalize;
-      font-size: 0.75rem;
-      color: $gray;
-      font-weight: 600;
-      margin-top: .5rem;
+    }
+
+    .value {
+      color: $accent;
+      line-height: 1.25rem;
     }
   }
 }
