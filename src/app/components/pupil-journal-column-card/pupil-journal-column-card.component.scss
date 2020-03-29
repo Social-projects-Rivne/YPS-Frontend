@@ -9,20 +9,22 @@
   padding-right: 1rem;
   border-right: 1px solid $light;
 
-  .absent{
+  .absent {
     text-transform: capitalize;
     align-self: end;
     justify-self: center;
+    color: $gray;
+    font-size: .9rem;
     font-weight: 600;
   }
 
   .topic {
     color: $accent;
     
-    &::first-letter{
+    &::first-letter {
       text-transform: uppercase;
-     }
-   }
+    }
+  }
 
   .lesson-date {
     text-transform: capitalize;

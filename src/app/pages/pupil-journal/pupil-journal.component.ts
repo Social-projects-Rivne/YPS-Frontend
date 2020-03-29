@@ -38,11 +38,12 @@ export class PupilJournalComponent implements OnInit {
 
     this.form.controls.disciplineId.valueChanges.subscribe(value => {
       this.http.get(`${apiUrl}/Marks/${value}`, this.httpOptionsService.options)
-      .subscribe(
-        (succesRes: IJournalColumn[]) => {
-          this.journalColumns = succesRes;
-          console.log(this.journalColumns);
-        })
-    })
+        .subscribe(
+          (succesRes: IJournalColumn[]) => {
+            this.journalColumns = succesRes;
+            console.log(this.journalColumns);
+          }
+        );
+    });
   }
 }

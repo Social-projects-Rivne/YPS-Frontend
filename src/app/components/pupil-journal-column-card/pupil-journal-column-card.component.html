@@ -2,8 +2,8 @@
 <span class="lesson-date digit">{{ journalColumn.lessonDate }}</span>
 <div class="marks" *ngIf="journalColumn.marks.length != 0">
   <div class="mark-section" *ngFor="let mark of journalColumn.marks">
-    <span class="mark-type" >{{mark.type}}</span>
-    <span class="mark-value">{{mark.value}}</span>
+    <span class="mark-type">{{ mark.type }}</span>
+    <span class="mark-value">{{ mark.value }}</span>
   </div>
 </div>
 <span class="absent" *ngIf="journalColumn.marks.length == 0">absent</span>
