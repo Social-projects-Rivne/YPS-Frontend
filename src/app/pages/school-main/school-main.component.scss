@@ -5,3 +5,9 @@
   margin: 0 auto;
   padding: 1rem;
 }
+
+@media (max-width: 1400px) {
+  :host {
+    max-width: 1200px;
+  }
+}
