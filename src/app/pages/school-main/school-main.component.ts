@@ -19,8 +19,8 @@ export class SchoolMainComponent implements OnInit {
     console.log("school ", this.school)
     this.http.get(`${apiUrl}/schools`, this.httpOptionsService.options)
       .subscribe(
-        (response: any) => {
-          console.log(response)
+        (response: ISchool) => {
+          this.school = response;
         },
         (error: any) => {
           console.log(error);
