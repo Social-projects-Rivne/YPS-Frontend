@@ -1,7 +1,5 @@
 <h3>Your Journal, please select your discipline</h3>
-
 <form class="form" [formGroup]="form">
-    
 <mat-form-field>
     <mat-label>Select a discipline</mat-label>
     <mat-select formControlName="disciplineId">
@@ -9,10 +7,9 @@
     </mat-select>
   </mat-form-field>
  </form>
- <span *ngIf="journalcolumns?.length == 0">
+ <span class="no-marks" *ngIf="journalcolumns?.length == 0">
     you don't have any marks yet.
   </span>
-
  <yps-pupil-journal-column-list [journalcolumns]= "journalcolumns"></yps-pupil-journal-column-list>
 
  

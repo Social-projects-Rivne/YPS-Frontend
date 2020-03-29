@@ -9,6 +9,13 @@
   padding-right: 1rem;
   border-right: 1px solid $light;
 
+  .absent{
+    text-transform: capitalize;
+    align-self: end;
+    justify-self: center;
+    font-weight: 600;
+  }
+
   .topic {
     color: $accent;
     
@@ -26,7 +33,31 @@
   .marks {
     display: grid;
     align-self: end;
-    grid-template-columns: repeat(3, auto);
+    grid-template-columns: repeat(3, 1fr);
     justify-self: start;
-   }
+
+    .mark-section {
+      display: grid;
+      grid-gap: 0.5rem;
+      margin-right: 0.5rem;
+      padding-right: 0.5rem;
+      border-right: 1px solid $light;
+
+      .mark-type {
+        color: $gray;
+        text-transform: capitalize;
+        font-size: 0.75rem;
+      }
+
+      .mark-value {
+        text-align: center;
+        font-size: .85rem;
+      }
+
+      &:last-child {
+        margin: 0;
+        border: none;
+      }
+    }
+  }
  }

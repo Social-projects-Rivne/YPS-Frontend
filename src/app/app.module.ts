@@ -86,7 +86,6 @@ import { TeacherItemComponent } from './components/teacher-item/teacher-item.com
 import { TeacherListComponent } from './components/teacher-list/teacher-list.component';
 import { PupilJournalComponent } from './pages/pupil-journal/pupil-journal.component';
 import { PupilJournalColumnCardComponent } from './components/pupil-journal-column-card/pupil-journal-column-card.component';
-import { PupilJournalColumnMarkComponent } from './components/pupil-journal-column-mark/pupil-journal-column-mark.component';
 import { PupilJournalColumnListComponent } from './components/pupil-journal-column-list/pupil-journal-column-list.component';
 
 @NgModule({
@@ -157,7 +156,6 @@ import { PupilJournalColumnListComponent } from './components/pupil-journal-colu
     TeacherListComponent,
     PupilJournalComponent,
     PupilJournalColumnCardComponent,
-    PupilJournalColumnMarkComponent,
     PupilJournalColumnListComponent
   ],
   imports: [
