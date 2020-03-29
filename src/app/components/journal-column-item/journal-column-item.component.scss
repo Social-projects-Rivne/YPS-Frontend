@@ -1,0 +1,56 @@
+@import "src/vars";
+
+:host {
+  display: grid;
+  grid-template-columns: calc(3rem + 2px) 1fr 8rem 8rem 8rem 0.25fr;
+  align-content: center;
+  row-gap: 0.5rem; 
+  grid-column-gap: 1rem;
+
+  .item-el {
+    align-self: center;
+    text-align: center;
+    line-height: 2rem;
+    padding: .5rem;
+    border: 1px solid $light;
+
+    &:last-child {
+     border-right: 1px solid $light;
+    }
+  }
+
+  .indexs {
+    display: grid;
+    align-content: center;
+    font-weight: bold;
+    background-color: $accent;
+    color: #ffffff;
+    text-align: center;
+  }
+
+  .pupil-name {
+    align-self: center;
+    text-align: left;
+  }
+
+  .form-mark {
+    display: grid;
+    grid-template-columns: 8rem 8rem 8rem;
+    grid-column-gap: 1rem;
+  
+    .select-mark {
+      text-align: center;
+      align-self: center;
+      border: {
+        top: 1px solid $light;
+        left: 1px solid $light;
+        right: 1px solid $light;
+      }
+      padding: 0.8rem; 
+    }
+
+    .mat-select {
+      height: 100%;
+    }
+  }
+}
