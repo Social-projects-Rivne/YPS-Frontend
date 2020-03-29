@@ -1,4 +1,4 @@
-<h3 class="header">Upcoming Events</h3>
+<h3 class="title" [ngClass]="{'center': url == '/GetUpcomingEventsBySchool'}">upcoming events</h3>
 <span class="no-items" *ngIf="events.length == 0">
   you don't have any upcoming events yet.
 </span>

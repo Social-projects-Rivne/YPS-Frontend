@@ -4,8 +4,17 @@
   display: grid;
   grid-gap: 1rem;
 
+  .title {
+    text-transform: capitalize;
+
+    &.center {
+      text-align: center;
+    }
+  }
+
   .no-items {
     color: $gray;
+    text-align: center;
 
     &::first-letter {
       text-transform: capitalize;
