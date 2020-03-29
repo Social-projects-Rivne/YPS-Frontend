@@ -1,0 +1,32 @@
+@import "src/vars";
+  
+:host {
+  display: grid;
+  grid-template-rows: auto auto 1fr;
+  position: relative;
+  align-content: center;
+  grid-gap: 0.5rem;
+  padding-right: 1rem;
+  border-right: 1px solid $light;
+
+  .topic {
+    color: $accent;
+    
+    &::first-letter{
+      text-transform: uppercase;
+     }
+   }
+
+  .lesson-date {
+    text-transform: capitalize;
+    font-size: 0.75rem;
+    color: $gray;
+   }
+
+  .marks {
+    display: grid;
+    align-self: end;
+    grid-template-columns: repeat(3, auto);
+    justify-self: start;
+   }
+ }

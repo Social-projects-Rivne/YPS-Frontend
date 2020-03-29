@@ -1,0 +1,7 @@
+@import "src/vars";
+
+:host {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(12rem, 2fr));
+  grid-gap: 1rem;
+ }

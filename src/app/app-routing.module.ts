@@ -44,6 +44,7 @@ import { ScheduleComponent } from './pages/schedule/schedule.component';
 import { LessonsComponent } from './pages/lessons/lessons.component';
 import { JournalColumnComponent } from './pages/journal-column/journal-column.component';
 import { HeadAssistantUpcomingEventsComponent } from './pages/head-assistant-upcoming-events/head-assistant-upcoming-events.component';
+import { PupilJournalComponent } from './pages/pupil-journal/pupil-journal.component';
 
 const headMasterRoutes: Routes = [
   { path: '', canActivateChild: [AuthGuard], component: HeadMasterProfileComponent },
@@ -86,7 +87,8 @@ const parentRoutes: Routes = [
 ];
 const pupilRoutes: Routes = [
   { path: '', canActivateChild: [AuthGuard], component: PupilProfileComponent },
-  { path: 'schedule', canActivateChild: [AuthGuard], component: ScheduleComponent }
+  { path: 'schedule', canActivateChild: [AuthGuard], component: ScheduleComponent },
+  { path: 'journal', canActivateChild: [AuthGuard], component: PupilJournalComponent}
 ];
 
 const routes: Routes = [
@@ -171,5 +173,6 @@ export const RoutingComponents = [
   HeadAssistantScheduleComponent,
   ScheduleComponent,
   LessonsComponent,
-  JournalColumnComponent
+  JournalColumnComponent,
+  PupilJournalComponent
 ];
