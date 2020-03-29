@@ -1,1 +1,25 @@
-<p>{{ school | json }}</p>
+<h4 class="name">{{ school.name }}</h4>
+<span class="short-name">{{ school.shortName }}</span>
+<div class="statistics">
+  <p class="statistics-title">school has</p>
+  <p class="statistics-item">
+    <span class="value">{{ school.pupils }}</span>
+    <span class="text">pupils</span>
+  </p>
+  <p class="statistics-item">
+    <span class="value">{{ school.parents }}</span>
+    <span class="text">parents</span>
+  </p>
+  <p class="statistics-item">
+    <span class="value">{{ school.teachers }}</span>
+    <span class="text">teachers</span>
+  </p>
+  <p class="statistics-item">
+    <span class="value">{{ school.auditoriums }}</span>
+    <span class="text">auditoriums</span>
+  </p>
+  <p class="statistics-item">
+    <span class="value">{{ school.disciplines }}</span>
+    <span class="text">disciplines</span>
+  </p>
+</div>

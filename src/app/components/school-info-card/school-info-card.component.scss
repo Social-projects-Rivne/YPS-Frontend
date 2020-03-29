@@ -1,0 +1,31 @@
+@import "src/vars";
+
+:host {
+  padding: 1rem;
+  border: 1px solid $light;
+
+  .name {
+    color: $accent;
+  }
+
+  .short-name {
+    font-size: 0.8rem;
+    color: $gray
+  }
+
+  .statistics {
+    display: grid;
+    grid-template-columns: repeat(5, auto);
+    grid-gap: .5rem;
+    justify-content: start;
+
+    &-title {
+      grid-column: 1 / -1;
+      text-transform: capitalize;
+      font-size: 0.75rem;
+      color: $gray;
+      font-weight: 600;
+      margin-top: .5rem;
+    }
+  }
+}
