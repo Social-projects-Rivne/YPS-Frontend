@@ -1,6 +1,6 @@
 import { IJournalColumnMark } from './IJournalColumnMark';
 
-export interface IJournalColumnDate {
+export interface IJournalColumn {
     lessonDate: string;
     discipline: string;
     topic: string;

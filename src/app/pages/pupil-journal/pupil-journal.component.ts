@@ -5,7 +5,7 @@ import { HttpClient } from '@angular/common/http';
 import { HttpOptionsService } from 'src/app/services/http-options/http-options.service';
 import { requiredValidator } from 'src/utils/validators/required-validator';
 import { FormGroup, FormBuilder } from '@angular/forms';
-import { IJournalColumnDate } from 'src/app/models/IJournalColumnDate';
+import { IJournalColumn } from 'src/app/models/IJournalColumn';
 
 @Component({
   selector: 'yps-pupil-journal',
@@ -13,7 +13,7 @@ import { IJournalColumnDate } from 'src/app/models/IJournalColumnDate';
   styleUrls: ['./pupil-journal.component.scss']
 })
 export class PupilJournalComponent implements OnInit {
-  journalcolumns: IJournalColumnDate[]; 
+  journalColumns: IJournalColumn[]; 
   disciplines: IDisciplineToSelect[];
   form: FormGroup;
 
@@ -38,9 +38,9 @@ export class PupilJournalComponent implements OnInit {
     
     this.form.controls.disciplineId.valueChanges.subscribe(value => {
        this.http.get(`${apiUrl}/Marks/${value}`, this.httpOptionsService.options)
-       .subscribe((succesRes: IJournalColumnDate[]) => {
-          this.journalcolumns = succesRes;
-          console.log(this.journalcolumns);
+       .subscribe((succesRes: IJournalColumn[]) => {
+          this.journalColumns = succesRes;
+          console.log(this.journalColumns);
        })
     })
   }
