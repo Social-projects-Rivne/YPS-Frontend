@@ -25,7 +25,6 @@ export class PupilJournalComponent implements OnInit {
          "disciplineId": [null, requiredValidator("disciplines is required")]
        })
 
-    
     this.http.get(`${apiUrl}/Disciplines/GetAllDisciplines`, this.httpOptionsService.options)
       .subscribe(
         (successRes: IDisciplineToSelect[]) => {
@@ -41,7 +40,5 @@ export class PupilJournalComponent implements OnInit {
           console.log(this.journalcolumns);
        })
     })
-
-
   }
 }

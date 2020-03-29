@@ -1,0 +1,11 @@
+@import "src/vars";
+
+:host {
+  .no-marks {
+    color: $gray;
+
+    &:first-letter {
+      text-transform: capitalize;
+    }
+  }
+}

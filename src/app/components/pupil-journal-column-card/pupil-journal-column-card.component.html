@@ -1,10 +1,9 @@
 <h4 class="topic">{{ journalcolumn.topic }}</h4>
 <span class="lesson-date digit">{{ journalcolumn.lessonDate }}</span>
-<div class="marks">
-  <yps-pupil-journal-column-mark
-    *ngFor="let mark of journalcolumn.marks"
-    [mark]="mark"
-  >
-  </yps-pupil-journal-column-mark>
+<div class="marks" *ngIf="journalcolumn.marks.length != 0">
+  <div class="mark-section" *ngFor="let mark of journalcolumn.marks">
+    <span class="mark-type" >{{mark.type}}</span>
+    <span class="mark-value">{{mark.value}}</span>
+  </div>
 </div>
-
+<span class="absent" *ngIf="journalcolumn.marks.length == 0">Absent</span>
