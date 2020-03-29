@@ -14,5 +14,4 @@ export class PupilJournalColumnCardComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
 }

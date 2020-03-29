@@ -17,8 +17,11 @@ export class PupilJournalComponent implements OnInit {
   disciplines: IDisciplineToSelect[];
   form: FormGroup;
 
-  constructor(private http: HttpClient,
-    private httpOptionsService: HttpOptionsService, private formBuilder: FormBuilder) { }
+  constructor(
+    private http: HttpClient,
+    private httpOptionsService: HttpOptionsService, 
+    private formBuilder: FormBuilder
+    ) { }
 
     ngOnInit(): void {
        this.form = this.formBuilder.group({
