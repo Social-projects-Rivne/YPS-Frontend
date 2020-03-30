@@ -70,6 +70,7 @@ import { MainScheduleComponent } from './components/main-schedule/main-schedule.
 import { LessonCardComponent } from './components/lesson-card/lesson-card.component';
 import { LessonDayCardComponent } from './components/lesson-day-card/lesson-day-card.component';
 import { LessonItemComponent } from './components/lesson-item/lesson-item.component';
+import { JournalColumnItemComponent } from './components/journal-column-item/journal-column-item.component';
 import { AddScheduleFormComponent } from './components/add-schedule-form/add-schedule-form.component';
 import { MAT_MOMENT_DATE_ADAPTER_OPTIONS, MatMomentDateModule } from '@angular/material-moment-adapter';
 import { AddUpcomingEventFormComponent } from './components/add-upcoming-event-form/add-upcoming-event-form.component';
@@ -84,6 +85,8 @@ import { ChildrenBoxComponent } from './components/children-box/children-box.com
 import { TeacherItemComponent } from './components/teacher-item/teacher-item.component';
 import { TeacherListComponent } from './components/teacher-list/teacher-list.component';
 import { SchoolInfoCardComponent } from './components/school-info-card/school-info-card.component';
+import { PupilJournalColumnCardComponent } from './components/pupil-journal-column-card/pupil-journal-column-card.component';
+import { PupilJournalColumnListComponent } from './components/pupil-journal-column-list/pupil-journal-column-list.component';
 
 @NgModule({
   declarations: [
@@ -138,6 +141,7 @@ import { SchoolInfoCardComponent } from './components/school-info-card/school-in
     LessonCardComponent,
     LessonDayCardComponent,
     LessonItemComponent,
+    JournalColumnItemComponent,
     AddScheduleFormComponent,
     AddUpcomingEventFormComponent,
     HeadAssistantUpcomingEventsComponent,
@@ -150,7 +154,9 @@ import { SchoolInfoCardComponent } from './components/school-info-card/school-in
     ChildrenBoxComponent,
     TeacherItemComponent,
     TeacherListComponent,
-    SchoolInfoCardComponent
+    SchoolInfoCardComponent,
+    PupilJournalColumnCardComponent,
+    PupilJournalColumnListComponent
   ],
   imports: [
     BrowserModule,

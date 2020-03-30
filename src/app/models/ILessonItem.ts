@@ -10,4 +10,5 @@ export interface ILessonItem {
     classId: number;
     className: string;
     teacherId: number;
+    isFinished: boolean;
 }

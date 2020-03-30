@@ -3,7 +3,6 @@ import { IScheduleDay } from 'src/app/models/IScheduleDay';
 import { HttpClient } from '@angular/common/http';
 import { apiUrl } from 'src/constants/urls';
 import { get } from 'js-cookie';
-import { days } from 'src/constants/schedule-test-data';
 
 @Component({
   selector: 'yps-schedule',
