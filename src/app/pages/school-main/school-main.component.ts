@@ -16,7 +16,6 @@ export class SchoolMainComponent implements OnInit {
 
   ngOnInit() {
     this.httpOptionsService.loadHeaders();
-    console.log("school ", this.school)
     this.http.get(`${apiUrl}/schools`, this.httpOptionsService.options)
       .subscribe(
         (response: ISchool) => {

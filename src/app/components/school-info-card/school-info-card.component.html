@@ -1,5 +1,17 @@
 <h2 class="name">{{ school.name }}</h2>
 <h4 class="short-name">{{ school.shortName }}</h4>
+<p class="locality value-wrap">
+  <mat-icon class="icon">location_city</mat-icon>
+  <span class="locality-value value">{{ school.locality }}</span>
+</p>
+<p class="address value-wrap">
+  <mat-icon class="icon">place</mat-icon>
+  <span class="address-value value">{{ school.address }}</span>
+</p>
+<p class="email value-wrap">
+  <mat-icon class="icon">mail</mat-icon>
+  <span class="email-value value">{{ school.email }}</span>
+</p>
 <p class="statistic-title">school statistic</p>
 <div class="statistic">
   there are
