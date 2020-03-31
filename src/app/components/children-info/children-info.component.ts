@@ -25,7 +25,6 @@ export class ChildrenInfoComponent implements OnInit {
   pupils: IUser[];
 
   user: IUser[] = null;
-  
   selectedPupilId: number;
   activeTab: string = "profile";
 
@@ -33,8 +32,7 @@ export class ChildrenInfoComponent implements OnInit {
   disciplines: IDisciplineToSelect[];
   form: FormGroup;
 
-
-  changeTab(name: string){
+  changeTab = (name: string) => {
     this.activeTab = name;
   }
 

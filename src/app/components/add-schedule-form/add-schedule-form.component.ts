@@ -121,8 +121,7 @@ export class AddScheduleFormComponent implements OnInit {
     if (isValid) {
       let request = {
         ...this.form.value,
-        weekCopyCount: parseInt(this.form.value.weekCopyCount, 10),
-        lessonDate: this.form.value.lessonDate
+        weekCopyCount: parseInt(this.form.value.weekCopyCount, 10)
       }
 
       console.log(request);
