@@ -32,10 +32,7 @@
         Marks
     </button>
 </div>
-<yps-profile-card  
-    [user]="user"
-    *ngIf="user != null && activeTab=='profile'"
->
+<yps-profile-card [user]="user" *ngIf="user != null && activeTab=='profile'">
 </yps-profile-card>
 <div *ngIf="user != null && activeTab=='marks'">
     <h3>Journal, please select a discipline</h3>

@@ -23,11 +23,9 @@ export class ChildrenInfoComponent implements OnInit {
   ) { }
 
   pupils: IUser[];
-
   user: IUser[] = null;
   selectedPupilId: number;
   activeTab: string = "profile";
-
   journalColumns: IJournalColumn[];
   disciplines: IDisciplineToSelect[];
   form: FormGroup;
