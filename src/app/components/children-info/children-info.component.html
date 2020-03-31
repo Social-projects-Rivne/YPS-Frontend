@@ -8,14 +8,49 @@
     </yps-pupil-info-card>
 </div>
 <button 
-    (click)="reset()" 
-    class="btn back-btn"  
-    *ngIf="user != null"
->
-    Back
+        (click)="reset()" 
+        class="btn back-btn"  
+        *ngIf="user != null"
+    >
+        Back
 </button>
+<div class="btn-ctn">
+    <button 
+        class="btn tab-btn"  
+        *ngIf="user != null"
+        (click)="changeTab('profile')"
+        [ngClass]="{active: activeTab == 'profile'}"
+    >
+        Profile
+    </button>
+    <button 
+        class="btn tab-btn"  
+        *ngIf="user != null"
+        (click)="changeTab('marks')"
+        [ngClass]="{active: activeTab == 'marks'}"
+    >
+        Marks
+    </button>
+</div>
 <yps-profile-card  
     [user]="user"
-    *ngIf="user != null"
+    *ngIf="user != null && activeTab=='profile'"
 >
 </yps-profile-card>
+<div *ngIf="user != null && activeTab=='marks'">
+    <h3>Journal, please select a discipline</h3>
+    <form class="form" [formGroup]="form">
+        <mat-form-field>
+            <mat-label>Select a discipline</mat-label>
+            <mat-select formControlName="disciplineId">
+                <mat-option *ngFor="let discipline of disciplines" [value]="discipline.id">{{discipline.name}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+    </form>
+    <span class="no-marks" *ngIf="journalColumns?.length == 0">
+        Don't have any marks yet.
+    </span>
+    <yps-pupil-journal-column-list [journalColumns]="journalColumns" *ngIf="form.controls.disciplineId.value != null">
+    </yps-pupil-journal-column-list>
+</div>

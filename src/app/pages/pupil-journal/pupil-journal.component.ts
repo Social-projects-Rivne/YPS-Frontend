@@ -28,7 +28,7 @@ export class PupilJournalComponent implements OnInit {
       "disciplineId": [null, requiredValidator("disciplines is required")]
     })
 
-    this.http.get(`${apiUrl}/Disciplines/GetAllDisciplines`, this.httpOptionsService.options)
+    this.http.get(`${apiUrl}/Disciplines/GetAllDisciplinesBySchool`, this.httpOptionsService.options)
       .subscribe(
         (successRes: IDisciplineToSelect[]) => {
           this.disciplines = successRes;
