@@ -1,45 +1,49 @@
 @import 'src/vars.scss';
 
 :host {
-  .container {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(9rem, 1fr));
-    grid-gap: 0.75rem;
-  }
-
-  .class-number-card {
-    padding: 1rem;
-    height: 6rem;
-    line-height: 4rem;
-    color: $accent;
+  .title {
+    text-transform: capitalize;
     text-align: center;
-    border: 1px solid $light;
-
-    &:hover {
-      cursor: pointer;
-      box-shadow: black 5px;
-      color: black;
-    }
-  }
-
-  .header {
-  margin: 1rem auto;
-  text-align: center;
-  align-self: center;
+    margin-bottom: 1rem;
   }
 
   .selected {
-    width: 4rem;
-    color: $accent;
-    align-self: center;
+    display: block;
     margin: 1rem auto;
-
   }
 
-  .schedule-display {
-    display: flex;
-    flex-direction: column;
-    justify-items: center;
-    flex-wrap: wrap;
+  .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(6rem, 1fr));
+    grid-gap: 0.75rem;
+
+    .class-number-card {
+      height: 4rem;
+      line-height: 4rem;
+      color: $gray;
+      text-align: center;
+      border: 1px solid $light;
+      cursor: pointer;
+
+      &:hover {
+        color: $accent;
+      }
+    }
+  }
+}
+
+@media (max-width: 1400px) {
+  :host {
+    .container {
+      grid-template-columns: repeat(auto-fill, minmax(11rem, 1fr));
+    }
+  }
+}
+
+@media (max-width: 1100px) {
+  :host {
+    .container {
+      grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
+    }
   }
 }

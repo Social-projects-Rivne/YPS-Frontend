@@ -1,0 +1,64 @@
+@import "src/vars";
+
+:host {
+  display: grid;
+  grid-gap: .5rem;
+  position: relative;
+
+  .name {
+    color: $accent;
+    text-align: center;
+  }
+
+  .value-wrap {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-content: center;
+    grid-gap: 0.5rem;
+    font-size: .8rem;
+    color: $gray;
+
+    .icon {
+      color: $accent;
+      font-size: 1rem;
+      width: 1rem;
+      height: 1rem;
+      line-height: 100%;
+      text-align: center;
+      align-self: center;
+      margin-bottom: -2px;
+    }
+  }
+
+  .locality {
+    position: absolute;
+    top: 3rem;
+    right: 0;
+
+    &-value {
+      text-transform: capitalize;
+    }
+  }
+
+  .statistic-title {
+    text-transform: capitalize;
+    font-size: .8rem;
+    color: $accent;
+    font-weight: 600;
+    margin-top: .5rem;
+  }
+
+  .statistic {
+    color: $gray;
+    font-size: .9rem;
+
+    &::first-letter {
+      text-transform: capitalize;
+    }
+
+    .value {
+      color: $accent;
+      line-height: 1.25rem;
+    }
+  }
+}

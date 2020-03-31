@@ -84,6 +84,7 @@ import { ParentListComponent } from './components/parent-list/parent-list.compon
 import { ChildrenBoxComponent } from './components/children-box/children-box.component';
 import { TeacherItemComponent } from './components/teacher-item/teacher-item.component';
 import { TeacherListComponent } from './components/teacher-list/teacher-list.component';
+import { SchoolInfoCardComponent } from './components/school-info-card/school-info-card.component';
 import { PupilJournalColumnCardComponent } from './components/pupil-journal-column-card/pupil-journal-column-card.component';
 import { PupilJournalColumnListComponent } from './components/pupil-journal-column-list/pupil-journal-column-list.component';
 
@@ -153,6 +154,7 @@ import { PupilJournalColumnListComponent } from './components/pupil-journal-colu
     ChildrenBoxComponent,
     TeacherItemComponent,
     TeacherListComponent,
+    SchoolInfoCardComponent,
     PupilJournalColumnCardComponent,
     PupilJournalColumnListComponent
   ],

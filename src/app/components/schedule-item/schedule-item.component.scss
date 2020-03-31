@@ -8,15 +8,35 @@
 
   .lesson-number {
     grid-row: 1 / 4;
+    position: relative;
+    display: grid;
+    align-content: center;
+    text-align: center;
+    width: 2rem;
+    height: 2rem;
 
     &-value {
-      color: #ffffff;
       z-index: 1;
+      color: #ffffff;
+      font-weight: bold;
+      font-size: .7rem;
+    }
+
+    &::before, &::after {
+      content: '';
+      position: absolute;
+    }
+
+    &::before {
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      transform: rotate(45deg);
+      background-color: $accent;
     }
 
     &::after {
-      content: "";
-      position: absolute;
       width: 2px;
       height: 4.5rem;
       background-color: $light;

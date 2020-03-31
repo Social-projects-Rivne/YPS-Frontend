@@ -9,7 +9,7 @@ import { IEvent } from 'src/app/models/IEvent';
 })
 export class UpcomingEventCardListComponent implements OnInit {
   @Input() url: string;
-  events: IEvent[];
+  events: IEvent[] = [];
 
   constructor(private eventService: EventService) { }
 
