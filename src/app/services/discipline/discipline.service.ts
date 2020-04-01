@@ -13,7 +13,7 @@ export class DisciplineService {
   constructor(
     private http: HttpClient,
     private httpOptionsService: HttpOptionsService
-    ){ }
+  ){ }
 
   getByClassTeacher = () =>{
     return this.http

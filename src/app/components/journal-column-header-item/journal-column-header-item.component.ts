@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { IJournalColumnHeader } from '../../models/IJournalColumnHeader'
 
 @Component({
@@ -6,12 +6,7 @@ import { IJournalColumnHeader } from '../../models/IJournalColumnHeader'
   templateUrl: './journal-column-header-item.component.html',
   styleUrls: ['./journal-column-header-item.component.scss']
 })
-export class JournalColumnHeaderItemComponent implements OnInit {
+
+export class JournalColumnHeaderItemComponent {
   @Input() journalColumn: IJournalColumnHeader;
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
 }
