@@ -53,6 +53,8 @@ export class AddScheduleFormComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    this.httpOptionsService.loadHeaders();
+    
     this.form = this.formBuilder.group({
       "classId": [null, requiredValidator("class is required")],
       "disciplineId": [null, requiredValidator("disciplines is required")],
@@ -69,7 +71,7 @@ export class AddScheduleFormComponent implements OnInit {
         }
       );
 
-    this.http.get(`${apiUrl}/Disciplines/GetAllDisciplines`, this.httpOptionsService.options)
+    this.http.get(`${apiUrl}/Disciplines/GetAllDisciplinesBySchool`, this.httpOptionsService.options)
       .subscribe(
         (successRes: IDisciplineToSelect[]) => {
           this.disciplines = successRes;
@@ -100,7 +102,8 @@ export class AddScheduleFormComponent implements OnInit {
   }
 
   getAuditoriums = (valueDate: Date, valueNum: any) => {
-    this.http.get(`${apiUrl}/Auditoriums/${valueDate.toDateString()}/${valueNum}`, this.httpOptionsService.options)
+    const newDate = new Date(valueDate).toDateString();
+    this.http.get(`${apiUrl}/Auditoriums/${newDate}/${valueNum}`, this.httpOptionsService.options)
       .subscribe((succesRes: IAuditorium[]) => {
         this.auditoriums = succesRes;
         this.form.addControl("auditoriumId", new FormControl(requiredValidator("auditoriums is required")))
@@ -118,8 +121,7 @@ export class AddScheduleFormComponent implements OnInit {
     if (isValid) {
       let request = {
         ...this.form.value,
-        weekCopyCount: parseInt(this.form.value.weekCopyCount, 10),
-        lessonDate: this.form.value.lessonDate.toDateString()
+        weekCopyCount: parseInt(this.form.value.weekCopyCount, 10)
       }
 
       console.log(request);

@@ -12,6 +12,29 @@
     }
 
     .back-btn {
+        display: grid;
         justify-self: start;
+    }
+
+    .btn-ctn {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        justify-self: center;
+        grid-gap: 1rem;
+    }
+
+    .active.tab-btn {
+        border-bottom-color: $accent;
+        color: $accent;
+    }
+
+    .tab-btn {
+        border-color: transparent;
+        background: none;
+        color: $gray;
+    }
+
+    .no-marks {
+        color: $gray;
     }
 }
