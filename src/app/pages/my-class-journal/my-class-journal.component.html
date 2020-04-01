@@ -1,0 +1,19 @@
+<span *ngIf="disciplineService.disciplineResponse.isClassTeacher">
+  <h1>Welcome to Your Class Journal!</h1>
+  <form class="form" [formGroup]="form">
+    <mat-form-field>
+      <mat-label>Select a discipline</mat-label>
+      <mat-select formControlName="disciplineId" disableRipple>
+        <mat-option
+        *ngFor="let discipline of disciplineService.disciplineResponse.disciplines"
+        [value]="discipline.id">{{ discipline.name }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </form>
+  <span class="no-marks" *ngIf="journalColumnHeaders?.length == 0">
+    you don't have any journal columns yet.
+  </span>
+  <yps-journal-column-header-list
+    [journalColumnHeaders]= "journalColumnHeaders">
+  </yps-journal-column-header-list>
+</span>

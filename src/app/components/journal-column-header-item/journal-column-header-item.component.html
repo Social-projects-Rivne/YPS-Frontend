@@ -1,0 +1,18 @@
+<div class="border">
+  <div class="index">
+    <span class="index-value digit">
+      {{ journalColumn.LessonNumber }}
+    </span>
+  </div>
+  <h4 class="full-name">
+    {{ journalColumn.date }}
+  </h4>
+  <p class="email">
+    <mat-icon class="icon schedule">schedule</mat-icon>
+    <span class="email-value">{{ journalColumn.lessonTimeGap }}</span>
+  </p>
+  <p class="work-info-title">topic</p>
+  <p class="work-info">
+    {{ journalColumn.topic }}
+  </p>
+</div>
