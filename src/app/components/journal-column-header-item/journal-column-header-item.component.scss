@@ -1,0 +1,26 @@
+@import "src/vars";
+
+:host {
+  .border{
+    border: 1px solid lightgrey;
+    padding: 1rem;
+  }
+
+  .work-info-title {
+    color: $gray;
+    text-transform: capitalize;
+    font-weight: 600;
+    font-size: .75rem;
+  }
+
+  .work-info {
+    padding: .5rem;
+    border: 1px solid $light;
+    font-size: .75rem;
+    font-weight: 600;
+
+    &::first-letter {
+      text-transform: capitalize;
+    }
+  }
+}
