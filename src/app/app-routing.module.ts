@@ -1,8 +1,6 @@
 import { HeadAssistantScheduleComponent } from './pages/head-assistant-schedule/head-assistant-schedule.component';
 import { ClassesComponent } from './pages/classes/classes.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
-import { MastersComponent } from './pages/masters/masters.component';
-import { HeadassistantsComponent } from './pages/headassistants/headassistants.component';
 import { TeachersComponent } from './pages/teachers/teachers.component';
 import { ParentsComponent } from './pages/parents/parents.component';
 import { PupilsComponent } from './pages/pupils/pupils.component';
@@ -51,8 +49,6 @@ const headMasterRoutes: Routes = [
   { path: 'pupils', canActivateChild: [AuthGuard], component: PupilsComponent },
   { path: 'parents', canActivateChild: [AuthGuard], component: ParentsComponent },
   { path: 'teachers', canActivateChild: [AuthGuard], component: TeachersComponent },
-  { path: 'head-assistants', canActivateChild: [AuthGuard], component: HeadassistantsComponent },
-  { path: 'masters', canActivateChild: [AuthGuard], component: MastersComponent },
   { path: 'classes', canActivate: [AuthGuard], component: ClassesComponent }
 ];
 
@@ -61,7 +57,6 @@ const masterRoutes: Routes = [
   { path: 'pupils', canActivateChild: [AuthGuard], component: PupilsComponent },
   { path: 'parents', canActivateChild: [AuthGuard], component: ParentsComponent },
   { path: 'teachers', canActivateChild: [AuthGuard], component: TeachersComponent },
-  { path: 'head-assistants', canActivateChild: [AuthGuard], component: HeadassistantsComponent },
   { path: 'classes', canActivate: [AuthGuard], component: ClassesComponent }
 ];
 
@@ -153,8 +148,6 @@ export const RoutingComponents = [
   TeachersComponent,
   PupilsComponent,
   ParentsComponent,
-  HeadassistantsComponent,
-  MastersComponent,
   AdminCabinetComponent,
   ParentCabinetComponent,
   UpcomingTestsComponent,

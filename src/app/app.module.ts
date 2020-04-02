@@ -1,5 +1,3 @@
-import { MastersComponent } from './pages/masters/masters.component';
-import { HeadassistantsComponent } from './pages/headassistants/headassistants.component';
 import { ParentsComponent } from './pages/parents/parents.component';
 import { PupilsComponent } from './pages/pupils/pupils.component';
 import { TeachersComponent } from './pages/teachers/teachers.component';
@@ -109,8 +107,6 @@ import { PupilJournalColumnListComponent } from './components/pupil-journal-colu
     TeachersComponent,
     PupilsComponent,
     ParentsComponent,
-    HeadassistantsComponent,
-    MastersComponent,
     SchoolRegisterFormComponent,
     RegisterHeadmasterResponseComponent,
     SidebarComponent,
