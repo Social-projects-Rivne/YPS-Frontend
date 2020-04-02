@@ -1,5 +1,14 @@
-<h3 class="title" [ngClass]="{'center': url == '/GetUpcomingEventsBySchool'}">upcoming events</h3>
-<span class="no-items" *ngIf="events.length == 0">
+<h3
+  class="title"
+  [ngClass]="{'center': url == '/GetUpcomingEventsBySchool'}"
+>
+  upcoming events
+</h3>
+<span
+  class="no-items"
+  *ngIf="events.length == 0"
+  [ngClass]="{'center': url == '/GetUpcomingEventsBySchool'}"
+>
   you don't have any upcoming events yet.
 </span>
 <div *ngFor="let event of events">
