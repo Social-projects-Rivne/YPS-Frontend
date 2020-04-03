@@ -43,6 +43,11 @@ export class TeacherCabinetComponent implements OnInit {
       value: 'Upcoming Tests',
       path: './upcoming-tests',
       icon: 'library_add_check'
+    },
+    {
+      value: 'My Class',
+      path: './my-class-journal',
+      icon: 'assignment'
     }
   ];
 

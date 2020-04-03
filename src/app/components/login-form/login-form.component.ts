@@ -8,8 +8,8 @@ import { requiredValidator } from 'src/utils/validators/required-validator';
 import { minLengthValidator } from 'src/utils/validators/min-length-validatot';
 import { validationHelper } from 'src/utils/helpers/validation-helper';
 import { HttpClient } from '@angular/common/http';
-import { set, get } from 'js-cookie';
-import { NavigationExtras, Router } from '@angular/router';
+import { set } from 'js-cookie';
+import { Router } from '@angular/router';
 
 @Component({
   selector: "yps-login-form",
@@ -44,7 +44,6 @@ export class LoginFormComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private http: HttpClient,
-    private authService: AuthService,
     public router: Router
   ) { }
 
@@ -63,8 +62,7 @@ export class LoginFormComponent implements OnInit {
       "password": [null, [
         requiredValidator("password is required."),
         minLengthValidator(7, "password must be at least 7 characters.")
-      ]],
-      "remember": [null]
+      ]]
     });
   }
 

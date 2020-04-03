@@ -79,7 +79,7 @@ export class UserSubFormComponent implements OnInit, OnDestroy, ControlValueAcce
       "middleName": [null, requiredValidator("middle name is required")],
       "phoneNumber": [null, [
         requiredValidator("phone number is required"),
-        minLengthValidator(7, "email must be at least 7 characters."),
+        minLengthValidator(7, "phone number must be at least 7 characters."),
         patternValidator(
           /^[(]{0,1}[0-9]{3}[)]{0,1}[-\s\.]{0,1}[0-9]{3}[-\s\.]{0,1}[0-9]{4}$/ ,
         "invalid phone number, should be similar to 0973456784")

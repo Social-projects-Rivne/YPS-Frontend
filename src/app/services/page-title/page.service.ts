@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
 })
 export class PageService {
 
-  // * Set Document Title to a Specific Value by "title" argument 
+  // * Set Document Title to a Specific Value by "title" argument
   set = (title: string): void => {
     document.title = title;
   }

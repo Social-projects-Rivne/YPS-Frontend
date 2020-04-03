@@ -10,10 +10,6 @@
     [formControlName]="field.name"
   >
   </yps-form-field>
-  <div class="wrap">
-    <mat-checkbox formControlName="remember" class="remember-control" id="remember-control">remember me!</mat-checkbox>
-    <a href="#" class="forgot-link">Forgot password?</a>
-  </div>
   <button type="submit" class="btn login-btn primary">login</button>
   <recaptcha *ngIf="iterations >= 3 && showCaptcha"  formControlName="myRecaptcha" ></recaptcha>
 </form>

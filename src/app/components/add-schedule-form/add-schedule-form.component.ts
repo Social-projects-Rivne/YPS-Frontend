@@ -54,7 +54,7 @@ export class AddScheduleFormComponent implements OnInit {
 
   ngOnInit(): void {
     this.httpOptionsService.loadHeaders();
-    
+
     this.form = this.formBuilder.group({
       "classId": [null, requiredValidator("class is required")],
       "disciplineId": [null, requiredValidator("disciplines is required")],
@@ -101,9 +101,8 @@ export class AddScheduleFormComponent implements OnInit {
     });
   }
 
-  getAuditoriums = (valueDate: Date, valueNum: any) => {
-    const newDate = new Date(valueDate).toDateString();
-    this.http.get(`${apiUrl}/Auditoriums/${newDate}/${valueNum}`, this.httpOptionsService.options)
+  getAuditoriums = (valueDate: any, valueNum: any) => {
+    this.http.get(`${apiUrl}/Auditoriums/${valueDate._d.toDateString()}/${valueNum}`, this.httpOptionsService.options)
       .subscribe((succesRes: IAuditorium[]) => {
         this.auditoriums = succesRes;
         this.form.addControl("auditoriumId", new FormControl(requiredValidator("auditoriums is required")))
