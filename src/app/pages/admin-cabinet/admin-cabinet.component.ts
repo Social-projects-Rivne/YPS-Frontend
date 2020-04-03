@@ -18,11 +18,6 @@ export class AdminCabinetComponent implements OnInit {
       value: 'school requests',
       path: './school-requests',
       icon: 'announcement'
-    },
-    {
-      value: 'schools',
-      path: './schools',
-      icon: 'school'
     }
   ];
   constructor(private pageService: PageService) { }
