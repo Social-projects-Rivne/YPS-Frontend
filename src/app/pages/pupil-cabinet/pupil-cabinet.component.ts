@@ -21,11 +21,6 @@ export class PupilCabinetComponent implements OnInit {
       icon: 'event'
     },
     {
-      value: 'Materials',
-      path: './materials',
-      icon: 'menu_book'
-    },
-    {
       value: 'Journal',
       path: './journal',
       icon: 'assignment'

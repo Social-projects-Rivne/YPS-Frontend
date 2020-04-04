@@ -15,11 +15,6 @@ export class HeadAssistantCabinetComponent implements OnInit {
       icon: 'account_circle'
     },
     {
-      value: 'Journals',
-      path: './journal',
-      icon: 'assignment'
-    },
-    {
       value: 'Upcoming Events',
       path: './upcoming-events',
       icon: 'view_list'
@@ -28,11 +23,6 @@ export class HeadAssistantCabinetComponent implements OnInit {
       value: 'Schedule',
       path: './schedule',
       icon: 'event'
-    },
-    {
-      value: 'Materials',
-      path: './materials',
-      icon: 'menu_book'
     }
   ];
 
