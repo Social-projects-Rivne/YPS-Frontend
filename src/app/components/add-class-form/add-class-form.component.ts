@@ -1,3 +1,4 @@
+import { minValueValidator } from './../../../utils/validators/min-value-validator';
 import { patternValidator } from "src/utils/validators/pattern-validator";
 import { maxLengthValidator } from "./../../../utils/validators/max-length-validator";
 import { ITeacherToSelect } from "./../../models/ITacherToSelect";
@@ -103,14 +104,15 @@ export class AddClassFormComponent implements OnInit {
         [
           requiredValidator("character is required"),
           maxLengthValidator(1, "character must be 1 symbol"),
-          patternValidator(/[A-Za-zÀ-ÿ]/, "must be single character")
+          patternValidator(/[A-Za-zÀ-ÿ]/, "must be single character"),
         ]
       ],
       number: [
         null,
         [
           requiredValidator("number is required"),
-          maxValueValidator(12, "max value is 12")
+          maxValueValidator(12, "max value is 12"),
+          minValueValidator(1,"min value is 1")
         ]
       ],
       classTeacherId: [null, [requiredValidator("teacher is required")]],
