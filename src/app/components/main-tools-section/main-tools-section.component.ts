@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class MainToolsSectionComponent implements OnInit {
 
   boxes = [
-    { title: 'Teachers', info: 'Personal Info, materials, journal, schedule.' },
+    { title: 'Teachers', info: 'Personal Info, journal, schedule.' },
     { title: 'Students', info: 'Personal info, schedule, upcoming events and tests.' },
     { title: 'Parents',  info: 'Personal info, monitoring for marks kids.' }
   ];
