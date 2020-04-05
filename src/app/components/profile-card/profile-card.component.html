@@ -1,7 +1,5 @@
 <div *ngIf="user != null" class="photo-edit">
     <img [src]="user.imageUrl" class="photo" />
-    <input type="file" style="display: none;" accept="image/*" #file>
-    <button class="btn upload-photo">Upload</button>
 </div>
 <div *ngIf="user != null" class="name-edit">
     <h2 class="full-name">{{ user.surname }} {{ user.firstName }} {{ user.middleName }}</h2>
